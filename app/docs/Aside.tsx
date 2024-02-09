@@ -16,34 +16,74 @@ const Aside = () => {
     a.order && b.order ? a.order - b.order : a.title.localeCompare(b.title)
   );
 
+  const allBase = allDocsSorted?.filter((d) => d.doc_type === "base");
+
+  const allComponents = allDocsSorted?.filter(
+    (d) => d.doc_type === "component"
+  );
+
   return (
-    <ol className="min-w-[300px] sticky top-6 max-h-screen">
+    <div className="min-w-[300px] sticky top-6 max-h-screen flex flex-col gap-6">
       <AnimatePresence mode="wait">
-        {allDocsSorted?.map((docs) => {
-          const isActive = pathname === "/docs/" + docs.path;
-          return (
-            <li key={docs.path} className="p-2 relative">
-              {isActive && (
-                <motion.span
-                  layoutId="aside_dot"
-                  className={cn(
-                    "absolute -left-3 w-3 h-3 top-[14px] rounded-full bg-primary"
+        <ol className="flex flex-col gap-2">
+          {allBase?.map((docs) => {
+            const isActive = pathname === "/docs/" + docs.path;
+            return (
+              <li key={docs._id} className="relative">
+                {isActive && (
+                  <motion.span
+                    layoutId="aside_dot"
+                    className={cn(
+                      "absolute -left-5 w-3 h-3 rounded-full bg-primary top-[5px]"
+                    )}
+                  />
+                )}
+                <Link
+                  href={`${baseUrl}/${docs.path}`}
+                  className={cn("transition-colors", {
+                    "text-primary dark:text-primary": isActive,
+                  })}
+                >
+                  {docs.title}
+                </Link>
+              </li>
+            );
+          })}
+        </ol>
+
+        <section className="flex flex-col gap-2">
+          <span className="text-sm text-secondary-700 dark:secondary-300">
+            Components
+          </span>
+
+          <ol>
+            {allComponents?.map((c) => {
+              const isActive = pathname === "/docs/" + c.path;
+              return (
+                <li key={c._id} className="relative">
+                  {isActive && (
+                    <motion.span
+                      layoutId="aside_dot"
+                      className={cn(
+                        "absolute -left-5 w-3 h-3 rounded-full bg-primary top-[5px]"
+                      )}
+                    />
                   )}
-                />
-              )}
-              <Link
-                href={`${baseUrl}/${docs.path}`}
-                className={cn("transition-colors", {
-                  "text-primary dark:text-primary": isActive,
-                })}
-              >
-                {docs.title}
-              </Link>
-            </li>
-          );
-        })}
+                  <Link
+                    href={`${baseUrl}/${c.path}`}
+                    className={cn("transition-colors", {
+                      "text-primary dark:text-primary": isActive,
+                    })}
+                  >
+                    {c.title}
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
       </AnimatePresence>
-    </ol>
+    </div>
   );
 };
 

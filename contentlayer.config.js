@@ -45,9 +45,12 @@ export const Doc = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    doc_type: {
+      type: "string",
+      required: true,
+    },
     order: {
       type: "number",
-      required: true,
     },
     publishedAt: {
       type: "string",
@@ -58,6 +61,12 @@ export const Doc = defineDocumentType(() => ({
       required: true,
     },
     cover: {
+      type: "string",
+    },
+    pageLink: {
+      type: "string",
+    },
+    githubLink: {
       type: "string",
     },
     tags: {
@@ -81,7 +90,6 @@ export default makeSource({
         rehypePrettyCode,
         {
           defaultLang: "js",
-
           theme: "one-dark-pro",
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty

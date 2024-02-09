@@ -1,0 +1,92 @@
+---
+title: Accordion
+path: accordion
+publishedAt: 2024-02-09
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Accordion
+doc_type: component
+summary: Use the accordion component and its options to expand and collapse the content inside each panel based on state reactivity from React and Tailwind CSS
+pageLink: /docs/accordion
+tags:
+  - Getting Started
+  - Installation
+  - Tailwind CSS
+  - Configuring
+---
+
+import AccordionRoot from "examples/Accordion/accordion-root.mdx";
+import { accordionRoot } from "examples/Accordion/accordion-root";
+
+import AccordionAlwaysOpen from "examples/Accordion/accordion-always-open.mdx";
+import { accordionAlwaysOpen } from "examples/Accordion/accordion-always-open";
+
+import AccordionBordered from "examples/Accordion/accordion-bordered.mdx";
+import accordionBorderedCode from "examples/Accordion/accordion-bordered";
+import AccordionIcon from "examples/Accordion/accordion-icon.mdx";
+import accordionIconCode from "examples/Accordion/accordion-icon";
+import Theme from "examples/Accordion/theme.mdx";
+
+The accordion component from Flowbite React can be used to toggle the visibility of the content of each accordion panel tab by expanding the collapsing the trigger
+element based on multiple examples and styles.
+
+The reactivity and state is handled by React and the components is built using the Tailwind CSS framework meaning that you can easily customize the styles and colors of the accordion.
+
+To use the accordion component, you need to import the **{"<Accordion>"}** component from **pol-ui**:
+
+```jsx
+import { Accordion } from "pol-ui";
+```
+
+## Default accordion
+
+Use this example of the {"<Accordion>"} component and the {"<Accordion.Panel>"} and {"<Accordion.Title>"} subcomponents to create an accordion with multiple panels.
+
+<Example
+  name="Default accordion"
+  code={accordionRoot}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--default&viewMode=story"
+>
+  <AccordionRoot />
+</Example>
+
+## Always open
+
+By default the accordion will close the other panels when a new panel is opened, but you can use the **alwaysOpen** prop to keep all panels open at the same time.
+
+<Example
+  name="Always open example"
+  code={accordionAlwaysOpen}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--always-open&viewMode=story"
+>
+  <AccordionAlwaysOpen />
+</Example>
+
+## Bordered
+
+You can use the **bordered** prop to add a border to the accordion panels.
+
+<Example
+  name="Bordered example"
+  code={accordionBorderedCode}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--bordered&viewMode=story"
+>
+  <AccordionBordered />
+</Example>
+
+## Custom icon
+
+You can use the **arrowIcon** prop to add a custom icon to the accordion panels.
+
+<Example
+  name="Always open example"
+  code={accordionIconCode}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--with-arrow-icon&viewMode=story"
+>
+  <AccordionIcon />
+</Example>
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/customize/theme).
+
+<Theme />
+
+## References

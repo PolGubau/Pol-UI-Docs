@@ -30,7 +30,7 @@ const DocsList = ({ docs }: { docs: Docs[] }) => {
       className="flex flex-col gap-4"
     >
       {docs.map((post) => (
-        <motion.li key={post.slug} variants={item}>
+        <motion.li key={post._id} variants={item}>
           <BigLink
             slug={post.slug}
             name={post.title}

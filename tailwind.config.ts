@@ -8,6 +8,7 @@ export default {
     "./content/**/*.mdx",
     "./node_modules/pol-ui/**/*.js",
   ],
+  darkMode: ["class"],
   theme: {
     extend: {
       colors: {

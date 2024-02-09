@@ -27,7 +27,7 @@ const SimilarBlogs = ({ blog: p, slug }: { blog: Docs; slug: string }) => {
       <div className="flex flex-wrap gap-2">
         {similarTechProjects().map((p) => {
           const realSlug = p.slug.replace("docs/", "");
-          return <BigLink key={p.slug} name={p.title} slug={realSlug} />;
+          return <BigLink key={p._id} name={p.title} slug={realSlug} />;
         })}
       </div>
     </>

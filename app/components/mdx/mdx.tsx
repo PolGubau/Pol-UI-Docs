@@ -13,6 +13,7 @@ import { ColorsEnum, IconButton, Tabs, useCopyToClipboard } from "pol-ui";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { TbCheck, TbCopy } from "react-icons/tb";
+import Example from "../Example";
 const CustomLink = (props) => {
   const href = props.href;
 
@@ -140,7 +141,7 @@ function StyledLink({ href, name, children }) {
   );
 }
 
-const Code = ({
+export const Code = ({
   code,
   language = "javascript",
   filename,
@@ -195,6 +196,7 @@ const components = {
   BigLink: BigLink,
   Tabs,
   Code,
+  Example,
 };
 
 export function Mdx({ code }: Readonly<{ code: string }>) {

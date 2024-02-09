@@ -1,5 +1,5 @@
 "use client";
-import { IconButton, Input } from "pol-ui";
+import { DarkThemeToggle, IconButton, Input } from "pol-ui";
 import { LayoutGroup } from "framer-motion";
 import { TbBrandGithub, TbSearch } from "react-icons/tb";
 import NavItem from "./nav-item";
@@ -33,6 +33,7 @@ export default function Navbar() {
           <IconButton href={metadata.links.github} target="_blank">
             <TbBrandGithub />
           </IconButton>
+          <DarkThemeToggle />
         </LayoutGroup>
       </div>
     </aside>

@@ -7,6 +7,7 @@ import { Footer } from "./components/Layout";
 import NextTopLoader from "nextjs-toploader";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoTopButton from "./components/GoTopButton";
+import AppProvider from "./providers/AppProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(constants.links.website),
@@ -115,17 +116,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${font.className}  text-dark bg-light dark:text-light dark:bg-dark transition-colors duration-200 w-full overflow-x-hidden`}
-    >
-      <body className="antialiased w-full max-w-5xl mb-20 flex mt-8 md:mx-auto scroll-smooth">
-        <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
-          <NextTopLoader color="#b49cff" height={2} showSpinner={false} />
-          <GoTopButton />
-          <Sidebar />
-          {children}
-          <Footer />
+    <html lang="en" className={`${font.className} `}>
+      <body className="antialiased    mb-20   mt-8 md:mx-auto scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 transition-colors duration-200 w-full overflow-x-hidden flex justify-center">
+        <main className="flex-auto flex flex-col w-full px-8 md:px-10 max-w-5xl">
+          <AppProvider>
+            <NextTopLoader color="#b49cff" height={2} showSpinner={false} />
+            <GoTopButton />
+            <Sidebar />
+            {children}
+            <Footer />
+          </AppProvider>
         </main>
       </body>
       <SpeedInsights />
