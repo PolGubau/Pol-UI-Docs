@@ -123,4 +123,21 @@ embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-ba
   <RoundedCode />
 </Example>
 
+## Theme
+
+```ts
+export interface BadgeTheme {
+  root: {
+    base: string;
+    color: ColorsType;
+    rounded: RoundedSizesTypes;
+    href: string;
+    size: MainSizesType;
+  };
+  icon: IBoolean & {
+    size: MainSizesType;
+  };
+}
+```
+
 ## References
