@@ -83,10 +83,18 @@ function formatDate(date: string) {
 }
 
 export default function DocPage({ params }) {
-  const doc: Docs | undefined = allDocs.find((d) => d.path === params.slug);
+  const allDocsSorted = allDocs?.sort((a, b) =>
+    a.order && b.order ? a.order - b.order : a.title.localeCompare(b.title)
+  );
 
-  const indexOfDoc = allDocs.findIndex((d) => d.path === `${params.slug}`) ?? 0;
-  const nextDoc = allDocs[indexOfDoc + 1] ?? allDocs[allDocs.length - 1];
+  const doc: Docs | undefined = allDocsSorted.find(
+    (d) => d.path === params.slug
+  );
+
+  const indexOfDoc =
+    allDocsSorted.findIndex((d) => d.path === `${params.slug}`) ?? 0;
+  const nextDoc =
+    allDocsSorted[indexOfDoc + 1] ?? allDocsSorted[allDocs.length - 1];
 
   if (!doc) {
     notFound();
@@ -119,7 +127,7 @@ export default function DocPage({ params }) {
         <div className="flex gap-4">
           <BigLink
             name={`Next up: ${nextDoc.title}`}
-            slug={`/${nextDoc.slug}`}
+            slug={`/docs/${nextDoc.path}`}
           />
         </div>
       </article>
