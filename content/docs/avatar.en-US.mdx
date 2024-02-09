@@ -25,16 +25,16 @@ All of the example are built as React components and you can access custom props
 To start using the avatar component you need to import it from the **pol-ui** package:
 
 ```jsx
-import { Alert } from "pol-ui";
+import { Avatar } from "pol-ui";
 ```
 
-## Default alert
+## Default avatar
 
 Here's a default example of the **{"<Avatar>"}** component where you can use the **img** prop to pass the image URL, the **alt** prop to pass a description of the image for accessibility and the **rounded** prop to make the avatar rounded.
 
 <Example
   height={150}
-name="Default alert"
+name="Default avatar"
 code={root}
 embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=size:md&id=components-avatar--default-avatar&viewMode=story"
 
@@ -45,10 +45,18 @@ embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=size:md&id=compon
 
 ## Props
 
-| Prop name | Type            | Default | Description                                        |
-| --------- | --------------- | ------- | -------------------------------------------------- |
-| icon      | React.ReactNode | null    | The icon to display in the accordion panel.        |
-| onDismiss | () => void      | null    | Callback to be called when the alert is dismissed. |
+| Prop name           | Type                                                           | Default     | Description                                                            |
+| ------------------- | -------------------------------------------------------------- | ----------- | ---------------------------------------------------------------------- |
+| alt                 | string                                                         |             | The alt text for the image.                                            |
+| img                 | string                                                         |             | The image URL.                                                         |
+| bordered            | bool                                                           | false       | Add a border to the avatar.                                            |
+| color               | Colors                                                         | 'secondary' | The color of the avatar.                                               |
+| size                | MainSizes                                                      | 'md'        | The size of the avatar.                                                |
+| status              | [AvatarStatus](/docs/avatar#additional-types-avatarstatusenum) | undefined   | The status of the avatar.                                              |
+| stacked             | bool                                                           | false       | Stack the avatar. Useful in groups                                     |
+| placeholderInitials | string                                                         | undefined   | The initials to be used as a placeholder if the image is not provided. |
+| statusPosition      | Positions                                                      | 'top-left'  | The position of the status badge.                                      |
+| theme               | [AvatarTheme](/docs/avatar#theme)                              | avatarTheme | The theme of the component.                                            |
 
 ## Examples
 
