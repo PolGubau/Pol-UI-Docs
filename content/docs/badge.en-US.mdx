@@ -13,8 +13,17 @@ tags:
   - Pol-ui
 ---
 
-import RootCode from "examples/Avatar/root.mdx";
-import root from "examples/Avatar/root";
+import RootCode from "examples/Badge/root.mdx";
+import root from "examples/Badge/root";
+
+import WithIconCode from "examples/Badge/withIcon.mdx";
+import WithIcon from "examples/Badge/withIcon";
+
+import IconCode from "examples/Badge/icon.mdx";
+import Icon from "examples/Badge/icon";
+
+import RoundedCode from "examples/Badge/rounded.mdx";
+import Rounded from "examples/Badge/rounded";
 
 The badge component can be used to show text, labels, and counters inside a small box or circle element which can be placed inside paragraphs, buttons, dropdowns, menu items, and more.
 
@@ -53,6 +62,8 @@ embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-ba
 | size      | MainSizesType                   | 'md'       | The size of the badge.    |
 | theme     | [BadgeTheme](/docs/badge#theme) | badgeTheme | The theme of the badge.   |
 
+## Theme
+
 ```ts
 export interface BadgeTheme {
   root: {
@@ -68,6 +79,48 @@ export interface BadgeTheme {
 }
 ```
 
-## References
+## Badge with icon
 
-- [Flowbite Badge](https://flowbite.com/docs/components/badge/)
+You can use the **icon** property to add an icon to the badge and change its size using the **size** property.
+
+<Example
+  height={100}
+name="Badge with icon"
+code={WithIcon}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-badge--badge-with-icon&viewMode=story"
+
+>
+
+  <WithIconCode />
+</Example>
+
+## Badge just with an icon
+
+You can use the **icon** property to add an icon to the badge and change its size using the **size** property.
+
+<Example
+  height={100}
+name="Badge justi with an icon"
+code={Icon}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-badge--badge-only-icon&viewMode=story"
+
+>
+
+  <IconCode />
+</Example>
+## Badge with custom rounded
+
+You can use the **icon** property to add an icon to the badge and change its size using the **size** property.
+
+<Example
+  height={100}
+name="Badge with custom rounded"
+code={Rounded}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-badge--small-rounded&viewMode=story"
+
+>
+
+  <RoundedCode />
+</Example>
+
+## References
