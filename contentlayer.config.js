@@ -45,6 +45,10 @@ export const Doc = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    order: {
+      type: "number",
+      required: true,
+    },
     publishedAt: {
       type: "string",
       required: true,

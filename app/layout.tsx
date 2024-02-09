@@ -84,9 +84,8 @@ export const metadata: Metadata = {
   ],
 
   twitter: {
-    site: constants.links.twitter,
     description: constants.description,
-    creator: constants.links.twitter,
+    creator: constants.creator.twitter,
     title: constants.title,
     card: "summary_large_image",
   },
@@ -118,9 +117,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${font.className} text-dark bg-light dark:text-light dark:bg-dark transition-colors duration-200 w-full overflow-x-hidden`}
+      className={`${font.className}  text-dark bg-light dark:text-light dark:bg-dark transition-colors duration-200 w-full overflow-x-hidden`}
     >
-      <body className="antialiased w-full max-w-5xl mb-20 flex mt-8 md:mx-auto">
+      <body className="antialiased w-full max-w-5xl mb-20 flex mt-8 md:mx-auto scroll-smooth">
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 ">
           <NextTopLoader color="#b49cff" height={2} showSpinner={false} />
           <GoTopButton />

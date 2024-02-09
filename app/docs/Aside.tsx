@@ -11,10 +11,15 @@ const Aside = () => {
 
   const baseUrl = "/docs";
 
+  // some docs have a order field, so we sort them by that, otherwise alphabetically
+  const allDocsSorted = allDocs?.sort((a, b) =>
+    a.order && b.order ? a.order - b.order : a.title.localeCompare(b.title)
+  );
+
   return (
-    <ol className="min-w-[300px]">
+    <ol className="min-w-[300px] sticky top-6 max-h-screen">
       <AnimatePresence mode="wait">
-        {allDocs?.map((docs) => {
+        {allDocsSorted?.map((docs) => {
           const isActive = pathname === "/docs/" + docs.path;
           return (
             <li key={docs.path} className="p-2 relative">
