@@ -15,7 +15,13 @@ const Example = ({
   children,
   code = "",
   embedUrl = "",
-}: PropsWithChildren<{ name?: string; code?: string; embedUrl?: string }>) => {
+  height = 400,
+}: PropsWithChildren<{
+  name?: string;
+  code?: string;
+  embedUrl?: string;
+  height: number;
+}>) => {
   const closedVariant = {
     height: 200,
     overflow: "hidden",
@@ -63,7 +69,7 @@ const Example = ({
           className="rounded-md "
           src={embedUrl}
           width="100%"
-          height="400"
+          height={height}
         ></iframe>
       </div>
 

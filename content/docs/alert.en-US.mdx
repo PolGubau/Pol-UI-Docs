@@ -13,16 +13,12 @@ tags:
   - Pol-ui
 ---
 
-import AccordionRoot from "examples/Alert/accordion-root.mdx";
-import { accordionRoot } from "examples/Alert/accordion-root";
+import RootCode from "examples/Alert/root.mdx";
+import root from "examples/Alert/root";
 
-import AccordionAlwaysOpen from "examples/Alert/accordion-always-open.mdx";
-import { accordionAlwaysOpen } from "examples/Alert/accordion-always-open";
+import OnDismissCode from "examples/Alert/onDismiss.mdx";
+import OnDismiss from "examples/Alert/onDismiss";
 
-import AccordionBordered from "examples/Alert/accordion-bordered.mdx";
-import accordionBorderedCode from "examples/Alert/accordion-bordered";
-import AccordionIcon from "examples/Alert/accordion-icon.mdx";
-import accordionIconCode from "examples/Alert/accordion-icon";
 import Theme from "examples/Alert/theme.mdx";
 
 The alert component can be used to show a contextual text to the user such as a success or error message after form validation inside an alert box where you can choose from multiple colors, sizes, and styles.
@@ -35,18 +31,21 @@ To start using the alert box you need to import the **{"<Alert>"}** component fr
 import { Alert } from "pol-ui";
 ```
 
-## Default accordion
+## Default alert
 
 The default alert component is a simple alert box with a text inside it and you can use the **color** prop to change the color of the alert box and the **title** prop to add a title to the alert box.
 
 Inside of the **{"<Alert>"}** component you can add any type of content such as text, images, or other components as they will be considered children of the alert box.
 
 <Example
-  name="Default accordion"
-  code={accordionRoot}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--default&viewMode=story"
+  height={150}
+name="Default alert"
+code={root}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-alert--default-alert&viewMode=story"
+
 >
-  <AccordionRoot />
+
+  <RootCode />
 </Example>
 
 ## Props
@@ -64,28 +63,35 @@ Inside of the **{"<Alert>"}** component you can add any type of content such as 
 
 ## Examples
 
-### With Icon
+### OnDismiss
 
-By default the accordion will close the other panels when a new panel is opened, but you can use the **alwaysOpen** prop to keep all panels open at the same time.
+You can use the **onDismiss** prop to add a close button to the alert box and a callback to be called when the alert is dismissed.
+
+Any function can be passed to the **onDismiss** prop and it will be called when the alert is dismissed.
 
 <Example
+  height={150}
   name="Always open example"
-  code={accordionAlwaysOpen}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--always-open&viewMode=story"
+  code={OnDismiss}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-alert--alert-dismissible&viewMode=story"
 >
-  <AccordionAlwaysOpen />
+  <OnDismissCode />
 </Example>
 
-### Bordered
+### With icon
 
-You can use the **bordered** prop to add a border to the accordion panels.
+You can use the **icon** prop to add an icon to the alert box.
+As usual, you can provide any time of svg as a React component to the **icon** prop.
 
 <Example
-  name="Bordered example"
-  code={accordionBorderedCode}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--bordered&viewMode=story"
+  name="Alert with icon"   
+  height={150}
+code={root}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-alert--alert-with-icons&viewMode=story"
+
 >
-  <AccordionBordered />
+
+  <RootCode />
 </Example>
 
 ### Custom icon
@@ -94,10 +100,10 @@ You can use the **arrowIcon** prop to add a custom icon to the accordion panels.
 
 <Example
   name="Always open example"
-  code={accordionIconCode}
+  code={root}
   embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--with-arrow-icon&viewMode=story"
 >
-  <AccordionIcon />
+  <RootCode />
 </Example>
 ## Theme
 
