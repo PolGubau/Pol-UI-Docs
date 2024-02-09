@@ -3,8 +3,7 @@ import { Badge } from "../components/Badge";
 import Image from "next/image";
 import ThreePhones from "../components/home/ThreePhones";
 import { ProjectsList } from "../components/Projects/ProjectList/ProjectList";
-import { firstProjects } from "../projects/page";
-import { BlogLink } from "../components/BlogLink";
+import { BigLink } from "../components/BigLink";
 import HomeSkeleton from "../components/home/HomeSkeleton";
 
 const imagesPhones = [
@@ -67,8 +66,8 @@ export default async function Page() {
           </ul>
         </div>
         <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
-          <BlogLink slug="blog/bio" name="My biography and career" />
-          <BlogLink
+          <BigLink slug="blog/bio" name="My biography and career" />
+          <BigLink
             slug="blog/shouldGoUniversity"
             name="Should you go to university?"
           />
@@ -113,18 +112,17 @@ export default async function Page() {
         </hgroup>
 
         <div className=" gap-4 grid grid-cols-1 md:grid-cols-2">
-          <BlogLink
+          <BigLink
             slug="blog/whyHaveSideProjects"
             name="Why you should have a side project"
           />
-          <BlogLink
+          <BigLink
             slug="blog/chooseSideProjects"
             name="How to choose a side project"
           />
         </div>
-        <ProjectsList projects={firstProjects} />
 
-        <BlogLink slug="/projects" name="See all my projects" />
+        <BigLink slug="/projects" name="See all my projects" />
       </main>
     </section>
   );

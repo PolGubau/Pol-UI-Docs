@@ -1,16 +1,13 @@
 "use client";
-
+import { Input } from "pol-ui";
 import { LayoutGroup } from "framer-motion";
 import NavItem from "./nav-item";
 const navItems = {
   "/": {
     name: "Home",
   },
-  "/projects": {
-    name: "Projects",
-  },
-  "/blog": {
-    name: "Blog",
+  "/docs": {
+    name: "Docs",
   },
 };
 
@@ -26,6 +23,8 @@ export default function Navbar() {
             {Object.entries(navItems).map(([path, { name }]) => {
               return <NavItem key={path} path={path} name={name} />;
             })}
+
+            <Input />
           </nav>
         </LayoutGroup>
       </div>

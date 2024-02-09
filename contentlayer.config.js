@@ -32,64 +32,16 @@ const computedFields = {
   },
 };
 
-export const Project = defineDocumentType(() => ({
-  name: "Projects",
-  filePathPattern: `**/projects/*.mdx`,
+export const Doc = defineDocumentType(() => ({
+  name: "Docs",
+  filePathPattern: `**/docs/**.mdx`,
   contentType: "mdx",
   fields: {
     title: {
       type: "string",
       required: true,
     },
-    summary: {
-      type: "string",
-      required: true,
-    },
-
-    startedAt: {
-      type: "string",
-      required: true,
-    },
-    endedAt: {
-      type: "string",
-    },
-    color: {
-      type: "string",
-    },
-    link: {
-      type: "string",
-    },
-    githubLink: {
-      type: "string",
-    },
-    npmCommand: {
-      type: "string",
-    },
-    npmLink: {
-      type: "string",
-    },
-
-    cover: {
-      required: true,
-      type: "string",
-    },
-    category: {
-      type: "string",
-      required: true,
-    },
-    tech: {
-      type: "string",
-      list: true,
-    },
-  },
-  computedFields,
-}));
-export const Blog = defineDocumentType(() => ({
-  name: "Blog",
-  filePathPattern: `**/blog/**.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
+    path: {
       type: "string",
       required: true,
     },
@@ -105,8 +57,10 @@ export const Blog = defineDocumentType(() => ({
       type: "string",
     },
     tags: {
-      type: "string",
-      list: true,
+      type: "list",
+      of: {
+        type: "string",
+      },
     },
   },
   computedFields,
@@ -114,7 +68,7 @@ export const Blog = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Blog, Project],
+  documentTypes: [Doc],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

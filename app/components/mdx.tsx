@@ -5,7 +5,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { Badge } from "./Badge";
 import { ThreePhones } from "./home";
 import { SlideUpWhenVisible } from "./home/ThreePhones";
-import { ArrowIcon, BlogLink } from "./BlogLink";
+import { ArrowIcon, BigLink } from "./BigLink";
 
 const CustomLink = (props) => {
   const href = props.href;
@@ -145,7 +145,7 @@ const components = {
   Badge,
   ThreePhones,
   SlideUpWhenVisible,
-  BlogLink,
+  BigLink: BigLink,
 };
 
 export function Mdx({ code }: Readonly<{ code: string }>) {

@@ -1,7 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { Mdx } from "app/components/mdx";
-import { allBlogs } from "contentlayer/generated";
+import { allDocs } from "contentlayer/generated";
 import Link from "next/link";
 import SimilarBlogs from "../components/SimilarBlogs";
 
@@ -14,7 +14,7 @@ export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = allBlogs.find((post) => post.slug === `blog/${params.slug}`);
+  const post = allDocs?.find((post) => post.slug === `blog/${params.slug}`);
 
   if (!post) {
     return {
@@ -79,8 +79,9 @@ function formatDate(date: string) {
   return `${fullDate}`;
 }
 
-export default function Blog({ params }) {
-  const post = allBlogs.find((post) => post.slug === `blog/${params.slug}`);
+export default function DocPage({ params }) {
+  const post = allDocs.find((post) => post.path === `${params.slug}`);
+
   if (!post) {
     notFound();
   }
@@ -95,7 +96,7 @@ export default function Blog({ params }) {
         }}
       ></script>
       <Link
-        href="/blog"
+        href="/docs"
         className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
       >
         ← Back
@@ -109,7 +110,7 @@ export default function Blog({ params }) {
         <Mdx code={post.body.code} />
         <SimilarBlogs blog={post} slug={params.slug} />
         <Link
-          href="/blog"
+          href="/docs"
           className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
         >
           ← Back to blog
