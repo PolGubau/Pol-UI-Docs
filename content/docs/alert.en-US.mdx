@@ -1,0 +1,108 @@
+---
+title: Alert
+path: alert
+publishedAt: 2024-02-09
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Alert
+doc_type: component
+summary: Use the accordion component and its options to expand and collapse the content inside each panel based on state reactivity from React and Tailwind CSS
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Alert
+tags:
+  - Alert
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import AccordionRoot from "examples/Alert/accordion-root.mdx";
+import { accordionRoot } from "examples/Alert/accordion-root";
+
+import AccordionAlwaysOpen from "examples/Alert/accordion-always-open.mdx";
+import { accordionAlwaysOpen } from "examples/Alert/accordion-always-open";
+
+import AccordionBordered from "examples/Alert/accordion-bordered.mdx";
+import accordionBorderedCode from "examples/Alert/accordion-bordered";
+import AccordionIcon from "examples/Alert/accordion-icon.mdx";
+import accordionIconCode from "examples/Alert/accordion-icon";
+import Theme from "examples/Alert/theme.mdx";
+
+The alert component can be used to show a contextual text to the user such as a success or error message after form validation inside an alert box where you can choose from multiple colors, sizes, and styles.
+
+The examples below are styled with Tailwind CSS and the reactivity is handled by React and you can also add any type of content inside the alert box.
+
+To start using the alert box you need to import the **{"<Alert>"}** component from the **pol-ui** package:
+
+```jsx
+import { Alert } from "pol-ui";
+```
+
+## Default accordion
+
+The default alert component is a simple alert box with a text inside it and you can use the **color** prop to change the color of the alert box and the **title** prop to add a title to the alert box.
+
+Inside of the **{"<Alert>"}** component you can add any type of content such as text, images, or other components as they will be considered children of the alert box.
+
+<Example
+  name="Default accordion"
+  code={accordionRoot}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--default&viewMode=story"
+>
+  <AccordionRoot />
+</Example>
+
+## Props
+
+| Prop name         | Type            | Default     | Description                                        |
+| ----------------- | --------------- | ----------- | -------------------------------------------------- |
+| icon              | React.ReactNode | null        | The icon to display in the accordion panel.        |
+| onDismiss         | () => void      | null        | Callback to be called when the alert is dismissed. |
+| children          | React.ReactNode | null        | The content to display in the alert.               |
+| additionalContent | React.ReactNode | null        | Additional content to display in the alert.        |
+| color             | Colors          | "secondary" | The color of the alert.                            |
+| rounded           | RoundedEnum     | 'md'        | The border radius of the alert.                    |
+| theme             | AlertTheme      | alertTheme  | The theme of the alert.                            |
+| withBorderAccent  | boolean         | false       | Whether to add a border accent to the alert.       |
+
+## Examples
+
+### With Icon
+
+By default the accordion will close the other panels when a new panel is opened, but you can use the **alwaysOpen** prop to keep all panels open at the same time.
+
+<Example
+  name="Always open example"
+  code={accordionAlwaysOpen}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--always-open&viewMode=story"
+>
+  <AccordionAlwaysOpen />
+</Example>
+
+### Bordered
+
+You can use the **bordered** prop to add a border to the accordion panels.
+
+<Example
+  name="Bordered example"
+  code={accordionBorderedCode}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--bordered&viewMode=story"
+>
+  <AccordionBordered />
+</Example>
+
+### Custom icon
+
+You can use the **arrowIcon** prop to add a custom icon to the accordion panels.
+
+<Example
+  name="Always open example"
+  code={accordionIconCode}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--with-arrow-icon&viewMode=story"
+>
+  <AccordionIcon />
+</Example>
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/customize/theme).
+
+<Theme />
+
+## References

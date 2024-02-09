@@ -7,10 +7,10 @@ doc_type: component
 summary: Use the accordion component and its options to expand and collapse the content inside each panel based on state reactivity from React and Tailwind CSS
 pageLink: /docs/accordion
 tags:
-  - Getting Started
-  - Installation
-  - Tailwind CSS
-  - Configuring
+  - components
+  - react
+  - tailwind
+  - accordion
 ---
 
 import AccordionRoot from "examples/Accordion/accordion-root.mdx";
@@ -48,7 +48,20 @@ Use this example of the {"<Accordion>"} component and the {"<Accordion.Panel>"} 
   <AccordionRoot />
 </Example>
 
-## Always open
+## Props
+
+| Prop name   | Type           | Default        | Description                               |
+| ----------- | -------------- | -------------- | ----------------------------------------- |
+| alwaysOpen  | boolean        | false          | Keep all panels open at the same time     |
+| bordered    | boolean        | false          | Add a border to the accordion panels      |
+| arrowIcon   | ReactNode      | null           | Add a custom icon to the accordion panels |
+| children    | ReactNode      | null           | The content of the accordion              |
+| collapseAll | boolean        | false          | Collapse all panels at the same time      |
+| theme       | AccordionTheme | accordionTheme | The theme of the accordion                |
+
+## Examples
+
+### Always open
 
 By default the accordion will close the other panels when a new panel is opened, but you can use the **alwaysOpen** prop to keep all panels open at the same time.
 
@@ -60,7 +73,7 @@ By default the accordion will close the other panels when a new panel is opened,
   <AccordionAlwaysOpen />
 </Example>
 
-## Bordered
+### Bordered
 
 You can use the **bordered** prop to add a border to the accordion panels.
 
@@ -72,7 +85,7 @@ You can use the **bordered** prop to add a border to the accordion panels.
   <AccordionBordered />
 </Example>
 
-## Custom icon
+### Custom icon
 
 You can use the **arrowIcon** prop to add a custom icon to the accordion panels.
 
