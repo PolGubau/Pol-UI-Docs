@@ -1,0 +1,23 @@
+const code = `
+import { Avatar, MainSizes, MainSizesEnum } from "pol-ui";
+import React from "react";
+const AvatarComponent = () => {
+  return (
+    <div className="flex flex-wrap gap-6">
+    {Object.keys(MainSizesEnum).map(size => (
+      <div key={size} className="flex flex-col items-center justify-center">
+        <Avatar
+          alt="Your avatar"
+          img="https://avatars.githubusercontent.com/u/63197171?v=4"
+          size={size as MainSizes}
+          className="mb-2"
+        />
+        <span className="text-gray-500">{size}</span>
+      </div>
+    ))}
+  </div>
+  );
+};
+export default AvatarComponent;
+`;
+export default code;

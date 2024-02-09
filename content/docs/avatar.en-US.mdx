@@ -16,6 +16,15 @@ tags:
 import RootCode from "examples/Avatar/root.mdx";
 import root from "examples/Avatar/root";
 
+import AllSizesCode from "examples/Avatar/allSizes.mdx";
+import AllSizes from "examples/Avatar/allSizes";
+
+import AllStatusCode from "examples/Avatar/allStatus.mdx";
+import AllStatus from "examples/Avatar/allStatus";
+
+import GroupCode from "examples/Avatar/group.mdx";
+import Group from "examples/Avatar/group";
+
 import Theme from "examples/Avatar/theme.mdx";
 
 The avatar component can be used to show a visual representation of a user or team account for your application based on multiple examples, colors, sizes and shapes.
@@ -60,7 +69,24 @@ embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=size:md&id=compon
 
 ## Examples
 
-### OnDismiss
+### All Avatar Sizes
+
+You can use the **onDismiss** prop to add a close button to the alert box and a callback to be called when the alert is dismissed.
+
+Any function can be passed to the **onDismiss** prop and it will be called when the alert is dismissed.
+
+<Example
+  height={200}
+name="All Avatar Sizes"
+code={AllSizes}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-avatar--all-sizes&viewMode=story"
+
+>
+
+  <AllSizesCode />
+</Example>
+
+### All Avatar Status
 
 You can use the **onDismiss** prop to add a close button to the alert box and a callback to be called when the alert is dismissed.
 
@@ -68,13 +94,28 @@ Any function can be passed to the **onDismiss** prop and it will be called when 
 
 <Example
   height={150}
-name="Default alert"
-code={root}
-embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=size:md&id=components-avatar--default-avatar&viewMode=story"
+name="All Avatar Sizes"
+code={AllStatus}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-avatar--all-status&viewMode=story"
 
 >
 
-  <RootCode />
+  <AllStatusCode />
+</Example>
+
+### Avatar group
+
+A group of avatars can be used to show a visual representation of a user or team account for your application based on multiple examples, colors, sizes and shapes.
+
+<Example
+  height={150}
+name="Group of avatars"
+code={Group}
+embedUrl="http://localhost:6006/iframe.html?id=components-avatar--default-avatar-group&viewMode=story"
+
+>
+
+  <GroupCode />
 </Example>
 
 ## Theme
