@@ -1,0 +1,92 @@
+---
+title: Avatar
+path: avatar
+publishedAt: 2024-02-09
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Avatar
+doc_type: component
+summary: Use the accordion component and its options to expand and collapse the content inside each panel based on state reactivity from React and Tailwind CSS
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Avatar
+tags:
+  - Avatar
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Avatar/root.mdx";
+import root from "examples/Avatar/root";
+
+import Theme from "examples/Avatar/theme.mdx";
+
+The avatar component can be used to show a visual representation of a user or team account for your application based on multiple examples, colors, sizes and shapes.
+
+All of the example are built as React components and you can access custom props and methods to customize the component and you can also use Tailwind CSS classes to style the component.
+
+To start using the avatar component you need to import it from the **pol-ui** package:
+
+```jsx
+import { Alert } from "pol-ui";
+```
+
+## Default alert
+
+Here's a default example of the **{"<Avatar>"}** component where you can use the **img** prop to pass the image URL, the **alt** prop to pass a description of the image for accessibility and the **rounded** prop to make the avatar rounded.
+
+<Example
+  height={150}
+name="Default alert"
+code={root}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=size:md&id=components-avatar--default-avatar&viewMode=story"
+
+>
+
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type            | Default | Description                                        |
+| --------- | --------------- | ------- | -------------------------------------------------- |
+| icon      | React.ReactNode | null    | The icon to display in the accordion panel.        |
+| onDismiss | () => void      | null    | Callback to be called when the alert is dismissed. |
+
+## Examples
+
+### OnDismiss
+
+You can use the **onDismiss** prop to add a close button to the alert box and a callback to be called when the alert is dismissed.
+
+Any function can be passed to the **onDismiss** prop and it will be called when the alert is dismissed.
+
+<Example
+  height={150}
+name="Default alert"
+code={root}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=size:md&id=components-avatar--default-avatar&viewMode=story"
+
+>
+
+  <RootCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+<Theme />
+
+## References
+
+### Additional types, AvatarStatusEnum
+
+The **AvatarStatusEnum** is an enum that you can use to set the status of the avatar component. If you rather use a string, you can use the following values: **away**, **busy**, **offline** and **online**.
+
+```js
+export enum AvatarStatusEnum {
+  away = 'away',
+  busy = 'busy',
+  offline = 'offline',
+  online = 'online',
+}
+
+```

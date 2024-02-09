@@ -1,0 +1,22 @@
+```ts
+interface AvatarTheme {
+  root: {
+    base: string;
+    bordered: string;
+    color: ColorsType;
+    img: AvatarImageTheme;
+    initials: AvatarInitialsTheme;
+    rounded: string;
+    size: MainSizesType;
+    stacked: string;
+    status: AvatarStatus & {
+      base: string;
+    };
+    statusPosition: Positions;
+  };
+  group: {
+    base: string;
+  };
+  groupCounter: string;
+}
+```

@@ -19,6 +19,18 @@ import root from "examples/Alert/root";
 import OnDismissCode from "examples/Alert/onDismiss.mdx";
 import OnDismiss from "examples/Alert/onDismiss";
 
+import WithIcon from "examples/Alert/withIcon.mdx";
+import WithIconCode from "examples/Alert/withIcon";
+
+import Bordered from "examples/Alert/bordered.mdx";
+import BorderedCode from "examples/Alert/bordered";
+
+import Additional from "examples/Alert/bordered.mdx";
+import AdditionalCode from "examples/Alert/bordered";
+
+import Complete from "examples/Alert/complete.mdx";
+import CompleteCode from "examples/Alert/complete";
+
 import Theme from "examples/Alert/theme.mdx";
 
 The alert component can be used to show a contextual text to the user such as a success or error message after form validation inside an alert box where you can choose from multiple colors, sizes, and styles.
@@ -59,7 +71,7 @@ embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-al
 | color             | Colors          | "secondary" | The color of the alert.                            |
 | rounded           | RoundedEnum     | 'md'        | The border radius of the alert.                    |
 | theme             | AlertTheme      | alertTheme  | The theme of the alert.                            |
-| withBorderAccent  | boolean         | false       | Whether to add a border accent to the alert.       |
+| bordered          | boolean         | false       | Whether to add a border accent to the alert.       |
 
 ## Examples
 
@@ -86,28 +98,62 @@ As usual, you can provide any time of svg as a React component to the **icon** p
 <Example
   name="Alert with icon"   
   height={150}
-code={root}
+code={WithIconCode}
 embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-alert--alert-with-icons&viewMode=story"
 
 >
 
-  <RootCode />
+  <WithIcon />
 </Example>
 
-### Custom icon
+### Bordered
 
-You can use the **arrowIcon** prop to add a custom icon to the accordion panels.
+You can use the **icon** prop to add an icon to the alert box.
+As usual, you can provide any time of svg as a React component to the **icon** prop.
 
 <Example
-  name="Always open example"
-  code={root}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-accordion--with-arrow-icon&viewMode=story"
+  name="Alert Bordered"   
+  height={150}
+code={BorderedCode}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-alert--alert-with-border-accent&viewMode=story"
 >
-  <RootCode />
+
+  <Bordered />
 </Example>
+
+### Additional content
+
+You can use the **icon** prop to add an icon to the alert box.
+As usual, you can provide any time of svg as a React component to the **icon** prop.
+
+<Example
+  name="Additional content" 
+  height={250}
+code={AdditionalCode}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-alert--alert-with-additional-content&viewMode=story"
+>
+
+  <Additional />
+</Example>
+
+### Additional content
+
+You can use the **icon** prop to add an icon to the alert box.
+As usual, you can provide any time of svg as a React component to the **icon** prop.
+
+<Example
+  name="Complete Alert"
+  height={200}
+code={CompleteCode}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-alert--alert-with-all-options&viewMode=story"
+>
+
+  <Complete />
+</Example>
+
 ## Theme
 
-To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/customize/theme).
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
 
 <Theme />
 

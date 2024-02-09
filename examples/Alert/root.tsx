@@ -1,5 +1,5 @@
 const code = `
-import { Accordion } from "pol-ui";
+import { Alert } from "pol-ui";
 import React from "react";
 const AlertComponent = () => {
   return (
