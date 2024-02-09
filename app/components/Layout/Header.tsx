@@ -1,12 +1,12 @@
+"use client";
 import Image from "next/image";
 import React from "react";
-import { largeProfileAvatar } from "./profileImageData";
 import { metadata } from "lib/constants";
-import MainSocials from "../Social/MainSocials";
+import { Button } from "pol-ui";
 
 const Header = () => {
   return (
-    <header className="flex flex-col md:flex-row gap-8 justify-between items-center mb-16">
+    <header className="flex flex-col md:flex-row gap-8 justify-between items-center mt-8 mb-16">
       <Image
         src="/images/me.png"
         className=" rounded-3xl flex md:hidden bg-primary   "
@@ -22,18 +22,22 @@ const Header = () => {
         <h2 className="text-xl md:text-2xl opacity-75 balance">
           {metadata.slogan}
         </h2>
-        <MainSocials />
-      </div>
+        {/* <MainSocials /> */}
 
-      <Image
-        placeholder={largeProfileAvatar}
-        src="/images/me.png"
-        className="shadow-xl rounded-full hidden md:flex   bg-primary "
-        alt="Pol Gubau Amores' profile image"
-        width={150}
-        height={150}
-        title="Pol Gubau Amores' profile image"
-      />
+        <div className="flex gap-2">
+          <Button href="/docs" label="Documentation" rounded="xl">
+            Documentation
+          </Button>
+          <Button
+            href={metadata.links.github}
+            label="Github"
+            color="secondary"
+            rounded="xl"
+          >
+            Github
+          </Button>
+        </div>
+      </div>
     </header>
   );
 };

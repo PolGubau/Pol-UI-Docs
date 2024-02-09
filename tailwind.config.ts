@@ -6,6 +6,7 @@ export default {
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./content/**/*.mdx",
+    "./node_modules/pol-ui/**/*.js",
   ],
   theme: {
     extend: {
@@ -34,7 +35,7 @@ export default {
           600: "#A6A6A6",
           700: "#8D8D8D",
           800: "#747474",
-          900: "#5B5B5B",
+          900: "#121212",
         },
         error: {
           DEFAULT: "#F44336",

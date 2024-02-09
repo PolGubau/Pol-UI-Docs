@@ -2,8 +2,7 @@ import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { Mdx } from "app/components/mdx";
 import { allDocs } from "contentlayer/generated";
-import Link from "next/link";
-import SimilarBlogs from "../components/SimilarBlogs";
+import { BigLink } from "app/components/BigLink";
 
 export const dynamic = "force-static";
 type Props = {
@@ -80,41 +79,37 @@ function formatDate(date: string) {
 }
 
 export default function DocPage({ params }) {
-  const post = allDocs.find((post) => post.path === `${params.slug}`);
+  const doc = allDocs.find((d) => d.path === `${params.slug}`);
 
-  if (!post) {
+  const indexOfDoc = allDocs.findIndex((d) => d.path === `${params.slug}`) ?? 0;
+  const nextDoc = allDocs[indexOfDoc + 1] ?? allDocs[allDocs.length - 1];
+
+  if (!doc) {
     notFound();
   }
 
   return (
-    <section className="  w-full ">
+    <section>
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(post.structuredData),
+          __html: JSON.stringify(doc.structuredData),
         }}
       ></script>
-      <Link
-        href="/docs"
-        className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
-      >
-        ← Back
-      </Link>
-      <h2 className="font-semibold text-2xl mt-4 balance">{post.title}</h2>
-      <p className="text-sm text-neutral-600 dark:text-neutral-400">
-        {formatDate(post.publishedAt)}
-      </p>
 
+      <header className="flex gap-1 items-center">
+        <h2 className="text-sm">{doc.title}</h2> <span>•</span>
+        <p className="text-xs text-neutral-600 dark:text-neutral-400">
+          Updated {formatDate(doc.publishedAt)}
+        </p>
+      </header>
       <article className="mb-8 w-full  flex flex-col gap-6">
-        <Mdx code={post.body.code} />
-        <SimilarBlogs blog={post} slug={params.slug} />
-        <Link
-          href="/docs"
-          className="text-neutral-500 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-300"
-        >
-          ← Back to blog
-        </Link>{" "}
+        <Mdx code={doc.body.code} />
+
+        <div className="flex gap-4">
+          <BigLink name={`Next up: ${nextDoc.title}`} slug={nextDoc.slug} />
+        </div>
       </article>
     </section>
   );

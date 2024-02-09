@@ -1,0 +1,58 @@
+---
+title: Getting Started
+publishedAt: 2024-02-09
+summary: This is the introduction to the pol-ui documentation. Here you will find the installation process and the configuration of Tailwind CSS.
+path: getting-started
+tags:
+  - Getting Started
+  - Installation
+  - Tailwind CSS
+  - Configuring
+---
+
+# Getting Started
+
+## Instalation
+
+To install **pol-ui**, run the following command in your terminal:
+
+### Install Tailwind CSS
+
+To use the full potential of **pol-ui**, you should work with [Tailwind CSS](https://tailwindcss.com/).
+
+To install Tailwind CSS, we recommend following the [official documentation](https://tailwindcss.com/docs/installation).
+
+These are the recommended ways as of January 2024:
+
+### Configuring Tailwind CSS
+
+Now we can configure our theme in the **theme** property.
+
+#### Examples
+
+Copy and paste this example to have a complete **tailwind.config.js** configuration.
+
+Adding the route **./node_modules/pol-ui/src/\*\*/\*.js**, your Tailwind CSS styles will also affect **pol-ui** components.
+
+Also remember to add the tailwindcss directives in a **globals.css** file in the root of your project.
+
+```css
+/* ./globals.css - Importamos este archivo desde nuestro layout principal*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+### Everything is ready!
+
+Now pol-ui is completely customized and ready to be used in your application.
+
+### Example of a button
+
+```jsx {6-7}
+import { Button } from "pol-ui";
+
+function Home() {
+  return <div class="flex gap-4 mt-4 items-center"></div>;
+}
+```

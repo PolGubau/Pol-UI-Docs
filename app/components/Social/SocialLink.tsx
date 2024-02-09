@@ -1,4 +1,5 @@
-import Link from "next/link";
+"use client";
+import { Button } from "pol-ui";
 import React from "react";
 
 interface SocialLinkProps {
@@ -9,13 +10,17 @@ interface SocialLinkProps {
 
 const SocialLink = ({ href, label, icon }: SocialLinkProps) => {
   return (
-    <Link
+    <Button
       href={href}
-      className="bg-transparent border border-dark/30  dark:bg-light/10  rounded-full flex gap-2 w-fit py-1 px-3 items-center transition-all hover:bg-dark/10 dark:hover:bg-light/20"
+      rounded="full"
+      color="secondary"
+      outline
+      target="_blank"
+      rel="noopener noreferrer"
     >
       {icon}
       {label}
-    </Link>
+    </Button>
   );
 };
 
