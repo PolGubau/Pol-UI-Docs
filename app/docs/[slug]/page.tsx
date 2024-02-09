@@ -5,6 +5,7 @@ import { allDocs } from "contentlayer/generated";
 import { BigLink } from "app/components/BigLink";
 import { cn } from "lib/utils";
 import Link from "next/link";
+import { metadata } from "lib/constants";
 
 export const dynamic = "force-static";
 type Props = {
@@ -15,7 +16,7 @@ export async function generateMetadata(
   { params, searchParams }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = allDocs?.find((post) => post.slug === `blog/${params.slug}`);
+  const post = allDocs.find((d) => d.path === `${params.slug}`);
 
   if (!post) {
     return {
@@ -44,19 +45,20 @@ export async function generateMetadata(
     slug,
   } = post;
   const ogImage = cover
-    ? `https://polgubau.com/images/${slug}/${cover}`
-    : `https://polgubau.com/og?title=${title}`;
+    ? `${metadata.links.website}/images/${slug}/${cover}`
+    : `${metadata.links.website}/og?title=${title}`;
   const previousImages = (await parent).openGraph?.images ?? [];
 
   return {
     title,
     description,
+    keywords: post.tags,
     openGraph: {
-      title: `${title} | Pol Gubau Amores`,
+      title: `${title} | ${metadata.longName}`,
       description,
       type: "article",
       publishedTime,
-      url: `https://polgubau.com/${slug}`,
+      url: `${metadata.links.website}/${slug}`,
       images: [ogImage, ...previousImages],
     },
     twitter: {

@@ -20,7 +20,7 @@ const Meta = () => {
       <link
         rel="mask-icon"
         href="/brand/safari-pinned-tab.svg"
-        color="#131313"
+        color="#121212"
       />
       <link rel="shortcut icon" href="/brand/favicon.ico" />
       <meta name="msapplication-TileColor" content="#b49cff" />
