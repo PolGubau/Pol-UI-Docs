@@ -62,23 +62,6 @@ embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-ba
 | size      | MainSizesType                   | 'md'       | The size of the badge.    |
 | theme     | [BadgeTheme](/docs/badge#theme) | badgeTheme | The theme of the badge.   |
 
-## Theme
-
-```ts
-export interface BadgeTheme {
-  root: {
-    base: string;
-    color: ColorsType;
-    rounded: RoundedSizesTypes;
-    href: string;
-    size: MainSizesType;
-  };
-  icon: IBoolean & {
-    size: MainSizesType;
-  };
-}
-```
-
 ## Badge with icon
 
 You can use the **icon** property to add an icon to the badge and change its size using the **size** property.

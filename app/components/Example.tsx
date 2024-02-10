@@ -64,8 +64,9 @@ const Example = ({
           <TbBrandStorybook size={20} />
         </IconButton>
       </header>
-      <div className="rounded-md flex justify-center items-center min-h-[200px]">
+      <div className="rounded-md flex justify-center items-center ">
         <iframe
+          title={embedUrl}
           className="rounded-md "
           src={embedUrl}
           width="100%"
