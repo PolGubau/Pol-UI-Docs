@@ -1,0 +1,55 @@
+---
+title: Banner
+path: banner
+publishedAt: 2024-02-09
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Banner
+doc_type: component
+summary: The banner component could represent a sticky element to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Banner
+tags:
+  - Banner
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Banner/root.mdx";
+import root from "examples/Banner/root";
+
+Get started with the sticky banner component coded with Tailwind CSS and Flowbite to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
+
+Explore the following examples based on various styles, sizes, and positionings to leverage the sticky banner component and increase marketing conversions with a responsive element supporting dark mode.
+
+To start using the banner component you need to import it from **pol-ui**:
+
+```jsx
+import { Banner } from "pol-ui";
+```
+
+## Default sticky banner
+
+Use this free example to show a text message for announcement with a CTA link, an icon element and a close button to dismiss the banner.
+
+<Example
+  height={100}
+name="Default banner"
+code={root}
+embedUrl="http://localhost:6006/iframe.html?args=&id=components-banner--default-banner&viewMode=story"
+
+>
+  <RootCode />
+</Example>
+## Theme
+
+```js
+interface BannerTheme {
+  base: string
+  bordered: IBoolean
+  color: ColorsType
+  rounded: RoundedSizesTypes
+}
+```
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/customize/theme).
+
+## References
