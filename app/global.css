@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  min-width: 360px;
-}
-
 *::selection {
   background-color: #b49cff;
   color: rgb(59, 60, 35);

@@ -6,10 +6,39 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "lib/utils";
+
+const AsideLink = ({ path, children }) => {
+  const pathname = usePathname();
+  const baseUrl = "/docs";
+  const isActive = pathname === baseUrl + "/" + path;
+
+  return (
+    <li className="relative">
+      {isActive && (
+        <motion.span
+          layoutId="aside_dot"
+          className={cn(
+            "absolute -left-5 w-3 h-3 rounded-full bg-primary top-[8px]"
+          )}
+        />
+      )}
+      <Link
+        href={baseUrl + "/" + path}
+        className={cn(
+          "px-2 transition-colors hover:bg-primary/20 flex flex-1 w-full py-1 rounded-lg text-sm text-secondary-800 dark:secondary-100 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary ",
+          {
+            "text-primary dark:text-primary": isActive,
+          }
+        )}
+      >
+        {children}
+      </Link>
+    </li>
+  );
+};
+
 const Aside = () => {
   const pathname = usePathname();
-
-  const baseUrl = "/docs";
 
   // some docs have a order field, so we sort them by that, otherwise alphabetically
   const allDocsSorted = allDocs?.sort((a, b) =>
@@ -23,30 +52,14 @@ const Aside = () => {
   );
 
   return (
-    <div className="min-w-[300px] sticky top-6 max-h-screen flex flex-col gap-6">
+    <div className="min-w-[150px] sticky top-6 max-h-screen h-full flex flex-col gap-6">
       <AnimatePresence mode="wait">
-        <ol className="flex flex-col gap-2">
+        <ol className="flex flex-col ">
           {allBase?.map((docs) => {
-            const isActive = pathname === "/docs/" + docs.path;
             return (
-              <li key={docs._id} className="relative">
-                {isActive && (
-                  <motion.span
-                    layoutId="aside_dot"
-                    className={cn(
-                      "absolute -left-5 w-3 h-3 rounded-full bg-primary top-[5px]"
-                    )}
-                  />
-                )}
-                <Link
-                  href={`${baseUrl}/${docs.path}`}
-                  className={cn("transition-colors", {
-                    "text-primary dark:text-primary": isActive,
-                  })}
-                >
-                  {docs.title}
-                </Link>
-              </li>
+              <AsideLink key={docs._id} path={docs.path}>
+                {docs.title}
+              </AsideLink>
             );
           })}
         </ol>
@@ -58,26 +71,10 @@ const Aside = () => {
 
           <ol>
             {allComponents?.map((c) => {
-              const isActive = pathname === "/docs/" + c.path;
               return (
-                <li key={c._id} className="relative">
-                  {isActive && (
-                    <motion.span
-                      layoutId="aside_dot"
-                      className={cn(
-                        "absolute -left-5 w-3 h-3 rounded-full bg-primary top-[5px]"
-                      )}
-                    />
-                  )}
-                  <Link
-                    href={`${baseUrl}/${c.path}`}
-                    className={cn("transition-colors", {
-                      "text-primary dark:text-primary": isActive,
-                    })}
-                  >
-                    {c.title}
-                  </Link>
-                </li>
+                <AsideLink key={c._id} path={c.path}>
+                  {c.title}
+                </AsideLink>
               );
             })}
           </ol>
