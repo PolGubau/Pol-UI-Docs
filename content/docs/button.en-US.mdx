@@ -1,12 +1,22 @@
 ---
-title: Buttons - Pol-ui
-description: Enable user interaction with the button component to perform actions on your website as links, for payment, form submission, social buttons and more based on React and Tailwind CSS
+title: Button
+path: button
+publishedAt: 2024-02-10
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Button
+doc_type: component
+summary: Buttons are used to trigger actions on your website. The button component from Pol-ui allows you to customise the buttons with different colors, sizes, icons, and more. All examples are built with React and Tailwind CSS.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Button
+tags:
+  - Button
+  - React
+  - Tailwind CSS
+  - Pol-ui
 ---
 
-import { CodeDemo } from '../../../components/code-demo';
-import { root,outline,sizes,withIcon } from '../../../examples/button';
+import RootCode from "examples/Banner/root.mdx";
+import root from "examples/Banner/root";
 
-# Button 
+## Introduction
 
 The button component is a common UI component found on the web that allows users to trigger certain actions on your website such as submitting a form, navigating to a new page, or downloading a file.
 
@@ -15,64 +25,47 @@ The examples from the Flowbite React library allows you to customise the buttons
 In order to start using the button component you need to import it from Flowbite React:
 
 ```jsx
-import { Button } from 'pol-ui';
+import { Button } from "pol-ui";
 ```
 
-## Default buttons
+## Default button
 
-Use this example to create a default button by using the `<Button>` component from React and by adding the `color` property you can change the color of the button.
+Use this example to create a default button by using the **{"<Button>"}** component from React and by adding the **color** property you can change the color of the button.
 
-<CodeDemo data={root} />
+ <Example
+ storybookUrl='http://localhost:6006/?path=/story/components-button--default-button'
+  height={80}
+name="Default banner"
+code={root}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--default-button&viewMode=story"
 
+>
 
-## Outline buttons
+  <RootCode />
+</Example>
 
-Use the `outline` property to create an outline button with transparent background and colored border.
+## Props
 
-<CodeDemo data={outline} />
+| Prop name       | Type              | Default       | Description                               |
+| --------------- | ----------------- | ------------- | ----------------------------------------- |
+| children        | React.ReactNode   | -             | The children of the breadcrumb component. |
+| as              | React.ElementType | "button"      | The HTML tag to render the button as.     |
+| href            | string            | -             | The URL to navigate when click.           |
+| color           | Colors            | "primary"     | The color of the button.                  |
+| fullSize        | boolean           | false         | The button will take the full width.      |
+| loading         | boolean           | false         | The button will be in a loading state.    |
+| loadingLabel    | string            | "Loading"     | The label of the loading state.           |
+| hasMotion       | boolean           | false         | The button will have a motion effect.     |
+| hasBackground   | boolean           | true          | The button will have a background color.  |
+| loader          | React.ReactNode   | {"<Loader/>"} | The loader component to use.              |
+| label           | string            | -             | The label of the button.                  |
+| outline         | boolean           | false         | The button will have an outline style.    |
+| rounded         | RoundedSizes      | 'md'          | The button will have a rounded style.     |
+| positionInGroup | PositionInGroup   | none          | The position of the button in a group.    |
+| size            | MainSizes         | "md"          | The size of the button.                   |
+| theme           | ButtonTheme       | buttonTheme   | The theme of the button.                  |
+| innerClassName  | string            | -             | Inner class name of the button children.  |
 
-## Button sizes
+Add to the previous table all native props from the HTML button tag.
 
-You can update the size of the button by adding the `size` property to the `<Button>` component.
-
-Choose from `xs`, `sm`, `md`, `lg`, and `xl` as the value.
-
-<CodeDemo data={sizes} />
-
-## Buttons with icon
-
-You can add icons to the buttons by adding it inside the `<Button>` component near the text.
-
- ## Button with loading state
-
-Add a loading state to the button element by adding the `isProcessing` property to the `<Button>` component.
-
-{/* <Example name="button.loading" /> */}
-
-<br />
-You can also customize the spinner icon by passing a React node to the `processingSpinner`
-prop.
-
-{/* <Example name="button.loadingSpinner" /> */}
-
-## Disabled buttons
-
-You can disable the button by adding the `disabled` property to the `<Button>` component.
-
-{/* <Example name="button.disabled" /> */}
-
-## Override Button base component
-
-The `as` prop provides you the ability to transform the `<Button />` component into another component or HTML element. This prop accepts a string representing an HTML tag or a functional React component.
-
-{/* <Example name="button.polymorph" /> */}
-
-## Theme
-
-To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/customize/theme).
-
-{/* <Theme name="button" /> */}
-
-## References
-
-- [Flowbite Buttons](https://flowbite.com/docs/components/buttons/)
+If you provide a **href** property, the button will render as an anchor tag, so all native props of the anchor tag are also available.

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Children, PropsWithChildren } from "react";
+import React, { PropsWithChildren } from "react";
 import { IconButton, toast, useBoolean, useCopyToClipboard } from "pol-ui";
 import { cn } from "lib/utils";
 import { motion } from "framer-motion";
@@ -14,11 +14,13 @@ const Example = ({
   name = "Component",
   children,
   code = "",
+  storybookUrl = "",
   embedUrl = "",
   height = 400,
 }: PropsWithChildren<{
   name?: string;
   code?: string;
+  storybookUrl?: string;
   embedUrl?: string;
   height: number;
 }>) => {
@@ -54,15 +56,17 @@ const Example = ({
         <p className="py-0 fonst-medium text-lg p-0 first-letter:uppercase">
           {name}
         </p>
-        <IconButton
-          outline
-          href="https://pol-ui-storybook.vercel.app/?path=/docs/components-accordion--docs"
-          label="Open in storybook"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <TbBrandStorybook size={20} />
-        </IconButton>
+        {storybookUrl && (
+          <IconButton
+            outline
+            href={storybookUrl}
+            label="Open in storybook"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <TbBrandStorybook size={20} />
+          </IconButton>
+        )}
       </header>
       <div className="rounded-md flex justify-center items-center ">
         <iframe

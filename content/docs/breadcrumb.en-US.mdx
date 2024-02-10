@@ -16,6 +16,11 @@ tags:
 import RootCode from "examples/Breadcrumb/root.mdx";
 import root from "examples/Breadcrumb/root";
 
+import ClassesCode from "examples/Breadcrumb/classes.mdx";
+import classes from "examples/Breadcrumb/classes";
+
+## Introduction
+
 The breadcrumb component can be used to indicate the current page's location within a navigational hierarchy and you can choose from multiple examples, colors, and sizes built with React and based on the utility classes from Tailwind CSS.
 
 To start using the breadcrumb component you need to import it from **pol-ui**:
@@ -34,7 +39,8 @@ You can use the **href** prop from React to make the breadcrumb items clickable 
   height={80}
 name="Default banner"
 code={root}
-embedUrl="http://localhost:6006/iframe.html?args=&id=components-breadcrumb--default&viewMode=story"
+storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-breadcrumb--default'
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-breadcrumb--default&viewMode=story"
 
 >
 
@@ -59,17 +65,57 @@ embedUrl="http://localhost:6006/iframe.html?args=&id=components-breadcrumb--defa
 | icon      | {"FC<ComponentProps<'svg'>>"} | -       | The icon displayed in each item     |
 | href      | string                        | -       | Url when the item is clicked        |
 
-## All colors
+## With custom classes
 
 As a part of the Pol-UI library, the banner component supports all the colors from the design system to match your brand identity and provide a consistent user experience.
 
 <Example
   height={80}
 name="Custom classes"
-code={root}
-embedUrl="http://localhost:6006/iframe.html?args=&id=components-breadcrumb--solid-background&viewMode=story"
+code={classes}
+storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-breadcrumb--solid-background'
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-breadcrumb--solid-background&viewMode=story"
 
 >
 
-  <RootCode />
+  <ClassesCode />
 </Example>
+
+## Theme
+
+### General Theme
+
+This is the structure of the theme applied to the breadcrumb components.
+To make easier the appliance of the theme, both the parent and the children components have their own 'sub-theme' to apply the styles.
+
+```ts
+interface BreadcrumbTheme {
+  root: BreadcrumbRootTheme;
+  item: BreadcrumbItemTheme;
+}
+```
+
+### Breadcrumb
+
+When using the **theme** prop from the **{"<Breadcrumb>"}** component, you can apply the following theme:
+This is done to avoid passing a **{"<BreadcrumbItem>"}** theme to the parent.
+
+```ts
+interface interface BreadcrumbRootTheme {
+  base: string
+  list: string
+}
+```
+
+### BreadcrumbItem
+
+    When using the **theme** prop from the **{"<BreadcrumbItem>"}** component, you can apply the following theme:
+
+```ts
+interface BreadcrumbItemTheme {
+  base: string;
+  chevron: string;
+  href: IBoolean;
+  icon: string;
+}
+```
