@@ -52,6 +52,9 @@ import rounded from "examples/Button/rounded";
 import SizesCode from "examples/Button/sizes.mdx";
 import sizes from "examples/Button/sizes";
 
+import GroupCode from "examples/Button/group.mdx";
+import group from "examples/Button/group";
+
 ## Introduction
 
 The button component is a common UI component found on the web that allows users to trigger certain actions on your website such as submitting a form, navigating to a new page, or downloading a file.
@@ -309,7 +312,29 @@ embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bu
   <IconCode />
 </Example>
 
+## Button group
+
+To create a group of buttons, you can use the **{"<ButtonGroup>"}** component and add the **{"<Button>"}** component as a child of the button group.
+
+<Callout emoji="🚧" type="warning">
+  The ButtonGroup component is usable but not totally finished. Still in
+  progress.
+</Callout>
+
+ <Example
+ storybookUrl='http://localhost:6006/?path=/story/components-buttongroup--default-avatar-group'
+  height={100}
+name="Button group"
+code={group}
+embedUrl="http://localhost:6006/iframe.html?args=&id=components-buttongroup--default-avatar-group&viewMode=story"
+>
+
+  <GroupCode />
+</Example>
+
 ## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
 
 ```ts
 interface ButtonTheme {

@@ -1,0 +1,14 @@
+const code = `
+import { Button,ButtonGroup } from "pol-ui";
+
+import React from "react";
+const ButtonComponent = () => {
+  return  <ButtonGroup>
+    <Button className="rounded-r-none">Profile</Button>
+    <Button rounded="none">Settings</Button>
+    <Button className="rounded-l-none">Messages</Button>
+  </ButtonGroup>
+};
+export default ButtonComponent;
+`;
+export default code;
