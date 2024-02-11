@@ -1,18 +1,33 @@
 {
-  "theme_color": "#facc15",
+  "theme_color": "#b49cff",
   "dir": "auto",
   "background_color": "#ededed",
   "display": "standalone",
-  "start_url": "https://polgubau.com",
-  "scope": "https://polgubau.com",
-  "id": "https://polgubau.com/UScGRN52vWrGW3SGFLVt",
+  "start_url": "https://ui.polgubau.com",
+  "scope": "https://ui.polgubau.com",
+  "id": "https://ui.polgubau.com/manifest.json",
   "orientation": "any",
   "lang": "en",
   "prefer_related_applications": false,
-  "categories": ["development", "pol", "pol gubau amores", "Pol Gubau Amores", "news", "blog", "frontend"],
-  "name": "Pol Gubau Amores",
-  "description": "👋🏼 Hello! I'm Pol Gubau Amores, a Frontend Developer and Designer based in Barcelona. I love to create beautiful and functional websites and apps.",
-  "short_name": "Pol Gubau",
+  "categories": [
+    "development",
+    "pol",
+    "pol gubau amores",
+    "Pol Gubau Amores",
+    "pol-ui",
+    "react",
+    "frontend",
+    "next.js",
+    "web development",
+    "web dev",
+    "web",
+    "design",
+    "designer",
+    "frontend developer"
+  ],
+  "name": "Pol-ui, empowering web development",
+  "description": "A beautiful and functional UI library for React and Next.js",
+  "short_name": "Pol-ui",
   "related_applications": [],
   "icons": [
     {
@@ -59,35 +74,14 @@
   "protocol_handlers": [
     {
       "protocol": "web+pwa",
-      "url": "https://polgubau.com/?pwaprotocolredirect=%s"
+      "url": "https://ui.polgubau.com/?pwaprotocolredirect=%s"
     },
     {
       "protocol": "web+polgubauamores",
-      "url": "https://polgubau.com/?pwaprotocolredirect=%s"
+      "url": "https://ui.polgubau.com/?pwaprotocolredirect=%s"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Blog",
-      "url": "https://polgubau.com/blog",
-      "icons": [
-        {
-          "src": "/icons/book-open.png",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Projects",
-      "url": "https://polgubau.com/projects",
-      "icons": [
-        {
-          "src": "/icons/folder.png",
-          "sizes": "192x192"
-        }
-      ]
-    }
-  ],
+
   "screenshots": [
     {
       "src": "/brand/screenshot.jpg",

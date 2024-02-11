@@ -1,0 +1,16 @@
+const code = `
+import { Button,theme,MainSizes } from "pol-ui";
+
+import React from "react";
+const ButtonComponent = () => {
+  return (<div className="flex gap-3 flex-wrap items-center">
+    {Object.keys(theme.button.size).map(size => (
+      <Button key={size} {...args} size={size as MainSizes}>
+        {size}
+      </Button>
+    ))}
+  </div>)
+};
+export default ButtonComponent;
+`;
+export default code;

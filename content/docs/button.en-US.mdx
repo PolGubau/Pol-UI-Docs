@@ -13,16 +13,52 @@ tags:
   - Pol-ui
 ---
 
-import RootCode from "examples/Banner/root.mdx";
-import root from "examples/Banner/root";
+import RootCode from "examples/Button/root.mdx";
+import root from "examples/Button/root";
+
+import ColorsCode from "examples/Button/colors.mdx";
+import colors from "examples/Button/colors";
+
+import ColorsOutlineCode from "examples/Button/colorsOutline.mdx";
+import colorsOutline from "examples/Button/colorsOutline";
+
+import DisabledCode from "examples/Button/disabled.mdx";
+import disabled from "examples/Button/disabled";
+
+import FullSizedCode from "examples/Button/fullSized.mdx";
+import fullSized from "examples/Button/fullSized";
+
+import IconCode from "examples/Button/icon.mdx";
+import icon from "examples/Button/icon";
+
+import LinkCode from "examples/Button/link.mdx";
+import link from "examples/Button/link";
+
+import LoadingCode from "examples/Button/loading.mdx";
+import loading from "examples/Button/loading";
+
+import MotionCode from "examples/Button/motion.mdx";
+import motion from "examples/Button/motion";
+
+import NoBackgroundCode from "examples/Button/noBackground.mdx";
+import noBackground from "examples/Button/noBackground";
+
+import OutlineCode from "examples/Button/outline.mdx";
+import outline from "examples/Button/outline";
+
+import RoundedCode from "examples/Button/rounded.mdx";
+import rounded from "examples/Button/rounded";
+
+import SizesCode from "examples/Button/sizes.mdx";
+import sizes from "examples/Button/sizes";
 
 ## Introduction
 
 The button component is a common UI component found on the web that allows users to trigger certain actions on your website such as submitting a form, navigating to a new page, or downloading a file.
 
-The examples from the Flowbite React library allows you to customise the buttons with different colors, sizes, icons, and more. All examples are built with React and Tailwind CSS.
+The examples from the Pol-ui library allows you to customise the buttons with different colors, sizes, icons, and more. All examples are built with React and Tailwind CSS.
 
-In order to start using the button component you need to import it from Flowbite React:
+In order to start using the button component you need to import it from Pol-ui:
 
 ```jsx
 import { Button } from "pol-ui";
@@ -34,7 +70,7 @@ Use this example to create a default button by using the **{"<Button>"}** compon
 
  <Example
  storybookUrl='http://localhost:6006/?path=/story/components-button--default-button'
-  height={80}
+  height={100}
 name="Default banner"
 code={root}
 embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--default-button&viewMode=story"
@@ -69,3 +105,237 @@ embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bu
 Add to the previous table all native props from the HTML button tag.
 
 If you provide a **href** property, the button will render as an anchor tag, so all native props of the anchor tag are also available.
+
+## Outline button
+
+Pol-ui allows you to create an outline button by using the **outline** property.
+It's an alternative style for the button component.
+If you rather use direct classes from Tailwind CSS, feel free to use the **className** property but this prop gives this functionality for free.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--outline-button'
+  height={100}
+name="Outline button"
+code={outline}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--outline-button&viewMode=story"
+
+>
+
+  <OutlineCode />
+</Example>
+
+## With loading state
+
+The **loading** property allows you to create a button with a loading state. A loading spinner will be displayed and the button will be disabled.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--loading'
+  height={100}
+name="Loading button"
+code={loading}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--loading&viewMode=story"
+
+>
+
+  <LoadingCode />
+</Example>
+
+## Disabled button
+
+To display a disabled button, you can use the **disabled** property.
+This prop will change the button to a disabled state and the user won't be able to interact with it. At the same time, the button will have a different color to indicate that it's disabled.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--disabled'
+  height={100}
+name="Disabled button"
+code={loading}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--disabled&viewMode=story"
+
+>
+
+  <LoadingCode />
+</Example>
+
+## Full with button
+
+The **fullSize** property allows you to create a button that takes the full width of its parent container.
+Useful for mobile devices or when you want to create a button that takes the full width of the screen.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--full-sized'
+  height={100}
+name="Full sized button"
+code={fullSized}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--full-sized&viewMode=story"
+
+>
+
+  <FullSizedCode />
+</Example>
+
+## Transparent button
+
+The **hasBackground** property allows you to create a button without a background color.
+This is useful when you want to create a button that looks like a link or 'just text' but still want to use the button component.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--transparent'
+  height={100}
+name="Transparent button"
+code={noBackground}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--transparent&viewMode=story"
+
+>
+
+  <NoBackgroundCode />
+</Example>
+
+## Link button
+
+**Pol-ui** doesn't have a specific component for links, but you can use the **{"<Button>"}** component and add the **href** property to create a link button. The HTML tag will be rendered as an anchor tag just with specifying this **href** property.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--link'
+  height={100}
+name="Link button"
+code={link}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--link&viewMode=story"
+
+>
+
+  <LinkCode />
+</Example>
+
+## With Motion
+
+If you want to add a motion effect to the button, you can use the **hasMotion** property. This will add a motion effect to the button when the user hovers over it, when the user clicks on it, or when the user focuses on it.
+This is interesting when you have a fancy design and want to add a little bit of animation to the button.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--with-motion'
+  height={100}
+name="with-motion button"
+code={motion}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--with-motion&viewMode=story"
+
+>
+
+  <MotionCode />
+</Example>
+
+## All rounded styles
+
+All rounded styles are available for the button component. You can use the **rounded** property to change the style of the button.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--rounded'
+  height={100}
+name="Rounded button"
+code={rounded}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--rounded&viewMode=story"
+
+>
+
+  <RoundedCode />
+</Example>
+
+## All sizes styles
+
+The **size** property is used to change the size of the button. You can use the **size** property to change the size of the button.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--sizes'
+  height={100}
+name="sizes button"
+code={sizes}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--sizes&viewMode=story"
+
+>
+
+  <SizesCode />
+</Example>
+
+## All color styles
+
+Button component follows your style guide and allows you to create buttons with different colors. You can use the **color** property to change the color of the button.
+
+For example, you could use the color **success** when you want to create a button that indicates a successful action.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--all-colors'
+  height={250}
+name="All colors button"
+code={colors}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--all-colors&viewMode=story"
+
+>
+
+  <ColorsCode />
+</Example>
+
+## Outlined colors
+
+Button component follows your style guide and allows you to create buttons with different colors. You can use the **color** property to change the color of the button.
+
+For example, you could use the color **success** when you want to create a button that indicates a successful action.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--outline-colors'
+  height={250}
+name="All outlined button"
+code={colorsOutline}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--outline-colors&viewMode=story"
+>
+
+  <ColorsOutlineCode />
+</Example>
+
+## Button with icon
+
+To add any icon to the button, you can use the **{"<Button>"}** component and add the **{"<Icon>"}** component as a child of the button.
+To let more flexibility, Button doesn't have a specific prop to add an icon so add it as well in the children of the button.
+
+If your **{"<Button>"}** component only has an icon, you can use the [IconButton](/icon-button) component.
+
+ <Example
+ storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--with-icon'
+  height={100}
+name="Button with icon"
+code={icon}
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--with-icon&viewMode=story"
+>
+
+  <IconCode />
+</Example>
+
+## Theme
+
+```ts
+interface ButtonTheme {
+  base: string;
+  fullSized: string;
+  color: ColorsType;
+  ring: {
+    base: string;
+    colors: ColorsType;
+  };
+  disabled: string;
+  loading: string;
+  loaderSlot: string;
+  loaderLeftPosition: MainSizesType;
+  inner: {
+    base: string;
+    position: PositionInButtonGroup;
+    outline: string;
+    loadingPadding: MainSizesType;
+  };
+  label: string;
+  outline: IBoolean & {
+    outlineBase: string;
+    color: ColorsType;
+  };
+  rounded: RoundedSizesTypes;
+  size: MainSizesType;
+}
+```
