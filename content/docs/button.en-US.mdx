@@ -152,12 +152,12 @@ This prop will change the button to a disabled state and the user won't be able 
  storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-button--disabled'
   height={100}
 name="Disabled button"
-code={loading}
+code={disabled}
 embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-button--disabled&viewMode=story"
 
 >
 
-  <LoadingCode />
+  <DisabledCode />
 </Example>
 
 ## Full with button
@@ -315,11 +315,6 @@ embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bu
 ## Button group
 
 To create a group of buttons, you can use the **{"<ButtonGroup>"}** component and add the **{"<Button>"}** component as a child of the button group.
-
-<Callout emoji="🚧" type="warning">
-  The ButtonGroup component is usable but not totally finished. Still in
-  progress.
-</Callout>
 
  <Example
  storybookUrl='http://localhost:6006/?path=/story/components-buttongroup--default-avatar-group'
