@@ -16,6 +16,12 @@ tags:
 import RootCode from "examples/Carousel/root.mdx";
 import root from "examples/Carousel/root";
 
+import loopCode from "examples/Carousel/loop.mdx";
+import loop from "examples/Carousel/loop";
+
+import StartCode from "examples/Carousel/start.mdx";
+import start from "examples/Carousel/start";
+
 Use the responsive carousel component to allow users to slide through multiple items and navigate between them using the control buttons and indicators.
 
 Choose from multiple examples and options to update the intervals, make the carousel static and set custom control button and indicator by configuring React and the utility classes from Tailwind CSS.
@@ -41,3 +47,31 @@ The default carousel component comes with a set of control buttons and indicator
 </Example>
 
 ## Props
+
+## Loop carousel
+
+A loop carousel is a carousel that will start over when the last item is reached.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-carousel--slide-interval"
+  height={470}
+  name="Default carousel"
+  code={loop}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-carousel--slide-interval"
+>
+  <LoopCode />
+</Example>
+
+## Custom starting index
+
+If you want to start the carousel at a specific index, you can use the `startIndex` prop.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-carousel--cusotm-start-index"
+  height={470}
+  name="Default carousel"
+  code={start}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-carousel--cusotm-start-index&viewMode=story"
+>
+  <StartCode />
+</Example>
