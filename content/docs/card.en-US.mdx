@@ -16,6 +16,9 @@ tags:
 import RootCode from "examples/Card/root.mdx";
 import root from "examples/Card/root";
 
+import HorizontalCode from "examples/Card/root.mdx";
+import horizontal from "examples/Card/root";
+
 The card component can be used to show a wide variety of content such as previews of blog posts, user profiles, pricing plans, and more. Choose from one of the many examples built with React and the utility classes from Tailwind CSS.
 
 To start using the card component you will need to import it from **pol-ui**:
@@ -28,14 +31,40 @@ import { Card } from "pol-ui";
 
 Use this example to show a simple card component with a title and description and apply the **href** tag to the **{"<Card>"}** component to set a hyperlink to the card.
 
- <Example
- storybookUrl='https://pol-ui-storybook.vercel.app/?path=/story/components-card--default'
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-card--default"
   height={200}
-name="Default banner"
-code={root}
-embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-card--default&viewMode=story"
-
+  name="Default card"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-card--default&viewMode=story"
 >
-
   <RootCode />
+</Example>
+
+## Horizontal card
+
+A card can hold the horizontal layout to show a wide variety of content such as previews of blog posts, user profiles, pricing plans, and more.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-card--horizontal"
+  height={400}
+  name="Horizontal card"
+  code={horizontal}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-card--horizontal&viewMode=story"
+>
+  <HorizontalCode />
+</Example>
+
+## Custom Image render
+
+A card can hold the horizontal layout to show a wide variety of content such as previews of blog posts, user profiles, pricing plans, and more.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-card--horizontal"
+  height={400}
+  name="Horizontal card"
+  code={horizontal}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-card--horizontal&viewMode=story"
+>
+  <HorizontalCode />
 </Example>

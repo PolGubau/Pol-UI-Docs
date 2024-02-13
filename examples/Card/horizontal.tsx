@@ -4,7 +4,8 @@ import { Card } from "pol-ui";
 import React from "react";
 const CardComponent = () => {
   return (
-    <Card>
+    <Card horizontal={true} imgSrc='https://ui.polgubau.com/logo.png' 
+      imageClass="w-24">
       <h5 className="text-2xl font-bold text-black">Check this Card title!</h5>
       <p className="font-normal text-secondary-700">
         This components is quite flexible and can be used in many ways.
