@@ -19,6 +19,9 @@ import root from "examples/Card/root";
 import HorizontalCode from "examples/Card/root.mdx";
 import horizontal from "examples/Card/root";
 
+import CustomRenderCode from "examples/Card/customRender.mdx";
+import customRender from "examples/Card/customRender";
+
 The card component can be used to show a wide variety of content such as previews of blog posts, user profiles, pricing plans, and more. Choose from one of the many examples built with React and the utility classes from Tailwind CSS.
 
 To start using the card component you will need to import it from **pol-ui**:
@@ -41,6 +44,18 @@ Use this example to show a simple card component with a title and description an
   <RootCode />
 </Example>
 
+## Props
+
+| Prop name   | Type                       | Default | Description                                  |
+| ----------- | -------------------------- | ------- | -------------------------------------------- |
+| children    | React.ReactNode            | -       | The children displayed inside the card       |
+| theme       | [CardTheme](/theme)        | {}      | The theme applied to the component           |
+| href        | string                     | -       | The url to go when pressing the card         |
+| horizontal  | boolean                    | false   | Set the card to horizontal layout            |
+| className   | string                     | -       | The class name to apply to the card          |
+| renderImage | (props) => React.ReactNode | -       | A custom image component to render the image |
+| imageClass  | string                     | -       | The class name to apply to the image         |
+
 ## Horizontal card
 
 A card can hold the horizontal layout to show a wide variety of content such as previews of blog posts, user profiles, pricing plans, and more.
@@ -57,14 +72,35 @@ A card can hold the horizontal layout to show a wide variety of content such as 
 
 ## Custom Image render
 
-A card can hold the horizontal layout to show a wide variety of content such as previews of blog posts, user profiles, pricing plans, and more.
+When using **next.js** or **Gatsby** you can use the **Image** component from **next/image** or **gatsby-image** to render the image with the **Card** component.
+
+The **renderImage** prop is used to display a custom image component inside on the card.
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-card--horizontal"
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-card--with-next-image"
   height={400}
   name="Horizontal card"
-  code={horizontal}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-card--horizontal&viewMode=story"
+  code={customRender}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?id=components-card--with-next-image&viewMode=story"
 >
-  <HorizontalCode />
+  <CustomRenderCode />
 </Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface CardTheme {
+  root: {
+    base: string;
+    children: string;
+    horizontal: IBoolean;
+    href: string;
+  };
+  img: {
+    base: string;
+    horizontal: IBoolean;
+  };
+}
+```

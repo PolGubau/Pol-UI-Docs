@@ -1,0 +1,90 @@
+---
+title: Card Stack
+path: cardstack
+publishedAt: 2024-02-13
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/CardStack
+doc_type: component
+summary: Card stacks are a great way to display a collection of cards in a single view. They can be used to display a wide variety of content such as previews of blog posts, user profiles, pricing plans, and more.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/CardStack
+tags:
+  - cardStack
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/CardStack/root.mdx";
+import root from "examples/CardStack/root";
+
+import OneItemCode from "examples/CardStack/oneItem.mdx";
+import oneItem from "examples/CardStack/oneItem";
+
+Card stacks are a fancy and modern way to display a collection of cards in a single view. They can be used to display a wide variety of content such as previews of blog posts, user profiles, pricing plans, and more.
+
+You can use the **{"<CardStack>"}** component to display a collection of children with a draggable effect.
+Feel free to use the **{"<Card>"}** component or any other component as children.
+
+```jsx
+import { CardStack } from "pol-ui";
+```
+
+## Default card stack
+
+Use this example to show a simple card component with a title and description and apply the **href** tag to the **{"<Card>"}** component to set a hyperlink to the card.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-cardstack--default"
+  height={300}
+  name="Default card stack"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-cardstack--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name   | Type                       | Default | Description                                  |
+| ----------- | -------------------------- | ------- | -------------------------------------------- |
+| children    | React.ReactNode            | -       | The children displayed inside the card       |
+| theme       | [CardTheme](/theme)        | {}      | The theme applied to the component           |
+| href        | string                     | -       | The url to go when pressing the card         |
+| horizontal  | boolean                    | false   | Set the card to horizontal layout            |
+| className   | string                     | -       | The class name to apply to the card          |
+| renderImage | (props) => React.ReactNode | -       | A custom image component to render the image |
+| imageClass  | string                     | -       | The class name to apply to the image         |
+
+## Variants
+
+### Just with one element
+
+Just in case you just have one item to display, the component is ready to handle it. The element dragged won't be deleted and will be returned to it's position.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-cardstack--just-one-element"
+  height={300}
+  name="Default card stack"
+  code={oneItem}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-cardstack--just-one-element&viewMode=story"
+>
+  <OneItemCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface CardTheme {
+  root: {
+    base: string;
+    children: string;
+    horizontal: IBoolean;
+    href: string;
+  };
+  img: {
+    base: string;
+    horizontal: IBoolean;
+  };
+}
+```
