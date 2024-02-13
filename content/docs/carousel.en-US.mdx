@@ -1,0 +1,43 @@
+---
+title: Carousel
+path: carousel
+publishedAt: 2024-02-13
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Carousel
+doc_type: component
+summary: Carousel is a component that allows users to slide through multiple items and navigate between them using the control buttons and indicators.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Carousel
+tags:
+  - carousel
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Carousel/root.mdx";
+import root from "examples/Carousel/root";
+
+Use the responsive carousel component to allow users to slide through multiple items and navigate between them using the control buttons and indicators.
+
+Choose from multiple examples and options to update the intervals, make the carousel static and set custom control button and indicator by configuring React and the utility classes from Tailwind CSS.
+
+To start using the carousel component you first need to import it from Pol-ui:
+
+```jsx
+import { Carousel } from "pol-ui";
+```
+
+## Default carousel
+
+The default carousel component comes with a set of control buttons and indicators to navigate between the items.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-carousel--carousel-template"
+  height={470}
+  name="Default carousel"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-carousel--carousel-template&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
