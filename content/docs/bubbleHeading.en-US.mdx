@@ -1,0 +1,70 @@
+---
+title: BubbleHeading
+path: bubbleHeading
+publishedAt: 2024-02-09
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/BubbleHeading
+doc_type: component
+summary: The banner component could represent a sticky element to show marketing, informational and CTA messages to your website visitors fixed to the top or bottom part of the page as the user scroll down the main content area.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/BubbleHeading
+tags:
+  - BubbleHeading
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Banner/root.mdx";
+import root from "examples/Banner/root";
+
+## Introduction
+
+A Banner is a important piece of UI for displaying **marketing**, informational, and call-to-action messages to website visitors. It provides a flexible and reusable way to present messages that can be fixed to the top or bottom of the page as the user scrolls through the main content area. The component enhances **user engagement** and communication by delivering important content in a visually prominent and persistent manner.
+
+With the React Banner component from Pol-ui you can import a simple but powerful ready to use component that can be customized to match your brand identity with props as color, rounded sizes, and theme.
+
+To start using the banner component you need to import it from **pol-ui**:
+
+```jsx
+import { BubbleHeading } from "pol-ui";
+```
+
+## Default BubbleHeading
+
+If you don't need to customize the banner component, you can use it with the default settings. The default banner component has a background color of primary, a bordered prop setted to false and a rounded prop setted to "md".
+
+<Example
+  height={120}
+name="Default banner"
+code={root}
+storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-bubbleheading--default"
+embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bubbleheading--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name       | Type                              | Default | Description                                    |
+| --------------- | --------------------------------- | ------- | ---------------------------------------------- |
+| bordered        | boolean                           | false   | If true, the banner will have a border         |
+| closable        | boolean                           | true    | If true, the banner will have a close button   |
+| color           | Colors                            | primary | The color of the banner                        |
+| rounded         | RoundedSizes                      | md      | The rounded size of the banner                 |
+| onClose         | () => void                        |         | The function to call when the banner is closed |
+| theme           | [BannerTheme](/docs/banner#theme) |         | The theme of the banner                        |
+| buttonClassName | string                            |         | The class name of the close button             |
+| hasMotion       | boolean                           | true    | If true, the banner will have a motion effect  |
+| motionDistance  | number                            | 50      | The distance of the motion effect              |
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/customize/theme).
+
+```js
+interface BannerTheme {
+  base: string
+  bordered: IBoolean
+  color: ColorsType
+  rounded: RoundedSizesTypes
+}
+```
