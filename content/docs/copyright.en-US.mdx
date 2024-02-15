@@ -1,0 +1,61 @@
+---
+title: Copyright
+path: copyright
+publishedAt: 2024-02-15
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Copyright
+doc_type: component
+summary: A component to display the copyright of the author.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Copyright
+tags:
+  - copyright
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Copyright/root.mdx";
+import root from "examples/Copyright/root";
+
+The **Copyright** component from **pol-ui** is a useful way to display the author and the year of the copyright of the website / application...
+
+## Importation
+
+Import the component from **pol-ui** to use the conveyor element:
+
+```jsx
+import { Copyright } from "pol-ui";
+```
+
+## Default copyright
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-texts-copyright--default-footer"
+  height={100}
+  name="Default conveyor"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-texts-copyright--default-footer&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type                     | Default                  | Description                       |
+| --------- | ------------------------ | ------------------------ | --------------------------------- |
+| by        | string                   | ""                       | The name of the author.           |
+| className | string                   | ""                       | The class name of the component.  |
+| href      | string                   | ""                       | The link to the author's website. |
+| theme     | [CopyrightTheme](#theme) | {}                       | The theme of the component.       |
+| year      | number                   | new Date().getFullYear() | The year of the copyright.        |
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface CopyrightTheme {
+  base: string;
+  href: string;
+  span: string;
+}
+```
