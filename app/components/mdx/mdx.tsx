@@ -89,7 +89,7 @@ function ConsCard({ title, cons }) {
     <div className="border border-red-200 dark:border-red-900 bg-neutral-50 dark:bg-neutral-900 rounded-xl p-6 my-6 w-full">
       <span>{title}</span>
       <div className="mt-4">
-        {cons.map((con) => (
+        {cons.map((con: string) => (
           <div key={con} className="flex font-medium items-baseline mb-2">
             <div className="h-4 w-4 mr-2">
               <svg

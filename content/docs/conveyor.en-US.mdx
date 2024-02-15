@@ -1,0 +1,109 @@
+---
+title: Conveyor
+path: conveyor
+publishedAt: 2024-02-15
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Conveyor
+doc_type: component
+summary: A Conveyor is a complete components that allows you to create a conveyor belt of elements. It can be used to create a carousel, a news ticker, or any other kind of conveyor belt.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Conveyor
+tags:
+  - conveyor
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Conveyor/root.mdx";
+import root from "examples/Conveyor/root";
+
+import LogosCode from "examples/Conveyor/logos.mdx";
+import logos from "examples/Conveyor/logos";
+
+import FastCode from "examples/Conveyor/fast.mdx";
+import fast from "examples/Conveyor/fast";
+
+The **Conveyor** component is a complete components that allows you to create a conveyor belt of elements. It can be used to create a carousel, a news ticker, or any other kind of conveyor belt.
+
+The conveyor from **pol-ui** has a stable animation and a good performance as it uses CSS transitions.
+
+## Importation
+
+Import the component from **pol-ui** to use the conveyor element:
+
+```jsx
+import { Conveyor } from "pol-ui";
+```
+
+## Default conveyor
+
+The default conveyor is a conveyor that moves the children from left to right.
+
+<Callout emoji='💡'>
+
+You can use the **pauseOnHover** prop to pause the conveyor when the mouse is over or disable it.
+
+</Callout>
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-conveyor--default"
+  height={400}
+  name="Default conveyor"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-conveyor--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name    | Type                    | Default      | Description                                |
+| ------------ | ----------------------- | ------------ | ------------------------------------------ |
+| children     | React.ReactNode         | -            | The children of the conveyor.              |
+| direction    | ConveyorDirection       | "horizontal" | The direction of the conveyor.             |
+| speed        | ConveyorSpeed           | "normal"     | The speed of the conveyor.                 |
+| pauseOnHover | boolean                 | false        | Pause the conveyor when the mouse is over. |
+| theme        | [ConveyorTheme](#theme) | -            | The theme of the conveyor.                 |
+| className    | string                  | -            | The class name of the conveyor.            |
+
+## Examples
+
+### Logos conveyor
+
+This example shows a conveyor with logos that moves from right to left.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-conveyor--logos"
+  height={400}
+  name="Default conveyor"
+  code={logos}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-conveyor--logos&viewMode=story"
+>
+  <LogosCode />
+</Example>
+
+### Fast conveyor
+
+The **speed** prop can be used to change the speed of the conveyor. The speed can be "slow", "normal" or "fast".
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-conveyor--fast-conveyor"
+  height={400}
+  name="Default conveyor"
+  code={fast}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-conveyor--fast-conveyor&viewMode=story"
+>
+  <FastCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface ConveyorTheme {
+  scroller: string;
+  list: string;
+  pauseAnimation: string;
+  animation: string;
+}
+```

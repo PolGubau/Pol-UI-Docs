@@ -1,0 +1,34 @@
+const code = `
+import { Conveyor } from "pol-ui";
+
+import React from "react";
+
+const ConveyorComponent = () => {
+  return (
+    <Conveyor direction="right" speed="slow">
+      {testimonials.map((testimonial, i) => (
+        <div
+          key={i}
+          className="w-[350px] h-full max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-secondary-500 px-8 py-6 md:w-[450px] bg-secondary-300 flex flex-col justify-between"
+        >
+          <div className="flex items-center  mb-4">
+            {Array.from({ length: testimonial.stars }).map((_, i) => (
+              <TbStarFilled key={i} className=" text-2xl" />
+            ))}
+            {Array.from({ length: 5 - testimonial.stars }).map((_, i) => (
+              <TbStar key={i} className=" text-2xl" />
+            ))}
+          </div>
+
+          <p className="text-lg mb-4">{testimonial.review}</p>
+          <div className="flex flex-col">
+            <p className="text-xl font-semibold">{testimonial.name}</p>
+          </div>
+        </div>
+      ))}
+    </Conveyor>
+  );
+};
+export default ConveyorComponent;
+`;
+export default code;

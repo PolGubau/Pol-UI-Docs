@@ -1,0 +1,139 @@
+---
+title: Checkbox
+path: checkbox
+publishedAt: 2024-02-15
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Checkbox
+doc_type: component
+summary: A Checkbox input can be used to select multiple options from a list of options. It is a component that allows the user to select one or more items from a set of options.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Checkbox
+tags:
+  - checkbox
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Checkbox/root.mdx";
+import root from "examples/Checkbox/root";
+
+import UncontrolledCode from "examples/Checkbox/uncontrolled.mdx";
+import uncontrolled from "examples/Checkbox/uncontrolled";
+
+import AllColorsCode from "examples/Checkbox/allColors.mdx";
+import allColors from "examples/Checkbox/allColors";
+
+## Introduction
+
+A **checkbox** is a component that allows the user to select one or more items from a set of options.
+This input could be super useful when you need to select multiple items from a short list of options.
+
+<ProsCard
+  title="You should use a checkbox when"
+  pros={[
+    "You have multiple options to select from",
+    "You don't have more than 5 options",
+    "You need to select more than one option",
+  ]}
+/>
+<ConsCard
+  title="You should not use a checkbox when"
+  cons={[
+    "You have a long list of options -> Use a select input",
+    "You need to select only one option -> Use a radio input",
+  ]}
+/>
+
+Import the component from **pol-ui** to use the checkbox element:
+
+## Importation
+
+```jsx
+import { Checkbox } from "pol-ui";
+```
+
+## Default checkbox
+
+The default checkbox component comes with a set of control buttons and indicators to navigate between the items.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-checkbox--controlled"
+  height={100}
+  name="Default checkbox"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-checkbox--controlled&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+The checkbox component comes with a set of props to **customize the appearance** and behavior of the component.
+
+This props are a small amount, our goal is to keep the component simple and easy to use and be the most **native** possible.
+
+You can also pass any prop that the native input checkbox accepts.
+
+| Prop name | Type                    | Default | Description                        |
+| --------- | ----------------------- | ------- | ---------------------------------- |
+| color     | Colors                  | primary | Specify the color of the checkbox. |
+| label     | string                  | null    | Add a label to the checkbox.       |
+| theme     | [CheckboxTheme](#theme) | null    | Specify the theme of the checkbox. |
+
+## Customization
+
+### Uncontrolled checkbox
+
+You can always use the checkbox as an **uncontrolled component**, this means that the checkbox will manage its own state and then you can get the value of the checkbox using the **ref** prop, a **form submit** or any other way.
+
+<Callout emoji="⚠️">
+  See how when using the uncontrolled checkbox, the animation is disabled
+  because there is not a direct way to know when the checkbox is checked.
+</Callout>
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-checkbox--default-checkbox"
+  height={100}
+  name="Default checkbox"
+  code={uncontrolled}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-checkbox--default-checkbox&viewMode=story"
+>
+  <UncontrolledCode />
+</Example>
+
+### All colors
+
+As all the components in **pol-ui**, the checkbox component comes with a set of colors to customize the appearance of the component.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-checkbox--all-colors"
+  height={130}
+  name="Default checkbox"
+  code={allColors}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-checkbox--all-colors&viewMode=story"
+>
+  <AllColorsCode />
+</Example>
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface CheckboxTheme {
+  base: string;
+  color: ColorsType;
+  before: string;
+  floating: {
+    base: string;
+    svg: string;
+  };
+  check: {
+    base: string;
+    color: ColorsType;
+  };
+}
+```
+
+## Further reading
+
+[See more about when to use a
+checkbox](https://www.nngroup.com/articles/checkboxes-vs-radio-buttons/)
