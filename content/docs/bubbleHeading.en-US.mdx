@@ -13,16 +13,31 @@ tags:
   - Pol-ui
 ---
 
-import RootCode from "examples/Banner/root.mdx";
-import root from "examples/Banner/root";
+import RootCode from "examples/BubbleHeading/root.mdx";
+import root from "examples/BubbleHeading/root";
+
+import OppositeCode from "examples/BubbleHeading/opposite.mdx";
+import opposite from "examples/BubbleHeading/opposite";
+
+import StepCode from "examples/BubbleHeading/step.mdx";
+import step from "examples/BubbleHeading/step";
+
+import DurationCode from "examples/BubbleHeading/duration.mdx";
+import duration from "examples/BubbleHeading/duration";
+
+import DarkCode from "examples/BubbleHeading/dark.mdx";
+import dark from "examples/BubbleHeading/dark";
+
+import CustomClassCode from "examples/BubbleHeading/customClass.mdx";
+import customClass from "examples/BubbleHeading/customClass";
 
 ## Introduction
 
-A Banner is a important piece of UI for displaying **marketing**, informational, and call-to-action messages to website visitors. It provides a flexible and reusable way to present messages that can be fixed to the top or bottom of the page as the user scrolls through the main content area. The component enhances **user engagement** and communication by delivering important content in a visually prominent and persistent manner.
+**BubbleHeading** is a fancy component thought to be used as a heading for your website in a langing page, for instance.
 
-With the React Banner component from Pol-ui you can import a simple but powerful ready to use component that can be customized to match your brand identity with props as color, rounded sizes, and theme.
+It has a motion effect that tracks your mouse movement each time you hover it. It can be highly customized to fit your needs.
 
-To start using the banner component you need to import it from **pol-ui**:
+### Import
 
 ```jsx
 import { BubbleHeading } from "pol-ui";
@@ -30,32 +45,47 @@ import { BubbleHeading } from "pol-ui";
 
 ## Default BubbleHeading
 
-If you don't need to customize the banner component, you can use it with the default settings. The default banner component has a background color of primary, a bordered prop setted to false and a rounded prop setted to "md".
+For a basic usage, you can use the **BubbleHeading** component with no props, but **a string** as a child.
 
 <Example
-  height={120}
-name="Default banner"
-code={root}
-storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-bubbleheading--default"
-embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bubbleheading--default&viewMode=story"
+  height={150}
+  name="Default BubbleHeading"
+  code={root}
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-bubbleheading--default"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bubbleheading--default&viewMode=story"
 >
   <RootCode />
 </Example>
 
 ## Props
 
-| Prop name       | Type                              | Default | Description                                    |
-| --------------- | --------------------------------- | ------- | ---------------------------------------------- |
-| bordered        | boolean                           | false   | If true, the banner will have a border         |
-| closable        | boolean                           | true    | If true, the banner will have a close button   |
-| color           | Colors                            | primary | The color of the banner                        |
-| rounded         | RoundedSizes                      | md      | The rounded size of the banner                 |
-| onClose         | () => void                        |         | The function to call when the banner is closed |
-| theme           | [BannerTheme](/docs/banner#theme) |         | The theme of the banner                        |
-| buttonClassName | string                            |         | The class name of the close button             |
-| hasMotion       | boolean                           | true    | If true, the banner will have a motion effect  |
-| motionDistance  | number                            | 50      | The distance of the motion effect              |
+| Prop name          | Type         | Default | Description                                            |
+| ------------------ | ------------ | ------- | ------------------------------------------------------ |
+| children           | string       |         | The text to be displayed in the heading                |
+| minWeight          | number       | 100     | The minimum weight of the bubble                       |
+| maxWeight          | number       | 900     | The maximum weight of the bubble                       |
+| step               | number       | 100     | More amount -> less letters affected                   |
+| opposite           | bool         | false   | Change the behavior of the heading                     |
+| as                 | HeadingLevel | h1      | The tag to be used as the heading                      |
+| className          | string       |         | Custom class to be used in the heading                 |
+| theme              | BannerTheme  | {}      | The theme to be used in the heading                    |
+| transitionDuration | number       | 0.25    | The duration of the transition effect (in miliseconds) |
 
+## Customization
+
+### Opposite prop
+
+You can use the **opposite** prop to change the behavior of the heading, it will
+
+<Example
+  height={150}
+  name="Opposite banner"
+  code={opposite}
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-bubbleheading--opposite"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bubbleheading--opposite&viewMode=story"
+>
+  <OppositeCode />
+</Example>
 ## Theme
 
 To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/customize/theme).
