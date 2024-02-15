@@ -1,0 +1,287 @@
+---
+title: Datepicker
+path: datepicker
+publishedAt: 2024-02-15
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Datepicker
+doc_type: component
+summary: datepicker is a component that allows users to slide through multiple items and navigate between them using the control buttons and indicators.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Datepicker
+tags:
+  - datepicker
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Datepicker/root.mdx";
+import root from "examples/Datepicker/root";
+
+import DarkCode from "examples/Datepicker/dark.mdx";
+import dark from "examples/Datepicker/dark";
+
+import NoAutohideCode from "examples/Datepicker/noAutohide.mdx";
+import noAutohide from "examples/Datepicker/noAutohide";
+
+import InlineCode from "examples/Datepicker/inline.mdx";
+import inline from "examples/Datepicker/inline";
+
+import RangedCode from "examples/Datepicker/ranged.mdx";
+import ranged from "examples/Datepicker/ranged";
+
+The Datepicker component from Pol-ui is an advanced UI element that you can use to allow users to pick a date from a calendar view by selecting the day, month, and year values which then will be available in the input field and state of the component.
+
+Follow the examples below to see how you can use the Datepicker component by importing it from the Pol-ui library, customize the colors and behaviour of the component by overriding the default theme variables and using the props from React.
+
+## Importation
+
+Import the component from **pol-ui** to use the datepicker element:
+
+```jsx
+import { Datepicker } from "pol-ui";
+```
+
+## Default datepicker
+
+The default datepicker component comes with a set of control buttons and indicators to navigate between the items.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/docs/components-datepicker--docs"
+  height={450}
+  name="Default datepicker"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-datepicker--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name             | Type                      | Default    | Description                                                                                             |
+| --------------------- | ------------------------- | ---------- | ------------------------------------------------------------------------------------------------------- |
+| open                  | boolean                   | false      | The open prop can be used to control the visibility of the datepicker component.                        |
+| inline                | boolean                   | false      | Display the datepicker component as an inline element.                                                  |
+| autoHide              | boolean                   | true       | Control the visibility of the datepicker component when the user clicks outside of the component.       |
+| showClearButton       | boolean                   | true       | Show the clear button inside the datepicker component.                                                  |
+| labelClearButton      | string                    | "Clear"    | The label of the clear button.                                                                          |
+| clearIcon             | ReactNode                 | null       | The icon of the clear button.                                                                           |
+| showTodayButton       | boolean                   | true       | Show the today button inside the datepicker component.                                                  |
+| todayIcon             | ReactNode                 | null       | The icon of the today button.                                                                           |
+| labelTodayButton      | string                    | "Today"    | The label of the today button.                                                                          |
+| defaultDate           | Date                      | new Date() | The default date value of the datepicker component.                                                     |
+| minDate               | Date                      | null       | The minimum date value that can be selected inside the datepicker component.                            |
+| maxDate               | Date                      | null       | The maximum date value that can be selected inside the datepicker component.                            |
+| language              | string                    | "en"       | The language of the datepicker component.                                                               |
+| weekStart             | WeekStart                 | 2 (Monday) | The first day of the week inside the datepicker component.                                              |
+| theme                 | [DatepickerTheme](#theme) | null       | The theme of the datepicker component.                                                                  |
+| onSelectedDateChanged | (date: Date) => void      | null       | The callback function that will be called when the user selects a date inside the datepicker component. |
+
+### Week start
+
+The **weekStart** prop can be used to set the first day of the week inside the datepicker component.
+
+```json
+{
+  "0": "Saturday",
+  "1": "Sunday",
+  "2": "Monday",
+  "3": "Tuesday",
+  "4": "Wednesday",
+  "5": "Thursday",
+  "6": "Friday"
+}
+```
+
+## Customization
+
+### Dark mode
+
+The datepicker component, as the rest of the components from Pol-ui, supports dark mode for free. Here you can see an example of how to use the datepicker component with the dark mode theme.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-datepicker--dark-mode"
+  height={550}
+  name="darkmode datepicker"
+  code={dark}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-datepicker--dark-mode&viewMode=story"
+>
+  <DarkCode />
+</Example>
+
+### Without auto-hide
+
+If you want to disable the auto-hide feature of the datepicker component, you can use the **autoHide** prop to control the visibility of the datepicker component when the user clicks outside of the component.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-datepicker--auto-hide-disabled"
+  height={550}
+  name="auto hide disabled datepicker"
+  code={dark}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-datepicker--auto-hide-disabled&viewMode=story"
+>
+  <DarkCode />
+</Example>
+
+### Inline
+
+You can also display the datepicker component as an inline element by using the **inline** prop.
+This option will delete the input field and display the datepicker component as an inline element.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-datepicker--inline"
+  height={550}
+  name="inline datepicker"
+  code={inline}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-datepicker--inline&viewMode=story"
+>
+  <InlineCode />
+</Example>
+
+### Ranged dates
+
+To limit the range of dates that can be selected inside the datepicker component, you can use the **minDate** and **maxDate** props.
+
+They both accept a Date object that will be used to limit the range of dates that can be selected inside the datepicker component.
+
+You can provide these dates from a native Date object or from a string that follows the ISO 8601 format.
+
+```jsx
+const minDate = new Date("2022-01-01");
+const maxDate = new Date("2022-12-31");
+
+// or also popular libraries like moment.js
+const minDate = moment("2022-01-01").toDate();
+const maxDate = moment("2022-12-31").toDate();
+```
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-datepicker--ranged-dates"
+  height={550}
+  name="ranged dates datepicker"
+  code={ranged}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-datepicker--ranged-dates&viewMode=story"
+>
+  <RangedCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface DatepickerTheme {
+  root: {
+    base: string;
+    input?: {
+      root: {
+        base: string;
+        labelPosition: {
+          left: string;
+          top: string;
+        };
+      };
+      base: string;
+      addon: string;
+      label: string;
+      field: {
+        base: string;
+        icons: {
+          base: string;
+          svg: string;
+          left: string;
+          right: string;
+        };
+        input: {
+          base: string;
+          sizes: MainSizesType;
+          colors: ColorsType;
+          label: {
+            base: string;
+          };
+          border: IBoolean;
+          withIcon: IBoolean;
+          withRightIcon: IBoolean;
+          withAddon: IBoolean;
+          multiline: IBoolean;
+        };
+      };
+    };
+  };
+  popup: {
+    root: {
+      base: string;
+      inline: string;
+      inner: string;
+    };
+    header: {
+      base: string;
+      title: string;
+      selectors: {
+        base: string;
+        button: {
+          base: string;
+          prev: string;
+          next: string;
+          view: string;
+        };
+      };
+    };
+    view: {
+      base: string;
+    };
+    footer: {
+      base: string;
+      button: {
+        base: string;
+        today: string;
+        clear: string;
+      };
+    };
+  };
+  views: {
+    days: {
+      header: {
+        base: string;
+        title: string;
+      };
+      items: {
+        base: string;
+        item: {
+          base: string;
+          selected: IBoolean;
+          disabled: string;
+        };
+      };
+    };
+    months: {
+      items: {
+        base: string;
+        item: {
+          base: string;
+          selected: IBoolean;
+          disabled: string;
+        };
+      };
+    };
+    years: {
+      items: {
+        base: string;
+        item: {
+          base: string;
+          disabled: string;
+          selected: IBoolean;
+        };
+      };
+    };
+    decades: {
+      items: {
+        base: string;
+        item: {
+          base: string;
+          selected: IBoolean;
+          disabled: string;
+        };
+      };
+    };
+  };
+}
+```

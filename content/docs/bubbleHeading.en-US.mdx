@@ -47,6 +47,11 @@ import { BubbleHeading } from "pol-ui";
 
 For a basic usage, you can use the **BubbleHeading** component with no props, but **a string** as a child.
 
+<Callout emoji="💡">
+  Feel free to use the **as** property to change the tag of the heading, it can
+  be **h1**, **h2**, **h3**, **h4**, **h5** or **h6**. By default it's **h2**.
+</Callout>
+
 <Example
   height={150}
   name="Default BubbleHeading"
@@ -59,17 +64,17 @@ For a basic usage, you can use the **BubbleHeading** component with no props, bu
 
 ## Props
 
-| Prop name          | Type         | Default | Description                                            |
-| ------------------ | ------------ | ------- | ------------------------------------------------------ |
-| children           | string       |         | The text to be displayed in the heading                |
-| minWeight          | number       | 100     | The minimum weight of the bubble                       |
-| maxWeight          | number       | 900     | The maximum weight of the bubble                       |
-| step               | number       | 100     | More amount -> less letters affected                   |
-| opposite           | bool         | false   | Change the behavior of the heading                     |
-| as                 | HeadingLevel | h1      | The tag to be used as the heading                      |
-| className          | string       |         | Custom class to be used in the heading                 |
-| theme              | BannerTheme  | {}      | The theme to be used in the heading                    |
-| transitionDuration | number       | 0.25    | The duration of the transition effect (in miliseconds) |
+| Prop name          | Type                         | Default | Description                                            |
+| ------------------ | ---------------------------- | ------- | ------------------------------------------------------ |
+| children           | string                       |         | The text to be displayed in the heading                |
+| minWeight          | number                       | 100     | The minimum weight of the bubble                       |
+| maxWeight          | number                       | 900     | The maximum weight of the bubble                       |
+| step               | number                       | 100     | More amount -> less letters affected                   |
+| opposite           | bool                         | false   | Change the behavior of the heading                     |
+| as                 | HeadingLevel                 | h1      | The tag to be used as the heading                      |
+| className          | string                       |         | Custom class to be used in the heading                 |
+| theme              | [BubbleHeadingTheme](#Theme) | {}      | The theme to be used in the heading                    |
+| transitionDuration | number                       | 0.25    | The duration of the transition effect (in miliseconds) |
 
 ## Customization
 
@@ -79,22 +84,84 @@ You can use the **opposite** prop to change the behavior of the heading, it will
 
 <Example
   height={150}
-  name="Opposite banner"
+  name="Opposite variant"
   code={opposite}
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-bubbleheading--opposite"
   embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bubbleheading--opposite&viewMode=story"
 >
   <OppositeCode />
 </Example>
+
+### Custom steps
+
+Steps mean the **amount of letters** affected by the mouse movement, the default value is 100.
+The bigger the number, the less letters will be affected by the mouse movement.
+
+<Example
+  height={150}
+  name="Custom step variant"
+  code={step}
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-bubbleheading--custom-step"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bubbleheading--custom-step&viewMode=story"
+>
+  <StepCode />
+</Example>
+### Custom Duration
+
+You can use the **transitionDuration** prop to change the duration of the transition effect, the default value is 0.25 seconds.
+It will change directly the speed of the effect in the CSS transition.
+
+<Example
+  height={150}
+  name="Custom duration"
+  code={duration}
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-bubbleheading--custom-duration"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bubbleheading--custom-duration&viewMode=story"
+>
+  <DurationCode />
+</Example>
+
+### Dark mode support
+
+The only change when using the **dark** mode is the color of the heading, it will be lighter by default.
+
+<Callout emoji="💡">
+  You can always use the **theme** or **className** props to customize the color
+  of the heading.
+</Callout>
+
+<Example
+  height={200}
+  name="Dark mode BubbleHeading"
+  code={dark}
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-bubbleheading--dark-mode"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bubbleheading--dark-mode&viewMode=story"
+>
+  <DarkCode />
+</Example>
+
+### Custom class
+
+The only change when using the **dark** mode is the color of the heading, it will be lighter by default.
+
+<Example
+  height={400}
+  name="Dark mode BubbleHeading"
+  code={customClass}
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-bubbleheading--custom-class"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-bubbleheading--custom-class&viewMode=story"
+>
+  <CustomClassCode />
+</Example>
+
 ## Theme
 
 To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/customize/theme).
 
+BubbleHeading uses a basic theme to customize the color of the heading because it's basically just a heading tag with motion effects.
+
 ```js
-interface BannerTheme {
-  base: string
-  bordered: IBoolean
-  color: ColorsType
-  rounded: RoundedSizesTypes
+interface BubbleHeadingTheme {
+  base: string;
 }
 ```

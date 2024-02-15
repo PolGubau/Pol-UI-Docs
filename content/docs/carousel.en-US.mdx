@@ -28,6 +28,8 @@ Choose from multiple examples and options to update the intervals, make the caro
 
 To start using the carousel component you first need to import it from Pol-ui:
 
+## Importation
+
 ```jsx
 import { Carousel } from "pol-ui";
 ```
@@ -46,7 +48,6 @@ The default carousel component comes with a set of control buttons and indicator
   <RootCode />
 </Example>
 
-## Props
 
 ## Loop carousel
 
@@ -75,3 +76,34 @@ If you want to start the carousel at a specific index, you can use the **startIn
 >
   <StartCode />
 </Example>
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+export interface CarouselTheme {
+  root: {
+    base: string;
+    controlsBase: string;
+    leftControl: string;
+    rightControl: string;
+  };
+  indicators: {
+    active: IBoolean;
+    base: string;
+    wrapper: string;
+  };
+  item: {
+    base: string;
+    wrapper: IBoolean;
+  };
+  control: {
+    base: string;
+    icon: string;
+  };
+  scrollContainer: {
+    base: string;
+    snap: string;
+  };
+}
+```

@@ -1,0 +1,17 @@
+const code = `
+import { Datepicker } from "pol-ui";
+
+import React from "react";
+
+const DatepickerComponent = () => {
+  return (
+    <div className="dark">
+      <div className=" bg-secondary-50  rounded-2xl dark:bg-secondary-900 p-8 min-h-[500px] ">
+        <Datepicker />
+      </div>
+    </div>
+  );
+};
+export default DatepickerComponent;
+`;
+export default code;
