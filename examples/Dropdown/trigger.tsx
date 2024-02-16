@@ -1,0 +1,43 @@
+const code = `
+import { DropdownItem, Dropdown } from "pol-ui";
+import React from "react";
+
+const DropdownComponent = () => {
+  return (
+    <Dropdown
+    label="Dropdown with custom trigger"
+    trigger={
+      <div className="flex items-center gap-2 rounded-full border p-3 hover:bg-secondary-200 transition-all">
+        <span>Name</span>
+        <Avatar size="sm" img="https://polgubau.com/_next/image?url=%2Fimages%2Fme.png&w=256&q=75" status="online" />
+      </div>
+    }
+  >
+     <DropdownItem
+        label="Undo"
+        onClick={() => console.log("Undo")}
+        shortcut="Ctrl+Z"
+      />
+      <DropdownItem label="Redo" disabled />
+      <DropdownItem label="Cut" />
+      <Dropdown label="Copy as">
+        <DropdownItem label="Text" />
+        <DropdownItem label="Video" />
+        <Dropdown label="Image" nestingIcon="🎞️">
+          <DropdownItem label=".png" />
+          <DropdownItem label=".jpg" />
+          <DropdownItem label=".svg" />
+          <DropdownItem label=".gif" />
+        </Dropdown>
+        <DropdownItem label="Audio" />
+      </Dropdown>
+      <Dropdown label="Share">
+        <DropdownItem label="Mail" />
+        <DropdownItem label="Instagram" />
+      </Dropdown>
+    </Dropdown>
+  );
+};
+export default DropdownComponent;
+`;
+export default code;

@@ -1,0 +1,56 @@
+---
+title: Divider
+path: divider
+publishedAt: 2024-02-16
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Divider
+doc_type: component
+summary: The DirectionHover component is a way to display images with a hover effect that shows the direction of the entering mouse.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Divider
+tags:
+  - divider
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Divider/root.mdx";
+import root from "examples/Divider/root";
+
+The **divider** component is a way to display a line that separates content. It is a simple component that can be used to separate content in a page.
+
+## Importation
+
+Import the component from **pol-ui** to use the conveyor element:
+
+```jsx
+import { Divider } from "pol-ui";
+```
+
+## Default Divider
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-divider--default"
+  height={300}
+  name="Default"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-divider--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type                   | Default | Description                      |
+| --------- | ---------------------- | ------- | -------------------------------- |
+| className | string                 |         | The class name of the component. |
+| theme     | [DividerTheme](#theme) | {}      | The theme of the component.      |
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface DividerTheme {
+  base: string;
+}
+```

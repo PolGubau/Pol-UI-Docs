@@ -1,0 +1,184 @@
+---
+title: Dropdown
+path: dropdown
+publishedAt: 2024-02-16
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Dropdown
+doc_type: component
+summary: The Dropdown component is a UI component built with React that allows you to show a list of items when clicking on a trigger element (ie. a button) that you can use to build dropdown menus, lists, and more.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Dropdown
+tags:
+  - dropdown
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Dropdown/root.mdx";
+import root from "examples/Dropdown/root";
+
+import ColorsCode from "examples/Dropdown/colors.mdx";
+import colors from "examples/Dropdown/colors";
+
+import DisabledCode from "examples/Dropdown/disabled.mdx";
+import disabled from "examples/Dropdown/disabled";
+
+import RoundedCode from "examples/Dropdown/rounded.mdx";
+import rounded from "examples/Dropdown/rounded";
+
+import SimpleCode from "examples/Dropdown/simple.mdx";
+import simple from "examples/Dropdown/simple";
+
+import SizesCode from "examples/Dropdown/sizes.mdx";
+import sizes from "examples/Dropdown/sizes";
+
+import TriggerCode from "examples/Dropdown/trigger.mdx";
+import trigger from "examples/Dropdown/trigger";
+
+The dropdown component is a UI component built with React that allows you to show a list of items when clicking on a trigger element (ie. a button) that you can use to build dropdown menus, lists, and more.
+
+The default styles are built with the utility classes from Tailwind CSS and you can use the custom props from React to customize the behaviour and positioning of the dropdowns.
+
+To start using the component make sure that you have imported it from Pol-ui:
+
+```jsx
+import { Dropdown } from "pol-ui";
+```
+
+## Default Dropdown
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropdown--default"
+  height={300}
+  name="Dropdown"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropdown--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+### Dropdown
+
+| Prop name   | Type                                      | Default   | Description                     |
+| ----------- | ----------------------------------------- | --------- | ------------------------------- |
+| label       | string                                    | -         | The label of the dropdown       |
+| nested      | boolean                                   | false     | If the dropdown is nested       |
+| children    | React.ReactNode                           | -         | The content of the dropdown     |
+| icon        | {"React.FC<React.ComponentProps<'svg'>>"} | -         | The icon of the dropdown        |
+| nestingIcon | React.ReactNode                           | -         | The icon of the nested dropdown |
+| theme       | [DropdownTheme](#dropdowntheme)           | -         | The theme of the dropdown       |
+| disabled    | boolean                                   | false     | If the dropdown is disabled     |
+| color       | Colors                                    | 'primary' | The color of the dropdown       |
+| size        | MainSizes                                 | 'md'      | The size of the dropdown        |
+| rounded     | RoundedSizes                              | 'md'      | The rounded of the dropdown     |
+| trigger     | React.JSX.Element                         | -         | The trigger of the dropdown     |
+
+### DropdownItem
+
+| Prop name   | Type                            | Default | Description                  |
+| ----------- | ------------------------------- | ------- | ---------------------------- |
+| label       | string                          | -       | The label of the item        |
+| disabled    | boolean                         | false   | If the item is disabled      |
+| customTheme | DropdownTheme                   | -       | The custom theme of the item |
+| shortcut    | [DropdownTheme](#dropdowntheme) | -       | The shortcut of the item     |
+
+## Examples
+
+### Simple Dropdown
+
+To create a simple dropdown you can use the **Dropdown** component and pass the **items** prop with an array of objects with the **label** and **value** properties.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropdown--simple-example"
+  height={300}
+  name="Simple dropdown"
+  code={simple}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropdown--simple-example&viewMode=story"
+>
+  <SimpleCode />
+</Example>
+
+### All colors
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropdown--colors"
+  height={300}
+  name="All colors"
+  code={colors}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropdown--colors&viewMode=story"
+>
+  <ColorsCode />
+</Example>
+
+### All roundness
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropdown--roundness"
+  height={300}
+  name="All roundness"
+  code={rounded}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropdown--roundness&viewMode=story"
+>
+  <RoundedCode />
+</Example>
+
+### All sizes
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropdown--sizes"
+  height={300}
+  name="All sizes"
+  code={sizes}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropdown--sizes&viewMode=story"
+>
+  <SizesCode />
+</Example>
+
+### Disabled
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropdown--disabled"
+  height={300}
+  name="Disabled"
+  code={disabled}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropdown--disabled&viewMode=story"
+>
+  <DisabledCode />
+</Example>
+
+### Custom trigger
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropdown--custom-trigger"
+  height={300}
+  name="Custom trigger"
+  code={trigger}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropdown--custom-trigger&viewMode=story"
+>
+  <TriggerCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface DropdownTheme {
+  root: {
+    icon: string;
+    disabled: string;
+    base: string;
+    color: ColorsType;
+  };
+  rounded: RoundedSizesTypes;
+  size: MainSizesType;
+  item: {
+    base: string;
+    color: ColorsType;
+  };
+  floating: {
+    base: string;
+  };
+}
+```

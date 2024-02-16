@@ -106,7 +106,7 @@ export default function DocPage({ params }) {
   const title = doc?.title ?? "Not found";
 
   return (
-    <section>
+    <section className="overflow-hidden max-w-full">
       <script
         type="application/ld+json"
         suppressHydrationWarning

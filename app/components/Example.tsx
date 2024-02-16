@@ -51,7 +51,7 @@ const Example = ({
     code ?? children?.toString() ?? "No children to copy";
 
   return (
-    <div className=" rounded-xl bg-primary bg-gradient-to-br from-primary-200 to-secondary-300   pb-4 shadow-inner shadow-primary-500/10 dark:border-none dark:bg-gray-700 dark:from-purple-700/10 dark:to-cyan-700/10 dark:shadow  p-2 gap-2">
+    <div className="max-w-[700px] rounded-xl bg-primary bg-gradient-to-br from-primary-200 to-secondary-300   pb-4 shadow-inner shadow-primary-500/10 dark:border-none dark:bg-gray-700 dark:from-purple-700/10 dark:to-cyan-700/10 dark:shadow  p-2 gap-2">
       <header className="flex justify-between px-4 pb-2 rounded-t-2xl items-center">
         <p className="py-0 fonst-medium text-lg p-0 first-letter:uppercase">
           {name}
