@@ -1,4 +1,4 @@
-```jsx
+const code = `
 import { DebouncedInput } from "pol-ui";
 
 import React from "react";
@@ -9,6 +9,8 @@ const DebouncedInputComponent = () => {
   return (
     <>
       <DebouncedInput
+        color="error"
+        helperText="This is an error"
         label="The returned value is debounced by 500ms (default)"
         onChange={(v) => setValue(e)} // <- The parameter is directly the value
         placeholder="Type something..."
@@ -19,4 +21,5 @@ const DebouncedInputComponent = () => {
   );
 };
 export default DebouncedInputComponent;
-```
+`;
+export default code;

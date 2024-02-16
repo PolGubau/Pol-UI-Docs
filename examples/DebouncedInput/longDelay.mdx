@@ -13,7 +13,7 @@ const DebouncedInputComponent = () => {
         delay={1000}
         onChange={(v) => setValue(e)} // <- The parameter is directly the value
         placeholder="Type something..."
-        value=""
+        value={value}
       />
       <p className="mt-4">Value: {value}</p>
     </>
