@@ -1,0 +1,105 @@
+---
+title: DirectionHover
+path: directionHover
+publishedAt: 2024-02-16
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/DirectionHover
+doc_type: component
+summary: The DirectionHover component is a way to display images with a hover effect that shows the direction of the entering mouse.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/DirectionHover
+tags:
+  - directionHover
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/DirectionHover/root.mdx";
+import root from "examples/DirectionHover/root";
+
+import LineCode from "examples/DirectionHover/line.mdx";
+import line from "examples/DirectionHover/line";
+
+import GridCode from "examples/DirectionHover/grid.mdx";
+import grid from "examples/DirectionHover/grid";
+
+The **DirectionHover** component is a way to display images with a hover effect that shows the direction of the entering mouse.
+
+## Importation
+
+Import the component from **pol-ui** to use the conveyor element:
+
+```jsx
+import { DirectionHover } from "pol-ui";
+```
+
+## Default DirectionHover
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-directionhover--line"
+  height={300}
+  name="Default"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-directionhover--line&viewMode=story"
+>
+  <RootCode />
+</Example>
+## Props
+
+| Prop name         | Type                          | Default | Description                                     |
+| ----------------- | ----------------------------- | ------- | ----------------------------------------------- |
+| imageUrl          | string                        |         | The url of the image to display                 |
+| children          | React.ReactNode \| string     |         | The content to display on hover                 |
+| childrenClassName | string                        |         | The class name to apply to the children element |
+| imageClassName    | string                        |         | The class name to apply to the image element    |
+| rounded           | RoundedSizes                  |         | The rounded size to apply to the image          |
+| alt               | string                        |         | The alt text to apply to the image              |
+| className         | string                        |         | The class name to apply to the root element     |
+| theme             | [DirectionHoverTheme](#theme) |         | The theme to apply to the root element          |
+| speed             | number                        |         | The speed of the hover effect                   |
+
+## Examples
+
+### Line example
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-directionhover--default"
+  height={300}
+  name="Line example"
+  code={line}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-directionhover--default&viewMode=story"
+>
+  <LineCode />
+</Example>
+
+### Grid example
+
+Another interesting use case is to display a grid of images with the hover effect, the images will create a nice effect when the mouse enters the grid.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-directionhover--grid"
+  height={800}
+  name="Grid example"
+  code={grid}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-directionhover--grid&viewMode=story"
+>
+  <GridCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface DirectionHoverTheme {
+  base: string;
+  overlay: string;
+  background: {
+    wrapper: string;
+    image: string;
+  };
+
+  children: string;
+
+  rounded: RoundedSizesElastic;
+}
+```

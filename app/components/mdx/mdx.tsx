@@ -14,6 +14,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { TbCheck, TbCopy } from "react-icons/tb";
 import Example from "../Example";
+import { twMerge } from "tailwind-merge";
 const CustomLink = (props) => {
   const href = props.href;
 
@@ -203,7 +204,12 @@ export function Mdx({ code }: Readonly<{ code: string }>) {
   const Component = useMDXComponent(code);
 
   return (
-    <article className="prose prose-quoteless prose-neutral dark:prose-invert ">
+    <article
+      className={twMerge(
+        "prose prose-quoteless prose-neutral dark:prose-invert flex flex-1 flex-col",
+        "w-full max-w-full"
+      )}
+    >
       <Component components={components} />
     </article>
   );

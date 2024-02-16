@@ -16,8 +16,14 @@ tags:
 import RootCode from "examples/DebouncedInput/root.mdx";
 import root from "examples/DebouncedInput/root";
 
-import Styles from "examples/DarkThemeToggle/styles.mdx";
-import styles from "examples/DarkThemeToggle/styles";
+import ShortDelay from "examples/DebouncedInput/shortDelay.mdx";
+import shortDelay from "examples/DebouncedInput/shortDelay";
+
+import LongDelay from "examples/DebouncedInput/longDelay.mdx";
+import longDelay from "examples/DebouncedInput/longDelay";
+
+import ErrorCode from "examples/DebouncedInput/error.mdx";
+import error from "examples/DebouncedInput/error";
 
 The **DebouncedInput** component is a simple input that debounces the input value to avoid unnecessary re-renders.
 
@@ -35,7 +41,7 @@ import { DebouncedInput } from "pol-ui";
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-debouncedinput--default"
-  height={235}
+  height={400}
   name="Default DebouncedInput"
   code={root}
   embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-debouncedinput--default&viewMode=story"
@@ -45,35 +51,64 @@ import { DebouncedInput } from "pol-ui";
 
 ## Props
 
-| Prop name | Type                           | Default | Description                                         |
-| --------- | ------------------------------ | ------- | --------------------------------------------------- |
-| iconDark  | string                         | TbSun   | The icon to display when the dark theme is active.  |
-| iconLight | string                         | TbMoon  | The icon to display when the light theme is active. |
-| theme     | [DarkThemeToggleTheme](#theme) | {}      | The theme to apply to the darkThemeToggle.          |
-| ref       | object                         | null    | The ref to apply to the darkThemeToggle.            |
-| color     | string                         | primary | The color to apply to the darkThemeToggle.          |
+| Prop name | Type                    | Default | Description                                              |
+| --------- | ----------------------- | ------- | -------------------------------------------------------- |
+| delay     | number                  | 500     | The delay in milliseconds before the value is sent.      |
+| onChange  | (value: string) => void |         | The function that will be called when the value changes. |
+| value     | string                  |         | The value of the input.                                  |
 
+<Callout emoji="💡">
+  You can also sent any prop available in the [Input
+  component](/docs/input#theme) to the DebouncedInput.
+</Callout>
 ## Examples
 
-### Custom styles
+### Custom delay
+
+To change the delay of the DebouncedInput, you can use the delay prop to set the delay in milliseconds.
+
+#### Short delay
+
+For example, you can set the delay to 10ms to send the value as soon as the user stops typing.
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-darkthemetoggle--custom-classes"
-  height={235}
-  name="Custom styles"
-  code={styles}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-darkthemetoggle--custom-classes&viewMode=story"
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-debouncedinput--less-delay"
+  height={400}
+  name="Short delay"
+  code={shortDelay}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-debouncedinput--less-delay&viewMode=story"
 >
-  <Styles />
+  <ShortDelay />
+</Example>
+
+#### Long delay
+
+If you need to wait a little bit more before sending the value, you can also set a longer delay.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-debouncedinput--long-delay"
+  height={400}
+  name="Long delay"
+  code={longDelay}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-debouncedinput--long-delay&viewMode=story"
+>
+  <LongDelay />
+</Example>
+
+### With error
+
+As well with the Input component, you can also use the DebouncedInput with the error prop and a helperText to show an error message.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-debouncedinput--with-error"
+  height={400}
+  name="Long delay"
+  code={error}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-debouncedinput--with-error&viewMode=story"
+>
+  <ErrorCode />
 </Example>
 
 ## Theme
 
-To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
-
-```ts
-interface DarkThemeToggleRootTheme {
-  base: string;
-  icon: string;
-}
-```
+The **DebouncedInput** component uses the same theme as the [Input component](/docs/input#theme).
