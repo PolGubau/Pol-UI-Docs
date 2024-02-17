@@ -1,0 +1,16 @@
+const code = `
+import { FileInput, Colors, ColorsEnum } from "pol-ui";
+import React from "react";
+
+const FileInputComponent = () => {
+  return(
+    <div className="flex flex-wrap items-center gap-3 ">
+    {Object.keys(ColorsEnum).map(color => (
+      <FileInput color={color as Colors} key={color} />
+    ))}
+  </div>
+  )
+};
+export default FileInputComponent;
+`;
+export default code;
