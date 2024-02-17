@@ -1,0 +1,14 @@
+const code = `
+import { DynamicHeading } from "pol-ui";
+import React from "react";
+
+const DynamicHeadingComponent = () => {
+  return (
+    <DynamicHeading className="text-success text-2xl font-bold">
+      Dynamic Heading
+    </DynamicHeading>
+  );
+};
+export default DynamicHeadingComponent;
+`;
+export default code;

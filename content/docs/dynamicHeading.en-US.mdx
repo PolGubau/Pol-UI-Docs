@@ -1,0 +1,82 @@
+---
+title: DynamicHeading
+path: dynamicHeading
+publishedAt: 2024-02-16
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/DynamicHeading
+doc_type: component
+summary: DynamicHeading is a component that allows you to render a heading with a dynamic level.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/DynamicHeading
+tags:
+  - dynamicHeading
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/DynamicHeading/root.mdx";
+import root from "examples/DynamicHeading/root";
+
+DynamicHeading is a component that allows you to render a heading with a dynamic level.
+
+<Callout emoji="💡">
+  By default the **DynamicHeading** component renders a **h2** tag, but you can
+  change it using the **as** prop.
+</Callout>
+
+To start using the component make sure that you have imported it from Pol-ui:
+
+```jsx
+import { DynamicHeading } from "pol-ui";
+```
+
+## Default DynamicHeading
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dynamicheading--default"
+  height={80}
+  name="DynamicHeading"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dynamicheading--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type            | Default | Description                 |
+| --------- | --------------- | ------- | --------------------------- |
+| as        | string          | "h2"    | The heading level to render |
+| children  | React.ReactNode | -       | The content of the heading  |
+
+## Examples
+
+### DynamicHeading as H4
+
+To render the **DynamicHeading** any other heading tag as a **h4** you can use the **as** prop:
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dynamicheading--h-4"
+  height={80}
+  name="DynamicHeading as a H4"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dynamicheading--h-4&viewMode=story"
+>
+  <RootCode />
+</Example>
+### Custom styles
+
+You can use the **className** prop to customize the styles of the **DynamicHeading** component:
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dynamicheading--custom-styles"
+  height={80}
+  name="DynamicHeading as a H4"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dynamicheading--custom-styles&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Theme
+
+The **DynamicHeading** doesn't have any styles by default, but you can use the **className** prop to customize the styles of the component.
