@@ -1,0 +1,60 @@
+const code = `
+import { FollowerPointer, HelperText, Card } from "pol-ui";
+import React from "react";
+
+const blogContent = {
+  author: "Pol Gubau",
+  date: "19th March, 2024",
+  title: "Mastering UI Design in React: A Comprehensive Guide",
+  description:
+    "Explore the intricate world of User Interface (UI) design in React with our insightful blog. From essential principles to advanced techniques, discover how to create stunning, responsive, and user-friendly interfaces that elevate your React applications to the next level. ",
+  authorAvatar:
+    "https://polgubau.com/_next/image?url=%2Fimages%2Fme.png&w=256&q=75",
+};
+const TitleComponent = ({
+  content,
+  avatar,
+}: {
+  content: string,
+  avatar: string,
+}) => (
+  <div className="flex space-x-2 items-center text-primary-50 bg-primary p-1 rounded-full pr-3">
+    <img
+      src={avatar}
+      height="30"
+      width="30"
+      alt="thumbnail"
+      className="rounded-full"
+    />
+    <p>{content}</p>
+  </div>
+);
+const CompleteCard = () => {
+  return (
+    <Card className="max-w-xl">
+      <HelperText>{blogContent.date}</HelperText>
+      <h2 className="font-bold my-4 -mt-1 text-lg text-zinc-700">
+        {blogContent.title}
+      </h2>
+      <p className="font-normal text-sm text-zinc-500">
+        {blogContent.description}
+      </p>
+    </Card>
+  );
+};
+const FileInputComponent = () => {
+  return (
+    <FollowerPointer
+      content={
+        <TitleComponent
+          content={blogContent.author}
+          avatar={blogContent.authorAvatar}
+          children={<CompleteCard />}
+        />
+      }
+    />
+  );
+};
+export default FileInputComponent;
+`;
+export default code;

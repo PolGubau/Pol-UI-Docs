@@ -1,0 +1,95 @@
+---
+title: FollowerPointer
+path: followerPointer
+publishedAt: 2024-02-17
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/FollowerPointer
+doc_type: component
+summary: FollowerPointer is a component that allows you to create a pointer that follows the user's mouse. The pointer is totally customizable and will affect the children components.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/FollowerPointer
+tags:
+  - followerPointer
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/FollowerPointer/root.mdx";
+import root from "examples/FollowerPointer/root";
+
+import HelperTextCode from "examples/FileInput/helperText.mdx";
+import helperText from "examples/FileInput/helperText";
+
+import AllColorsCode from "examples/FileInput/allColors.mdx";
+import allColors from "examples/FileInput/allColors";
+
+FollowerPointer is a component that allows you to create a pointer that follows the user's mouse.
+The pointer is totally customizable and will affect the children components.
+
+```jsx
+import { FollowerPointer } from "pol-ui";
+```
+
+## Default FollowerPointer
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-followerpointer--default"
+  height={300}
+  name="FollowerPointer"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-followerpointer--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type                           | Default   | Description                         |
+| --------- | ------------------------------ | --------- | ----------------------------------- |
+| className | string                         | undefined | Custom class name for the component |
+| content   | string or React.ReactNode      | undefined | Content of the popup                |
+| icon      | React.ReactNode                | undefined | Icon of the component               |
+| theme     | [FollowerPointerTheme](#theme) | undefined | Theme of the component              |
+| children  | React.ReactNode                | undefined | Children of the component           |
+
+## Examples
+
+### FollowerPointer with custom icon
+
+To modify the icon of the **FollowerPointer** component, you can use the **icon** prop and pass any React component.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-followerpointer--custom-icon"
+  height={300}
+  name="With custom icon"
+  code={helperText}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-followerpointer--custom-icon&viewMode=story"
+>
+  <HelperTextCode />
+</Example>
+
+### Custom content
+
+You can change as well the content prop to pass any string or React component.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-followerpointer--custom-element"
+  height={300}
+  name="Custom content"
+  code={allColors}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-followerpointer--custom-element&viewMode=story"
+>
+  <AllColorsCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface FollowerPointerTheme {
+  base: string;
+  icon: string;
+  pointerWrapper: string;
+  pointer: string;
+}
+```
