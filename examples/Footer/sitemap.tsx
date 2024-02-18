@@ -1,0 +1,65 @@
+const code = `
+import { Copyright, Footer, FooterLinkGroup, Link } from "pol-ui";
+import React from "react";
+
+const FooterComponent = () => {
+  return (
+    <Footer>
+    <div className="w-full bg-gray-800 dark">
+    <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
+      <div>
+        <FooterLinkGroup col title="Company">
+          <Link href="#">About</Link>
+          <Link href="#">Careers</Link>
+          <Link href="#">Brand Center</Link>
+          <Link href="#">Blog</Link>
+        </FooterLinkGroup>
+      </div>
+      <div>
+        <FooterLinkGroup col title="help center">
+          <Link href="#">Discord Server</Link>
+          <Link href="#">Twitter</Link>
+          <Link href="#">Facebook</Link>
+          <Link href="#">Contact Us</Link>
+        </FooterLinkGroup>
+      </div>
+      <div>
+        <FooterLinkGroup col title="legal">
+          <Link href="#">Privacy Policy</Link>
+          <Link href="#">Licensing</Link>
+          <Link href="#">Terms &amp; Conditions</Link>
+        </FooterLinkGroup>
+      </div>
+      <div>
+        <FooterLinkGroup col title="download">
+          <Link href="#">iOS</Link>
+          <Link href="#">Android</Link>
+          <Link href="#">Windows</Link>
+          <Link href="#">MacOS</Link>
+        </FooterLinkGroup>
+      </div>
+    </div>
+    <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between sm:px-10">
+      <Copyright href="#" by="Pol-ui™" year={2022} />
+      <div className="mt-4 flex space-x-2 sm:mt-0 sm:justify-center">
+        <IconButton href="#">
+          <BsDribbble size={20} />
+        </IconButton>
+        <IconButton href="#">
+          <BsInstagram size={20} />
+        </IconButton>
+        <IconButton href="#">
+          <BsGithub size={20} />
+        </IconButton>
+        <IconButton href="#">
+          <BsDribbble size={20} />
+        </IconButton>
+      </div>
+    </div>
+  </div>
+    </Footer>
+  );
+};
+export default FooterComponent;
+`;
+export default code;
