@@ -13,8 +13,8 @@ tags:
   - Pol-ui
 ---
 
-import RootCode from "examples/Footer/root.mdx";
-import root from "examples/Footer/root";
+import RootCode from "examples/IconButton/root.mdx";
+import root from "examples/IconButton/root";
 
 import LogoCode from "examples/Footer/logo.mdx";
 import logo from "examples/Footer/logo";
@@ -45,97 +45,57 @@ import { IconButton } from "pol-ui";
 
 ## Props
 
-### Footer
+The **IconButton** component has the following props:
 
-| Prop name | Type    | Default | Description                                        |
-| --------- | ------- | ------- | -------------------------------------------------- |
-| container | boolean | false   | If true, the footer will be wrapped in a container |
-| theme     | object  | {}      | Custom theme for the footer                        |
-| className | string  | ""      | Custom class for the footer                        |
-| children  | node    | null    | The content of the footer                          |
+| Prop name | Type                      | Default | Description                                 |
+| --------- | ------------------------- | ------- | ------------------------------------------- |
+| theme     | [IconButtonTheme](#theme) | {}      | The theme for the **IconButton** component. |
 
 <Callout emoji="💡">
-  You can also provide any prop comming from the HTML **footer** tag.
+  You can also provide any prop comming from the HTML **button** tag and the
+  [**Button** component props](/docs/button#theme) but the **theme** and the
+  **loadingLabel** prop.
 </Callout>
 
-### FooterBrand
+The concrete props for the **IconButton** component are:
 
-| Prop name | Type   | Default | Description                |
-| --------- | ------ | ------- | -------------------------- |
-| alt       | string | ""      | The alt text for the image |
-| className | string | ""      | Custom class for the brand |
-| href      | string | ""      | The link for the brand     |
-| name      | string | ""      | The name of the brand      |
-| src       | string | ""      | The source of the image    |
-| theme     | object | {}      | Custom theme for the brand |
-
-<Callout emoji="💡">
-  You can also provide any prop comming from the HTML anchor tag and the HTML
-  image tag. If your brand has a **href** prop, the brand will be rendered as an
-  anchor.
-</Callout>
-
-### FooterLinkGroup
-
-| Prop name      | Type    | Default | Description                                     |
-| -------------- | ------- | ------- | ----------------------------------------------- |
-| col            | boolean | false   | If true, the group will be rendered as a column |
-| theme          | object  | {}      | Custom theme for the group                      |
-| titleAs        | string  | "h2"    | The tag for the title                           |
-| title          | string  | ""      | The title of the group                          |
-| titleClassname | string  | ""      | Custom class for the title                      |
-| className      | string  | ""      | Custom class for the group                      |
-| children       | node    | null    | The content of the group                        |
-
-<Callout emoji="💡">
-  You can also provide any prop comming from the HTML **ul** tag.
-</Callout>
+```ts
+export type IconButtonProps<T extends ElementType = "button"> = {
+  theme?: DeepPartial<IconButtonTheme>;
+} & ComponentPropsWithoutRef<T> &
+  Omit<ButtonProps, "theme" | "loadingLabel">;
+```
 
 ## Examples
 
-### Footer with a brand
+### With Motion
+
+The prop **hasMotion** will add a motion effect to the **IconButton** component while hovering, focusing or clicking.
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-footer--with-logo-footer"
-  height={100}
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--default-button"
+  height={170}
   name="Footer"
-  code={logo}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-footer--with-logo-footer&viewMode=story"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--default-button&viewMode=story"
 >
-  <LogoCode />
-</Example>
-
-### Footer with social media links
-
-<Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-footer--with-social-media-footer"
-  height={100}
-  name="Footer"
-  code={social}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-footer--with-social-media-footer&viewMode=story"
->
-  <SocialCode />
-</Example>
-
-### Footer with a sitemap
-
-<Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-footer--sitemap-links-footer"
-  height={100}
-  name="Footer"
-  code={sitemap}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-footer--sitemap-links-footer&viewMode=story"
->
-  <SitemapCode />
+  <RootCode />
 </Example>
 
 ## Theme
 
 ```ts
-interface HelperTextTheme {
-  root: {
+interface IconButtonTheme {
+  base: string;
+  color: ColorsType;
+  disabled: string;
+  loading: string;
+  inner: {
     base: string;
-    colors: ColorsType;
+    outline: string;
+    color: ColorsType;
   };
+  rounded: RoundedSizesTypes;
+  size: MainSizesType;
 }
 ```
