@@ -5,7 +5,7 @@ import React from "react";
 
 const IconButtonComponent = () => {
   return (
-    <IconButton label="Search">
+    <IconButton label="Search" loading>
       <TbSearch />
     </IconButton>
   );
