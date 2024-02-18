@@ -1,13 +1,13 @@
 ---
-title: Footer
-path: footer
-publishedAt: 2024-02-17
-githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Footer
+title: IconButton
+path: iconButton
+publishedAt: 2024-02-18
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/IconButton
 doc_type: component
-summary: Footer is a component that allows you to create a pointer that follows the user's mouse. The pointer is totally customizable and will affect the children components.
-pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Footer
+summary: IconButton is a beauty way to display a action trigger without a text. A icon will be rendered with a button style.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/IconButton
 tags:
-  - footer
+  - iconButton
   - React
   - Tailwind CSS
   - Pol-ui
@@ -25,24 +25,20 @@ import social from "examples/Footer/social";
 import SitemapCode from "examples/Footer/sitemap.mdx";
 import sitemap from "examples/Footer/sitemap";
 
-The footer component is an important section of a website where you should provide content such as sitemap links, copyright text, logo of your brand, social media account links, and more.
-
-Get started with the examples from Pol-ui based on multiple styles, sizes, and colors by using React components and the utility classes from Tailwind CSS.
-
-To start using the footer component you need to import it from **pol-ui**:
+The **IconButton** component is a beauty way to display a action trigger without a text. A icon will be rendered with a button style.
 
 ```jsx
-import { Footer } from "pol-ui";
+import { IconButton } from "pol-ui";
 ```
 
-## Default Footer
+## Default IconButton
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-footer--default-footer"
-  height={300}
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--default-button"
+  height={170}
   name="Footer"
   code={root}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-footer--default-footer&viewMode=story"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--default-button&viewMode=story"
 >
   <RootCode />
 </Example>
@@ -101,7 +97,7 @@ import { Footer } from "pol-ui";
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-footer--with-logo-footer"
-  height={400}
+  height={100}
   name="Footer"
   code={logo}
   embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-footer--with-logo-footer&viewMode=story"
@@ -113,7 +109,7 @@ import { Footer } from "pol-ui";
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-footer--with-social-media-footer"
-  height={400}
+  height={100}
   name="Footer"
   code={social}
   embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-footer--with-social-media-footer&viewMode=story"
@@ -125,7 +121,7 @@ import { Footer } from "pol-ui";
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-footer--sitemap-links-footer"
-  height={570}
+  height={100}
   name="Footer"
   code={sitemap}
   embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-footer--sitemap-links-footer&viewMode=story"
@@ -136,24 +132,10 @@ import { Footer } from "pol-ui";
 ## Theme
 
 ```ts
-interface FooterTheme {
-  brand: FooterBrandTheme;
-  groupLink: FooterLinkGroupTheme;
+interface HelperTextTheme {
   root: {
     base: string;
-    container: string;
+    colors: ColorsType;
   };
-}
-interface FooterLinkGroupTheme {
-  title: string;
-  base: string;
-  col: string;
-  titleAs?: ElementType;
-}
-
-interface FooterBrandTheme {
-  base: string;
-  img: string;
-  span: string;
 }
 ```
