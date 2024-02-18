@@ -42,7 +42,7 @@ const CompleteCard = () => {
     </Card>
   );
 };
-const FileInputComponent = () => {
+const FollowerPointerComponent = () => {
   return (
     <FollowerPointer
       content={
@@ -60,6 +60,6 @@ const FileInputComponent = () => {
     />
   );
 };
-export default FileInputComponent;
+export default FollowerPointerComponent;
 `;
 export default code;

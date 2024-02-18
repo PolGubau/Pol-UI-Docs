@@ -1,0 +1,22 @@
+```jsx
+import { Copyright, Footer, FooterLinkGroup, Link } from "pol-ui";
+import React from "react";
+
+const FooterComponent = () => {
+  return (
+    <Footer>
+      <div className="flex w-full justify-between p-6">
+        <Copyright href="#" by="Pol-ui" year={thisYear} />
+        <FooterLinkGroup>
+          <Link href="#">About</Link>
+          <Link href="#">Privacy Policy</Link>
+          <Link href="#">Licensing</Link>
+          <Link href="#">Contact</Link>
+          <Button size="sm">Get Started</Button>
+        </FooterLinkGroup>
+      </div>
+    </Footer>
+  );
+};
+export default FooterComponent;
+```
