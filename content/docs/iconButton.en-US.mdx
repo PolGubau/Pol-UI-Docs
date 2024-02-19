@@ -16,14 +16,29 @@ tags:
 import RootCode from "examples/IconButton/root.mdx";
 import root from "examples/IconButton/root";
 
-import LogoCode from "examples/Footer/logo.mdx";
-import logo from "examples/Footer/logo";
+import AllColorsCode from "examples/IconButton/allColors.mdx";
+import allColors from "examples/IconButton/allColors";
 
-import SocialCode from "examples/Footer/social.mdx";
-import social from "examples/Footer/social";
+import AllRoundedCode from "examples/IconButton/allRounded.mdx";
+import allRounded from "examples/IconButton/allRounded";
 
-import SitemapCode from "examples/Footer/sitemap.mdx";
-import sitemap from "examples/Footer/sitemap";
+import AllSizesCode from "examples/IconButton/allSizes.mdx";
+import allSizes from "examples/IconButton/allSizes";
+
+import LoadingCode from "examples/IconButton/loading.mdx";
+import loading from "examples/IconButton/loading";
+
+import DisabledCode from "examples/IconButton/disabled.mdx";
+import disabled from "examples/IconButton/disabled";
+
+import MotionCode from "examples/IconButton/motion.mdx";
+import motion from "examples/IconButton/motion";
+
+import OutlineCode from "examples/IconButton/outline.mdx";
+import outline from "examples/IconButton/outline";
+
+import WithoutTooltipCode from "examples/IconButton/withoutTooltip.mdx";
+import withoutTooltip from "examples/IconButton/withoutTooltip";
 
 The **IconButton** component is a beauty way to display a action trigger without a text. A icon will be rendered with a button style.
 
@@ -73,13 +88,111 @@ export type IconButtonProps<T extends ElementType = "button"> = {
 The prop **hasMotion** will add a motion effect to the **IconButton** component while hovering, focusing or clicking.
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--default-button"
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--with-motion"
   height={170}
   name="Footer"
-  code={root}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--default-button&viewMode=story"
+  code={motion}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--with-motion&viewMode=story"
 >
-  <RootCode />
+  <MotionCode />
+</Example>
+
+### Outline
+
+The prop **outline** will add a outline to the **IconButton** component.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--outline-button"
+  height={170}
+  name="Footer"
+  code={outline}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--outline-button&viewMode=story"
+>
+  <OutlineCode />
+</Example>
+### Without Tooltip
+
+To avoid having a tooltip, don't specify the **label** prop.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--without-tooltip"
+  height={170}
+  name="Footer"
+  code={withoutTooltip}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--without-tooltip&viewMode=story"
+>
+  <WithoutTooltipCode />
+</Example>
+
+### Loading
+
+Use the **loading** prop to set the **IconButton** component in a loading state.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--loading"
+  height={170}
+  name="Footer"
+  code={loading}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--loading&viewMode=story"
+>
+  <LoadingCode />
+</Example>
+
+### Disabled
+
+Use the **disabled** prop to set the **IconButton** component in a disabled state.
+This will avoid the **IconButton** component to be clicked, to have a hover effect and to have a tooltip when the **label** prop is set.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--disabled"
+  height={170}
+  name="Footer"
+  code={disabled}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--disabled&viewMode=story"
+>
+  <DisabledCode />
+</Example>
+
+### All Rounded Sizes
+
+The **rounded** prop will set the scale of rounded corners for the **IconButton** component.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--rounded"
+  height={170}
+  name="Footer"
+  code={allRounded}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--rounded&viewMode=story"
+>
+  <AllRoundedCode />
+</Example>
+
+### All Sizes
+
+The **size** prop will set the scale of the **IconButton** component.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--sizes"
+  height={170}
+  name="Footer"
+  code={allSizes}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--sizes&viewMode=story"
+>
+  <AllSizesCode />
+</Example>
+
+### All Colors
+
+The **color** prop will set the color of the **IconButton** component.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-iconbutton--all-colors"
+  height={440}
+  name="Footer"
+  code={allColors}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-iconbutton--all-colors&viewMode=story"
+>
+  <AllColorsCode />
 </Example>
 
 ## Theme
