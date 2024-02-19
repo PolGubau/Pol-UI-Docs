@@ -1,0 +1,148 @@
+---
+title: Kanban
+path: kanban
+publishedAt: 2024-02-18
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Kanban
+doc_type: component
+summary: Kanban is a type of project management tool that helps teams visualize work, limit work-in-progress, and maximize efficiency. The Kanban component from pol-ui comes with a set of props that allows you to customize the component to fit your needs.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Kanban
+tags:
+  - kanban
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/ImageTrail/root.mdx";
+import root from "examples/ImageTrail/root";
+
+import MoreRotationCode from "examples/ImageTrail/moreRotation.mdx";
+import moreRotation from "examples/ImageTrail/moreRotation";
+
+import MoreRenderBufferCode from "examples/ImageTrail/moreRenderBuffer.mdx";
+import moreRenderBuffer from "examples/ImageTrail/moreRenderBuffer";
+
+A **Kanban** is a type of project management tool that helps teams visualize work, limit work-in-progress, and maximize efficiency. The Kanban component from **pol-ui** comes with a set of props that allows you to customize the component to fit your needs.
+
+```jsx
+import { Kanban } from "pol-ui";
+```
+
+## Default Kanban
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kanban--default"
+  height={450}
+  name="Kanban"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kanban--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+The **Kanban** component has the following props:
+
+| Prop name          | Type                                                                        | Default | Description                                     |
+| ------------------ | --------------------------------------------------------------------------- | ------- | ----------------------------------------------- |
+| dragable           | boolean                                                                     | true    | If the cards can be dragged or not              |
+| columns            | string[]                                                                    |         | The columns of the kanban                       |
+| cards              | KanbanCardProps[]                                                           |         | The cards of the kanban                         |
+| setCards           | (value: KanbanCardProps[]) => void                                          |         | The function to set the cards of the kanban     |
+| deleteButton       | (dragging: boolean) => React.ReactNode                                      |         | The function to render the delete button        |
+| deletePositionY    | 'top' \| 'bottom'                                                           |         | The position of the delete button in the Y axis |
+| deletePositionX    | 'left' \| 'right' \| 'center'                                               |         | The position of the delete button in the X axis |
+| deleteDelay        | number                                                                      | 300     | The delay to delete the card                    |
+| onReorder          | {"({ cards, cardId, before, newColumn, isSameColumn }: OnReorder) => void"} |         | The function to reorder the cards               |
+| onCreate           | {"({ column, title }: { column: string; title: string }) => void"}          |         | The function to create a new card               |
+| onDelete           | {"(cardId: KanbanCardProps['id']) => void"}                                 |         | The function to delete a card                   |
+| className          | string                                                                      |         | The class name of the kanban                    |
+| columnClassName    | string                                                                      |         | The class name of the columns                   |
+| columnsClassName   | string                                                                      |         | The class name of the columns container         |
+| indicatorClassName | string                                                                      |         | The class name of the indicator                 |
+| titleClasses       | string[]                                                                    |         | The class names of the titles                   |
+| labels             | {"{ add?: string; cancel?: string; placeholder?: string }"}                 |         | The labels of the kanban                        |
+| theme              | [KanbanTheme](#theme)                                                       |         | The theme of the kanban                         |
+
+## Examples
+
+### Delete on top
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kanban--delete-on-top"
+  height={450}
+  name="Delete on top"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kanban--delete-on-top&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+### Delete on left
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kanban--delete-on-left"
+  height={450}
+  name="Delete on left"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kanban--delete-on-left&viewMode=story"
+>
+  <RootCode />
+</Example>
+### Delete on right
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kanban--delete-on-right"
+  height={450}
+  name="Delete on right"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kanban--delete-on-right&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+### Instant delete delay
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kanban--instant-delete-delay"
+  height={450}
+  name="Instant delete delay"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kanban--instant-delete-delay&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+### Custom labels
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kanban--custom-labels"
+  height={450}
+  name="Custom labels"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kanban--custom-labels&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+### Custom labels
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kanban--long-delete-delay"
+  height={450}
+  name="Custom labels"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kanban--long-delete-delay&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Theme
+
+```ts
+interface ImageTrailTheme {
+  base: string;
+  image: string;
+}
+```
