@@ -1,7 +1,6 @@
 const code = `
 import { Modal, Button, useBoolean, Input, Checkbox, PasswordInput } from "pol-ui";
 const ModalComponent = () => {
-  const [show, setShow] = React.useState(false);
   const { value, setTrue, setFalse } = useBoolean(false);
 
   return (

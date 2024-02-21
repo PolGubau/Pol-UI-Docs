@@ -13,14 +13,14 @@ tags:
   - Pol-ui
 ---
 
-import RootCode from "examples/Loader/root.mdx";
-import root from "examples/Loader/root";
+import RootCode from "examples/Modal/root.mdx";
+import root from "examples/Modal/root";
 
-import WarningCode from "examples/Loader/warning.mdx";
-import warning from "examples/Loader/warning";
+import WarningCode from "examples/Modal/warning.mdx";
+import warning from "examples/Modal/warning";
 
-import FormCode from "examples/Loader/form.mdx";
-import form from "examples/Loader/form";
+import FormCode from "examples/Modal/form.mdx";
+import form from "examples/Modal/form";
 
 The **Modal** component can be used to show any type of content such as text, form elements, and notifications to your website visitors by creating an off-canvas box on top of the main content area of your website.
 
@@ -39,8 +39,6 @@ Use the **{"<Modal>"}** React component to show a dialog element to the user wit
 The visibility of the component can be set by passing a boolean value to the **show** prop on the **{"<Modal>"}** component and we recommend you to do this via the React state, both with a useState hook or a Redux store.
 
 We also recommend the use of **useBoolean** from **pol-ui** to manage the state of the modal component visibility.
-
-Using a **openModal** and **setOpenModal** state for the main React component should allow you to easily manage the state of the Modal component and use inline functions on event listeners such as **onClick** or **onClose**.
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-modal--default"
