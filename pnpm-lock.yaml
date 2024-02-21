@@ -30,8 +30,8 @@ dependencies:
     specifier: ^1.6.4
     version: 1.6.4(next@14.0.1)(react-dom@18.2.0)(react@18.2.0)
   pol-ui:
-    specifier: ^2.1.10
-    version: 2.1.10(@types/react-dom@18.2.14)(@types/react@18.2.32)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.3.5)
+    specifier: ^2.1.11
+    version: 2.1.13(@types/react-dom@18.2.14)(@types/react@18.2.32)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.3.5)
   react:
     specifier: 18.2.0
     version: 18.2.0
@@ -1876,6 +1876,11 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
+  /clsx@2.1.0:
+    resolution: {integrity: sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==}
+    engines: {node: '>=6'}
+    dev: false
+
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
     engines: {node: '>=7.0.0'}
@@ -3662,8 +3667,8 @@ packages:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
 
-  /pol-ui@2.1.10(@types/react-dom@18.2.14)(@types/react@18.2.32)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.3.5):
-    resolution: {integrity: sha512-e7UTStncZZ24HcOAFAyYfrGYetYL0IsFT538geCnq1YoSpuWZPjlLR5mS6gObe16PqjzeOT5Y57vvXYd4ML46w==}
+  /pol-ui@2.1.13(@types/react-dom@18.2.14)(@types/react@18.2.32)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.3.5):
+    resolution: {integrity: sha512-9i9AKJGCObH4bA6GQ3c/HMxaWaNIBYROM96VVjhuSLB25whU1pG+tHSv1ONQaEkYDKmFHkEhat6voro+PB8/Sg==}
     peerDependencies:
       react: ^18
       react-dom: ^18
@@ -3672,6 +3677,7 @@ packages:
       '@floating-ui/react': 0.26.9(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-navigation-menu': 1.1.4(@types/react-dom@18.2.14)(@types/react@18.2.32)(react-dom@18.2.0)(react@18.2.0)
       '@radix-ui/react-popover': 1.0.7(@types/react-dom@18.2.14)(@types/react@18.2.32)(react-dom@18.2.0)(react@18.2.0)
+      clsx: 2.1.0
       embla-carousel-react: 8.0.0-rc22(react@18.2.0)
       framer-motion: 10.18.0(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
