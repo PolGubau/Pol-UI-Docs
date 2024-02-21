@@ -1,0 +1,11 @@
+```jsx
+import { Loader, MainSizes,MainSizesEnum } from "pol-ui";
+const LoaderComponent = () => {
+  return   ( <div className="flex flex-row gap-3">
+    {Object.keys(MainSizesEnum).map(v => (
+      <Loader size={v as MainSizes} aria-label={`${v} loader example`} key={v} title={`${v} loader example`} />
+    ))}
+  </div>)
+};
+export default LoaderComponent;
+```

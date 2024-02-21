@@ -1,0 +1,129 @@
+---
+title: Loader
+path: loader
+publishedAt: 2024-02-21
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Loader
+doc_type: component
+summary: A Loader is a component that is used to indicate that something is loading. It can be used to show that a page is loading, that a component is fetching data, or that a button is processing an action.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Loader
+tags:
+  - loader
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Loader/root.mdx";
+import root from "examples/Loader/root";
+
+import AlignedCode from "examples/Loader/alignment.mdx";
+import alignment from "examples/Loader/alignment";
+
+import ButtonsCode from "examples/Loader/buttons.mdx";
+import buttons from "examples/Loader/buttons";
+
+import ColorsCode from "examples/Loader/colors.mdx";
+import colors from "examples/Loader/colors";
+
+import SizesCode from "examples/Loader/sizes.mdx";
+import sizes from "examples/Loader/sizes";
+
+A **Loader** is a component that is used to indicate that something is loading. It can be used to show that a page is loading, that a component is fetching data, or that a button is processing an action.
+
+Start using the **Loader component** by first importing it from Pol-ui:
+
+```jsx
+import { Loader } from "pol-ui";
+```
+
+## Default list group
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-loader--default"
+  height={100}
+  name="Default Loader"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-loader--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+### Loader
+
+The **Loader** component has the following props:
+
+| Prop name | Type                  | Default     | Description                               |
+| --------- | --------------------- | ----------- | ----------------------------------------- |
+| theme     | [LoaderTheme](#theme) | {}          | The theme to be applied to the component. |
+| color     | Colors                | 'secondary' | The color of the loader.                  |
+| size      | MainSizes             | 'md'        | The size of the loader.                   |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **span**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/span).
+</Callout>
+## Examples
+
+### Different alignments
+
+As a span tag, it's possible to align the loader to the left, center, or right using the **text-left**, **text-center**, and **text-right** classes.
+
+Example:
+
+```jsx
+<div className="text-left">
+  <Loader aria-label="Left-aligned loader example rotate-360" />
+</div>
+```
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-loader--alignment"
+  height={280}
+  name="Different alignments"
+  code={alignment}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-loader--alignment&viewMode=story"
+>
+  <AlignedCode />
+</Example>
+
+### Different colors
+
+Use the custom **color** prop to change the color of the loader. Check the [Colors](/docs/design-system) page to see how the colors work.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-loader--colors"
+  height={100}
+  name="Different colors"
+  code={colors}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-loader--colors&viewMode=story"
+>
+  <ColorsCode />
+</Example>
+
+### Button examples
+
+Some examples of how can the loaders be use with buttons.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-loader--buttons"
+  height={100}
+  name="Button examples"
+  code={buttons}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-loader--buttons&viewMode=story"
+>
+  <ButtonsCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface LoaderTheme {
+  base: string;
+  color: ColorsType;
+  size: MainSizesType;
+}
+```

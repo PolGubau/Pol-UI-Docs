@@ -12,8 +12,19 @@ tags:
   - Tailwind CSS
   - Pol-ui
 ---
-import RootCode from "examples/Label/root.mdx";
-import root from "examples/Label/root";
+
+import RootCode from "examples/ListGroup/root.mdx";
+import root from "examples/ListGroup/root";
+
+import IconsCode from "examples/ListGroup/icons.mdx";
+import icons from "examples/ListGroup/icons";
+
+import ButtonsCode from "examples/ListGroup/buttons.mdx";
+import buttons from "examples/ListGroup/buttons";
+
+import LinksCode from "examples/ListGroup/links.mdx";
+import links from "examples/ListGroup/links";
+
 The **list group** component can be used to show a list of items inside of an unordered list.
 It can be used for navigation, to show a simple aside, to display a list of items in a menu...
 
@@ -29,13 +40,91 @@ Use the default example to create a simple list of items inside of a menu by usi
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-listgroup--default-list-group"
-  height={110}
-  name="Default Link"
+  height={200}
+  name="Default ListGroup"
   code={root}
   embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-listgroup--default-list-group&viewMode=story"
 >
   <RootCode />
 </Example>
+
+## Props
+
+### ListGroup
+
+The **ListGroup** component has the following props:
+
+| Prop name | Type                     | Default | Description                               |
+| --------- | ------------------------ | ------- | ----------------------------------------- |
+| theme     | [ListGroupTheme](#theme) |         | The theme to be applied to the component. |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **ul**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/ul).
+</Callout>
+
+### ListItem
+
+| Prop name | Type                          | Default | Description                                    |
+| --------- | ----------------------------- | ------- | ---------------------------------------------- |
+| active    | boolean                       | false   | Whether the item is active or not.             |
+| disabled  | boolean                       | false   | Whether the item is disabled or not.           |
+| href      | string                        |         | The URL to link to.                            |
+| icon      | {"FC<ComponentProps<'svg'>>"} |         | The icon to display next to the item.          |
+| onClick   | (event) => void               |         | The function to call when the item is clicked. |
+| theme     | [ListGroupTheme](#theme)      |         | The theme to be applied to the component.      |
+| color     | Colors                        |         | The color to apply to the item.                |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **a**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/a) as well as the
+  [HTML **button**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/button).
+</Callout>
+## Examples
+
+### With icons
+
+To display icons next to the items, you can use the **ListGroupItem** component with the **icon** prop.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-listgroup--with-icons"
+  height={200}
+  name="With icons"
+  code={icons}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-listgroup--with-icons&viewMode=story"
+>
+  <IconsCode />
+</Example>
+
+### Render children as Links
+
+With the use of the **href** prop, you can render the children as links.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-listgroup--with-links"
+  height={200}
+  name="With links"
+  code={links}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-listgroup--with-links&viewMode=story"
+>
+  <LinksCode />
+</Example>
+
+### Attach actions to items
+
+You can attach actions to the items by using the **onClick** prop.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-listgroup--with-buttons"
+  height={200}
+  name="With buttons"
+  code={buttons}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-listgroup--with-buttons&viewMode=story"
+>
+  <ButtonsCode />
+</Example>
+
 ## Theme
 
 To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).

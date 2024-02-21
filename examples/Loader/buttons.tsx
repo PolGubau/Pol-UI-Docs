@@ -1,0 +1,22 @@
+const code = `
+import { Button, Loader } from "pol-ui";
+const LoaderComponent = () => {
+  return (
+    <div className="flex flex-row gap-3">
+      <Button rounded="full">
+        <Loader
+          aria-label="Loader button example"
+          className="text-secondary-50"
+        />
+        <span className="pl-3">Loading...</span>
+      </Button>
+      <Button color="secondary">
+        <Loader aria-label="Alternate loader button example" />
+        <span className="pl-3">Loading...</span>
+      </Button>
+    </div>
+  );
+};
+export default LoaderComponent;
+`;
+export default code;

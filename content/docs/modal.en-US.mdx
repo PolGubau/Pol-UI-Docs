@@ -1,0 +1,32 @@
+---
+title: Modal
+path: modal
+publishedAt: 2024-02-21
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Modal
+doc_type: component
+summary: A Modal is a dialog box or popup window that is displayed on top of the current page. It can be used to show any type of content such as text, form elements, and notifications to your website visitors by creating an off-canvas box on top of the main content area of your website.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Modal
+tags:
+  - modal
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The modal component can be used to show any type of content such as text, form elements, and notifications to your website visitors by creating an off-canvas box on top of the main content area of your website.
+
+You can choose from multiple examples based on various styles, layouts, and elements inside the modal component and you can customize the behaviour, placement, and sizing using our custom React props and the utility classes from Tailwind CSS.
+
+To get started with the modal component you first need to import it from Pol-ui:
+
+```jsx
+import { Modal } from "pol-ui";
+```
+
+## Default modal
+
+Use the `<Modal>` React component to show a dialog element to the user with a header, body, and footer where you can add any type of content such as text or form elements.
+
+The visibility of the component can be set by passing a boolean value to the `show` prop on the `<Modal>` component and we recommend you to do this via the React state.
+
+Using a `openModal` and `setOpenModal` state for the main React component should allow you to easily manage the state of the Modal component and use inline functions on event listeners such as `onClick` or `onClose`.
