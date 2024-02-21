@@ -1,0 +1,95 @@
+---
+title: Kbd
+path: kbd
+publishedAt: 2024-02-21
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Kbd
+doc_type: component
+summary: Kbd is a small component that can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Kbd
+tags:
+  - kbd
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/KBD/root.mdx";
+import root from "examples/KBD/root";
+
+import IconCode from "examples/KBD/icon.mdx";
+import icon from "examples/KBD/icon";
+
+import WithIconCode from "examples/KBD/withIcon.mdx";
+import withIcon from "examples/KBD/withIcon";
+
+The KBD (Keyboard) component can be used to indicate a textual user input from the keyboard inside other elements such as in text, tables, cards, and more.
+
+Use the semantic **{"<Kbd>"}** keyboard input tag to use the default monospace font which is best suited for representing input keys.
+
+To start using the **Kbd** component you need to import it from **pol-ui**:
+
+```jsx
+import { Kbd } from "pol-ui";
+```
+
+## Default KBD
+
+Here's a list of KBD components that you can use inside any other element.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kbd--default"
+  height={110}
+  name="Default KBD"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kbd--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+The **Kanban** component has the following props:
+
+| Prop name | Type                          | Default | Description                                |
+| --------- | ----------------------------- | ------- | ------------------------------------------ |
+| icon      | {"FC<ComponentProps<'svg'>>"} | -       | The icon to be used in the Kbd component.  |
+| theme     | [KbdTheme](#theme)            | -       | The theme to be used in the Kbd component. |
+
+## Examples
+
+### Only Icon
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kbd--only-icon"
+  height={110}
+  name="Only Icon"
+  code={withIcon}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kbd--only-icon&viewMode=story"
+>
+  <WithIconCode />
+</Example>
+
+### With Icon
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kbd--with-icon"
+  height={110}
+  name="With Icon"
+  code={icon}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kbd--with-icon&viewMode=story"
+>
+  <IconCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface KbdTheme {
+  root: {
+    base: string;
+    icon: string;
+  };
+}
+```
