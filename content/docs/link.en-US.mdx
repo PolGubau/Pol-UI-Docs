@@ -1,0 +1,85 @@
+---
+title: Link
+path: link
+publishedAt: 2024-02-21
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Link
+doc_type: component
+summary: A wrapper for an HTML **a** element, with a theme system to customize its appearance.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Link
+tags:
+  - link
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Label/root.mdx";
+import root from "examples/Label/root";
+
+The **Link** component is a wrapper for an HTML **a** element, with a theme system to customize its appearance.
+
+If you are using **Next.js** or **Gatsby**, you can use the **Link** component from pol-ui with the **as** prop to render the component as a Next.js or Gatsby link.
+
+```jsx
+import { Link } from "pol-ui";
+import NextLink from "next/link";
+
+// For modern Next.js (>13.0.0)
+export default function MyComponent() {
+  return (
+    <Link as={NextLink} href="/about" passHref>About</Link>
+  );
+}
+// For older versions of Next.js (same as passing an anchor to the next unstyled link)
+export default function MyComponent() {
+  return (
+    <NextLink href="/about" passHref>
+      <Link>About</Link>
+    </NextLink>
+  );
+}
+
+```
+
+To start using the **Label** component you need to import it from **pol-ui**:
+
+```jsx
+import { Label } from "pol-ui";
+```
+
+## Default Link
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-link--default"
+  height={110}
+  name="Default Link"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-link--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+The **Link** component has the following props:
+
+| Prop name | Type                | Default | Description                               |
+| --------- | ------------------- | ------- | ----------------------------------------- |
+| as        | ElementType         | a       | The HTML tag to render the component as.  |
+| theme     | [LinkTheme](#theme) |         | The theme to be applied to the component. |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **anchor**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/a).
+</Callout>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface LinkTheme {
+  base: string;
+  href: string;
+}
+```

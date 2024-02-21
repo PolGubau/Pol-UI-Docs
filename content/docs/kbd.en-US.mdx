@@ -34,8 +34,6 @@ import { Kbd } from "pol-ui";
 
 ## Default KBD
 
-Here's a list of KBD components that you can use inside any other element.
-
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kbd--default"
   height={110}
@@ -48,13 +46,17 @@ Here's a list of KBD components that you can use inside any other element.
 
 ## Props
 
-The **Kanban** component has the following props:
+The **Kbd** component has the following props:
 
 | Prop name | Type                          | Default | Description                                |
 | --------- | ----------------------------- | ------- | ------------------------------------------ |
 | icon      | {"FC<ComponentProps<'svg'>>"} | -       | The icon to be used in the Kbd component.  |
 | theme     | [KbdTheme](#theme)            | -       | The theme to be used in the Kbd component. |
 
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **span**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/span).
+</Callout>
 ## Examples
 
 ### Only Icon

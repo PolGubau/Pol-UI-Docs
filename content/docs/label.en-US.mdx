@@ -1,0 +1,66 @@
+---
+title: Label
+path: label
+publishedAt: 2024-02-21
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Label
+doc_type: component
+summary: A semantic and accessible text displayed in form inputs.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Label
+tags:
+  - label
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Label/root.mdx";
+import root from "examples/Label/root";
+
+The Label component is our wrapper for the HTML **label** element.
+
+To start using the **Label** component you need to import it from **pol-ui**:
+
+```jsx
+import { Label } from "pol-ui";
+```
+
+## Default Label
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-texts-label--default-label"
+  height={110}
+  name="Default Label"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-texts-label--default-label&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+The **Label** component has the following props:
+
+| Prop name | Type                 | Default | Description                              |
+| --------- | -------------------- | ------- | ---------------------------------------- |
+| color     | **Colors**           | -       | The color of the label.                  |
+| disabled  | **boolean**          | -       | If **true**, the label will be disabled. |
+| theme     | [LabelTheme](#theme) | -       | The theme of the label.                  |
+| value     | **string**           | -       | The value of the label.                  |
+| className | **string**           | -       | The class name of the label.             |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **label**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/label).
+</Callout>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface LabelTheme {
+  base: string;
+  colors: ColorsType;
+  disabled: string;
+}
+```

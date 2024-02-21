@@ -1,0 +1,59 @@
+---
+title: ListGroup
+path: listGroup
+publishedAt: 2024-02-21
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/ListGroup
+doc_type: component
+summary: A ListGroup component can be used to show a list of items inside of an unordered list. It can be used for navigation, to show a simple aside, to display a list of items in a menu...
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/ListGroup
+tags:
+  - listGroup
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+import RootCode from "examples/Label/root.mdx";
+import root from "examples/Label/root";
+The **list group** component can be used to show a list of items inside of an unordered list.
+It can be used for navigation, to show a simple aside, to display a list of items in a menu...
+
+Start using the list group component by first importing it from Pol-ui:
+
+```jsx
+import { ListGroup } from "pol-ui";
+```
+
+## Default list group
+
+Use the default example to create a simple list of items inside of a menu by using the **ListGroup** component with **ListGroupItem** child components inside of it.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-listgroup--default-list-group"
+  height={110}
+  name="Default Link"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-listgroup--default-list-group&viewMode=story"
+>
+  <RootCode />
+</Example>
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface ListGroupTheme {
+  root: {
+    base: string;
+  };
+  item: {
+    base: string;
+    link: {
+      base: string;
+      active: IBoolean;
+      disabled: IBoolean;
+      href: IBoolean;
+      icon: string;
+    };
+  };
+}
+```
