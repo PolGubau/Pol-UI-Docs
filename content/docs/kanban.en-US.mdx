@@ -241,41 +241,43 @@ The **Kanban** component has the following props:
 ### Custom classname
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kanban--custom-custom-classname"
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-kanban--custom-classname"
   height={450}
   name="Custom classname"
   code={customClassname}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kanban--custom-custom-classname&viewMode=story"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-kanban--custom-classname&viewMode=story"
 >
   <CustomClassnameCode />
 </Example>
 
 ## Theme
 
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
 ```ts
 interface KanbanTheme {
   root: {
-    base: string
-  }
+    base: string;
+  };
   column: {
-    base: string
-    header: string
-    title: string
-    length: string
-    column: string
-    active: string
-  }
+    base: string;
+    header: string;
+    title: string;
+    length: string;
+    column: string;
+    active: string;
+  };
   indicator: {
-    base: string
-  }
+    base: string;
+  };
   add: {
-    form: string
-    textarea: string
-    buttonGroup: string
-  }
+    form: string;
+    textarea: string;
+    buttonGroup: string;
+  };
   card: {
-    base: string
-    dragable: string
-  }
+    base: string;
+    dragable: string;
+  };
 }
 ```
