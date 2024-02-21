@@ -13,7 +13,16 @@ tags:
   - Pol-ui
 ---
 
-The modal component can be used to show any type of content such as text, form elements, and notifications to your website visitors by creating an off-canvas box on top of the main content area of your website.
+import RootCode from "examples/Loader/root.mdx";
+import root from "examples/Loader/root";
+
+import WarningCode from "examples/Loader/warning.mdx";
+import warning from "examples/Loader/warning";
+
+import FormCode from "examples/Loader/form.mdx";
+import form from "examples/Loader/form";
+
+The **Modal** component can be used to show any type of content such as text, form elements, and notifications to your website visitors by creating an off-canvas box on top of the main content area of your website.
 
 You can choose from multiple examples based on various styles, layouts, and elements inside the modal component and you can customize the behaviour, placement, and sizing using our custom React props and the utility classes from Tailwind CSS.
 
@@ -25,8 +34,76 @@ import { Modal } from "pol-ui";
 
 ## Default modal
 
-Use the `<Modal>` React component to show a dialog element to the user with a header, body, and footer where you can add any type of content such as text or form elements.
+Use the **{"<Modal>"}** React component to show a dialog element to the user with a header, body, and footer where you can add any type of content such as text or form elements.
 
-The visibility of the component can be set by passing a boolean value to the `show` prop on the `<Modal>` component and we recommend you to do this via the React state.
+The visibility of the component can be set by passing a boolean value to the **show** prop on the **{"<Modal>"}** component and we recommend you to do this via the React state, both with a useState hook or a Redux store.
 
-Using a `openModal` and `setOpenModal` state for the main React component should allow you to easily manage the state of the Modal component and use inline functions on event listeners such as `onClick` or `onClose`.
+We also recommend the use of **useBoolean** from **pol-ui** to manage the state of the modal component visibility.
+
+Using a **openModal** and **setOpenModal** state for the main React component should allow you to easily manage the state of the Modal component and use inline functions on event listeners such as **onClick** or **onClose**.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-modal--default"
+  height={400}
+  name="Default Loader"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-modal--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name    | Type                 | Default  | Description                                  |
+| ------------ | -------------------- | -------- | -------------------------------------------- |
+| onClose      | () => void           | -        | Callback function to close the modal         |
+| position     | keyof ModalPositions | 'center' | Position of the modal                        |
+| popup        | boolean              | -        | If true, the modal will be a popup           |
+| root         | HTMLElement          | -        | The root element to append the modal to      |
+| show         | boolean              | -        | If true, the modal will be visible           |
+| size         | MainSizes            | '2xl'    | Size of the modal                            |
+| dismissible  | boolean              | true     | If true, the modal will be dismissible       |
+| deleteButton | boolean              | false    | If true, the modal will have a delete button |
+| lockScroll   | boolean              | true     | If true, the modal will lock the scroll      |
+| theme        | [ModalTheme](#theme) | -        | Custom theme for the modal                   |
+| initialFocus | number               | -        | Initial focus for the modal                  |
+
+## Examples
+
+### Warning modal
+
+<Example
+  storybookUrl="http://localhost:6006/?path=/story/components-modal--warning"
+  height={400}
+  name="Warning modal"
+  code={warning}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-modal--warning&viewMode=story"
+>
+  <WarningCode />
+</Example>
+
+### Modal with a form
+
+<Example
+  storybookUrl="http://localhost:6006/?path=/story/components-modal--form"
+  height={400}
+  name="Modal with a form"
+  code={form}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-modal--form&viewMode=story"
+>
+  <FormCode />
+</Example>
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface ModalTheme {
+  base: string;
+  show: string;
+  closeButton: string;
+  sizes: Sizes;
+  positions: ModalPositions;
+  content: string;
+}
+```
