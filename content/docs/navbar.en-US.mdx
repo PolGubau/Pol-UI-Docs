@@ -13,6 +13,9 @@ tags:
   - Pol-ui
 ---
 
+import RootCode from "examples/Modal/root.mdx";
+import root from "examples/Modal/root";
+
 The navbar component is an important section of any website as it is the first section that appears on any page and it serves the purpose of allowing your users to navigate throughout your website.
 
 Generally, the navigation bar consists of the logo of your website, a list of menu items for navigation and other secondary elements such as buttons, dropdowns, and a hamburger menu for mobile devices.
@@ -28,11 +31,106 @@ import { Navbar } from "pol-ui";
 ## Default Navbar
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-modal--default"
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-navbar--default"
   height={400}
   name="Default Loader"
   code={root}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-modal--default&viewMode=story"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+### Navbar Props
+
+| Prop name     | Type                  | Default   | Description                                                        |
+| ------------- | --------------------- | --------- | ------------------------------------------------------------------ |
+| defaultOpen   | boolean               | false     | If true, the navbar will be open by default                        |
+| theme         | [NavbarTheme](#theme) | {}        | The theme of the navbar                                            |
+| rightContent  | React.ReactNode       | undefined | The content that will be displayed on the right side of the navbar |
+| leftContent   | React.ReactNode       | undefined | The content that will be displayed on the left side of the navbar  |
+| links         | NavbarLink[]          | undefined | The links that will be displayed on the navbar                     |
+| linkClassName | string                | undefined | The class name that will be applied to the links                   |
+| hasHambuguer  | boolean               | true      | If true, the navbar will have a hamburger menu for mobile devices  |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **nav**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/nav).
+</Callout>
+
+### NavbarLink Props
+
+| Prop name | Type            | Default   | Description                      |
+| --------- | --------------- | --------- | -------------------------------- |
+| href      | string          | -         | The URL of the link              |
+| label     | string          | -         | The label of the link            |
+| content   | React.ReactNode | undefined | A sublist for navigation menu    |
+| active    | boolean         | false     | If true, the link will be active |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **anchor**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/a).
+</Callout>
+
+## Examples
+
+### Navbar With CTA
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-navbar--with-cta"
+  height={400}
+  name="With CTA"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--with-cta&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+### Navbar With Dropdown
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-navbar--with-dropdown"
+  height={400}
+  name="With Dropdown"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--with-dropdown&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+### Navbar With custom classes
+
+<Example
+  storybookUrl="http://localhost:6006/?path=/story/components-navbar--custom-classes"
+  height={400}
+  name="With custom classes"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--custom-classes&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+### Navbar With custom link classes
+
+<Example
+  storybookUrl="http://localhost:6006/?path=/story/components-navbar--custom-link-class"
+  height={400}
+  name="With custom link classes"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--custom-link-class&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+### Navbar Without Hamburguer
+
+<Example
+  storybookUrl="http://localhost:6006/?path=/story/components-navbar--without-hamburguer"
+  height={400}
+  name="Without Hamburguer"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--without-hamburguer&viewMode=story"
 >
   <RootCode />
 </Example>
