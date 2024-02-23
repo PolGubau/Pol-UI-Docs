@@ -2,8 +2,6 @@ const code = `
 import { PasswordInput } from "pol-ui";
 
 const PasswordInputComponent = () => {
-  const text = 'Parallax text in Pol-ui'
-
   return (
     <PasswordInput placeholder="******" label="Password" />
   );
