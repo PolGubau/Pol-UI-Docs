@@ -1,0 +1,191 @@
+---
+title: Pagination
+path: pagination
+publishedAt: 2024-02-21
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Pagination
+doc_type: component
+summary: The Pagination component is an important section of any website as it is the first section that appears on any page and it serves the purpose of allowing your users to navigate throughout your website.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Pagination
+tags:
+  - pagination
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Pagination/root.mdx";
+import root from "examples/Pagination/root";
+
+import CustomLabelsCode from "examples/Pagination/customLabels.mdx";
+import customLabels from "examples/Pagination/customLabels";
+
+import IconsCode from "examples/Pagination/icons.mdx";
+import icons from "examples/Pagination/icons";
+
+import NavCode from "examples/Pagination/nav.mdx";
+import nav from "examples/Pagination/nav";
+
+import NavWithIconsCode from "examples/Pagination/navWithIcons.mdx";
+import navWithIcons from "examples/Pagination/navWithIcons";
+
+import TableCode from "examples/Pagination/table.mdx";
+import table from "examples/Pagination/table";
+
+import TableIconCode from "examples/Pagination/tableIcon.mdx";
+import tableIcon from "examples/Pagination/tableIcon";
+
+The pagination component can be used to show a list of pages with numbers and links to allow the users to navigate through multiple pages, data from tables, and more.
+
+Choose one of the examples below based on various styles and sizes and customize them using the React props API and the utility classes from Tailwind CSS.
+
+You need to import the pagination component from the **pol-ui** library before using it:
+
+```jsx
+import { Pagination } from "pol-ui";
+```
+
+## Default pagination
+
+Use the **{"<Pagination>"}** component to create a default pagination element and use the **currentPage** prop to set the currently active page, the **totalPages** prop to set how many pages there are in total and update the **onPageChange** even listener to set the state of the pagination component via React.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--default"
+  height={120}
+  name="Default pagination"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-pagination--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+## Pagination with icons
+
+Add next and previous icons to the pagination component by passing the**showIcon**` prop via React.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--pagination-with-icons"
+  height={120}
+  name="Default pagination"
+  code={icons}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-pagination--pagination-with-icons&viewMode=story"
+>
+  <IconsCode />
+</Example>
+
+## Navigation layout with icons
+
+Show only the next and previous control buttons by passing the **layout="navigation"** prop from React.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--nav"
+  height={120}
+  name="Navigation pagination"
+  code={nav}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-pagination--nav&viewMode=story"
+>
+  <NavCode />
+</Example>
+
+## Control button icons
+
+Show the control buttons with icons by passing both the **layout="navigation"** and **showIcons** props.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--nav-with-icons"
+  height={120}
+  name="Control button icons"
+  code={navWithIcons}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-pagination--nav-with-icons&viewMode=story"
+>
+  <NavWithIconsCode />
+</Example>
+## Outline
+
+If you want to show the pagination component with an outline, you can pass the **layout="outline"** prop from React.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--outline"
+  height={120}
+  name="Outline pagination"
+  code={outline}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-pagination--outline&viewMode=story"
+>
+  <OutlineCode />
+</Example>
+
+## Table data navigation
+
+Use this example show table data navigation by using the **layout="table"** prop from React.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--table"
+  height={120}
+  name="Table data navigation"
+  code={table}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-pagination--table&viewMode=story"
+>
+  <TableCode />
+</Example>
+
+## Table data navigation with icons
+
+Show icons for the next and previous control buttons for table navigation by passing the **showIcons** prop.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--table-with-icons"
+  height={120}
+  name="Default pagination"
+  code={tableIcon}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-pagination--table-with-icons&viewMode=story"
+>
+  <TableIconCode />
+</Example>
+## Custom Labels
+
+Customize the text for the next and previous buttons by passing the **previousLabel** and **nextLabel** props.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--labels"
+  height={120}
+  name="Default pagination"
+  code={customLabels}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-pagination--labels&viewMode=story"
+>
+  <CustomLabelsCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+export interface PaginationTheme {
+  base: string;
+  layout: {
+    table: {
+      base: string;
+      span: string;
+    };
+  };
+  pages: {
+    base: string;
+    showIcon: string;
+    previous: {
+      base: string;
+      icon: string;
+    };
+    next: {
+      base: string;
+      icon: string;
+    };
+    selector: {
+      base: string;
+      active: string;
+      disabled: string;
+    };
+  };
+}
+```
+
+```
+
+```
