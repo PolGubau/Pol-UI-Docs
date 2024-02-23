@@ -1,13 +1,13 @@
 ---
-title: Navbar
-path: navbar
+title: NavigationMenu
+path: navigation-menu
 publishedAt: 2024-02-21
-githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Navbar
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/NavigationMenu
 doc_type: component
-summary: The Navbar component is an important section of any website as it is the first section that appears on any page and it serves the purpose of allowing your users to navigate throughout your website.
-pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Navbar
+summary: The NavigationMenu component is an important section of any website as it is the first section that appears on any page and it serves the purpose of allowing your users to navigate throughout your website.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/NavigationMenu
 tags:
-  - navbar
+  - navigation-menu
   - React
   - Tailwind CSS
   - Pol-ui
@@ -31,26 +31,26 @@ import linkClasses from "examples/Navbar/linkClasses";
 import NoHamburguerCode from "examples/Navbar/noHamburguer.mdx";
 import noHamburguer from "examples/Navbar/noHamburguer";
 
-The navbar component is an important section of any website as it is the first section that appears on any page and it serves the purpose of allowing your users to navigate throughout your website.
+The **Navigation Menu** is an interactive component that allows you to create a navigation list with links and dropdowns. It is a very flexible component that can be used in many different ways.
 
-Generally, the navigation bar consists of the logo of your website, a list of menu items for navigation and other secondary elements such as buttons, dropdowns, and a hamburger menu for mobile devices.
+The most characteristic feature of the Navigation Menu is the ability to collapse and expand submenus with more options. In **pol-ui** we implemented a modern pattern of animations based on the **radix-ui** library to make the experience of using the Navigation Menu more pleasant.
 
 All interactivity and options are handled by using React properties and you can customise the appearance of the navbar using the classes from Tailwind CSS.
 
 To start using the navbar component you need to import it from Pol-ui:
 
 ```jsx
-import { Navbar } from "pol-ui";
+import { NavigationMenu } from "pol-ui";
 ```
 
-## Default Navbar
+## Default NavigationMenu
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-navbar--default"
+  storybookUrl="http://localhost:6006/?path=/story/components-navigationmenu--default"
   height={400}
-  name="Default Navbar"
+  name="Default NavigationMenu"
   code={root}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--default&viewMode=story"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navigationmenu--default&viewMode=story"
 >
   <RootCode />
 </Example>

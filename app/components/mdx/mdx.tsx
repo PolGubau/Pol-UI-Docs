@@ -207,7 +207,7 @@ export function Mdx({ code }: Readonly<{ code: string }>) {
     <article
       className={twMerge(
         "prose prose-quoteless prose-neutral dark:prose-invert flex flex-1 flex-col",
-        "w-full max-w-full"
+        "w-full max-w-full overflow-hidden"
       )}
     >
       <Component components={components} />

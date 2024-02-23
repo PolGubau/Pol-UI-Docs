@@ -106,7 +106,7 @@ export default function DocPage({ params }) {
   const title = doc?.title ?? "Not found";
 
   return (
-    <section className="overflow-hidden max-w-full">
+    <section className="overflow-hidden max-w-full w-full ">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -121,7 +121,7 @@ export default function DocPage({ params }) {
       )}
       <h1 className="text-2xl md:text-4xl mb-6 mt-1 font-semibold">{title}</h1>
       <Toc text={raw} />
-      <article className="mb-8 w-full  flex flex-col gap-6">
+      <article className="mb-8 w-full flex flex-col gap-6 overflow-hidden max-w-[1000px]">
         <Mdx code={code} />
 
         <div className="flex gap-4">
