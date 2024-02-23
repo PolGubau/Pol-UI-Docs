@@ -55,119 +55,80 @@ import { NavigationMenu } from "pol-ui";
   <RootCode />
 </Example>
 
+## Structure
+
+```ts
+<NavigationMenu>
+  // If it's a dropdown
+  <NavigationMenuItem>
+    <NavigationMenuTrigger></NavigationMenuTrigger>
+    <NavigationMenuContent></NavigationMenuContent>
+  </NavigationMenuItem>
+  // If it's a link
+  <NavigationMenuItem>
+    <NavigationMenuLink></NavigationMenuLink>
+  </NavigationMenuItem>
+</NavigationMenu>
+```
+
+<Callout emoji="💡">
+  NavigationMenuLink is important to ensure the correct behavior of the
+  component. It is a wrapper for the anchor tag and it is responsible for the
+  accessibility of the component.
+</Callout>
 ## Props
 
-### Navbar Props
+### NavigationMenu Props
 
-| Prop name     | Type                  | Default   | Description                                                        |
-| ------------- | --------------------- | --------- | ------------------------------------------------------------------ |
-| defaultOpen   | boolean               | false     | If true, the navbar will be open by default                        |
-| theme         | [NavbarTheme](#theme) | {}        | The theme of the navbar                                            |
-| rightContent  | React.ReactNode       | undefined | The content that will be displayed on the right side of the navbar |
-| leftContent   | React.ReactNode       | undefined | The content that will be displayed on the left side of the navbar  |
-| links         | NavbarLink[]          | undefined | The links that will be displayed on the navbar                     |
-| linkClassName | string                | undefined | The class name that will be applied to the links                   |
-| hasHambuguer  | boolean               | true      | If true, the navbar will have a hamburger menu for mobile devices  |
+| Prop name     | Type                              | Default | Description                                                          |
+| ------------- | --------------------------------- | ------- | -------------------------------------------------------------------- |
+| children      | React.ReactNode                   | -       | The children of the component.                                       |
+| hasIndicator  | boolean                           | true    | If true, the component will show an indicator when the menu is open. |
+| listClassName | string                            | ''      | The class name of the list.                                          |
+| theme         | [NavigationMenuThemeRoot](#theme) | {}      | The theme of the component.                                          |
 
-<Callout emoji="💡">
-  You can also provide any prop comming from the [HTML **nav**
-  tag](https://developer.mozilla.org/docs/Web/HTML/Element/nav).
-</Callout>
+### NavigationMenuTrigger Props
 
-### NavbarLink Props
-
-| Prop name | Type            | Default   | Description                      |
-| --------- | --------------- | --------- | -------------------------------- |
-| href      | string          | -         | The URL of the link              |
-| label     | string          | -         | The label of the link            |
-| content   | React.ReactNode | undefined | A sublist for navigation menu    |
-| active    | boolean         | false     | If true, the link will be active |
+| Prop name | Type                                 | Default       | Description                      |
+| --------- | ------------------------------------ | ------------- | -------------------------------- |
+| children  | React.ReactNode                      | -             | The children of the component.   |
+| className | string                               | ''            | The class name of the component. |
+| icon      | {"FC<ComponentProps<'svg'>> "}       | TbChevronDown | The icon of the component.       |
+| theme     | [NavigationMenuTriggerTheme](#theme) | {}            | The theme of the component.      |
 
 <Callout emoji="💡">
-  You can also provide any prop comming from the [HTML **anchor**
-  tag](https://developer.mozilla.org/docs/Web/HTML/Element/a).
+  You can also provide any prop comming from the [HTML **button**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/button).
 </Callout>
 
-## Examples
+### NavigationMenuTrigger Props
 
-### Navbar With CTA
-
-<Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-navbar--with-cta"
-  height={400}
-  name="With CTA"
-  code={cta}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--with-cta&viewMode=story"
->
-  <CTACode />
-</Example>
-
-### Navbar With Dropdown
-
-<Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-navbar--with-dropdown"
-  height={400}
-  name="With Dropdown"
-  code={dropdown}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--with-dropdown&viewMode=story"
->
-  <DropdownCode />
-</Example>
-
-### Navbar With custom classes
-
-<Example
-  storybookUrl="http://localhost:6006/?path=/story/components-navbar--custom-classes"
-  height={400}
-  name="With custom classes"
-  code={classes}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--custom-classes&viewMode=story"
->
-  <ClassesCode />
-</Example>
-
-### Navbar With custom link classes
-
-<Example
-  storybookUrl="http://localhost:6006/?path=/story/components-navbar--custom-link-class"
-  height={400}
-  name="With custom link classes"
-  code={linkClasses}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--custom-link-class&viewMode=story"
->
-  <LinkClassesCode />
-</Example>
-
-### Navbar Without Hamburguer
-
-<Example
-  storybookUrl="http://localhost:6006/?path=/story/components-navbar--without-hamburguer"
-  height={400}
-  name="Without Hamburguer"
-  code={noHamburguer}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-navbar--without-hamburguer&viewMode=story"
->
-  <NoHamburguerCode />
-</Example>
+| Prop name | Type                                 | Default | Description                      |
+| --------- | ------------------------------------ | ------- | -------------------------------- |
+| children  | React.ReactNode                      | -       | The children of the component.   |
+| className | string                               | ''      | The class name of the component. |
+| theme     | [NavigationMenuContentTheme](#theme) | {}      | The theme of the component.      |
 
 ## Theme
 
 To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
 
 ```ts
-interface NavbarTheme {
-  root: NavbarRootTheme;
-  collapse: NavbarCollapseTheme;
-  toggle: NavbarToggleTheme;
+interface NavigationMenuTheme {
+  root: NavigationMenuThemeRoot;
+  trigger: NavigationMenuTriggerTheme;
+  content: NavigationMenuContentTheme;
 }
-interface NavbarToggleTheme {
+
+interface NavigationMenuThemeRoot {
   base: string;
 }
 
-interface NavbarRootTheme {
+interface NavigationMenuTriggerTheme {
   base: string;
-  inner: {
-    base: string;
-  };
+  icon: string;
+}
+interface NavigationMenuContentTheme {
+  base: string;
 }
 ```
