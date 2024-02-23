@@ -1,0 +1,10 @@
+const code = `
+import { ParallaxText } from "pol-ui";
+
+const ParallaxTextComponent = () => {
+  return <ParallaxText resistence={6000}>I'm a H1</ParallaxText>;
+
+};
+export default ParallaxTextComponent;
+`;
+export default code;

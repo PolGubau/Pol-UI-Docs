@@ -9,8 +9,7 @@ const PaginationComponent = () => {
       currentPage={page}
       onPageChange={setPage}
       totalPages={100}
-      layout={'table'}
- 
+      hasLabels={true}
     />
   );
 };

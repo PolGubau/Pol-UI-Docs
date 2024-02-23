@@ -9,9 +9,8 @@ const PaginationComponent = () => {
       currentPage={page}
       onPageChange={setPage}
       totalPages={100}
-      layout={'navigation'}
-      showIcons={true}
-
+      hasRange={false}
+ 
     />
   );
 };

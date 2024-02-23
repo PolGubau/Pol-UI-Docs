@@ -1,0 +1,28 @@
+```jsx
+import { ParallaxText } from "pol-ui";
+
+const ParallaxTextComponent = () => {
+  const text = "Parallax text in Pol-ui";
+
+  return (
+    <section>
+      <ParallaxText className="text-sm" renderedElements={20}>
+        {text}
+      </ParallaxText>
+      <ParallaxText className="text-md" renderedElements={18}>
+        {text}
+      </ParallaxText>
+      <ParallaxText className="text-lg" renderedElements={16}>
+        {text}
+      </ParallaxText>
+      <ParallaxText className="text-xl" renderedElements={14}>
+        {text}
+      </ParallaxText>
+      <ParallaxText className="text-2xl" renderedElements={12}>
+        {text}
+      </ParallaxText>
+    </section>
+  );
+};
+export default ParallaxTextComponent;
+```

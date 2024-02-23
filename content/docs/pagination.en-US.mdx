@@ -60,7 +60,48 @@ Use the **{"<Pagination>"}** component to create a default pagination element an
 >
   <RootCode />
 </Example>
-## Pagination with icons
+
+## Props
+
+### Pagination
+
+| Prop name              | Type                                      | Default                  | Description                                         |
+| ---------------------- | ----------------------------------------- | ------------------------ | --------------------------------------------------- |
+| className              | string                                    | undefined                | The className to apply to the pagination component. |
+| currentPage            | number                                    | 1                        | The current page number.                            |
+| hasRange               | boolean                                   | true                     | Show the range of pages.                            |
+| hasLabels              | boolean                                   | false                    | Show the labels.                                    |
+| labels                 | Labels                                    | [Labels](#labels)        | The labels to show.                                 |
+| onPageChange           | (page: number) => void                    | undefined                | The event listener to handle the page change.       |
+| renderPaginationButton | ([props](#Paginationbutton)) => ReactNode | {"<PaginationButton />"} | The render prop to customize the pagination button. |
+| showIcons              | boolean                                   | false                    | Show the icons.                                     |
+| theme                  | [PaginationTheme](#theme)                 | {" {} "}                 | The theme to apply to the pagination component.     |
+| totalPages             | number                                    | 1                        | The total number of pages.                          |
+| pageSize               | number                                    | 5                        | The number of pages to show.                        |
+| outline                | boolean                                   | false                    | Show the outline.                                   |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **nav**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/nav).
+</Callout>
+### PaginationButton
+
+| Prop name | Type                            | Default   | Description                                  |
+| --------- | ------------------------------- | --------- | -------------------------------------------- |
+| active    | boolean                         | false     | The active state of the button.              |
+| children  | ReactNode                       | undefined | The children to render.                      |
+| onClick   | (event) => void                 | undefined | The event listener to handle the click.      |
+| outline   | boolean                         | false     | Show the outline.                            |
+| theme     | [PaginationButtonTheme](#theme) | {}        | The theme to apply to the pagination button. |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **button**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/button).
+</Callout>
+
+## Examples
+
+### Pagination with icons
 
 Add next and previous icons to the pagination component by passing the**showIcon**` prop via React.
 
@@ -74,9 +115,9 @@ Add next and previous icons to the pagination component by passing the**showIcon
   <IconsCode />
 </Example>
 
-## Navigation layout with icons
+### Navigation layout with icons
 
-Show only the next and previous control buttons by passing the **layout="navigation"** prop from React.
+Show only the next and previous control buttons by passing the **hasRange="false"** prop from React.
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--nav"
@@ -88,9 +129,9 @@ Show only the next and previous control buttons by passing the **layout="navigat
   <NavCode />
 </Example>
 
-## Control button icons
+### Control button icons
 
-Show the control buttons with icons by passing both the **layout="navigation"** and **showIcons** props.
+Show the control buttons with icons by passing both the **hasRange="false"** and **showIcons** props.
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--nav-with-icons"
@@ -101,9 +142,9 @@ Show the control buttons with icons by passing both the **layout="navigation"** 
 >
   <NavWithIconsCode />
 </Example>
-## Outline
+### Outline
 
-If you want to show the pagination component with an outline, you can pass the **layout="outline"** prop from React.
+If you want to show the pagination component with an outline, you can pass the **outline** prop.
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--outline"
@@ -115,9 +156,9 @@ If you want to show the pagination component with an outline, you can pass the *
   <OutlineCode />
 </Example>
 
-## Table data navigation
+### Table data navigation
 
-Use this example show table data navigation by using the **layout="table"** prop from React.
+Use this example show table data navigation by turning true the **hasLabels** prop.
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--table"
@@ -129,7 +170,7 @@ Use this example show table data navigation by using the **layout="table"** prop
   <TableCode />
 </Example>
 
-## Table data navigation with icons
+### Table data navigation with icons
 
 Show icons for the next and previous control buttons for table navigation by passing the **showIcons** prop.
 
@@ -142,9 +183,9 @@ Show icons for the next and previous control buttons for table navigation by pas
 >
   <TableIconCode />
 </Example>
-## Custom Labels
+### Custom Labels
 
-Customize the text for the next and previous buttons by passing the **previousLabel** and **nextLabel** props.
+Customize the text for the next and previous buttons by passing a [Labels](#labels) object to the **labels** prop.
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-pagination--labels"
@@ -159,6 +200,7 @@ Customize the text for the next and previous buttons by passing the **previousLa
 ## Theme
 
 To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+### PaginationTheme
 
 ```ts
 export interface PaginationTheme {
@@ -186,5 +228,18 @@ export interface PaginationTheme {
       disabled: string;
     };
   };
+}
+```
+
+### Labels
+
+```ts
+interface Labels {
+  next: string;
+  previous: string;
+  of: string;
+  to: string;
+  entries: string;
+  showing: string;
 }
 ```

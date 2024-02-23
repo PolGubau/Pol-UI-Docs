@@ -1,0 +1,218 @@
+---
+title: ParallaxText
+path: parallaxText
+publishedAt: 2024-02-23
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/ParallaxText
+doc_type: component
+summary: The ParallaxText from pol-ui represents a component that animates a text as a infinite carrousel with a parallax effect.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/ParallaxText
+tags:
+  - parallaxText
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/ParallaxText/root.mdx";
+import root from "examples/ParallaxText/root";
+
+import AmountCode from "examples/ParallaxText/amount.mdx";
+import amount from "examples/ParallaxText/amount";
+
+import BlurredCode from "examples/ParallaxText/blurred.mdx";
+import blurred from "examples/ParallaxText/blurred";
+
+import CustomClassCode from "examples/ParallaxText/customClass.mdx";
+import customClass from "examples/ParallaxText/customClass";
+
+import ElementsCode from "examples/ParallaxText/elements.mdx";
+import elements from "examples/ParallaxText/elements";
+
+import ResistanceCode from "examples/ParallaxText/resistance.mdx";
+import resistance from "examples/ParallaxText/resistance";
+
+import SameDirectionCode from "examples/ParallaxText/sameDirection.mdx";
+import sameDirection from "examples/ParallaxText/sameDirection";
+
+The **ParallaxText** from **pol-ui** represents a component that animates a text as a infinite carrousel with a parallax effect.
+
+When you scroll, the text will move at a faster speed than usual and when inverting the scroll, the text will also invert the direction.
+
+```jsx
+import { ParallaxText } from "pol-ui";
+```
+
+## Default ParallaxText
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-parallaxtext--default"
+  height={550}
+  name="Default ParallaxText"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-parallaxtext--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name        | Type                        | Default                          | Description                               |
+| ---------------- | --------------------------- | -------------------------------- | ----------------------------------------- |
+| children         | string                      | -                                | The text to be displayed.                 |
+| velocity         | number                      | 5                                | The speed of the parallax effect.         |
+| className        | string                      | -                                | The class to be applied to the component. |
+| as               | T                           | 'span'                           | The HTML tag to be used.                  |
+| resistence       | number                      | 1000                             | The resistence of the parallax effect.    |
+| renderedElements | number                      | Math.ceil(100 / children.length) | Number of elements to render.             |
+| theme            | [ParallaxTextTheme](#theme) | {" {} "}                         | The theme to be applied to the component. |
+
+<Callout emoji="💡">
+  The renderedElements are the concrete number of elements (copies) to render.
+  This is a performance optimization, the lower the number the better, but you
+  need to make sure that the text is long enough to cover the whole screen.
+</Callout>
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the **As prop**, [HTML **span**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/span) by default.
+</Callout>
+
+## Examples
+
+### Blurred ParallaxText
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-parallaxtext--blurred"
+  height={550}
+  name="Blurred ParallaxText"
+  code={blurred}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-parallaxtext--blurred&viewMode=story"
+>
+  <BlurredCode />
+</Example>
+
+### ParallaxText in the same direction
+
+Use **velocity** prop to make the parallax effect in the same direction.
+Positive values will make the elements move right when scrolling down and left when scrolling up.
+
+The opposite happens with negative values.
+
+The higher the number, the faster the parallax effect.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-parallaxtext--same-direction"
+  height={550}
+  name="Same direction"
+  code={sameDirection}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-parallaxtext--same-direction&viewMode=story"
+>
+  <SameDirectionCode />
+</Example>
+### Custom classes
+
+You can customize any CSS property of the ParallaxText component
+by using the `className` and Tailwind CSS classes.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-parallaxtext--custom-class"
+  height={550}
+  name="Custom clases"
+  code={customClass}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-parallaxtext--custom-class&viewMode=story"
+>
+  <CustomClassCode />
+</Example>
+### Custom elements amount
+
+The number of elements to render. This is a performance optimization, the lower the number the better, but you need to make sure that the text is long enough to cover the whole screen.
+By default is:
+
+```js
+Math.ceil(100 / children.length) ?? 10;
+```
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-parallaxtext--custom-elements-amount"
+  height={550}
+  name="Custom elements amount"
+  code={amount}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-parallaxtext--custom-elements-amount&viewMode=story"
+>
+  <AmountCode />
+</Example>
+### Custom elements tag
+
+By default, the ParallaxText component uses the **span** tag, but you can customize it using the **as** prop.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-parallaxtext--custom-elements"
+  height={550}
+  name="Custom elements tag"
+  code={elements}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-parallaxtext--custom-elements&viewMode=story"
+>
+  <ElementsCode />
+</Example>
+
+### Custom resistance
+
+To customize the resistance of the parallax effect, you can use the **resistance** prop, the higher the number, the slower the parallax effect.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-parallaxtext--resistance"
+  height={550}
+  name="Resistance"
+  code={resistance}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-parallaxtext--custom-elements&viewMode=story"
+>
+  <ResistanceCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+### PaginationTheme
+
+```ts
+export interface PaginationTheme {
+  base: string;
+  layout: {
+    table: {
+      base: string;
+      span: string;
+    };
+  };
+  pages: {
+    base: string;
+    showIcon: string;
+    previous: {
+      base: string;
+      icon: string;
+    };
+    next: {
+      base: string;
+      icon: string;
+    };
+    selector: {
+      base: string;
+      active: string;
+      disabled: string;
+    };
+  };
+}
+```
+
+### Labels
+
+```ts
+interface Labels {
+  next: string;
+  previous: string;
+  of: string;
+  to: string;
+  entries: string;
+  showing: string;
+}
+```
