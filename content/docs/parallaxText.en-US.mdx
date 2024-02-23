@@ -112,7 +112,7 @@ The higher the number, the faster the parallax effect.
 ### Custom classes
 
 You can customize any CSS property of the ParallaxText component
-by using the `className` and Tailwind CSS classes.
+by using the **className** and Tailwind CSS classes.
 
 <Example
   storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-parallaxtext--custom-class"
@@ -173,46 +173,8 @@ To customize the resistance of the parallax effect, you can use the **resistance
 
 To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
 
-### PaginationTheme
-
 ```ts
-export interface PaginationTheme {
+interface ParallaxTextTheme {
   base: string;
-  layout: {
-    table: {
-      base: string;
-      span: string;
-    };
-  };
-  pages: {
-    base: string;
-    showIcon: string;
-    previous: {
-      base: string;
-      icon: string;
-    };
-    next: {
-      base: string;
-      icon: string;
-    };
-    selector: {
-      base: string;
-      active: string;
-      disabled: string;
-    };
-  };
-}
-```
-
-### Labels
-
-```ts
-interface Labels {
-  next: string;
-  previous: string;
-  of: string;
-  to: string;
-  entries: string;
-  showing: string;
 }
 ```
