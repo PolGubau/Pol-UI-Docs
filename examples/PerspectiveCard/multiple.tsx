@@ -1,0 +1,22 @@
+const code = `
+import { PerspectiveCard } from "pol-ui";
+
+const PerspectiveCardComponent = () => {
+  return (
+    <div className="w-full flex p-10 gap-10 rounded-3xl border justify-center bg-primary-200">
+      <PerspectiveCard className="flex gap-2">
+        <div className="w-[150px] h-[150px] rounded-3xl bg-primary grid place-items-center">
+          Hello there
+        </div>
+      </PerspectiveCard>
+      <PerspectiveCard className="flex gap-2">
+        <div className="w-[150px] h-[150px] rounded-3xl bg-primary grid place-items-center">
+          Hello there
+        </div>
+      </PerspectiveCard>
+    </div>
+  );
+};
+export default PerspectiveCardComponent;
+`;
+export default code;

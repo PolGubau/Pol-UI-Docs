@@ -1,0 +1,136 @@
+---
+title: PerspectiveCard
+path: perspectiveCard
+publishedAt: 2024-02-23
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/PerspectiveCard
+doc_type: component
+summary: The PerspectiveCard from pol-ui represents a type a card with a motion effect that rotates in 3D the card when the user hovers it.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/PerspectiveCard
+tags:
+  - perspectiveCard
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/PerspectiveCard/root.mdx";
+import root from "examples/PerspectiveCard/root";
+
+import MultipleCode from "examples/PerspectiveCard/multiple.mdx";
+import multiple from "examples/PerspectiveCard/multiple";
+
+import MultipleElementsCode from "examples/PerspectiveCard/multipleElements.mdx";
+import multipleElements from "examples/PerspectiveCard/multipleElements";
+
+import PropsCode from "examples/PerspectiveCard/props.mdx";
+import props from "examples/PerspectiveCard/props";
+
+import WideParentCode from "examples/PerspectiveCard/wideParent.mdx";
+import wideParent from "examples/PerspectiveCard/wideParent";
+
+The **PerspectiveCard** from **pol-ui** represents a type a card with a motion effect that rotates in 3D the card when the user hovers it.
+
+## Importation
+
+Import the component from **pol-ui** to use the PerspectiveCard element:
+
+```jsx
+import { PerspectiveCard } from "pol-ui";
+```
+
+## Default Perspective Card
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-perspectivecard--default"
+  height={500}
+  name="Default PerspectiveCard"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-perspectivecard--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name        | Type                           | Default | Description                                |
+| ---------------- | ------------------------------ | ------- | ------------------------------------------ |
+| children         | ReactNode                      | -       | The content of the card.                   |
+| className        | string                         | -       | The class name of the card.                |
+| wrapperClassName | string                         | -       | The class name of the wrapper of the card. |
+| theme            | [PerspectiveCardTheme](#theme) | {"{}"}  | The theme of the card.                     |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **div**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/div).
+</Callout>
+
+## Examples
+
+### Custom Parent
+
+The parent of the **PerspectiveCard** component can be any tag and any Taildwind CSS class.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-perspectivecard--wide-parent"
+  height={500}
+  name="Card with custom parent"
+  code={wideParent}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-perspectivecard--wide-parent&viewMode=story"
+>
+  <WideParentCode />
+</Example>
+### Custom Props
+
+To add custom props form the div tag or a **motion.div** tag from
+[**framer-motion**](https://www.framer.com/motion/) you can add any prop to the **PerspectiveCard** component.
+
+Try for example to do **hover** to the following card:
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-perspectivecard--custom-props"
+  height={500}
+  name="Card with custom props"
+  code={props}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-perspectivecard--custom-props&viewMode=story"
+>
+  <PropsCode />
+</Example>
+
+### Multiple Elements in one card
+
+You can add any children to the **PerspectiveCard** component, so you can create the effect to have multiple elements moving in 3D.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-perspectivecard--multiple-elements"
+  height={500}
+  name="Card with multiple elements"
+  code={multipleElements}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-perspectivecard--multiple-elements&viewMode=story"
+>
+  <MultipleElementsCode />
+</Example>
+
+### Multiple Cards at the same time
+
+Having multiple **PerspectiveCard** components next to the other won't create any conflict. You can have as many cards as you want in the same parent.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-perspectivecard--two-cards"
+  height={500}
+  name="Two cards in one parent"
+  code={multiple}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-perspectivecard--two-cards&viewMode=story"
+>
+  <MultipleCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface PerspectiveCardTheme {
+  base: string;
+  wrapper: string;
+}
+```
