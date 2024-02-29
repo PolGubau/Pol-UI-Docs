@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "lib/utils";
+import { Sidebar, SidebarItem, useBoolean } from "pol-ui";
+import { TbLayout } from "react-icons/tb";
 
 const AsideLink = ({ path, children }) => {
   const pathname = usePathname();
@@ -44,41 +46,37 @@ const Aside = () => {
   );
 
   const allBase = allDocsSorted?.filter((d) => d.doc_type === "base");
+  console.log(allBase);
 
   const allComponents = allDocsSorted?.filter(
     (d) => d.doc_type === "component"
   );
 
+  const { value, toggle } = useBoolean(false);
   return (
-    <aside className="min-w-[150px] sticky top-6 overflow-y-auto flex flex-col gap-6">
-      <AnimatePresence mode="wait">
-        <ol className="flex flex-col ">
-          {allBase?.map((docs) => {
-            return (
-              <AsideLink key={docs._id} path={docs.path}>
-                {docs.title}
-              </AsideLink>
-            );
-          })}
-        </ol>
+    <Sidebar
+      toggle={toggle}
+      collapsed={value}
+      className="h-[92vh] overflow-y-auto"
+    >
+      {allBase?.map((docs) => {
+        return (
+          <SidebarItem key={docs._id} href={docs.path}>
+            {docs.title}
+          </SidebarItem>
+        );
+      })}
 
-        <section className="flex flex-col gap-2">
-          <span className="text-sm text-secondary-700 dark:secondary-300">
-            Components
-          </span>
-
-          <ol>
-            {allComponents?.map((c) => {
-              return (
-                <AsideLink key={c._id} path={c.path}>
-                  {c.title}
-                </AsideLink>
-              );
-            })}
-          </ol>
-        </section>
-      </AnimatePresence>
-    </aside>
+      <Sidebar.Collapse label="Components" icon={TbLayout}>
+        {allComponents?.map((c) => {
+          return (
+            <SidebarItem key={c._id} href={c.path}>
+              {c.title}
+            </SidebarItem>
+          );
+        })}
+      </Sidebar.Collapse>
+    </Sidebar>
   );
 };
 

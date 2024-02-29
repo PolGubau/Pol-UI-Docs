@@ -117,8 +117,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.className} `}>
-      <body className="antialiased    mb-20   mt-8 md:mx-auto scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 transition-colors duration-200 w-full overflow-x-hidden flex justify-center">
-        <main className="flex-auto flex flex-col w-full px-8 md:px-10 max-w-5xl">
+      <body className="antialiased mb-20 scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 w-full overflow-x-hidden flex justify-center">
+        <main className="flex-auto flex flex-col w-full">
           <AppProvider>
             <NextTopLoader color="#b49cff" height={2} showSpinner={false} />
             <GoTopButton />
