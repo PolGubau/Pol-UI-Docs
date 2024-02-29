@@ -1,0 +1,12 @@
+```jsx
+import { Switch, MainSizesEnum, MainSizes } from "pol-ui";
+export const AllSizes = (): JSX.Element => (
+  <div className="flex flex-wrap gap-6">
+    {Object.keys(MainSizesEnum).map(v => (
+      <div key={v} className="flex flex-col items-center justify-center">
+        <Switch size={v as MainSizes} checked={true} onChange={() => {}} label={v} />
+      </div>
+    ))}
+  </div>
+)
+```

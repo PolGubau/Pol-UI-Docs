@@ -1,0 +1,73 @@
+```jsx
+import { Tabs } from "pol-ui";
+
+const tabs = [
+  {
+    name: "Product",
+    content: (
+      <div className="bg-secondary-200 p-6 rounded-2xl">
+        <h2 className="text-3xl text-secondary-900 font-bold">Product Tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur
+        </p>
+      </div>
+    ),
+  },
+  {
+    name: "Features",
+    content: (
+      <div className="bg-secondary-200 p-6 rounded-2xl">
+        <h2 className="text-3xl text-secondary-900 font-bold">Features Tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem
+        </p>
+      </div>
+    ),
+  },
+  {
+    name: "Reviews",
+    content: (
+      <div className="bg-secondary-200 p-6 rounded-2xl">
+        <h2 className="text-3xl text-secondary-900 font-bold">Reviews Tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur
+        </p>
+      </div>
+    ),
+  },
+  {
+    name: "Customers",
+    content: (
+      <div className="bg-secondary-200 p-6 rounded-2xl">
+        <h2 className="text-3xl text-secondary-900 font-bold">Customers Tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+        </p>
+      </div>
+    ),
+  },
+];
+
+export const TabsExample = (): JSX.Element => (
+  <div className=" relative flex flex-col mx-auto w-full  items-start justify-start">
+    <Tabs tabs={tabs} hasNavMotion={false} />
+  </div>
+);
+```

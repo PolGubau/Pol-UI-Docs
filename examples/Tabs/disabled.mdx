@@ -1,0 +1,43 @@
+```jsx
+import { Tabs } from "pol-ui";
+
+const tabs = [
+  {
+    name: "Enabled",
+    content: (
+      <div className="bg-secondary-200 p-6 rounded-2xl">
+        <h2 className="text-3xl text-secondary-900 font-bold">Enabled Tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur
+        </p>
+      </div>
+    ),
+  },
+  {
+    name: "Disabled",
+    disabled: true,
+    content: (
+      <div className="bg-secondary-200 p-6 rounded-2xl">
+        <h2 className="text-3xl text-secondary-900 font-bold">Disabled Tab</h2>
+        <p>
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur adipisicing elit. Ipsam, quas.
+          Lorem ipsum dolor sit amet consecte tur
+        </p>
+      </div>
+    ),
+  },
+];
+
+export const TabsExample = (): JSX.Element => (
+  <div className=" relative flex flex-col mx-auto w-full  items-start justify-start">
+    <Tabs tabs={tabs} />
+  </div>
+);
+```
