@@ -1,9 +1,9 @@
-```jsx
+const code = `
 import { Popover } from "pol-ui";
 
 const PopoverComponent = () => {
   return (
-    <Popover>
+    <Popover defaultOpen>
       <div className="flex flex-col items-center rounded-2xl">
         <Avatar
           size="lg"
@@ -25,4 +25,5 @@ const PopoverComponent = () => {
   );
 };
 export default PopoverComponent;
-```
+`;
+export default code;

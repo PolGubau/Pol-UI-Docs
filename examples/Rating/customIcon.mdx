@@ -1,0 +1,19 @@
+```jsx
+import { Rating } from "pol-ui";
+import {
+  TbCactus,
+  TbAdjustmentsBolt,
+  TbPhotoFilled,
+  TbLayout,
+  TbPhoneCheck,
+} from "react-icons/tb";
+export const CustomIcon = (): JSX.Element => (
+  <div className="flex flex-col gap-4 w-full">
+    <Rating starIcon={TbCactus} filled={1} />
+    <Rating starIcon={TbAdjustmentsBolt} filled={2} />
+    <Rating starIcon={TbPhotoFilled} filled={3} />
+    <Rating starIcon={TbLayout} filled={4} />
+    <Rating starIcon={TbPhoneCheck} filled={5} />
+  </div>
+);
+```

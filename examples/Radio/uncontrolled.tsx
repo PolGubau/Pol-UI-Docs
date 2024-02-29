@@ -1,0 +1,23 @@
+const code = `
+import { Radio } from "pol-ui";
+
+export const UnControlled = (): JSX.Element => {
+  const options = ["Option 1", "Option 2", "Option 3"];
+  return (
+    <ul className="flex gap-2">
+      {options.map((option) => {
+        return (
+          <Radio
+            name="2"
+            key={option}
+            value={option}
+            label={option}
+            defaultChecked={option === options[1]}
+          />
+        );
+      })}
+    </ul>
+  );
+};
+`;
+export default code;

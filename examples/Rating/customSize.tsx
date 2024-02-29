@@ -1,0 +1,11 @@
+const code = `
+import { Rating, ratingTheme, MainSizes } from "pol-ui";
+export const CustomSize = (): JSX.Element => (
+  <div className="flex flex-col gap-4 w-full">
+    {Object.keys(ratingTheme.star.size).map(size => (
+      <Rating key={size} size={size as MainSizes} />
+    ))}
+  </div>
+)
+`;
+export default code;

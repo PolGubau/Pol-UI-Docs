@@ -1,17 +1,29 @@
 const code = `
-import { PerspectiveCard } from "pol-ui";
+import { Popover } from "pol-ui";
 
-const PerspectiveCardComponent = () => {
+const PopoverComponent = () => {
   return (
-    <div className="w-[500px] min-h-[400px] rounded-3xl border bg-primary-200">
-      <PerspectiveCard>
-        <div className="w-[150px] h-[150px] rounded-3xl bg-primary grid place-items-center">
-          Hello there
+    <Popover>
+      <div className="flex flex-col items-center rounded-2xl">
+        <Avatar
+          size="lg"
+          img={"https://avatars.githubusercontent.com/u/63197171?v=4"}
+        />
+        <h2 className="text-lg font-bold mt-2">Pol Gubau Amores</h2>
+        <p className="text-sm text-secondary-500">
+          Software Engineer at <b>Pol-ui</b>
+        </p>
+
+        <div className="mt-4 flex items-center">
+          <Button color="secondary">View Profile</Button>
+          <Button color="primary" className="ml-2">
+            Follow
+          </Button>
         </div>
-      </PerspectiveCard>
-    </div>
+      </div>{" "}
+    </Popover>
   );
 };
-export default PerspectiveCardComponent;
+export default PopoverComponent;
 `;
 export default code;
