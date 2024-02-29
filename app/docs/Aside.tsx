@@ -38,8 +38,6 @@ const AsideLink = ({ path, children }) => {
 };
 
 const Aside = () => {
-  const pathname = usePathname();
-
   // some docs have a order field, so we sort them by that, otherwise alphabetically
   const allDocsSorted = allDocs?.sort((a, b) =>
     a.order && b.order ? a.order - b.order : a.title.localeCompare(b.title)
@@ -52,7 +50,7 @@ const Aside = () => {
   );
 
   return (
-    <div className="min-w-[150px] sticky top-6 max-h-screen h-full flex flex-col gap-6">
+    <aside className="min-w-[150px] sticky top-6 overflow-y-auto flex flex-col gap-6">
       <AnimatePresence mode="wait">
         <ol className="flex flex-col ">
           {allBase?.map((docs) => {
@@ -80,7 +78,7 @@ const Aside = () => {
           </ol>
         </section>
       </AnimatePresence>
-    </div>
+    </aside>
   );
 };
 

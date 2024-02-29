@@ -2,7 +2,7 @@ import "./global.css";
 import type { Metadata } from "next";
 import { metadata as constants } from "../lib/constants";
 import { Poppins } from "next/font/google";
-import Sidebar from "./components/navbar";
+import Navbar from "./components/navbar";
 import { Footer } from "./components/Layout";
 import NextTopLoader from "nextjs-toploader";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -105,7 +105,7 @@ export const viewport = {
   viewport: "width=device-width, initial-scale=1.0",
   colorScheme: "light dark",
 };
-export const font = Poppins({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "600", "800"],
 });
@@ -116,13 +116,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${font.className} `}>
+    <html lang="en" className={`${poppins.className} `}>
       <body className="antialiased    mb-20   mt-8 md:mx-auto scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 transition-colors duration-200 w-full overflow-x-hidden flex justify-center">
         <main className="flex-auto flex flex-col w-full px-8 md:px-10 max-w-5xl">
           <AppProvider>
             <NextTopLoader color="#b49cff" height={2} showSpinner={false} />
             <GoTopButton />
-            <Sidebar />
+            <Navbar />
             {children}
             <Footer />
           </AppProvider>

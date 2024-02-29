@@ -4,7 +4,7 @@ import Aside from "./Aside";
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main
-      className="grid grid-cols-[auto,1fr] gap-4 "
+      className="grid grid-cols-[auto,1fr] gap-4 h-[95hv]"
       style={{
         scrollbarGutter: "stable",
       }}
