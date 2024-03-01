@@ -1,0 +1,97 @@
+---
+title: Toggle
+path: toggle
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Toggle
+doc_type: component
+summary: The Toggle is a type of button that allows the user to switch between two possible states.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Toggle
+tags:
+  - toggle
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Toggle/root.mdx";
+import root from "examples/Toggle/root";
+
+import AllColorsCode from "examples/Toggle/allColors.mdx";
+import allColors from "examples/Toggle/allColors";
+
+The **Toggle** is a type of button that allows the user to switch between two possible states.
+
+## Importation
+
+Import the component from **pol-ui** to use the Toggle element:
+
+```jsx
+import { Toggle } from "pol-ui";
+```
+
+## Default Toggle
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-toggle--default"
+  height={150}
+  name="Default Toggle"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-toggle--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+### Toggle
+
+| Prop name | Type                  | Default            | Description                                     |
+| --------- | --------------------- | ------------------ | ----------------------------------------------- |
+| active    | boolean               | false              | The state of the toggle                         |
+| children  | React.ReactNode       | -                  | The content of the toggle                       |
+| rounded   | RoundedSizes          | 'xl'               | The rounded size of the toggle                  |
+| theme     | [ToggleTheme](#theme) | -                  | The theme of the toggle                         |
+| color     | Colors                | ColorsEnum.primary | The color of the toggle                         |
+| disabled  | boolean               | false              | The state of the toggle                         |
+| onClick   | (e) => void           | -                  | The function to call when the toggle is clicked |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **button**
+  tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button).
+</Callout>
+## Examples
+
+### Some Toggle examples
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-toggle--all-colors"
+  height={250}
+  name="Toggle Examples"
+  code={allColors}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-toggle--all-colors&viewMode=story"
+>
+  <AllColorsCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+enum BooleanEnum {
+  off = "off",
+  on = "on",
+}
+interface ToggleTheme {
+  base: string;
+  rounded: RoundedSizesTypes;
+  active: Record<
+    BooleanEnum,
+    {
+      base: string;
+      colors: ColorsType;
+    }
+  >;
+}
+```

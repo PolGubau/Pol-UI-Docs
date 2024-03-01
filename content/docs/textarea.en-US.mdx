@@ -1,0 +1,82 @@
+---
+title: Textarea
+path: teaxtarea
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Textarea
+doc_type: component
+summary: The Textarea component from **pol-ui** creates an animated heading that displays a list of words one by one. It is a great way to create a dynamic and engaging heading for your website.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Textarea
+tags:
+  - teaxtarea
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Textarea/root.mdx";
+import root from "examples/Textarea/root";
+
+import HeightCode from "examples/Textarea/height.mdx";
+import height from "examples/Textarea/height";
+
+import ResizeCode from "examples/Textarea/resize.mdx";
+import resize from "examples/Textarea/resize";
+ 
+ 
+ 
+The **Textarea** component from **pol-ui** creates an animated heading that displays a list of words one by one. It is a great way to create a dynamic and engaging heading for your website.
+
+## Importation
+
+Import the component from **pol-ui** to use the Textarea element:
+
+```jsx
+import { Textarea } from "pol-ui";
+```
+
+## Default Textarea
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-textarea--default-textarea"
+  height={350}
+  name="Default Textarea"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-textarea--default-textarea&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+The props used in the **Textarea** component are the same as in the [input component](/docs/input#theme) or any prop in the [textarea element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea).
+
+## Examples
+
+### Custom Height
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-textarea--custom-height"
+  height={350}
+  name="Example with long text"
+  code={height}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-textarea--custom-height&viewMode=story"
+>
+  <HeightCode />
+</Example>
+
+### Resizable
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-textarea--resizeable"
+  height={350}
+  name="Example with long text"
+  code={resize}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-textarea--resizeable&viewMode=story"
+>
+  <ResizeCode />
+</Example>
+
+## Theme
+
+The theme used in the **Textarea** component is the same as in the [input component](/docs/input#theme).

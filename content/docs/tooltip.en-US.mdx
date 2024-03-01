@@ -1,0 +1,163 @@
+---
+title: Tooltip
+path: tooltip
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Tooltip
+doc_type: component
+summary: Indicate helpful information when hovering over an element such as a button or link to improve the UI/UX of your website.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Tooltip
+tags:
+  - tooltip
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Tooltip/root.mdx";
+import root from "examples/Tooltip/root";
+
+import AnimationsCode from "examples/Tooltip/animations.mdx";
+import animations from "examples/Tooltip/animations";
+
+import ClickCode from "examples/Tooltip/click.mdx";
+import click from "examples/Tooltip/click";
+
+import DarkModeCode from "examples/Tooltip/darkMode.mdx";
+import darkMode from "examples/Tooltip/darkMode";
+
+import NoArrowCode from "examples/Tooltip/noArrow.mdx";
+import noArrow from "examples/Tooltip/noArrow";
+
+import PopoverCode from "examples/Tooltip/popover.mdx";
+import popover from "examples/Tooltip/popover";
+
+Use the **Tooltip** component from **Pol-ui** to indicate helpful information when hovering over an element such as a button or link to improve the UI/UX of your website.
+
+## Importation
+
+Import the component from **pol-ui** to use the Tooltip element:
+
+```jsx
+import { Tooltip } from "pol-ui";
+```
+
+## Default Tooltip
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tooltip--default-tooltip"
+  height={150}
+  name="Default Tooltip"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tooltip--default-tooltip&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+### Tooltip
+
+| Prop name | Type                   | Default            | Description                                      |
+| --------- | ---------------------- | ------------------ | ------------------------------------------------ |
+| active    | boolean                | false              | The state of the tooltip                         |
+| children  | React.ReactNode        | -                  | The content of the tooltip                       |
+| rounded   | RoundedSizes           | 'xl'               | The rounded size of the tooltip                  |
+| theme     | [TooltipTheme](#theme) | -                  | The theme of the tooltip                         |
+| color     | Colors                 | ColorsEnum.primary | The color of the tooltip                         |
+| disabled  | boolean                | false              | The state of the tooltip                         |
+| onClick   | (e) => void            | -                  | The function to call when the tooltip is clicked |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **button**
+  tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button).
+</Callout>
+## Examples
+
+### Trigger on Click
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tooltip--trigger-on-click"
+  height={250}
+  name="Trigger on Click"
+  code={click}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tooltip--trigger-on-click&viewMode=story"
+>
+  <ClickCode />
+</Example>
+
+### As Popover
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tooltip--popover"
+  height={250}
+  name="Trigger as Popover"
+  code={popover}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tooltip--popover&viewMode=story"
+>
+  <PopoverCode />
+</Example>
+
+### Tooltip Without Arrow
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tooltip--no-arrow"
+  height={250}
+  name="Tooltip Without Arrow"
+  code={noArrow}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tooltip--no-arrow&viewMode=story"
+>
+  <NoArrowCode />
+</Example>
+
+### Slow animation
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tooltip--slow-animation"
+  height={250}
+  name="Slow animation"
+  code={animations}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tooltip--slow-animation&viewMode=story"
+>
+  <AnimationsCode />
+</Example>
+
+### Dark mode
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tooltip--dark-mode"
+  height={250}
+  name="Dark mode"
+  code={darkMode}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tooltip--dark-mode&viewMode=story"
+>
+  <DarkModeCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+export interface FloatingTheme {
+  arrow: {
+    base: string;
+    placement: string;
+    style: {
+      dark: string;
+      light: string;
+      auto: string;
+    };
+  };
+  animation: string;
+  base: string;
+  content: string;
+  hidden: string;
+  style: {
+    auto: string;
+    dark: string;
+    light: string;
+  };
+  target: string;
+}
+```

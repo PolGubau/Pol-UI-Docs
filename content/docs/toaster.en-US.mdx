@@ -1,0 +1,130 @@
+---
+title: Toaster
+path: toaster
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Toaster
+doc_type: component
+summary: The Toaster is a wrapper for your app that provides a way to trigger popup messages using the toast function.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Toaster
+tags:
+  - toaster
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Toaster/root.mdx";
+import root from "examples/Toaster/root";
+
+import ExamplesCode from "examples/Toaster/examples.mdx";
+import examples from "examples/Toaster/examples";
+
+The **Toaster** is a wrapper for your app that provides a way to trigger popup messages using the **toast** function.
+
+## Importation
+
+Import the component from **pol-ui** to use the Toaster element:
+
+```jsx
+import { Toaster } from "pol-ui";
+```
+
+## Default Toaster
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-toaster--default"
+  height={380}
+  name="Default Toaster"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-toaster--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+### Toaster
+
+| Prop name             | Type                          | Default   | Description                                                    |
+| --------------------- | ----------------------------- | --------- | -------------------------------------------------------------- |
+| invert                | boolean                       | false     | Inverts the color of the toast.                                |
+| theme                 | 'light' \| 'dark' \| 'system' | undefined | Specifies the theme for the toaster.                           |
+| position              | Position                      | undefined | Specifies the position of the toaster on the screen.           |
+| hotkey                | string[]                      | undefined | Specifies the hotkey(s) to trigger the toaster.                |
+| richColors            | boolean                       | undefined | Enables rich colors for the toasts.                            |
+| expand                | boolean                       | undefined | Enables expanding behavior for the toasts.                     |
+| duration              | number                        | undefined | Specifies the duration for which the toasts will be displayed. |
+| gap                   | number                        | undefined | Specifies the gap between toasts.                              |
+| visibleToasts         | number                        | undefined | Specifies the maximum number of visible toasts.                |
+| closeButton           | boolean                       | undefined | Enables the close button for each toast.                       |
+| toastOptions          | ToastOptions                  | undefined | Specifies additional options for the toasts.                   |
+| className             | string                        | undefined | Specifies additional class names for the toaster.              |
+| style                 | CSSProperties                 | undefined | Specifies additional styles for the toaster.                   |
+| offset                | string \| number              | undefined | Specifies the offset for the toaster.                          |
+| dir                   | 'rtl' \| 'ltr' \| 'auto'      | undefined | Specifies the text direction for the toaster.                  |
+| loadingIcon           | ReactNode                     | undefined | Specifies the loading icon for the toaster.                    |
+| containerAriaLabel    | string                        | undefined | Specifies the ARIA label for the toaster container.            |
+| pauseWhenPageIsHidden | boolean                       | undefined | Pauses toasts when the page is hidden.                         |
+
+### Toast
+
+| Prop name            | Type                                                | Default   | Description                                     |
+| -------------------- | --------------------------------------------------- | --------- | ----------------------------------------------- |
+| theme                | [ToastTheme](#theme)                                | undefined | Specifies the theme for the toast.              |
+| id                   | number \| string                                    | undefined | Unique identifier for the toast.                |
+| title                | string \| ReactNode                                 | undefined | Title of the toast.                             |
+| type                 | ToastTypes                                          | undefined | Type of the toast.                              |
+| icon                 | ReactNode                                           | undefined | Icon to be displayed in the toast.              |
+| jsx                  | ReactNode                                           | undefined | JSX content for the toast.                      |
+| invert               | boolean                                             | undefined | Inverts the color of the toast.                 |
+| closeButton          | boolean                                             | undefined | Enables the close button for the toast.         |
+| dismissible          | boolean                                             | undefined | Allows dismissing the toast manually.           |
+| description          | ReactNode                                           | undefined | Description content for the toast.              |
+| duration             | number                                              | undefined | Duration for which the toast will be displayed. |
+| delete               | boolean                                             | undefined | Enables deleting the toast.                     |
+| important            | boolean                                             | undefined | Marks the toast as important.                   |
+| action               | {" { label: ReactNode, onClick: (e) => void } "}    | undefined | Action button for the toast.                    |
+| cancel               | {"{ label: ReactNode, onClick?: (event) => void }"} | undefined | Cancel button for the toast.                    |
+| onDismiss            | (toast) => void                                     | undefined | Callback when the toast is dismissed.           |
+| onAutoClose          | (toast) => void                                     | undefined | Callback when the toast auto-closes.            |
+| promise              | PromiseT                                            | undefined | Promise associated with the toast.              |
+| cancelButtonStyle    | CSSProperties                                       | undefined | Styles for the cancel button.                   |
+| actionButtonStyle    | CSSProperties                                       | undefined | Styles for the action button.                   |
+| style                | CSSProperties                                       | undefined | Styles for the toast.                           |
+| className            | string                                              | undefined | Additional class names for the toast.           |
+| classNames           | ToastClassnames                                     | undefined | Class names for different parts of the toast.   |
+| descriptionClassName | string                                              | undefined | Class name for the toast description.           |
+| position             | Position                                            | undefined | Position of the toast on the screen.            |
+
+## Examples
+
+### Some Toaster examples
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-toaster--examples"
+  height={350}
+  name="Toaster Examples"
+  code={examples}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-toaster--examples&viewMode=story"
+>
+  <ExamplesCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface ToastTheme {
+  base: string;
+  title: string;
+  description: string;
+  success: string;
+  error: string;
+  info: string;
+  warning: string;
+  loading: string;
+  default: string;
+}
+```
