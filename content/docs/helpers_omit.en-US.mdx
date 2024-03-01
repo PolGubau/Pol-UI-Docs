@@ -1,0 +1,91 @@
+---
+title: omit
+path: omit
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/omit
+doc_type: helper
+summary: Utility function that creates a new object excluding specified keys. It accepts an array of keys to omit and returns a function that takes an object as input and produces a new object with the specified keys removed.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/omit
+tags:
+  - omit
+  - Object Manipulation
+  - JavaScript
+  - Pol-ui
+---
+
+The **omit** function is a utility that creates a new object excluding specified keys. It accepts an array of keys to omit and returns a function that takes an object as input and produces a new object with the specified keys removed.
+
+## Usage
+
+Import the **omit** function in your project and use it to create a new object without the specified keys:
+
+```tsx
+import { omit } from "./path-to-omit";
+
+// Your code goes here
+
+const originalObject = {
+  name: "John Doe",
+  age: 25,
+  city: "Example City",
+};
+
+const keysToOmit = ["age", "city"];
+
+const modifiedObject = omit(keysToOmit)(originalObject);
+
+// Log the original and modified objects to see the difference
+console.log("Original Object:", originalObject);
+console.log("Modified Object:", modifiedObject);
+```
+
+## **Parameters**
+
+The **omit** function takes two generic type parameters:
+
+- **T** (**object**): The type of the input object.
+- **K** (**string**): The type of the keys to omit.
+
+The function returns a new function that accepts the following parameter:
+
+- **obj** (**T**): The input object from which specified keys are to be omitted.
+
+## **Return Value**
+
+The returned function produces a new object of type **{"Omit<T, K>"}**, where keys specified in the **keys** array are excluded.
+
+## **Example**
+
+```tsx
+tsxCopy code
+import { omit } from './path-to-omit';
+
+const originalObject = {
+  name: 'John Doe',
+  age: 25,
+  city: 'Example City',
+};
+
+const keysToOmit = ['age', 'city'];
+
+const modifiedObject = omit(keysToOmit)(originalObject);
+
+console.log('Original Object:', originalObject);
+console.log('Modified Object:', modifiedObject);
+
+// Output:
+// Original Object: { name: 'John Doe', age: 25, city: 'Example City' }
+// Modified Object: { name: 'John Doe' }
+
+```
+
+In this example, the **omit** function is used to create a new object (**modifiedObject**) by omitting specified keys (**'age'** and **'city'**) from the original object.
+
+## **Use Cases**
+
+1. **Data Transformation**: Use **omit** to transform data structures by excluding certain properties, creating a modified version of an object.
+2. **Configurations**: When working with configuration objects, **omit** can be used to create variations by excluding specific configuration options.
+3. **Form Handling**: In form handling scenarios, **omit** can help create a new state object with certain form fields excluded.
+
+Integrate the **omit** function into your project for flexible object manipulation by selectively excluding keys.

@@ -1,0 +1,124 @@
+---
+title: mergeDeep
+path: mergeDeep
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/mergeDeep
+doc_type: helper
+summary: Utility function that merges and deep copies the values of enumerable own properties from a source object to a target object, creating a new object with the merged and deeply copied properties. This ensures that changes made to the merged object do not affect the original target or source objects.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/mergeDeep
+tags:
+  - mergeDeep
+  - cloneDeep
+  - React
+  - JavaScript
+  - Pol-ui
+---
+
+The **mergeDeep** function is a utility that merges and deep copies the values of all enumerable own properties from a source object to a target object, creating a new object with the merged and deeply copied properties. This ensures that changes made to the merged object do not affect the original target or source objects.
+
+## Usage
+
+Import the **mergeDeep** function in your project and use it to merge and deep copy properties from a source object to a target object:
+
+```tsx
+import { mergeDeep } from "./path-to-mergeDeep";
+
+// Your code goes here
+
+const targetObject = {
+  name: "John Doe",
+  address: {
+    city: "Example City",
+    country: "Example Country",
+  },
+};
+
+const sourceObject = {
+  address: {
+    city: "New City",
+  },
+  age: 26,
+};
+
+const mergedObject = mergeDeep(targetObject, sourceObject);
+
+// Make changes to the merged object without affecting the original target or source
+mergedObject.age = 27;
+mergedObject.address.city = "Another City";
+
+// Log the original target, source, and merged objects to see the difference
+console.log("Target Object:", targetObject);
+console.log("Source Object:", sourceObject);
+console.log("Merged Object:", mergedObject);
+```
+
+## Parameters
+
+The **mergeDeep** function takes two parameters:
+
+- **target** (**T**): The target object to get properties from.
+- **source** (**S**): The source object from which to copy properties.
+
+## Return Value
+
+The function returns a new object that is a merged and deep copy of the target and source objects.
+
+## Example
+
+```tsx
+import { mergeDeep } from "./path-to-mergeDeep";
+
+const targetObject = {
+  name: "Alice Wonderland",
+  preferences: {
+    color: "blue",
+    theme: "dark",
+  },
+};
+
+const sourceObject = {
+  preferences: {
+    theme: "light",
+  },
+  age: 30,
+};
+
+const mergedObject = mergeDeep(targetObject, sourceObject);
+
+console.log("Target Object:", targetObject);
+console.log("Source Object:", sourceObject);
+console.log("Merged Object:", mergedObject);
+
+// Output:
+// Target Object: { name: 'Alice Wonderland', preferences: { color: 'blue', theme: 'dark' } }
+// Source Object: { preferences: { theme: 'light' }, age: 30 }
+// Merged Object: { name: 'Alice Wonderland', preferences: { color: 'blue', theme: 'light' }, age: 30 }
+```
+
+In this example, the **mergeDeep** function is used to create a new object by merging and deep copying properties from a target and source object. Changes to the merged object do not affect the original target or source objects.
+
+## Use Cases
+
+1. **State Management in React**: When managing state in a React application, especially with complex and nested structures, **mergeDeep** can be used to ensure immutability and prevent unintended side effects.
+2. **Configuration Objects**: If your application uses configuration objects with nested properties, **mergeDeep** ensures that modifications to one instance do not affect others.
+3. **Data Integration**: When integrating data from multiple sources or APIs, **mergeDeep** can be employed to combine and transform data structures while maintaining isolation.
+
+## Pros and Cons
+
+<ProsCard
+  title="Benefits of mergeDeep"
+  pros={[
+    "Immutability: Ensures that the original target and source objects remain unchanged, promoting immutability.",
+    "Nested Structures: Handles deeply nested structures, making it suitable for complex data scenarios.",
+  ]}
+/>
+<ConsCard
+  title="Considerations for mergeDeep"
+  cons={[
+    "Performance: Deep cloning can be computationally expensive, especially for large and deeply nested objects. Consider the performance implications in performance-sensitive applications.",
+    "Circular References: Handling circular references in objects requires additional logic to prevent infinite recursion during the merging process.",
+  ]}
+/>
+
+Integrate the **mergeDeep** function into your project to facilitate the merging and deep copying of objects, ensuring robust data handling and immutability where needed.

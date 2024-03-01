@@ -1,0 +1,71 @@
+---
+title: isObject
+path: isObject
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/isObject
+doc_type: helper
+summary: Utility function that checks whether a provided parameter is a plain object. It returns `true` if the parameter is a non-null object with the `Object` constructor, indicating a plain object, and `false` otherwise.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/isObject
+tags:
+  - isObject
+  - Type Checking
+  - JavaScript
+  - Pol-ui
+---
+
+The **isObject** function is a utility that checks whether a provided parameter is a plain object. It returns **true** if the parameter is a non-null object with the Object constructor, indicating a plain object, and **false** otherwise.
+
+## Usage
+
+Import the **isObject** function in your project and use it to check if a given parameter is a plain object:
+
+```tsx
+import { isObject } from "pol-ui";
+
+// Your code goes here
+
+const exampleObject = { key: "value" };
+
+if (isObject(exampleObject)) {
+  // Code to handle the case when exampleObject is a plain object
+  console.log("Provided parameter is a plain object");
+} else {
+  // Code to handle the case when exampleObject is not a plain object
+  console.log("Provided parameter is not a plain object");
+}
+```
+
+## **Parameters**
+
+- **item** (**unknown**): The parameter to be checked for being a plain object.
+
+## **Return Value**
+
+The function returns a boolean value (**true** or **false**), indicating whether the provided parameter is a plain object.
+
+## **Example**
+
+```tsx
+import { isObject } from "pol-ui";
+
+const exampleObject = { key: "value" };
+
+if (isObject(exampleObject)) {
+  console.log("Provided parameter is a plain object");
+} else {
+  console.log("Provided parameter is not a plain object");
+}
+
+// Output:
+// Provided parameter is a plain object
+```
+
+In this example, the **isObject** function is used to check if a given parameter (**`exampleObject`**) is a plain object.
+
+## **Use Cases**
+
+1. **Type Checking**: Use **isObject** to perform type checking and ensure that a variable is a plain object before performing operations specific to objects.
+2. **Object Validation**: When building functions that expect plain objects as parameters, use **isObject** to validate the input and provide appropriate handling for non-object cases.
+
+Integrate the **isObject** function into your project for robust type checking of plain objects.
