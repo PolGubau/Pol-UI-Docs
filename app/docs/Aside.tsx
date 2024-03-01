@@ -4,7 +4,7 @@ import { allDocs } from "contentlayer/generated";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "lib/utils";
 import { Sidebar, SidebarItem, useBoolean } from "pol-ui";
 import { TbLayout } from "react-icons/tb";
@@ -45,7 +45,7 @@ const Aside = () => {
     a.order && b.order ? a.order - b.order : a.title.localeCompare(b.title)
   );
 
-  const allBase = allDocsSorted?.filter((d) => d.doc_type === "base");
+  const allBase = allDocsSorted?.filter((d) => d.doc_type === "base").reverse();
   console.log(allBase);
 
   const allComponents = allDocsSorted?.filter(
@@ -57,11 +57,15 @@ const Aside = () => {
     <Sidebar
       toggle={toggle}
       collapsed={value}
-      className="h-[92vh] overflow-y-auto"
+      className="h-[92vh] overflow-y-auto bg-secondary-50 dark:bg-secondary-900"
     >
       {allBase?.map((docs) => {
         return (
-          <SidebarItem key={docs._id} href={docs.path}>
+          <SidebarItem
+            key={docs._id}
+            href={docs.path}
+            className=" bg-secondary-50 dark:bg-secondary-900"
+          >
             {docs.title}
           </SidebarItem>
         );
@@ -70,7 +74,11 @@ const Aside = () => {
       <Sidebar.Collapse label="Components" icon={TbLayout}>
         {allComponents?.map((c) => {
           return (
-            <SidebarItem key={c._id} href={c.path}>
+            <SidebarItem
+              key={c._id}
+              href={c.path}
+              className=" bg-secondary-50 dark:bg-secondary-900"
+            >
               {c.title}
             </SidebarItem>
           );
