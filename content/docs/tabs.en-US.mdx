@@ -1,0 +1,158 @@
+---
+title: Tabs
+path: tabs
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Tabs
+doc_type: component
+summary: Show a list of tab items that you can click on to change the content inside
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Tabs
+tags:
+  - tabs
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Tabs/root.mdx";
+import root from "examples/Tabs/root";
+
+import ContainedCode from "examples/Tabs/contained.mdx";
+import contained from "examples/Tabs/contained";
+
+import DisabledCode from "examples/Tabs/disabled.mdx";
+import disabled from "examples/Tabs/disabled";
+
+import WithMotionCode from "examples/Tabs/withMotion.mdx";
+import withMotion from "examples/Tabs/withMotion";
+
+import WithoutNavMotionCode from "examples/Tabs/withoutNavMotion.mdx";
+import withoutNavMotion from "examples/Tabs/withoutNavMotion";
+
+The **Tabs** component from **pol-ui** can be used to show a list of tab items that you can click on to change the content inside of the main tabs component using React state reactivity.
+
+## Importation
+
+Import the component from **pol-ui** to use the Tabs element:
+
+```jsx
+import { Tabs } from "pol-ui";
+```
+
+## Default Tabs
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tabs--tabs-example"
+  height={350}
+  name="Default Tabs"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tabs--tabs-example&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name          | Type                   | Default            | Description               |
+| ------------------ | ---------------------- | ------------------ | ------------------------- |
+| tabs               | Tab[]                  | -                  | The tabs to display       |
+| containerClassName | string                 | -                  | The class name of the     |
+| container          |
+| activeTabClassName | string                 | -                  | The class name of the     |
+| active tab         |
+| tabClassName       | string                 | -                  | The class name of the tab |
+| contentClassName   | string                 | -                  | The class name of the     |
+| content            |
+| hasMotion          | boolean                | false              | If the tabs have motion   |
+| hasNavMotion       | boolean                | true               | If the tabs have nav      |
+| motion             |
+| mode               | contained / underlined | TabMode.underlined | The mode of the tabs      |
+| theme              | [TabsTheme](#theme)    | -                  | The theme of the tabs     |
+
+### Tabs
+
+| Prop name | Type            | Default | Description            |
+| --------- | --------------- | ------- | ---------------------- |
+| name      | string          | -       | The name of the tab    |
+| content   | React.ReactNode | -       | The content of the tab |
+| disabled  | boolean         | false   | If the tab is disabled |
+
+## Examples
+
+### Contained Tabs
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tabs--contained-mode"
+  height={350}
+  name="Contained Tabs"
+  code={contained}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tabs--contained-mode&viewMode=story"
+>
+  <ContainedCode />
+</Example>
+
+### Tabs with motion
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tabs--with-motion"
+  height={350}
+  name="With Motion"
+  code={withMotion}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tabs--with-motion&viewMode=story"
+>
+  <WithMotionCode />
+</Example>
+
+### Tabs without nav motion
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tabs--with-motion"
+  height={350}
+  name="Without Nav Motion"
+  code={withoutNavMotion}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tabs--with-motion&viewMode=story"
+>
+  <WithoutNavMotionCode />
+</Example>
+
+### Disabled tab
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tabs--disabled"
+  height={350}
+  name="Without Nav Motion"
+  code={disabled}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tabs--disabled&viewMode=story"
+>
+  <DisabledCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface TabsTheme {
+  root: {
+    base: string;
+    shadow: string;
+    wrapper: string;
+  };
+  head: {
+    base: string;
+    cell: {
+      base: string;
+    };
+  };
+  row: {
+    base: string;
+    hovered: string;
+    striped: string;
+  };
+  body: {
+    base: string;
+    cell: {
+      base: string;
+    };;
+  };
+}
+```

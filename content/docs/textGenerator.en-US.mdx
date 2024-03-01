@@ -1,0 +1,139 @@
+---
+title: TextGenerator
+path: textGenerator
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/TextGenerator
+doc_type: component
+summary: The TextGenerator component from **pol-ui** creates an animated heading that displays a list of words one by one. It is a great way to create a dynamic and engaging heading for your website.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/TextGenerator
+tags:
+  - textGenerator
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/TextGenerator/root.mdx";
+import root from "examples/TextGenerator/root";
+
+import SlowCode from "examples/TextGenerator/slow.mdx";
+import slow from "examples/TextGenerator/slow";
+
+import FastCode from "examples/TextGenerator/fast.mdx";
+import fast from "examples/TextGenerator/fast";
+
+import DelayCode from "examples/TextGenerator/delay.mdx";
+import delay from "examples/TextGenerator/delay";
+
+import CustomClassCode from "examples/TextGenerator/customClass.mdx";
+import customClass from "examples/TextGenerator/customClass";
+
+import LongTextCode from "examples/TextGenerator/longText.mdx";
+import longText from "examples/TextGenerator/longText";
+ 
+ 
+The **TextGenerator** component from **pol-ui** creates an animated heading that displays a list of words one by one. It is a great way to create a dynamic and engaging heading for your website.
+
+## Importation
+
+Import the component from **pol-ui** to use the TextGenerator element:
+
+```jsx
+import { TextGenerator } from "pol-ui";
+```
+
+## Default TextGenerator
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-textgenerator--example"
+  height={350}
+  name="Default TextGenerator"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-textgenerator--example&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type                         | Default | Description                               |
+| --------- | ---------------------------- | ------- | ----------------------------------------- |
+| text      | string                       |         | The text to be animated.                  |
+| speed     | number                       | 1       | The speed of the animation.               |
+| delay     | number                       | 0.2     | The delay between each word.              |
+| className | string                       |         | The class name to be applied to the text. |
+| theme     | [TextGeneratorTheme](#theme) | {}      | The theme to be applied to the text.      |
+
+## Examples
+
+### Long TextGenerator
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-textgenerator--default"
+  height={350}
+  name="Example with long text"
+  code={longText}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-textgenerator--default&viewMode=story"
+>
+  <LongTextCode />
+</Example>
+
+### Slow TextGenerator
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-textgenerator--slow"
+  height={350}
+  name="Example with slow text"
+  code={slow}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-textgenerator--slow&viewMode=story"
+>
+  <SlowCode />
+</Example>
+
+### Fast TextGenerator
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-textgenerator--fast"
+  height={350}
+  name="Example with fast text"
+  code={fast}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-textgenerator--fast&viewMode=story"
+>
+  <FastCode />
+</Example>
+
+### Custom Delay TextGenerator
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-textgenerator--delay"
+  height={350}
+  name="Example with fast text"
+  code={fast}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-textgenerator--delay&viewMode=story"
+>
+  <FastCode />
+</Example>
+
+### Custom className
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-textgenerator--custom-class"
+  height={350}
+  name="Example with custom class"
+  code={customClass}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-textgenerator--custom-class&viewMode=story"
+>
+  <CustomClassCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface TextGeneratorTheme {
+  base: string;
+  wrapper: string;
+}
+```
