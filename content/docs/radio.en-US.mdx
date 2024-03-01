@@ -1,0 +1,108 @@
+---
+title: Radio
+path: radio
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Radio
+doc_type: component
+summary: A Radio is a popup component that is used to display additional information or actions when the user interacts with a button or a link.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Radio
+tags:
+  - radio
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Radio/root.mdx";
+import root from "examples/Radio/root";
+
+import AllColorsCode from "examples/Radio/allColors.mdx";
+import allColors from "examples/Radio/allColors";
+
+import DarkModeCode from "examples/Radio/darkMode.mdx";
+import darkMode from "examples/Radio/darkMode";
+
+import UncontrolledCode from "examples/Radio/uncontrolled.mdx";
+import uncontrolled from "examples/Radio/uncontrolled";
+
+Use the progress bar component from Pol-ui to show the percentage and completion rate of a given task using a visually friendly bar meter based on multiple styles and sizes.
+
+Choose one of the examples below for your application and use the React props to update the progress fill rate, label, sizing, and colors and customize with the classes from Tailwind CSS.
+
+To start using the progress bar component make sure you import it first from Pol-ui:
+
+## Importation
+
+Import the component from **pol-ui** to use the Radio element:
+
+```jsx
+import { Radio } from "pol-ui";
+```
+
+## Default Radio
+
+Use this example to show a progress bar where you can set the progress rate using the **progress** prop from React which should be a number from 1 to 100.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-radio--default"
+  height={200}
+  name="Default Radio"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-radio--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type                 | Default            | Description                                                          |
+| --------- | -------------------- | ------------------ | -------------------------------------------------------------------- |
+| theme     | [RadioTheme](#theme) | {}                 | The theme object to customize the appearance of the Radio component. |
+| color     | Colors               | ColorsEnum.primary | The color of the Radio component.                                    |
+| label     | string               | -                  | The label of the Radio component.                                    |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **input**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/input).
+</Callout>
+
+## Examples
+
+### All colors
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-radio--all-colors"
+  height={400}
+  name="All colors"
+  code={allColors}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-radio--all-colors&viewMode=story"
+>
+  <AllColorsCode />
+</Example>
+
+### Uncontrolled Radio
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-radio--un-controlled"
+  height={400}
+  name="Uncontrolled radio"
+  code={uncontrolled}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-radio--un-controlled&viewMode=story"
+>
+  <UncontrolledCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface ProgressTheme {
+  base: string;
+  label: string;
+  bar: string;
+  color: ColorsType;
+  size: MainSizesType;
+  rounded: RoundedSizesTypes;
+}
+```
