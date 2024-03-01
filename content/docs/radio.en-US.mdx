@@ -92,17 +92,34 @@ Use this example to show a progress bar where you can set the progress rate usin
   <UncontrolledCode />
 </Example>
 
+### Dark Mode
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-radio--dark-mode"
+  height={400}
+  name="Dark mode"
+  code={darkMode}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-radio--dark-mode&viewMode=story"
+>
+  <DarkModeCode />
+</Example>
+
 ## Theme
 
 To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
 
 ```ts
-interface ProgressTheme {
+interface RadioTheme {
   base: string;
-  label: string;
-  bar: string;
   color: ColorsType;
-  size: MainSizesType;
-  rounded: RoundedSizesTypes;
+  before: string;
+  floating: {
+    base: string;
+    svg: string;
+  };
+  check: {
+    base: string;
+    color: ColorsType;
+  };
 }
 ```
