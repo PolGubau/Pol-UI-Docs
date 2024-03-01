@@ -74,7 +74,7 @@ const Aside = () => {
             );
           })}
 
-          <Sidebar.Collapse label="Components" icon={TbLayout}>
+          <Sidebar.Collapse open label="Components" icon={TbLayout}>
             {allComponents?.map((c) => {
               return (
                 <SidebarItem

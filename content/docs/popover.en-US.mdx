@@ -13,27 +13,33 @@ tags:
   - Pol-ui
 ---
 
-import RootCode from "examples/PerspectiveCard/root.mdx";
-import root from "examples/PerspectiveCard/root";
+import RootCode from "examples/Popover/root.mdx";
+import root from "examples/Popover/root";
+import ControlledCode from "examples/Popover/controlled.mdx";
+import controlled from "examples/Popover/controlled";
+import DefaultOpenCode from "examples/Popover/defaultOpen.mdx";
+import defaultOpen from "examples/Popover/defaultOpen";
+import RoundedCode from "examples/Popover/rounded.mdx";
+import rounded from "examples/Popover/rounded";
 
 A **Popover** is a popup component that is used to display additional information or actions when the user interacts with a button or a link.
 
 ## Importation
 
-Import the component from **pol-ui** to use the PerspectiveCard element:
+Import the component from **pol-ui** to use the Popover element:
 
 ```jsx
-import { PerspectiveCard } from "pol-ui";
+import { Popover } from "pol-ui";
 ```
 
 ## Default Perspective Card
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-perspectivecard--default"
-  height={500}
-  name="Default PerspectiveCard"
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-popover--default"
+  height={400}
+  name="Default Popover"
   code={root}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-perspectivecard--default&viewMode=story"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-popover--default&viewMode=story"
 >
   <RootCode />
 </Example>
@@ -56,16 +62,38 @@ import { PerspectiveCard } from "pol-ui";
 
 ### All rounded sizes
 
-The 
+The amount of roundness of the popover popup can be customized using the **rounded** prop. The following example shows all the available rounded sizes.
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-perspectivecard--two-cards"
-  height={500}
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-popover--all-rounded"
+  height={400}
   name="Two cards in one parent"
-  code={multiple}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-perspectivecard--two-cards&viewMode=story"
+  code={rounded}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-popover--all-rounded&viewMode=story"
 >
-  <MultipleCode />
+  <RoundedCode />
+</Example>
+### Default Open
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-popover--default-open"
+  height={400}
+  name="Two cards in one parent"
+  code={defaultOpen}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-popover--default-open&viewMode=story"
+>
+  <DefaultOpenCode />
+</Example>
+### Controlled
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-popover--controlled"
+  height={400}
+  name="Two cards in one parent"
+  code={controlled}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-popover--controlled&viewMode=story"
+>
+  <ControlledCode />
 </Example>
 ## Theme
 

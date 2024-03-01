@@ -1,0 +1,106 @@
+---
+title: Progress
+path: progress
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Progress
+doc_type: component
+summary: A Progress is a popup component that is used to display additional information or actions when the user interacts with a button or a link.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Progress
+tags:
+  - progress
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Progress/root.mdx";
+import root from "examples/Progress/root";
+
+import AllColorsCode from "examples/Progress/allColors.mdx";
+import allColors from "examples/Progress/allColors";
+
+import AllSizesCode from "examples/Progress/allSizes.mdx";
+import allSizes from "examples/Progress/allSizes";
+
+import CustomClassesCode from "examples/Progress/customClasses.mdx";
+import customClasses from "examples/Progress/customClasses";
+
+import RoundnessCode from "examples/Progress/roundness.mdx";
+import roundness from "examples/Progress/roundness";
+
+import WithoutMotionCode from "examples/Progress/withoutMotion.mdx";
+import withoutMotion from "examples/Progress/withoutMotion";
+
+Use the progress bar component from Pol-ui to show the percentage and completion rate of a given task using a visually friendly bar meter based on multiple styles and sizes.
+
+Choose one of the examples below for your application and use the React props to update the progress fill rate, label, sizing, and colors and customize with the classes from Tailwind CSS.
+
+To start using the progress bar component make sure you import it first from Pol-ui:
+
+## Importation
+
+Import the component from **pol-ui** to use the Progress element:
+
+```jsx
+import { Progress } from "pol-ui";
+```
+
+## Default Progress
+
+Use this example to show a progress bar where you can set the progress rate using the **progress** prop from React which should be a number from 1 to 100.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-progress--default"
+  height={250}
+  name="Default Progress"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-progress--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name    | Type                      | Default               | Description                                   |
+| ------------ | ------------------------- | --------------------- | --------------------------------------------- |
+| progress     | number                    | 75                    | The progress rate from 1 to 100               |
+| size         | MainSizes                 | MainSizesEnum.md      | The size of the progress bar                  |
+| label        | string                    | -                     | The label to be displayed on the progress bar |
+| theme        | [ProgressTheme](#theme)   | -                     | The theme to be used on the progress bar      |
+| hasMotion    | boolean                   | true                  | If the progress bar should have motion        |
+| color        | Colors                    | ColorsEnum.primary    | The color of the progress bar                 |
+| rounded      | keyof RoundedSizesElastic | RoundedSizesEnum.full | The rounded size of the progress bar          |
+| barClassName | string                    | -                     | The class name to be used on the progress bar |
+
+## Examples
+
+### All rounded sizes
+
+The amount of roundness of the popover popup can be customized using the **rounded** prop. The following example shows all the available rounded sizes.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-popover--all-rounded"
+  height={400}
+  name="Two cards in one parent"
+  code={rounded}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-popover--all-rounded&viewMode=story"
+>
+  <RoundedCode />
+</Example>
+
+
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface ProgressTheme {
+  base: string;
+  label: string;
+  bar: string;
+  color: ColorsType;
+  size: MainSizesType;
+  rounded: RoundedSizesTypes;
+}
+```
