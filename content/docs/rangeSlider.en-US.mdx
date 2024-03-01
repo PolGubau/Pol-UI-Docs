@@ -1,0 +1,69 @@
+---
+title: RangeSlider
+path: rangeSlider
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/RangeSlider
+doc_type: component
+summary: The RangeSlider displays a range of values along a bar, allowing users to select a number value visually.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/RangeSlider
+tags:
+  - rangeSlider
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/RangeSlider/root.mdx";
+import root from "examples/RangeSlider/root";
+
+The **RangeSlider** displays a range of values along a bar, allowing users to select a number value visually.
+
+## Importation
+
+Import the component from **pol-ui** to use the RangeSlider element:
+
+```jsx
+import { RangeSlider } from "pol-ui";
+```
+
+## Default RangeSlider
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-rangeslider--default-range-slider"
+  height={150}
+  name="Default RangeSlider"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-rangeslider--default-range-slider&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type                       | Default            | Description                                                                |
+| --------- | -------------------------- | ------------------ | -------------------------------------------------------------------------- |
+| theme     | [RangeSliderTheme](#theme) | {}                 | The theme object to customize the appearance of the RangeSlider component. |
+| color     | Colors                     | ColorsEnum.primary | The color of the RangeSlider component.                                    |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **input**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/input).
+</Callout>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface RangeSliderTheme {
+  root: { base: string };
+  field: {
+    base: string;
+    input: {
+      base: string;
+      sizes: MainSizesType;
+    };
+  };
+}
+```

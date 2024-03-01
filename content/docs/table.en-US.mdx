@@ -1,0 +1,138 @@
+---
+title: Table
+path: table
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Table
+doc_type: component
+summary: The Table is a layout component to display data in a tabular format.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Table
+tags:
+  - table
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Table/root.mdx";
+import root from "examples/Table/root";
+
+The **Table** is a layout component to display data in a tabular format. It's a great way to display data in a structured way, and it's also a great way to compare data.
+
+## Importation
+
+Import the component from **pol-ui** to use the Table element:
+
+```jsx
+import { Table } from "pol-ui";
+```
+
+## Default Table
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-tables--default-table"
+  height={400}
+  name="Default Table"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-tables--default-table&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+### Table
+
+| Prop name | Type                 | Default | Description                                 |
+| --------- | -------------------- | ------- | ------------------------------------------- |
+| children  | React.ReactNode      |         | The content of the Table                    |
+| className | string               |         | The class of the Table                      |
+| striped   | boolean              | false   | If true, the Table will have striped rows   |
+| hoverable | boolean              | false   | If true, the Table will have hoverable rows |
+| hasShadow | boolean              | true    | If true, the Table will have a shadow       |
+| theme     | [TableTheme](#theme) |         | The theme of the Table                      |
+
+### TableHead
+
+| Prop name | Type                     | Default | Description                |
+| --------- | ------------------------ | ------- | -------------------------- |
+| theme     | [TableHeadTheme](#theme) |         | The theme of the TableHead |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **thead**
+  tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead).
+</Callout>
+
+### TableHeadCell
+
+| Prop name                    | Type | Default                             | Description |
+| ---------------------------- | ---- | ----------------------------------- | ----------- |
+| [TableHeadCellTheme](#theme) |      | The theme of the TableHeadCellTheme |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **th**
+  tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th).
+</Callout>
+
+### TableRow
+
+| Prop name               | Type | Default                        | Description |
+| ----------------------- | ---- | ------------------------------ | ----------- |
+| [TableRowTheme](#theme) |      | The theme of the TableRowTheme |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **tr**
+  tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr).
+</Callout>
+
+### TableBody
+
+| Prop name                | Type | Default                         | Description |
+| ------------------------ | ---- | ------------------------------- | ----------- |
+| [TableBodyTheme](#theme) |      | The theme of the TableBodyTheme |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **tbody**
+  tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody).
+</Callout>
+
+### TableCell
+
+| Prop name                | Type | Default                         | Description |
+| ------------------------ | ---- | ------------------------------- | ----------- |
+| [TableCellTheme](#theme) |      | The theme of the TableCellTheme |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **td**
+  tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td).
+</Callout>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface TableTheme {
+  root: {
+    base: string;
+    shadow: string;
+    wrapper: string;
+  };
+  head: {
+    base: string;
+    cell: {
+      base: string;
+    };
+  };
+  row: {
+    base: string;
+    hovered: string;
+    striped: string;
+  };
+  body: {
+    base: string;
+    cell: {
+      base: string;
+    };;
+  };
+}
+```

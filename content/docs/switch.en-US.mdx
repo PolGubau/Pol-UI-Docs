@@ -1,0 +1,106 @@
+---
+title: Switch
+path: switch
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Switch
+doc_type: component
+summary: A Switch is a motion component that changes the color of the background when the user scrolls.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Switch
+tags:
+  - switch
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Switch/root.mdx";
+import root from "examples/Switch/root";
+
+import AllSizesCode from "examples/Switch/allSizes.mdx";
+import allSizes from "examples/Switch/allSizes";
+
+import AllColorsCode from "examples/Switch/allColors.mdx";
+import allColors from "examples/Switch/allColors";
+
+The **Switch** is a motion component that changes the color of the background when the user scrolls.
+
+## Importation
+
+Import the component from **pol-ui** to use the Switch element:
+
+```jsx
+import { Switch } from "pol-ui";
+```
+
+## Default Switch
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-switch--default-switch"
+  height={150}
+  name="Default Switch"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-switch--default-switch&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type                       | Default              | Description                                     |
+| --------- | -------------------------- | -------------------- | ----------------------------------------------- |
+| checked   | boolean                    | false                | The state of the switch                         |
+| color     | Colors                     | ColorsEnum.secondary | The color of the switch                         |
+| size      | MainSizes                  | MainSizesEnum.md     | The size of the switch                          |
+| label     | string                     | -                    | The label of the switch                         |
+| onChange  | (checked: boolean) => void | -                    | The function to call when the switch is clicked |
+| theme     | [SwitchTheme](#theme)      | -                    | The theme of the switch                         |
+
+## Examples
+
+### All colors
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-switch--all-colors"
+  height={300}
+  name="All colors"
+  code={allColors}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-switch--all-colors&viewMode=story"
+>
+  <AllColorsCode />
+</Example>
+
+### All sizes
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-switch--all-sizes"
+  height={100}
+  name="All sizes"
+  code={allSizes}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-switch--all-sizes&viewMode=story"
+>
+  <AllSizesCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface SwitchTheme {
+  root: {
+    base: string;
+    active: IBoolean;
+    label: string;
+  };
+  toggle: {
+    base: string;
+    sizes: MainSizesType;
+    color: ColorsType;
+    checked: IBoolean;
+    handler: {
+      base: string;
+      sizes: MainSizesType;
+    };
+  };
+}
+```

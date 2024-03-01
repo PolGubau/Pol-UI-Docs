@@ -1,0 +1,92 @@
+---
+title: Select
+path: select
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Select
+doc_type: component
+summary: A Select component is a key component in a form, it allows the user to select one or more options from a list of options.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Select
+tags:
+  - select
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Select/root.mdx";
+import root from "examples/Select/root";
+
+import WithIconsCode from "examples/Select/withIcons.mdx";
+import withIcons from "examples/Select/withIcons";
+
+A Select component is a key component in a form, it allows the user to select one or more options from a list of options.
+
+## Importation
+
+Import the component from **pol-ui** to use the Rating element:
+
+```jsx
+import { Rating } from "pol-ui";
+```
+
+## Default Rating
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-select--default-select"
+  height={150}
+  name="Default Rating"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-select--default-select&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name  | Type                          | Default | Description                         |
+| ---------- | ----------------------------- | ------- | ----------------------------------- |
+| addon      | ReactNode                     | -       | Addon to the input                  |
+| color      | Colors                        | primary | The color of the input              |
+| helperText | ReactNode                     | -       | Helper text to show below the input |
+| icon       | {"FC<ComponentProps<'svg'>>"} | -       | Icon to show inside the input       |
+| shadow     | boolean                       | false   | If the input should have a shadow   |
+| sizing     | MainSizes                     | md      | The size of the input               |
+| theme      | [SelectTheme](#theme)         | -       | The theme of the input              |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **select**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/select).
+</Callout>
+
+## Examples
+
+### Select with Icon
+
+To add an icon to the Rating component, you can use the **icon** prop.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-select--with-icon"
+  height={150}
+  name="Custom star amount Rating"
+  code={withIcons}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-select--with-icon&viewMode=story"
+>
+  <WithIconsCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface RatingTheme {
+  root: { base: string };
+  field: {
+    base: string;
+    input: {
+      base: string;
+      sizes: MainSizesType;
+    };
+  };
+}
+```

@@ -1,0 +1,88 @@
+---
+title: StickyScroll
+path: stickySroll
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/StickyScroll
+doc_type: component
+summary: A StickyScroll is a motion component that changes the color of the background when the user scrolls.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/StickyScroll
+tags:
+  - stickySroll
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/StickyScroll/root.mdx";
+import root from "examples/StickyScroll/root";
+
+import ComplexCode from "examples/StickyScroll/complex.mdx";
+import complex from "examples/StickyScroll/complex";
+
+The **StickyScroll** is a motion component that changes the color of the background when the user scrolls.
+
+## Importation
+
+Import the component from **pol-ui** to use the StickyScroll element:
+
+```jsx
+import { StickyScroll } from "pol-ui";
+```
+
+## Default StickyScroll
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-stickyscroll--simple"
+  height={500}
+  name="Default StickyScroll"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-stickyscroll--simple&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name | Type                        | Default | Description                                 |
+| --------- | --------------------------- | ------- | ------------------------------------------- |
+| colors    | string[]                    | -       | The colors to be used in the StickyScroll   |
+| theme     | [StickyScrollTheme](#theme) | -       | The theme to be used in the StickyScroll    |
+| className | string                      | -       | The class to be used in the StickyScroll    |
+| children  | ReactNode                   | -       | The children to be used in the StickyScroll |
+
+## Examples
+
+### StickyScroll without Icon
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-stickyscroll--between-content"
+  height={500}
+  name="StickyScroll without Icon"
+  code={complex}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-stickyscroll--between-content&viewMode=story"
+>
+  <ComplexCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface StickyScrollTheme {
+  root: {
+    base: string;
+    collapsed: IBoolean;
+    inner: string;
+  };
+  collapse: StickyScrollCollapseTheme;
+  item: StickyScrollItemTheme;
+  itemGroup: string;
+  logo: StickyScrollLogoTheme;
+  closeButton: {
+    base: string;
+    collapsed: string;
+    expanded: string;
+  };
+}
+```

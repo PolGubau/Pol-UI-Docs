@@ -1,0 +1,188 @@
+---
+title: Sidebar
+path: sidebar
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Sidebar
+doc_type: component
+summary: A Sidebar is a main part of a website, it allows the user to navigate through the website in a simple way.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Sidebar
+tags:
+  - sidebar
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Sidebar/root.mdx";
+import root from "examples/Sidebar/root";
+
+import CompleteExampleCode from "examples/Sidebar/completeExample.mdx";
+import completeExample from "examples/Sidebar/completeExample";
+
+import DefaultOpenedCode from "examples/Sidebar/defaultOpened.mdx";
+import defaultOpened from "examples/Sidebar/defaultOpened";
+
+import HidingCollapseCode from "examples/Sidebar/hidingCollapse.mdx";
+import hidingCollapse from "examples/Sidebar/hidingCollapse";
+
+import MultilevelCode from "examples/Sidebar/multilevel.mdx";
+import multilevel from "examples/Sidebar/multilevel";
+
+import WithLogoCode from "examples/Sidebar/withLogo.mdx";
+import withLogo from "examples/Sidebar/withLogo";
+
+import WithoutIconsCode from "examples/Sidebar/withoutIcons.mdx";
+import withoutIcons from "examples/Sidebar/withoutIcons";
+
+import WithSearchCode from "examples/Sidebar/withSearch.mdx";
+import withSearch from "examples/Sidebar/withSearch";
+
+A **Sidebar** is a main part of a website, it allows the user to navigate through the website in a simple way.
+
+## Importation
+
+Import the component from **pol-ui** to use the Sidebar element:
+
+```jsx
+import { Sidebar } from "pol-ui";
+```
+
+## Default Sidebar
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-sidebar--default"
+  height={500}
+  name="Default Sidebar"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-sidebar--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name      | Type                   | Default    | Description                          |
+| -------------- | ---------------------- | ---------- | ------------------------------------ |
+| as             | ElementType            | 'nav'      | The HTML tag to use for the Sidebar. |
+| collapseMode   | 'collapse' \| 'hide'   | 'collapse' | The mode of the Sidebar.             |
+| theme          | [SidebarTheme](#theme) | {}         | The theme of the Sidebar.            |
+| open           | boolean                | true       | The state of the Sidebar.            |
+| toggle         | () => void             | -          | The function to toggle the Sidebar.  |
+| customBgColor  | string                 | -          | The background color of the Sidebar. |
+| innerClassName | string                 | -          | The class name of the inner Sidebar. |
+| footer         | React.ReactNode        | -          | The footer of the Sidebar.           |
+| hasMotion      | boolean                | -          | The motion of the Sidebar.           |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **div**
+  tag](https://developer.mozilla.org/docs/Web/HTML/Element/div).
+</Callout>
+
+## Examples
+
+### Sidebar without Icon
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-sidebar--without-icons"
+  height={500}
+  name="Sidebar without Icon"
+  code={withoutIcons}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-sidebar--without-icons&viewMode=story"
+>
+  <WithoutIconsCode />
+</Example>
+
+### Hidden when collapsed
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-sidebar--hiding-collapse"
+  height={500}
+  name="Hidden when collapsed"
+  code={hidingCollapse}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-sidebar--hiding-collapse&viewMode=story"
+>
+  <HidingCollapseCode />
+</Example>
+
+### Multilevel Sidebar
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-sidebar--multi-level-dropdown"
+  height={500}
+  name="Multilevel Sidebar"
+  code={multilevel}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-sidebar--multi-level-dropdown&viewMode=story"
+>
+  <MultilevelCode />
+</Example>
+
+### Default Opened Sidebar
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-sidebar--default-expanded-dropdown"
+  height={500}
+  name="Default Opened Sidebar"
+  code={defaultOpened}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-sidebar--default-expanded-dropdown&viewMode=story"
+>
+  <DefaultOpenedCode />
+</Example>
+
+### Sidebar with Branding
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-sidebar--logo-branding"
+  height={500}
+  name="Sidebar with Branding"
+  code={withLogo}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-sidebar--logo-branding&viewMode=story"
+>
+  <WithLogoCode />
+</Example>
+
+### Complete Example
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-sidebar--complete-example"
+  height={500}
+  name="Complete Example"
+  code={completeExample}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-sidebar--complete-example&viewMode=story"
+>
+  <CompleteExampleCode />
+</Example>
+
+### Complete Example
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-sidebar--with-search"
+  height={500}
+  name="Complete Example"
+  code={withSearch}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-sidebar--with-search&viewMode=story"
+>
+  <WithSearchCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface SidebarTheme {
+  root: {
+    base: string;
+    collapsed: IBoolean;
+    inner: string;
+  };
+  collapse: SidebarCollapseTheme;
+  item: SidebarItemTheme;
+  itemGroup: string;
+  logo: SidebarLogoTheme;
+  closeButton: {
+    base: string;
+    collapsed: string;
+    expanded: string;
+  };
+}
+```
