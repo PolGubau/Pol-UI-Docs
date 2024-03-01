@@ -1,0 +1,63 @@
+---
+title: getDocumentDirection
+path: getDocumentDirection
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/getDocumentDirection
+doc_type: helper
+summary: Utility function that determines the document direction (ltr or rtl) based on the HTML 'dir' attribute or the computed style of the document element.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/getDocumentDirection
+tags:
+  - getDocumentDirection
+  - React
+  - Typescript
+  - Pol-ui
+---
+
+The **getDocumentDirection** function is a utility that determines the document direction (ltr or rtl) based on the HTML 'dir' attribute or the computed style of the document element.
+
+## Usage
+
+Import the **getDocumentDirection** function in your project and use it to retrieve the document direction:
+
+```tsx
+import { getDocumentDirection } from "pol-ui";
+
+// Your code goes here
+
+const documentDirection = getDocumentDirection();
+
+console.log("Document Direction:", documentDirection);
+```
+
+## Return Value
+
+The function returns the document direction, which can be either 'ltr' (left-to-right) or 'rtl' (right-to-left).
+
+## Example
+
+```tsx
+tsxCopy code
+import { getDocumentDirection } from 'pol-ui';
+
+const documentDirection = getDocumentDirection();
+
+console.log('Document Direction:', documentDirection);
+
+// Output:
+// Document Direction: ltr
+
+```
+
+In this example, the **getDocumentDirection** function is used to retrieve the document direction, either 'ltr' or 'rtl'.
+
+## Use Cases
+
+1. **Dynamic Styling**: When dynamically adjusting styles based on the document direction, this function can be used to determine the current direction.
+2. **Localization**: In applications with multilingual support, knowing the document direction is essential for rendering content correctly.
+
+## Note
+
+If the 'dir' attribute of the HTML element is set to 'auto' or not specified, the function checks the computed style of the document element to determine the direction.
+
+Integrate the **getDocumentDirection** function into your project to obtain the document direction and enhance the adaptability of your application's UI.

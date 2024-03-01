@@ -1,0 +1,104 @@
+---
+title: useFloating
+path: useFloating
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useFloating
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useFloating
+tags:
+  - useFloating
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **useBaseFloating** and **useFloatingInteractions** custom hooks from the **@floating-ui/react** library provide functionality for managing floating UI elements, such as tooltips or popovers. These hooks are designed to simplify the implementation of floating UI components in a React application.
+
+## useBaseFloating Hook
+
+The **useBaseFloating** hook provides the basic functionality for managing the visibility and placement of floating UI elements.
+
+### Usage
+
+```jsx
+import { useBaseFloating } from 'pol-ui';
+
+function MyComponent() {
+  const { context } = useBaseFloating({
+    open: true,
+    setOpen: (value) => {
+      // Handle open state change
+    },
+    placement: 'top', // Optional: Specify the placement of the floating element ('auto' or a specific placement)
+    arrowRef: // Optional: Reference to the arrow element (RefObject<HTMLDivElement>)
+  });
+
+  // Use context in your component to control the floating element
+
+  return (
+    <div>
+      {/* Your component content goes here */}
+    </div>
+  );
+}
+
+```
+
+### Parameters
+
+- **open** (boolean): The state indicating whether the floating element is open.
+- **arrowRef** (RefObject{"<HTMLDivElement>"}): Optional reference to the arrow element.
+- **placement** ('auto' | Placement): Optional placement of the floating element.
+- **setOpen** (Dispatch{"<SetStateAction<boolean>>"}): Function to handle changes in the open state.
+
+## useFloatingInteractions Hook
+
+The **useFloatingInteractions** hook enhances the basic floating functionality by adding support for various interaction triggers like click and hover.
+
+### Usage
+
+```jsx
+jsxCopy code
+import { useFloatingInteractions } from 'pol-ui';
+
+function MyComponent() {
+  const { context } = useBaseFloating({
+    open: true,
+    setOpen: (value) => {
+      // Handle open state change
+    },
+  });
+
+  useFloatingInteractions({
+    context,
+    trigger: 'click', // Specify the trigger for the floating element ('click' or 'hover')
+    role: 'tooltip', // Specify the role of the floating element
+    interactions: [
+      // Additional interactions (ElementProps[])
+    ],
+  });
+
+  // Use context in your component to control the floating element with interactions
+
+  return (
+    <div>
+      {/* Your component content goes here */}
+    </div>
+  );
+}
+
+```
+
+### Parameters
+
+- **context** {"(ReturnType<typeof useFloating>['context'])"}: The context object from the **useBaseFloating** hook.
+- **trigger** ('click' | 'hover'): Optional interaction trigger for the floating element.
+- **role** (UseRoleProps['role']): Optional role of the floating element.
+- **interactions** (ElementProps[]): Optional additional interactions to enhance functionality.
+
+## Notes
+
+- These hooks are designed to work together for creating flexible and interactive floating UI elements.
+- Adjust the styles and dimensions according to your project requirements.

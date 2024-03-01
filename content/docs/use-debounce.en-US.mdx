@@ -1,0 +1,71 @@
+---
+title: useDebounce
+path: useDebounce
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useDebounce
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useDebounce
+tags:
+  - useDebounce
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **useDebounce** hook allows you to debounce a value for a given delay. It is useful when you want to wait for the user to stop typing before performing an action, such as making an API call or updating a state.
+
+## Importation
+Make sure you are importing the useDebounce hook from the pol-ui library in your React component.
+
+```jsx
+import { useDebounce } from "pol-ui";
+```
+
+## Usage
+
+```jsx
+const [value, setValue] = useState < string > "";
+const debouncedValue = useDebounce < string > (value, 1000); // Debounce for 1 second
+
+useEffect(() => {
+  console.log(debouncedValue);
+}, [debouncedValue]);
+```
+
+## Parameters
+
+- **value** < T >: The value to debounce.
+- **delay** < number > (optional): The delay in milliseconds. Default is 500.
+
+## Returns
+
+- **debouncedValue** < T >: The debounced value.
+
+## Example
+
+```jsx
+import React, { useState, useEffect } from "react";
+import { useDebounce } from "pol-ui";
+
+const App = () => {
+  const [value, setValue] = useState < string > "";
+  const debouncedValue = useDebounce < string > (value, 1000); // Debounce for 1 second
+
+  useEffect(() => {
+    console.log(debouncedValue);
+  }, [debouncedValue]);
+
+  return (
+    <input
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      placeholder="Debounce input"
+    />
+  );
+};
+
+export default App;
+```
+

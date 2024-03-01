@@ -3,11 +3,11 @@
 import { allDocs } from "contentlayer/generated";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useMemo } from "react";
 import { motion } from "framer-motion";
 import { cn } from "lib/utils";
 import { Sidebar, SidebarItem, useBoolean } from "pol-ui";
-import { TbLayout } from "react-icons/tb";
+import { TbFishHook, TbHelpSquareRounded, TbLayout } from "react-icons/tb";
 
 const AsideLink = ({ path, children }) => {
   const pathname = usePathname();
@@ -48,8 +48,19 @@ const Aside = () => {
   const allBase = allDocsSorted?.filter((d) => d.doc_type === "base").reverse();
   console.log(allBase);
 
-  const allComponents = allDocsSorted?.filter(
-    (d) => d.doc_type === "component"
+  const allComponents = useMemo(
+    () => allDocsSorted?.filter((d) => d.doc_type === "component"),
+    []
+  );
+
+  const allHooks = useMemo(
+    () => allDocsSorted?.filter((d) => d.doc_type === "hook"),
+    []
+  );
+
+  const allHelpers = useMemo(
+    () => allDocsSorted?.filter((d) => d.doc_type === "helper"),
+    []
   );
 
   const { value, toggle } = useBoolean(false);
@@ -76,6 +87,32 @@ const Aside = () => {
 
           <Sidebar.Collapse open label="Components" icon={TbLayout}>
             {allComponents?.map((c) => {
+              return (
+                <SidebarItem
+                  key={c._id}
+                  href={"/docs/" + c.path}
+                  className=" bg-secondary-50 dark:bg-secondary-900"
+                >
+                  {c.title}
+                </SidebarItem>
+              );
+            })}
+          </Sidebar.Collapse>
+          <Sidebar.Collapse label="Hooks" icon={TbFishHook}>
+            {allHooks?.map((c) => {
+              return (
+                <SidebarItem
+                  key={c._id}
+                  href={"/docs/" + c.path}
+                  className=" bg-secondary-50 dark:bg-secondary-900"
+                >
+                  {c.title}
+                </SidebarItem>
+              );
+            })}
+          </Sidebar.Collapse>
+          <Sidebar.Collapse label="Helpers" icon={TbHelpSquareRounded}>
+            {allHelpers?.map((c) => {
               return (
                 <SidebarItem
                   key={c._id}

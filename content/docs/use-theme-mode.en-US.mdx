@@ -1,0 +1,88 @@
+---
+title: useThemeMode
+path: useThemeMode
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useThemeMode
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useThemeMode
+tags:
+  - useThemeMode
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **useThemeMode** custom hook allows you to manage and synchronize the theme mode (light, dark, or auto) in your React application. It provides functions to set the theme mode, toggle between light and dark modes, and clear the mode.
+
+## Importation
+
+Make sure you are importing the useThemeMode hook from the pol-ui library in your React component.
+
+```jsx
+import { useThemeMode } from "pol-ui";
+```
+
+## Usage
+
+Import the **useThemeMode** hook in your React component and use it to manage the theme mode:
+
+```tsx
+import { useThemeMode } from "pol-ui";
+
+function ThemableComponent() {
+  const { mode, computedMode, setMode, toggleMode, clearMode } = useThemeMode();
+
+  // Your component logic goes here
+
+  return (
+    <div>
+      <p>Current Theme Mode: {mode}</p>
+      <p>Computed Mode: {computedMode}</p>
+      <button onClick={() => setMode("light")}>Set Light Mode</button>
+      <button onClick={() => setMode("dark")}>Set Dark Mode</button>
+      <button onClick={toggleMode}>Toggle Mode</button>
+      <button onClick={clearMode}>Clear Mode</button>
+    </div>
+  );
+}
+```
+
+## Return Value
+
+The **useThemeMode** hook returns an object with the following properties:
+
+- **mode** (ThemeMode): The current theme mode. ( light | dark | auto )
+- **computedMode** (ThemeMode): The computed theme mode, considering the auto mode.
+- **setMode** (function): Set the theme mode to a specific value.
+- **toggleMode** (function): Toggle between light and dark modes.
+- **clearMode** (function): Clear the theme mode to the default value.
+
+## Example
+
+```tsx
+import { useThemeMode } from "pol-ui";
+
+function DarkModeToggle() {
+  const { mode, computedMode, setMode, toggleMode, clearMode } = useThemeMode();
+
+  return (
+    <div>
+      <p>Current Theme Mode: {mode}</p>
+      <p>Computed Mode: {computedMode}</p>
+      <button onClick={() => setMode("dark")}>Set Dark Mode</button>
+      <button onClick={toggleMode}>Toggle Mode</button>
+      <button onClick={clearMode}>Clear Mode</button>
+    </div>
+  );
+}
+```
+
+This example demonstrates how to use the **useThemeMode** hook to manage and toggle between light and dark modes.
+
+## Notes
+
+- Ensure that the **dark** class is added or removed from the **html** element based on the theme mode.
+- The hook automatically syncs the theme mode across multiple instances using local storage.
+- You can customize the component logic based on your application requirements.

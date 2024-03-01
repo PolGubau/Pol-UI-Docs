@@ -1,0 +1,86 @@
+---
+title: useLocalStorage
+path: useLocalStorage
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useLocalStorage
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useLocalStorage
+tags:
+  - useLocalStorage
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **useLocalStorage** custom hook from the pol-ui library enables you to manage state in the **localStorage** of the client's browser. It provides a convenient way to persist and synchronize state across different components or tabs.
+
+## Importation
+
+Make sure you have the **pol-ui** library installed:
+
+```jsx
+import { useLocalStorage } from "pol-ui";
+```
+
+## Usage
+
+```tsx
+import { useLocalStorage } from "pol-ui";
+
+function MyComponent() {
+  const [value, setValue] = useLocalStorage("myKey", "defaultValue");
+
+  // Use the value and setValue as you would with useState
+  // ...
+
+  return (
+    <div>
+      <p>Value from localStorage: {value}</p>
+      {/* Other components and logic */}
+    </div>
+  );
+}
+```
+
+## Parameters
+
+- key (string): The key under which the value is stored in localStorage.
+- initialValue (T): The initial value to use if no value is found in localStorage.
+
+## Return Value
+
+An array containing the current value and a function to set a new value:
+
+- value (T): The current value from localStorage.
+- setValue (function): A function to set a new value in localStorage.
+
+## Example
+
+```tsx
+import { useLocalStorage } from "pol-ui";
+
+function ExampleComponent() {
+  const [count, setCount] = useLocalStorage("count", 0);
+
+  const handleIncrement = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={handleIncrement}>Increment</button>
+    </div>
+  );
+}
+```
+
+## Notes
+
+1. The hook uses the localStorage API to store and retrieve values. It automatically converts values to JSON format before storing and parsing them upon retrieval.
+
+2. It provides a mechanism to listen for changes to localStorage across different components or tabs using a custom event.
+
+3. Be cautious about storing sensitive information in localStorage as it is accessible to JavaScript running on the same domain.

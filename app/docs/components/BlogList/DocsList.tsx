@@ -1,44 +1,42 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import { Docs } from "contentlayer/generated";
-import { BigLink } from "app/components/BigLink";
+import { Card } from "pol-ui";
 const DocsList = ({ docs }: { docs: Docs[] }) => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
+  const allDocsSorted = docs?.sort((a, b) =>
+    a.order && b.order ? a.order - b.order : a.title.localeCompare(b.title)
+  );
 
-      transition: {
-        type: "spring",
-        duration: 0.2,
-        staggerChildren: 0.2,
-      },
-    },
-  };
+  const allBase = allDocsSorted?.filter((d) => d.doc_type === "base").reverse();
+  console.log(allBase);
 
-  const item = {
-    hidden: { opacity: 0, x: -100 },
-    show: { opacity: 1, x: 0 },
-  };
-
+  const allComponents = allDocsSorted?.filter(
+    (d) => d.doc_type === "component"
+  );
+  const allHooks = allDocsSorted?.filter((d) => d.doc_type === "hook");
   return (
-    <motion.ul
-      variants={container}
-      initial="hidden"
-      animate="show"
-      className="flex flex-col gap-4"
-    >
-      {docs.map((post) => (
-        <motion.li key={post._id} variants={item}>
-          <BigLink
-            slug={post.slug}
-            name={post.title}
-            className="pl-8"
-          ></BigLink>
-        </motion.li>
-      ))}
-    </motion.ul>
+    <>
+      <div className="flex flex-col gap-4">
+        <h2 className="text-3xl">Components</h2>
+        <ul className="gap-4 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {allComponents.map((post) => (
+            <Card key={post._id} href={"/docs/" + post.path}>
+              <h3 className="text-2xl p-4">{post.title}</h3>
+            </Card>
+          ))}
+        </ul>
+      </div>
+      <div className="flex flex-col gap-4">
+        <h2 className="text-3xl">Hooks</h2>
+        <ul className="gap-4 grid grid-cols-3">
+          {allHooks.map((post) => (
+            <Card key={post._id} href={"/docs/" + post.path}>
+              <h3 className="text-2xl p-4">{post.title}</h3>
+            </Card>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

@@ -1,0 +1,82 @@
+---
+title: useRipple
+path: useRipple
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useRipple
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useRipple
+tags:
+  - useRipple
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **useRipple** custom hook from the pol-ui library provides an easy way to implement a ripple effect for elements in a React application. It can be used to add a visual interaction feedback when a user clicks on an element.
+
+## Importation
+
+Make sure you are importing the useRipple hook from the pol-ui library in your React component.
+
+```jsx
+import { useRipple } from "pol-ui";
+```
+
+## Usage
+
+Import the useRipple hook in your React component and apply it to the desired container.
+
+```tsx
+import { useRipple } from "pol-ui";
+
+function MyComponent() {
+  const [ref, event] = useRipple();
+
+  return (
+    <div ref={ref} onClick={event}>
+      {/* Your component content goes here */}
+    </div>
+  );
+}
+```
+
+## Options
+
+The **useRipple** hook accepts an optional parameter inputOptions that allows you to customize the ripple effect:
+
+1. duration (number): The duration of the ripple animation (default: 450).
+2. timingFunction (string): The timing function of the ripple animation (default: 'cubic-bezier(.42,.36,.28,.88)').
+3. disabled (boolean): Whether the ripple is disabled (default: false).
+4. className (string): The class name to apply to the ripple element (default: 'bg-[#fff]').
+5. opacity (number): The opacity of the ripple (default: 0.1).
+6. containerClassName (string): The class name to apply to the ripple container (default: 'ripple--container').
+7. ignoreNonLeftClick (boolean): Whether to ignore non-left clicks (default: true).
+8. onSpawn (function): A function called when the ripple is spawned.
+9. cancelAutomatically (boolean): Whether to cancel the ripple automatically (default: false).
+10. ref (React.RefObject{"<T>"}): The ref to the ripple host element.
+
+## Example
+
+Here's an example of how to use the **useRipple** hook to create a button with a ripple effect:
+
+```tsx
+import { useRipple } from "pol-ui";
+
+function RippleButton() {
+  const [ref, event] = useRipple();
+
+  return (
+    <button ref={ref} onClick={event} className="ripple-button">
+      Click me
+    </button>
+  );
+}
+```
+
+## Notes
+
+1. The useRipple hook automatically handles the creation and animation of the ripple effect based on the user's interaction.
+2. You can customize the appearance and behavior of the ripple effect using the options provided.
+3. Adjust the styles and dimensions according to your project requirements.

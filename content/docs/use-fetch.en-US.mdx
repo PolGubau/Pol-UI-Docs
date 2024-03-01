@@ -1,0 +1,80 @@
+---
+title: useFetch
+path: useFetch
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useFetch
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useFetch
+tags:
+  - useFetch
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **useFetch** custom hook from the pol-ui library allows you to conveniently fetch data from a specified URL in a React component. It handles loading, error, and fetched states, as well as caching responses for improved performance.
+
+## Importation
+
+Make sure you are importing the useFetch hook from the pol-ui library in your React component.
+
+```jsx
+import { useFetch } from "pol-ui";
+```
+
+## Usage
+
+Import the useFetch hook in your React component and use it to fetch data from a given URL.
+
+```tsx
+import { useFetch } from "pol-ui";
+
+function MyComponent() {
+  const url = "https://api.example.com/data";
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  const { data, error } = useFetch(url, options);
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
+  // Render your component with the fetched data
+  return (
+    <div>
+      <h1>Fetched Data:</h1>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  );
+}
+```
+
+This example demonstrates how to use the useFetch hook to fetch data from the specified API endpoint.
+
+## Parameters
+
+- url (string): The URL from which to fetch data.
+- options (RequestInit): Optional configurations for the fetch API.
+
+##´Return Value
+An object with the following properties:
+
+- data (T | undefined): The fetched data.
+- error (Error | undefined): Any error that occurred during the fetch.
+
+## Notes
+
+The hook uses a simple caching mechanism to store and retrieve responses for the same URL, improving performance by avoiding redundant requests.
+
+It includes a cleanup mechanism to prevent state updates after a component is unmounted.

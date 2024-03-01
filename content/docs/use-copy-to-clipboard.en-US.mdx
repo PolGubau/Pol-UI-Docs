@@ -1,0 +1,74 @@
+---
+title: useCopyToClipboard
+path: useCopyToClipboard
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useCopyToClipboard
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useCopyToClipboard
+tags:
+  - useCopyToClipboard
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **useCopyToClipboard** hook is a hook that allows you to copy a string to the clipboard. It returns a function that receives a string as a parameter and copies it to the clipboard.
+
+## Importation
+Make sure you are importing the useCopyToClipboard hook from the pol-ui library in your React component.
+
+```jsx
+import { useCopyToClipboard } from "pol-ui";
+```
+
+## Usage
+
+This is the most basic usage of the **useCopyToClipboard** hook.
+
+```jsx
+const { copiedText, copy } = useCopyToClipboard();
+```
+
+## Methods
+
+### copy
+
+The **copy** method is a function that receives a string as a parameter and copies it to the clipboard.
+
+```jsx
+const { copiedText, copy } = useCopyToClipboard();
+
+copy("Hello, world!");
+```
+
+## Returned values
+
+The **useCopyToClipboard** hook returns an object with the following properties:
+
+### copiedText
+
+The **copiedText** is a string that contains the last string that was copied to the clipboard.
+
+### copy
+
+The **copy** is a function that receives a string as a parameter and copies it to the clipboard.
+
+## Example
+
+```jsx
+import React from "react";
+import { useCopyToClipboard } from "pol-ui";
+
+export default function App() {
+  const { copiedText, copy } = useCopyToClipboard();
+
+  return (
+    <div>
+      <button onClick={() => copy("Hello, world!")}>Copy</button>
+      {copiedText && <p>Copied: {copiedText}</p>}
+    </div>
+  );
+}
+```

@@ -1,0 +1,110 @@
+---
+title: useBoolean
+path: useBoolean
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useBoolean
+doc_type: hook
+summary: Hook to manage boolean to toggle between true and false.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useBoolean
+tags:
+  - useBoolean
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+Hook to manage boolean to toggle between true and false.
+It also provides a set of methods to toggle, set true and set false the boolean value. It is useful to manage the state of a modal, a dropdown, a tooltip, etc
+
+The **useBoolean** uses React internal hooks and it's built with TypeScript, so it's type safe and with zero dependencies added.
+
+## Importation
+Make sure you are importing the useBoolean hook from the pol-ui library in your React component.
+
+```jsx
+import { useBoolean } from "pol-ui";
+```
+
+## Usage
+
+This is the most basic usage of the **useBoolean** hook.
+
+```jsx
+const { value, toggle } = useBoolean(false);
+```
+
+## Methods
+
+### value
+
+The current value of the boolean, it can be true or false.
+
+### setValue
+
+Set the value of the boolean, it's a function that receives a boolean as a parameter and triggers a re-render changing the value of an internal setState.
+
+### setTrue
+
+Set the value of the boolean to true.
+
+### setFalse
+
+Set the value of the boolean to false.
+
+### toggle
+
+Toggle the value of the boolean, if it's true it will be set to false and if it's false it will be set to true.
+
+## Example
+
+```jsx
+import { useBoolean } from "pol-ui";
+
+function App() {
+  const { value, toggle } = useBoolean(false);
+
+  return (
+    <div>
+      <button onClick={toggle}>Toggle</button>
+      {value && <div>Visible</div>}
+    </div>
+  );
+}
+```
+
+## Example with setTrue and setFalse
+
+```jsx
+import { useBoolean } from "pol-ui";
+
+function App() {
+  const { value, setTrue, setFalse } = useBoolean(false);
+
+  return (
+    <div>
+      <button onClick={setTrue}>Set True</button>
+      <button onClick={setFalse}>Set False</button>
+      {value && <div>Visible</div>}
+    </div>
+  );
+}
+```
+
+## Example with setValue
+
+```jsx
+import { useBoolean } from "pol-ui";
+
+function App() {
+  const { value, setValue } = useBoolean(false);
+
+  return (
+    <div>
+      <button onClick={() => setValue(true)}>Set True</button>
+      <button onClick={() => setValue(false)}>Set False</button>
+      {value && <div>Visible</div>}
+    </div>
+  );
+}
+```

@@ -1,0 +1,110 @@
+---
+title: cloneDeep
+path: cloneDeep
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/cloneDeep
+doc_type: helper
+summary: Utility that performs a deep clone of an object, creating a copy of the source object and all of its nested properties. This ensures that any changes made to the cloned object do not affect the original, and vice versa.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/cloneDeep
+tags:
+  - cloneDeep
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **cloneDeep** function is a utility that performs a deep clone of an object, creating a copy of the source object and all of its nested properties. This ensures that any changes made to the cloned object do not affect the original, and vice versa.
+
+## Usage
+
+Import the **cloneDeep** function in your project and use it to create a deep clone of an object:
+
+```tsx
+import { cloneDeep } from "pol-ui";
+
+// Your code goes here
+
+const originalObject = {
+  name: "John Doe",
+  age: 25,
+  address: {
+    city: "Example City",
+    country: "Example Country",
+  },
+};
+
+const clonedObject = cloneDeep(originalObject);
+
+// Make changes to the cloned object without affecting the original
+clonedObject.age = 26;
+clonedObject.address.city = "New City";
+
+// Log the original and cloned objects to see the difference
+console.log("Original Object:", originalObject);
+console.log("Cloned Object:", clonedObject);
+```
+
+## **Parameters**
+
+The **cloneDeep** function accepts a single parameter:
+
+- **source** (**T**): The source object to be deep cloned.
+
+## **Return Value**
+
+The function returns a deep clone of the source object (**T**).
+
+## **Example**
+
+```tsx
+tsxCopy code
+import { cloneDeep } from 'pol-ui';
+
+const originalObject = {
+  name: 'Alice Wonderland',
+  age: 30,
+  preferences: {
+    color: 'blue',
+    theme: 'dark',
+  },
+};
+
+const clonedObject = cloneDeep(originalObject);
+
+console.log('Original Object:', originalObject);
+console.log('Cloned Object:', clonedObject);
+
+// Output:
+// Original Object: { name: 'Alice Wonderland', age: 30, preferences: { color: 'blue', theme: 'dark' } }
+// Cloned Object: { name: 'Alice Wonderland', age: 30, preferences: { color: 'blue', theme: 'dark' } }
+
+```
+
+In this example, the **cloneDeep** function is used to create a deep clone of an object. Modifying the cloned object does not impact the original, demonstrating the isolation achieved by the deep cloning process.
+
+## **Use Cases**
+
+1. **Immutable State in React**: When managing state in a React application, especially with nested structures, deep cloning can be useful to maintain immutability and prevent unintended side effects.
+2. **Configuration Objects**: If your application uses configuration objects with nested properties, deep cloning ensures that modifications to one instance do not affect others.
+3. **Data Transformation**: When transforming data structures during data processing or manipulation, a deep clone can be employed to create independent copies of the original data.
+
+## **Pros and Cons**
+
+<ProsCard
+  title="Deep cloning is useful when"
+  pros={[
+    "Isolation: Deep cloning ensures that changes to the cloned object do not impact the original, providing a clear separation between the two instances.",
+    "Immutability: Useful for scenarios where immutability is crucial, such as in React applications when managing state.",
+  ]}
+/>
+<ConsCard
+  title="Considerations for deep cloning"
+  cons={[
+    "Performance: Deep cloning can be computationally expensive, especially for large and deeply nested objects. Consider the performance implications in performance-sensitive applications.",
+    "Circular References: Handling circular references in objects requires additional logic to prevent infinite recursion during the cloning process.",
+
+]}
+/>
+
+Integrate the **cloneDeep** function into your project to facilitate the creation of deep clones, ensuring robust data handling and immutability where needed.

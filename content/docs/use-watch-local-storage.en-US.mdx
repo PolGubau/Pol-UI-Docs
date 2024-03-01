@@ -1,0 +1,91 @@
+---
+title: useWatchLocalStorage
+path: useWatchLocalStorage
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useWatchLocalStorage
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useWatchLocalStorage
+tags:
+  - useWatchLocalStorage
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **useWatchLocalStorage** custom hook enables you to monitor changes in the local storage for a specified key across different browser tabs. When another tab instance mutates the local storage value, the **onChange** callback is triggered.
+
+## Importation
+
+Make sure you are importing the useWatchLocalStorage hook from the pol-ui library in your React component.
+
+```jsx
+import { useWatchLocalStorage } from "pol-ui";
+```
+
+## Usage
+
+Import the **useWatchLocalStorage** hook in your React component and use it to watch changes in local storage for a specific key:
+
+```tsx
+import { useWatchLocalStorage } from "pol-ui";
+
+function LocalStorageWatcher() {
+  // Specify the key to watch and provide a callback for handling changes
+  useWatchLocalStorage({
+    key: "yourLocalStorageKey",
+    onChange: (newValue) => {
+      // Handle the updated local storage value
+      console.log("New local storage value:", newValue);
+    },
+  });
+
+  // Your component logic goes here
+
+  return (
+    <div>
+      <p>Listening for local storage changes...</p>
+      {/* Your component UI goes here */}
+    </div>
+  );
+}
+```
+
+## Parameters
+
+- **key** (string): The key in local storage to monitor for changes.
+- **onChange** (function): A callback function that is invoked when the local storage value for the specified key changes. It receives the new value as an argument.
+
+## Example
+
+```tsx
+tsxCopy code
+import { useWatchLocalStorage } from 'pol-ui';
+
+function LocalStorageWatcher() {
+  useWatchLocalStorage({
+    key: 'themeMode',
+    onChange: (newValue) => {
+      // Handle the theme mode change
+      console.log('Theme mode updated:', newValue);
+      // You may update your application theme based on the new value
+    },
+  });
+
+  return (
+    <div>
+      <p>Listening for theme mode changes...</p>
+      {/* Your component UI goes here */}
+    </div>
+  );
+}
+
+```
+
+In this example, the **LocalStorageWatcher** component listens for changes in the local storage value associated with the key 'themeMode'. When the value changes, it logs the updated theme mode.
+
+## Notes
+
+- Ensure that the key specified in **useWatchLocalStorage** matches the key used to update the local storage value in other parts of your application.
+- Customize the callback function (**onChange**) to perform actions based on the updated local storage value.

@@ -1,0 +1,86 @@
+---
+title: useBgColorTransition
+path: useBgColorTransition
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useBgColorTransition
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/useBgColorTransition
+tags:
+  - useBgColorTransition
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **useBgColorTransition** custom hook provides a simple way to create a background color transition based on the scroll position. This can be useful for implementing dynamic and visually appealing background color changes as the user scrolls through a webpage.
+
+## Importation
+
+Make sure you are importing the useBgColorTransition hook from the pol-ui library in your React component.
+
+```jsx
+import { useBgColorTransition } from "pol-ui";
+```
+
+## Usage
+
+Import the **useBgColorTransition** hook in your React component and apply it to the target element.
+
+```tsx
+import { useBgColorTransition } from "pol-ui";
+
+function MyComponent() {
+  const { color, ref } = useBgColorTransition([
+    "#ff0000",
+    "#00ff00",
+    "#0000ff",
+  ]);
+
+  return (
+    <div ref={ref} style={{ backgroundColor: color }}>
+      {/* Your component content goes here */}
+    </div>
+  );
+}
+```
+
+## Parameters
+
+- **colors** (string[]): An array of color values representing the gradient.
+
+## Return Value
+
+The **useBgColorTransition** hook returns an object with the following properties:
+
+- **color** (string): The active background color based on the scroll position.
+- **ref** (React.RefObject{"<HTMLDivElement | null>"}): A ref to the target element.
+
+## Example
+
+```tsx
+import { useBgColorTransition } from "pol-ui";
+
+function ScrollColorTransition() {
+  const { color, ref } = useBgColorTransition([
+    "#ff0000",
+    "#00ff00",
+    "#0000ff",
+  ]);
+
+  return (
+    <div ref={ref} style={{ height: "100vh" }}>
+      <p>Scroll down to see the background color transition.</p>
+      {/* Your component content goes here */}
+    </div>
+  );
+}
+```
+
+This example demonstrates how to use the **useBgColorTransition** hook to create a background color transition based on the scroll position.
+
+## Notes
+
+- Adjust the colors in the array to fit the desired gradient for your background.
+- Ensure that the target element has a defined height to observe the scroll position.

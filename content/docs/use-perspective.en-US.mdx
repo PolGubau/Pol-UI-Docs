@@ -1,0 +1,87 @@
+---
+title: usePerspective
+path: usePerspective
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/usePerspective
+doc_type: hook
+summary: Hook to copy a string to the clipboard.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/usePerspective
+tags:
+  - usePerspective
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **usePerspective** custom hook, utilizing **framer-motion**, provides a simple way to create a perspective effect on a React component. It tracks mouse movements within a designated container and adjusts the component's rotation based on the cursor position.
+
+## Importation
+
+Make sure you have the **pol-ui** library installed:
+
+```jsx
+import { usePerspective } from "pol-ui";
+```
+
+## Usage
+
+Import the usePerspective hook in your React component and apply it to the target container.
+
+```tsx
+import { usePerspective } from "pol-ui";
+
+function MyComponent() {
+  const {
+    ref,
+    parentWidth,
+    parentHeight,
+    x,
+    y,
+    rotateX,
+    rotateY,
+    handleMouse,
+  } = usePerspective();
+
+  return (
+    <div
+      ref={ref}
+      style={{ width: "100%", height: "100%", position: "relative" }}
+      onMouseMove={handleMouse}
+    >
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          background: "lightgray",
+          transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+          transformStyle: "preserve-3d",
+          transition: "transform 0.3s ease-out",
+        }}
+      >
+        {/* Your component content goes here */}
+      </div>
+    </div>
+  );
+}
+```
+
+This example demonstrates how to use the **usePerspective hook** to create a perspective effect on a container based on mouse movements.
+
+## Return Value
+
+An object with the following properties:
+
+1. ref (React.RefObject): A ref object that should be assigned to the container element.
+2. parentWidth (number): The width of the container element.
+3. parentHeight (number): The height of the container element.
+4. x (object): A useMotionValue instance representing the X-axis position.
+5. y (object): A useMotionValue instance representing the Y-axis position.
+6. rotateX (object): A useTransform instance for X-axis rotation.
+7. rotateY (object): A useTransform instance for Y-axis rotation.
+8. handleMouse (function): A mouse event handler to update the position based on cursor movements.
+
+## Notes
+
+1.  This hook utilizes framer-motion for handling motion values and transformations.
+2.  Adjust the styles and dimensions according to your project requirements.

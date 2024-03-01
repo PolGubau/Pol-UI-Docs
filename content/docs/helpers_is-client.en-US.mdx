@@ -1,0 +1,67 @@
+---
+title: isClient
+path: isClient
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/isClient
+doc_type: helper
+summary: Utility function that checks whether the code is running in a client-side environment (browser). It returns `true` if the `window` object is defined, indicating a client-side context, and `false` otherwise.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/helpers/isClient
+tags:
+  - isClient
+  - Next.js
+  - Server-side Rendering
+  - Pol-ui
+---
+
+The **isClient** function is a utility that checks whether the code is running in a client-side environment (browser). It returns `true` if the `window` object is defined, indicating a client-side context, and `false` otherwise.
+
+## Usage
+
+Import the **isClient** function in your project and use it to conditionally execute code based on the runtime environment:
+
+```tsx
+import { isClient } from "pol-ui";
+
+// Your code goes here
+
+if (isClient()) {
+  // Code that should only run on the client side
+  console.log("Running on the client side");
+} else {
+  // Code that should run in other environments (server-side, etc.)
+  console.log("Running in a non-client environment");
+}
+```
+
+## **Return Value**
+
+The function returns a boolean value (**true** or **false**), indicating whether the code is running in a client-side environment.
+
+## **Example**
+
+```tsx
+tsxCopy code
+import { isClient } from 'pol-ui';
+
+if (isClient()) {
+  console.log('Running on the client side');
+} else {
+  console.log('Running in a non-client environment');
+}
+
+// Output:
+// Running on the client side
+// or
+// Running in a non-client environment
+
+```
+
+In this example, the **isClient** function is used to conditionally execute code based on whether the environment is client-side or not.
+
+## **Use Cases**
+
+1. **Conditional Code Execution**: Use **isClient** to run code specifically tailored for client-side environments, such as browser-specific logic.
+2. **Next.js Server-side Rendering (SSR)**: In frameworks like Next.js, where server-side rendering is common, **isClient** helps identify client-side code to prevent server-side execution.
+
+Integrate the **isClient** function into your project, especially in server-side rendering frameworks like Next.js, to handle environment-specific logic more effectively.

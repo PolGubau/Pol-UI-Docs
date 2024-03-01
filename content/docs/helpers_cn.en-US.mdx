@@ -1,0 +1,90 @@
+---
+title: cn
+path: cn
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/cn
+doc_type: helper
+summary: A utility that combines the power of the **clsx** and **tailwind-merge** libraries, providing a seamless way to merge class names in a Tailwind CSS project
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/cn
+tags:
+  - cn
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+The **cn** helper function is a utility that combines the power of the **clsx** and **tailwind-merge** libraries, providing a seamless way to merge class names in a Tailwind CSS project.
+
+## Importation
+
+Make sure you are importing the useBoolean hook from the pol-ui library in your React component.
+
+```jsx
+import { cn } from "pol-ui";
+```
+
+## Usage
+
+Import the **cn** helper function in your project and use it to merge class names:
+
+```tsx
+tsxCopy code
+import { cn } from 'pol-ui';
+
+// Your component code goes here
+
+const combinedClasses = cn('bg-blue-500', 'text-white', { 'font-bold': true }, 'custom-class');
+
+// Your component UI goes here with the combined classes
+
+// Example usage in a React component
+function MyComponent() {
+  return (
+    <div className={combinedClasses}>
+      <p>Hello, Tailwind CSS!</p>
+    </div>
+  );
+}
+
+```
+
+## Parameters
+
+The **cn** helper function accepts an unlimited number of parameters, where each parameter is a class name or an object of class names. It uses **clsx** and **tailwind-merge** internally to merge and process the class names.
+
+- **...inputs** (ClassValue[]): The class names to be merged. These can be strings, objects, or arrays of class names.
+
+## Example
+
+```tsx
+import { cn } from "pol-ui";
+
+const buttonClasses = cn(
+  "bg-blue-500",
+  "text-white",
+  { "font-bold": true },
+  ["p-2", "rounded-md"],
+  { "hover:bg-blue-700": true, "focus:outline-none": true }
+);
+
+// Example usage in a React component
+function MyButton() {
+  return (
+    <button
+      className={buttonClasses}
+      onClick={() => console.log("Button clicked")}
+    >
+      Click Me
+    </button>
+  );
+}
+```
+
+In this example, the **cn** function is used to combine multiple class names, including Tailwind CSS classes and conditional classes based on object properties.
+
+## Notes
+
+- The **cn** helper function simplifies the process of merging class names in a Tailwind CSS project.
+- It supports various inputs, including strings, objects, and arrays of class names.
+- You can easily extend and customize the utility function based on your project's needs.
