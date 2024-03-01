@@ -106,7 +106,7 @@ export default function DocPage({ params }) {
   const title = doc?.title ?? "Not found";
 
   return (
-    <section className="overflow-hidden max-w-full w-full ">
+    <section className="">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -114,23 +114,35 @@ export default function DocPage({ params }) {
           __html: JSON.stringify(structuredData),
         }}
       ></script>
-      {doc?.publishedAt && (
-        <p className="text-xs text-neutral-600 dark:text-neutral-400">
-          Updated {formatDate(doc?.publishedAt)}
-        </p>
-      )}
-      <h1 className="text-2xl md:text-4xl mb-6 mt-1 font-semibold">{title}</h1>
-      <Toc text={raw} />
-      <article className="mb-8 w-full flex flex-col gap-6 overflow-hidden max-w-[1000px]">
-        <Mdx code={code} />
 
-        <div className="flex gap-4">
-          <BigLink
-            name={`Next up: ${nextDoc.title}`}
-            slug={`/docs/${nextDoc.path}`}
-          />
+      <div className="xl:flex-row flex flex-col gap-4 justify-center">
+        <div>
+          <h1 className="text-2xl md:text-4xl mb-6 mt-1 font-semibold">
+            {title}
+          </h1>
+          <article className="mb-8 w-full flex flex-col gap-6 overflow-hidden max-w-[1000px]">
+            <Mdx code={code} />
+
+            <div className="flex gap-4">
+              <BigLink
+                name={`Next up: ${nextDoc.title}`}
+                slug={`/docs/${nextDoc.path}`}
+              />
+            </div>
+          </article>
+          {doc?.publishedAt && (
+            <p className="text-xs text-neutral-600 dark:text-neutral-400">
+              Since {formatDate(doc?.publishedAt)}
+            </p>
+          )}
         </div>
-      </article>
+
+        <div className="border-red-300 border-2 flex flex-col h-screen overflow-hidden">
+          <div className="sticky top-0 p-4">
+            <Toc text={raw} />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

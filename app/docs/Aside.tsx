@@ -54,37 +54,42 @@ const Aside = () => {
 
   const { value, toggle } = useBoolean(false);
   return (
-    <Sidebar
-      toggle={toggle}
-      collapsed={value}
-      className="h-[92vh] overflow-y-auto bg-secondary-50 dark:bg-secondary-900"
-    >
-      {allBase?.map((docs) => {
-        return (
-          <SidebarItem
-            key={docs._id}
-            href={docs.path}
-            className=" bg-secondary-50 dark:bg-secondary-900"
-          >
-            {docs.title}
-          </SidebarItem>
-        );
-      })}
+    <section className="min-h-screen ">
+      <div className="sticky top-0 ">
+        <Sidebar
+          toggle={toggle}
+          collapsed={value}
+          collapsable={true}
+          className="h-[92vh] bg-secondary-50 dark:bg-secondary-900"
+        >
+          {allBase?.map((docs) => {
+            return (
+              <SidebarItem
+                key={docs._id}
+                href={docs.path}
+                className=" bg-secondary-50 dark:bg-secondary-900"
+              >
+                {docs.title}
+              </SidebarItem>
+            );
+          })}
 
-      <Sidebar.Collapse label="Components" icon={TbLayout}>
-        {allComponents?.map((c) => {
-          return (
-            <SidebarItem
-              key={c._id}
-              href={c.path}
-              className=" bg-secondary-50 dark:bg-secondary-900"
-            >
-              {c.title}
-            </SidebarItem>
-          );
-        })}
-      </Sidebar.Collapse>
-    </Sidebar>
+          <Sidebar.Collapse label="Components" icon={TbLayout}>
+            {allComponents?.map((c) => {
+              return (
+                <SidebarItem
+                  key={c._id}
+                  href={"/docs/" + c.path}
+                  className=" bg-secondary-50 dark:bg-secondary-900"
+                >
+                  {c.title}
+                </SidebarItem>
+              );
+            })}
+          </Sidebar.Collapse>
+        </Sidebar>
+      </div>
+    </section>
   );
 };
 
