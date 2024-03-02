@@ -18,7 +18,9 @@ export default function Error({
   return (
     <div className="text-center flex flex-col justify-center">
       <p>🫥 Oh no, something went wrong... maybe refresh?</p>
-      <Button onClick={() => reset()}>Refresh</Button>
+      <Button onClick={() => reset()} className="w-fit">
+        Refresh
+      </Button>
     </div>
   );
 }

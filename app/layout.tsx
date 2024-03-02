@@ -117,16 +117,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.className} `}>
-      <body className="antialiased mb-20 scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 overflow-x-hidden flex justify-center">
-        <main className="flex-auto flex flex-col w-full">
-          <AppProvider>
-            <NextTopLoader color="#b49cff" height={2} showSpinner={false} />
-            <GoTopButton />
+      <body className="antialiased mb-20 scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 justify-center flex-auto flex flex-col w-full min-h-screen">
+        <AppProvider>
+          <div
+            className="fixed top-0 left-0 w-full h-[80px] "
+            style={{
+              zIndex: 1000,
+            }}
+          >
             <Navbar />
-            {children}
-            <Footer />
-          </AppProvider>
-        </main>
+          </div>
+          <div className="mt-[80px]">{children}</div>
+
+          <Footer />
+        </AppProvider>
       </body>
       <SpeedInsights />
     </html>

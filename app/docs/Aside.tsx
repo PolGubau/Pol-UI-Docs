@@ -64,8 +64,13 @@ const Aside = () => {
 
   const { value, toggle } = useBoolean(false);
   return (
-    <section className="min-h-screen ">
-      <div className="sticky top-0 ">
+    <section
+      className="h-auto "
+      style={{
+        scrollbarWidth: "thin",
+      }}
+    >
+      <div className="sticky top-[75px]">
         <Sidebar
           toggle={toggle}
           collapsed={value}
