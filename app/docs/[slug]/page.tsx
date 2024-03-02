@@ -119,7 +119,10 @@ export default function DocPage({ params }) {
         <div>
           <h1 className="text-2xl md:text-4xl mb-6 mt-1 font-semibold">
             {title}
-          </h1>
+          </h1>{" "}
+          <div className=" ">
+            <Toc text={raw} />
+          </div>
           <article className="mb-8 w-full flex flex-col gap-6 overflow-hidden max-w-[1000px]">
             <Mdx code={code} />
 
@@ -135,12 +138,6 @@ export default function DocPage({ params }) {
               Since {formatDate(doc?.publishedAt)}
             </p>
           )}
-        </div>
-
-        <div className="border-red-300 border-2 flex flex-col h-screen overflow-hidden">
-          <div className="sticky top-0 p-4">
-            <Toc text={raw} />
-          </div>
         </div>
       </div>
     </section>

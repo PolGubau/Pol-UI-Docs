@@ -31,7 +31,7 @@ export default function Navbar() {
   const pathname = usePathname();
   return (
     <UINavbar
-      className="w-full relative bg-secondary-50 dark:bg-secondary-900"
+      className="w-screen relative bg-secondary-50 dark:bg-secondary-900"
       links={navItems.map((i) => {
         return {
           label: i.label,
