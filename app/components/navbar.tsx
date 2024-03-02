@@ -53,11 +53,14 @@ export default function Navbar() {
         </div>
       }
       leftContent={
-        <img
-          src="https://ui.polgubau.com/logo.png"
-          className="h-6 sm:h-7"
-          alt="Pol-ui Logo"
-        />
+        <a href="/" className="flex items-center gap-2">
+          <img
+            src="https://ui.polgubau.com/isotype.png"
+            className="h-6 sm:h-7"
+            alt="Pol-ui Logo"
+          />
+          <span className="text-xl font-semibold">{metadata.name}</span>
+        </a>
       }
     />
   );
