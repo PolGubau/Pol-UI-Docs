@@ -1,0 +1,112 @@
+---
+title: Dropzone
+path: dropzone
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Dropzone
+doc_type: component
+summary: The Dropzone component from **pol-ui** creates an animated heading that displays a list of words one by one. It is a great way to create a dynamic and engaging heading for your website.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Dropzone
+tags:
+  - dropzone
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Dropzone/root.mdx";
+import root from "examples/Dropzone/root";
+
+import HorizontalCode from "examples/Timeline/horizontal.mdx";
+import horizontal from "examples/Timeline/horizontal";
+
+The **Timeline** component from **pol-ui** creates an animated heading that displays a list of words one by one. It is a great way to create a dynamic and engaging heading for your website.
+
+## Importation
+
+Import the component from **pol-ui** to use the Timeline element:
+
+```jsx
+import { Timeline } from "pol-ui";
+```
+
+## Default Timeline
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-timeline--default"
+  height={380}
+  name="Default Timeline"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-timeline--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+### Timeline
+
+| Prop name  | Type                    | Default | Description                               |
+| ---------- | ----------------------- | ------- | ----------------------------------------- |
+| theme      | [TimelineTheme](#theme) | {}      | The theme to be applied to the component. |
+| horizontal | boolean                 | false   | The direction of the timeline.            |
+
+### TimelineItem
+
+| Prop name     | Type                        | Default | Description                               |
+| ------------- | --------------------------- | ------- | ----------------------------------------- |
+| theme         | [TimelineItemTheme](#theme) | {}      | The theme to be applied to the component. |
+| iconContent   | ReactNode                   | null    | The content of the icon.                  |
+| icon          | ReactNode                   | null    | The icon to be displayed.                 |
+| iconClassName | string                      | null    | The class name of the icon.               |
+
+## Examples
+
+### Horizontal Timeline
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-timeline--horizontal"
+  height={280}
+  name="Example with long text"
+  code={horizontal}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-timeline--horizontal&viewMode=story"
+>
+  <HorizontalCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface TimelineTheme {
+  root: {
+    direction: {
+      horizontal: string;
+      vertical: string;
+    };
+  };
+  item: {
+    root: {
+      horizontal: string;
+      vertical: string;
+    };
+    content: string;
+    point: {
+      horizontal: string;
+      line: string;
+      marker: {
+        base: {
+          horizontal: string;
+          vertical: string;
+        };
+        icon: {
+          base: string;
+          wrapper: string;
+        };
+      };
+      vertical: string;
+    };
+  };
+}
+```
