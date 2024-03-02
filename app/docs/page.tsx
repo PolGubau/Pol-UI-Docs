@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://ui.polgubau.com/brand/thumbnail.png",
+        url: "https://ui.polgubau.com/logo.png",
         width: 1920,
         height: 1080,
         alt: "Pol Gubau Amores' website preview",

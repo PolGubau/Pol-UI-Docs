@@ -12,7 +12,7 @@ import AppProvider from "./providers/AppProvider";
 export const metadata: Metadata = {
   metadataBase: new URL(constants.links.website),
   title: {
-    default: `${constants.title} - Frontend Developer and UX Designer`,
+    default: constants.title,
     template: `%s | ${constants.title}`,
   },
   alternates: {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
       url: "/brand/apple-touch-icon.png",
       type: "image/png",
       sizes: "180x180",
-      color: "#ff4",
+      color: "#b49cff",
       rel: "apple-touch-icon",
       media: "light",
       fetchPriority: "high",
@@ -99,8 +99,8 @@ export const metadata: Metadata = {
 };
 export const viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ff4" },
-    { media: "(prefers-color-scheme: dark)", color: "#ff4" },
+    { media: "(prefers-color-scheme: light)", color: "#b49cff" },
+    { media: "(prefers-color-scheme: dark)", color: "#b49cff" },
   ],
   viewport: "width=device-width, initial-scale=1.0",
   colorScheme: "light dark",
@@ -117,7 +117,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.className} `}>
-      <body className="antialiased mb-20 scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 w-full overflow-x-hidden flex justify-center">
+      <body className="antialiased mb-20 scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 overflow-x-hidden flex justify-center">
         <main className="flex-auto flex flex-col w-full">
           <AppProvider>
             <NextTopLoader color="#b49cff" height={2} showSpinner={false} />
