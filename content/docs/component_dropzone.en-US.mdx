@@ -17,8 +17,14 @@ tags:
 import RootCode from "examples/Dropzone/root.mdx";
 import root from "examples/Dropzone/root";
 
-import HorizontalCode from "examples/Timeline/horizontal.mdx";
-import horizontal from "examples/Timeline/horizontal";
+import AcceptCode from "examples/Dropzone/accept.mdx";
+import accept from "examples/Dropzone/accept";
+
+import SingleCode from "examples/Dropzone/single.mdx";
+import single from "examples/Dropzone/single";
+
+import CustomClassCode from "examples/Dropzone/customClass.mdx";
+import customClass from "examples/Dropzone/customClass";
 
 The **Dropzone** displays a box where the user can drag and drop files to upload them. It also allows the user to click on the box to open the _file explorer_ and select files to upload.
 
@@ -33,80 +39,77 @@ import { Timeline } from "pol-ui";
 ## Default Timeline
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-timeline--default"
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropzone--example"
   height={380}
   name="Default Timeline"
   code={root}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-timeline--default&viewMode=story"
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropzone--example&viewMode=story"
 >
   <RootCode />
 </Example>
 
 ## Props
 
-### Timeline
-
-| Prop name  | Type                    | Default | Description                               |
-| ---------- | ----------------------- | ------- | ----------------------------------------- |
-| theme      | [TimelineTheme](#theme) | {}      | The theme to be applied to the component. |
-| horizontal | boolean                 | false   | The direction of the timeline.            |
-
-### TimelineItem
-
-| Prop name     | Type                        | Default | Description                               |
-| ------------- | --------------------------- | ------- | ----------------------------------------- |
-| theme         | [TimelineItemTheme](#theme) | {}      | The theme to be applied to the component. |
-| iconContent   | ReactNode                   | null    | The content of the icon.                  |
-| icon          | ReactNode                   | null    | The icon to be displayed.                 |
-| iconClassName | string                      | null    | The class name of the icon.               |
+| Prop name         | Type                            | Default | Description                                                                 |
+| ----------------- | ------------------------------- | ------- | --------------------------------------------------------------------------- |
+| onDragStateChange | (isDragActive: boolean) => void | -       | Called when the drag state changes.                                         |
+| onDrag            | () => void                      | -       | Called when the user drags a file over the dropzone.                        |
+| onDragIn          | () => void                      | -       | Called when the user drags a file into the dropzone.                        |
+| onDragOut         | () => void                      | -       | Called when the user drags a file out of the dropzone.                      |
+| onDrop            | (e: DragEvent) => void          | -       | Called when the user drops a file into the dropzone.                        |
+| onFilesDrop       | (files: File[]) => void         | -       | Called when the user drops a file into the dropzone.                        |
+| multiple          | boolean                         | true    | Whether the dropzone should accept multiple files.                          |
+| accept            | string                          | -       | A string that specifies the types of files that the dropzone should accept. |
+| disabled          | boolean                         | false   | Whether the dropzone is disabled.                                           |
+| className         | string                          | -       | A string that specifies the class name of the dropzone.                     |
+| disabledClassName | string                          | -       | A string that specifies the class name of the dropzone when it is disabled. |
+| activeClassName   | string                          | -       | A string that specifies the class name of the dropzone when it is active.   |
+| theme             | [DropzoneTheme](#theme)         | -       | An object that specifies the theme of the dropzone.                         |
 
 ## Examples
 
-### Horizontal Timeline
+### Single file
 
 <Example
-  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-timeline--horizontal"
-  height={280}
-  name="Example with long text"
-  code={horizontal}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-timeline--horizontal&viewMode=story"
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropzone--single"
+  height={380}
+  name="Single file"
+  code={single}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropzone--single&viewMode=story"
 >
-  <HorizontalCode />
+  <SingleCode />
 </Example>
 
+### Custom class
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropzone--custom-class"
+  height={630}
+  name="custom-class file"
+  code={customClass}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropzone--custom-class&viewMode=story"
+>
+  <CustomClassCode />
+</Example>
+### Custom accepts
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-dropzone--custom-accepts"
+  height={300}
+  name="custom-accepts file"
+  code={accept}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-dropzone--custom-accepts&viewMode=story"
+>
+  <AcceptCode />
+</Example>
 ## Theme
 
 To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
 
 ```ts
-interface TimelineTheme {
-  root: {
-    direction: {
-      horizontal: string;
-      vertical: string;
-    };
-  };
-  item: {
-    root: {
-      horizontal: string;
-      vertical: string;
-    };
-    content: string;
-    point: {
-      horizontal: string;
-      line: string;
-      marker: {
-        base: {
-          horizontal: string;
-          vertical: string;
-        };
-        icon: {
-          base: string;
-          wrapper: string;
-        };
-      };
-      vertical: string;
-    };
-  };
+interface DropzoneTheme {
+  base: string;
+  disabled: string;
+  active: string;
 }
 ```

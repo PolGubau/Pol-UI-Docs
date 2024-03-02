@@ -46,7 +46,6 @@ const Aside = () => {
   );
 
   const allBase = allDocsSorted?.filter((d) => d.doc_type === "base").reverse();
-  console.log(allBase);
 
   const allComponents = useMemo(
     () => allDocsSorted?.filter((d) => d.doc_type === "component"),

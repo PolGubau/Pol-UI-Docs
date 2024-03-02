@@ -8,7 +8,6 @@ const DocsList = ({ docs }: { docs: Docs[] }) => {
   );
 
   const allBase = allDocsSorted?.filter((d) => d.doc_type === "base").reverse();
-  console.log(allBase);
 
   const allComponents = allDocsSorted?.filter(
     (d) => d.doc_type === "component"
