@@ -18,11 +18,20 @@ const DocsList = ({ docs }: { docs: Docs[] }) => {
   return (
     <section className="flex flex-col gap-8">
       {Object.keys(orderedBycategory).map((category) => (
-        <div key={category} className="flex flex-col gap-4">
+        <div key={category} className="flex flex-col gap-4 ">
           <h2 className="text-3xl">Components</h2>
-          <ul className="gap-4 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {orderedBycategory[category].map((post) => (
-              <Card key={post._id} href={"/docs/" + post.path}>
+          <ul className="gap-4 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+            {orderedBycategory[category].map((post: Docs) => (
+              <Card
+                key={post._id}
+                href={"/docs/" + post.path}
+                className="group "
+              >
+                <img
+                  src="/test.gif"
+                  alt="component test"
+                  className="pause hover:[animation-play-state:running]"
+                />
                 <h3 className="text-xl p-4">{post.title}</h3>
               </Card>
             ))}
