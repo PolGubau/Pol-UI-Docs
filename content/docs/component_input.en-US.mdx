@@ -1,0 +1,204 @@
+---
+title: Input
+path: input
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Input
+doc_type: component
+summary: The Input component is a text input field that allows users to enter text. It can be used in forms, modals, and more.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Input
+tags:
+  - input
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Input/root.mdx";
+import root from "examples/Input/root";
+
+import AllColorsCode from "examples/Input/allColors.mdx";
+import allColors from "examples/Input/allColors";
+
+import IconCode from "examples/Input/icon.mdx";
+import icon from "examples/Input/icon";
+
+import LabelCode from "examples/Input/label.mdx";
+import label from "examples/Input/label";
+
+import LeftLabelCode from "examples/Input/leftLabel.mdx";
+import leftLabel from "examples/Input/leftLabel";
+
+import RightIconCode from "examples/Input/rightIcon.mdx";
+import rightIcon from "examples/Input/rightIcon";
+
+import HelperCode from "examples/Input/helper.mdx";
+import helper from "examples/Input/helper";
+
+Use the **Input** component from **Pol-ui** is a text input field that allows users to enter text. It can be used in forms, modals, and more.
+
+## Importation
+
+Import the component from **pol-ui** to use the Tooltip element:
+
+```jsx
+import { Input } from "pol-ui";
+```
+
+## Default Input
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-input--default"
+  height={100}
+  name="Default Input"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-input--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+| Prop name      | Type                 | Default   | Description                                                                      |
+| -------------- | -------------------- | --------- | -------------------------------------------------------------------------------- |
+| color          | Colors               | "primary" | Optional prop to specify the color of the input.                                 |
+| size           | string               | "md"      | Optional prop to specify the size of the input.                                  |
+| theme          | [InputTheme](#theme) | {}        | Optional prop to change the theme of the input.                                  |
+| border         | bool                 | false     | Optional prop to add a border to the input.                                      |
+| label          | string               | null      | Optional prop to add a label to the input.                                       |
+| labelPosition  | string               | "top"     | Optional prop to specify the position of the label.                              |
+| labelClassName | string               | ""        | Optional prop to add additional classes to the label.                            |
+| innerClassName | string               | ""        | Optional prop to add additional classes to the inner input container.            |
+| leftComponent  | ReactNode            | null      | Optional prop to add a component to the left of the input. Recommended to icons  |
+| rightComponent | ReactNode            | null      | Optional prop to add a component to the right of the input. Recommended to icons |
+| helperText     | ReactNode            | null      | Optional prop to provide helper text for the input.                              |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **input**
+  tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input).
+</Callout>
+
+## Examples
+
+### With integrated label
+
+You can show a label directly in the **Input** component by passing the **label** prop.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-input--with-placeholder-and-label"
+  height={130}
+  name="Input with label"
+  code={label}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-input--with-placeholder-and-label&viewMode=story"
+>
+  <LabelCode />
+</Example>
+
+### With label in the left
+
+You can show a label directly in the **Input** component by setting the **labelPosition** prop to **left**.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-input--left-label"
+  height={120}
+  name="Input with left label"
+  code={leftLabel}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-input--left-label&viewMode=story"
+>
+  <LeftLabelCode />
+</Example>
+### With left icon
+
+You can show an icon directly in the **Input** component by setting the **leftComponent** prop to **a JSX.Element**.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-input--with-icon"
+  height={120}
+  name="Input with icon"
+  code={icon}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-input--with-icon&viewMode=story"
+>
+  <IconCode />
+</Example>
+### With a right icon
+
+You can show an icon directly in the **Input** component by setting the **rightComponent** prop to **a JSX.Element**.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-input--with-right-icon"
+  height={120}
+  name="Input with icon in the right"
+  code={rightIcon}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-input--with-right-icon&viewMode=story"
+>
+  <RightIconCode />
+</Example>
+
+### With Helper Text
+
+Use the **helperText** prop to show a helper text below the input.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-input--with-helper-text"
+  height={120}
+  name="Input with icon in the right"
+  code={helper}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-input--with-helper-text&viewMode=story"
+>
+  <HelperCode />
+</Example>
+
+### All Colors
+
+The **Input** component has all the default color options from the design system from **Pol-ui** specified in the [Theme](#theme) section.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-inputs-input--all-colors"
+  height={400}
+  name="All default color options"
+  code={allColors}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-inputs-input--all-colors&viewMode=story"
+>
+  <AllColorsCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface InputTheme {
+  root: {
+    base: string;
+    labelPosition: {
+      left: string;
+      top: string;
+    };
+  };
+  base: string;
+  addon: string;
+  label: string;
+  field: {
+    base: string;
+    icons: {
+      base: string;
+      svg: string;
+      left: string;
+      right: string;
+    };
+    input: {
+      base: string;
+      sizes: MainSizesType;
+      colors: ColorsType;
+      label: {
+        base: string;
+      };
+      border: IBoolean;
+      withIcon: IBoolean;
+      withRightIcon: IBoolean;
+      withAddon: IBoolean;
+      multiline: IBoolean;
+    };
+  };
+}
+```

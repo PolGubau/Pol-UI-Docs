@@ -1,0 +1,117 @@
+---
+title: Command
+path: command
+publishedAt: 2024-02-18
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Command
+doc_type: component
+summary: Command is a component that provides a way to navigate through a list of items using the keyboard. It is a combination of a list and an input, where the input is used to filter the list of items.
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/Command
+tags:
+  - command
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/Command/root.mdx";
+import root from "examples/Command/root";
+
+import InlineCode from "examples/Command/inline.mdx";
+import inline from "examples/Command/inline";
+
+import DarkCode from "examples/Command/dark.mdx";
+import dark from "examples/Command/dark";
+
+The **Command** component from **pol-ui** is a component that provides a way to navigate through a list of items using the keyboard. It is a combination of a list and an input, where the input is used to filter the list of items.
+
+```jsx
+import { Command } from "pol-ui";
+```
+
+## Default Command
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-command--command-menu"
+  height={480}
+  name="Default"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-command--command-menu&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+The **Command** component has the following props:
+
+| Prop name               | Type                                | Default | Description                                                                                                                                                      |
+| ----------------------- | ----------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| label                   | string                              |         | Accessible label for this command menu. Not shown visibly.                                                                                                       |
+| shouldFilter            | boolean                             | true    | Optionally set to false to turn off the automatic filtering and sorting. If false, you must conditionally render valid items based on the search query yourself. |
+| filter                  | (value, search, keywords) => number |         | Custom filter function for whether each command menu item should matches the given search query. It should return a number between 0 and 1.                      |
+| defaultValue            | string                              |         | Optional default item value when it is initially rendered.                                                                                                       |
+| value                   | string                              |         | Optional controlled state of the selected command menu item.                                                                                                     |
+| onValueChange           | (value: string) => void             |         | Event handler called when the selected item of the menu changes.                                                                                                 |
+| loop                    | boolean                             |         | Optionally set to true to turn on looping around when using the arrow keys.                                                                                      |
+| disablePointerSelection | boolean                             |         | Optionally set to true to disable selection via pointer events.                                                                                                  |
+| vimBindings             | boolean                             | true    | Set to false to disable ctrl+n/j/p/k shortcuts. Defaults to true.                                                                                                |
+| theme                   | [CommandTheme](#theme)              |         | Theme for the command component.                                                                                                                                 |
+| children                | React.ReactNode                     |         | The children of the command component.                                                                                                                           |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the HTML **div** tag
+</Callout>
+
+## Examples
+
+### Inline variation
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-command--inline-command"
+  height={400}
+  name="More rotation"
+  code={inline}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-command--inline-command&viewMode=story"
+>
+  <InlineCode />
+</Example>
+### Dark Mode Support
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-command--dark-mode"
+  height={580}
+  name="Dark Mode Support"
+  code={dark}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-command--dark-mode&viewMode=story"
+>
+  <DarkCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface CommandTheme {
+  root: {
+    base: string;
+  };
+  empty: {
+    base: string;
+  };
+  group: {
+    base: string;
+    header: string;
+  };
+  list: {
+    base: string;
+  };
+  input: {
+    base: string;
+    icon: string;
+    input: string;
+  };
+  separator: {
+    base: string;
+  };
+}
+```
