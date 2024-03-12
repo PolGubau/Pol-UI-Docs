@@ -1,0 +1,94 @@
+---
+title: OtpInput
+path: otpInput
+publishedAt: 2024-03-01
+githubLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/OtpInput
+doc_type: component
+summary: The one time password input that provides a single input as different squares.
+
+pageLink: https://github.com/PolGubau/pol-ui/tree/main/src/components/OtpInput
+tags:
+  - otpInput
+  - React
+  - Tailwind CSS
+  - Pol-ui
+---
+
+import RootCode from "examples/OtpInput/root.mdx";
+import root from "examples/OtpInput/root";
+
+import JourneyCode from "examples/OtpInput/example.mdx";
+import journey from "examples/OtpInput/example";
+
+Use the **OtpInput** component from **Pol-ui** to provide a one time password input that provides a single input as different squares.
+
+## Importation
+
+Import the component from **pol-ui** to use the Tooltip element:
+
+```jsx
+import { OtpInput } from "pol-ui";
+```
+
+## Default OtpInput
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-otpinput--default"
+  height={250}
+  name="Default OtpInput"
+  code={root}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-otpinput--default&viewMode=story"
+>
+  <RootCode />
+</Example>
+
+## Props
+
+### Tooltip
+
+| Prop name       | Type                                                                | Default                        | Description                                                   |
+| --------------- | ------------------------------------------------------------------- | ------------------------------ | ------------------------------------------------------------- | --- |
+| value           | string                                                              | ""                             | Value of the OTP input                                        |
+| length          | number                                                              | 4                              | Number of OTP inputs to be rendered                           |
+| onChange        | (otp: string) => void                                               | -                              | Callback to be called when the OTP value changes              |
+| onPaste         | ((event: ClipboardEvent) => void)                                   | -                              | Callback to be called when pasting content into the component |
+| shouldAutoFocus | boolean                                                             | false                          | Whether the first input should be auto focused                |
+| placeholder     | string                                                              | -                              | Placeholder for the inputs                                    |
+| renderSeparator | ReactNode                                                           | ((index: number) => ReactNode) | -                                                             |
+| type            | "number" \| "text" \| "tel" \| "password" \| "OtpValidTypes.number" | "number"                       | The type that will be passed to the input being rendered      |
+| inputsClassName | string                                                              | -                              | Classname for the inputs                                      |
+| onComplete      | ((otp: string) => void)                                             | -                              | Callback to be called when the OTP is complete                |
+| theme           | [Theme](#theme)                                                     | {}                             |                                                               | -   |
+
+<Callout emoji="💡">
+  You can also provide any prop comming from the [HTML **input**
+  tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input).
+</Callout>
+## Examples
+
+### Example of usecase
+
+The common use case for the OtpInput is to provide a one time password input for a form with a multiple digit code.
+
+<Example
+  storybookUrl="https://pol-ui-storybook.vercel.app/?path=/story/components-otpinput--example"
+  height={250}
+  name="A journey example"
+  code={journey}
+  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-otpinput--example&viewMode=story"
+>
+  <JourneyCode />
+</Example>
+
+## Theme
+
+To learn more about how to customize the appearance of components, please see the [Theme docs](/docs/theming).
+
+```ts
+interface OtpInputTheme {
+  base: string;
+  input: string;
+  selected: string;
+  unselected: string;
+}
+```

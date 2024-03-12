@@ -117,7 +117,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.className} `}>
-      <body className="antialiased mb-20 scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 justify-center flex-auto flex flex-col w-full min-h-screen">
+      <body className="antialiased mb-20 scroll-smooth text-secondary-900 bg-secondary-50 dark:text-secondary-50 dark:bg-secondary-900 justify-center flex-auto flex flex-col max-w-screen min-h-screen">
         <AppProvider>
           <div
             className="fixed top-0 left-0 w-full h-[80px] "

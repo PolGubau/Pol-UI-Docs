@@ -27,11 +27,6 @@ const DocsList = ({ docs }: { docs: Docs[] }) => {
                 href={"/docs/" + post.path}
                 className="group "
               >
-                <img
-                  src="/test.gif"
-                  alt="component test"
-                  className="pause hover:[animation-play-state:running]"
-                />
                 <h3 className="text-xl p-4">{post.title}</h3>
               </Card>
             ))}
