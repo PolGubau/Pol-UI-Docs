@@ -182,83 +182,45 @@ export interface PoluiTheme {
   // ... and so on
 }
 ```
+
 Each single component has a prop called **theme** that is a structured object used to apply tailwind styles to the component.
 
-If you for example, modify the global alert theme here, all your **alerts** will have this same changes. 
+If you for example, modify the global alert theme here, all your **alerts** will have this same changes.
+
+```tsx title="Example of a custom theme in Alert"
+
+
+const AppProvider = ({ children }: PropsWithChildren) => {
+  return (
+      <PoluiProvider theme={
+        theme:{
+          alert: {
+              base: "bg-red-500 text-white",
+          },
+        }
+      }>{children}</PoluiProvider>
+  );
+};
+```
+
+Using this configuration, all alerts will have a red background and white text.
 
 ## 2 - Component customization
 
-**Pol-ui** components are highly customizable. You can customize their styles by using the **className** prop, and you can also use the **styles** prop to provide inline styles.
+As well as the global theme, you can customize each single component in your application.
 
-### className prop
+### Using Tailind CSS classes
 
-You can use the **className** prop to add your own classes to the component. This is useful when you want to override the default styles of a component.
+All components have a prop called **className** that allows you to apply tailwind classes to the component.
 
-```tsx title="Example of using the className prop"
-import { Button } from "pol-ui";
+The problem here is that some components have a complex structures inside and it's not that easy as applying a class to a div.
 
-function MyComponent() {
-  return <Button className="bg-red-500 text-white">Click me</Button>;
-}
+To solve this problem some components provides different tailwind props for that as **inputClassName**, **iconClassName**, **buttonClassName** and so on.
+
+To be sure that you can change each single Tailwind class, you can use the same **theme** prop that we saw before but specific to the component.
+
+```tsx title="Example of a custom theme in Alert"
+<Alert theme={{ base: "bg-red-500 text-white" }}>This is a custom alert</Alert>
 ```
 
-### styles prop
-
-You can use the **styles** prop to provide inline styles to the component. This is useful when you want to apply styles that are not possible to achieve with classes.
-
-```tsx title="Example of using the styles prop"
-import { Button } from "pol-ui";
-
-function MyComponent() {
-  return (
-    <Button styles={{ color: "red", backgroundColor: "white" }}>
-      Click me
-    </Button>
-  );
-}
-```
-
-## 3 - Global styles
-
-You can also add global styles to your application. You can do this by using the **@apply** directive from Tailwind CSS.
-
-```css title="Example of adding global styles"
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.my-global-class {
-  @apply bg-red-500 text-white;
-}
-```
-
-## 4 - Dark mode
-
-**Pol-ui** has built-in support for dark mode. You can enable it by setting the **darkMode** property in the **tailwind.config.js** file to **"class"**.
-
-```javascript title="Example of enabling dark mode"
-// tailwind.config.js
-import { type Config } from "tailwindcss";
-
-export default {
-  darkMode: "class",
-} satisfies Config;
-```
-
-You can then use the **dark** variant to apply styles for dark mode.
-
-```css title="Example of using the dark variant"
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-.my-dark-class {
-  @apply bg-gray-800 text-white;
-}
-
-.dark .my-dark-class {
-  @apply bg-gray-300 text-black;
-}
-```
-
-## 5 - Conclusion
+This will apply the same changes as the previous example, but only for this single alert.
