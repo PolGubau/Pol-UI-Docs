@@ -149,6 +149,8 @@ This new color called **my-custom-color** will be available to use in your appli
 
 The good part of using the plugin is that for free you will have the colors [detailed before](#default-colors) without the need to add them manually.
 
+### If you don't want to use the plugin
+
 ## 2 - General configuration - Theming
 
 In the root of you application, you can wrap your app with a component called **ProviderProps** , where a prop called **theme** is optionally sent. This prop is a object that has the same structure of the **Theme** type.
@@ -205,7 +207,7 @@ const AppProvider = ({ children }: PropsWithChildren) => {
 
 Using this configuration, all alerts will have a red background and white text.
 
-## 2 - Component customization
+## 3 - Component customization
 
 As well as the global theme, you can customize each single component in your application.
 
@@ -213,7 +215,15 @@ As well as the global theme, you can customize each single component in your app
 
 All components have a prop called **className** that allows you to apply tailwind classes to the component.
 
-The problem here is that some components have a complex structures inside and it's not that easy as applying a class to a div.
+```tsx title="Example of a custom theme in Alert"
+<Alert className="bg-red-500 text-white">This is a custom alert</Alert>
+```
+
+This will have the same effect as applying tailwind classes to any HTML element.
+
+### Using the theme prop
+
+Some components have a complex structure inside and it's not that easy as applying a class to a div.
 
 To solve this problem some components provides different tailwind props for that as **inputClassName**, **iconClassName**, **buttonClassName** and so on.
 
