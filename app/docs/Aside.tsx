@@ -1,12 +1,9 @@
 "use client";
 
 import { allDocs } from "contentlayer/generated";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useMemo } from "react";
-import { motion } from "framer-motion";
-import { cn } from "lib/utils";
-import { Sidebar, SidebarItem, useBoolean } from "pol-ui";
+import { Sidebar, SidebarCollapse, SidebarItem, useBoolean } from "pol-ui";
 import { TbFishHook, TbHelpSquareRounded, TbLayout } from "react-icons/tb";
 
 const Aside = () => {
@@ -40,18 +37,11 @@ const Aside = () => {
 
   const { value, toggle } = useBoolean(false);
   return (
-    <section
-      className="h-auto "
-      style={{
-        scrollbarWidth: "thin",
-      }}
-    >
-      {pathname}
+    <section className="h-auto">
       <div className="sticky top-[75px]">
         <Sidebar
-          toggle={toggle}
-          collapsed={value}
-          collapsable={true}
+          onOpenChange={toggle}
+          open={value}
           className="h-[92vh] bg-secondary-50 dark:bg-secondary-900"
         >
           {allBase?.map((docs) => {
@@ -67,7 +57,7 @@ const Aside = () => {
             );
           })}
 
-          <Sidebar.Collapse open label="Components" icon={TbLayout}>
+          <SidebarCollapse badge="Components" icon={TbLayout}>
             {allComponents?.map((c) => {
               return (
                 <SidebarItem
@@ -80,8 +70,8 @@ const Aside = () => {
                 </SidebarItem>
               );
             })}
-          </Sidebar.Collapse>
-          <Sidebar.Collapse label="Hooks" icon={TbFishHook}>
+          </SidebarCollapse>
+          <SidebarCollapse badge="Hooks" icon={TbFishHook}>
             {allHooks?.map((c) => {
               return (
                 <SidebarItem
@@ -94,8 +84,8 @@ const Aside = () => {
                 </SidebarItem>
               );
             })}
-          </Sidebar.Collapse>
-          <Sidebar.Collapse label="Helpers" icon={TbHelpSquareRounded}>
+          </SidebarCollapse>
+          <SidebarCollapse badge="Helpers" icon={TbHelpSquareRounded}>
             {allHelpers?.map((c) => {
               return (
                 <SidebarItem
@@ -108,7 +98,7 @@ const Aside = () => {
                 </SidebarItem>
               );
             })}
-          </Sidebar.Collapse>
+          </SidebarCollapse>
         </Sidebar>
       </div>
     </section>

@@ -35,17 +35,17 @@ const Example = ({
   };
 
   const { value, toggle } = useBoolean(false);
-  const [_copied, copy] = useCopyToClipboard();
+  const { copiedText, copy } = useCopyToClipboard();
   const [justCopied, setJustCopied] = React.useState(false);
 
   React.useEffect(() => {
-    if (_copied) {
+    if (copiedText) {
       setJustCopied(true);
       setTimeout(() => {
         setJustCopied(false);
       }, 1000);
     }
-  }, [_copied]);
+  }, [copiedText]);
 
   const parsedChildrenToCopy: string =
     code ?? children?.toString() ?? "No children to copy";
