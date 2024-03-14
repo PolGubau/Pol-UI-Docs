@@ -83,17 +83,14 @@ const Example = ({
           width="100%"
           height={height}
         ></iframe>
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-transparent to-secondary-50 dark:to-secondary-900 z-20" />
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-white/0 to-secondary-50 dark:to-secondary-900 z-20" />
       </div>
 
       <motion.div
         animate={value ? openVariant : closedVariant}
         transition={{ duration: 0.5, type: "spring" }}
         className={cn(
-          "overflow-hidden relative -mt-4 rounded-b-[20px] bg-secondary-50 dark:bg-secondary-900",
-          {
-            hidden: !value,
-          }
+          "overflow-hidden relative  rounded-b-[20px] bg-secondary-50 dark:bg-secondary-900"
         )}
       >
         {children}

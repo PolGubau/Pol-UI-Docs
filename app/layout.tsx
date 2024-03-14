@@ -4,9 +4,7 @@ import { metadata as constants } from "../lib/constants";
 import { Poppins } from "next/font/google";
 import Navbar from "./components/navbar";
 import { Footer } from "./components/Layout";
-import NextTopLoader from "nextjs-toploader";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import GoTopButton from "./components/GoTopButton";
 import AppProvider from "./providers/AppProvider";
 
 export const metadata: Metadata = {

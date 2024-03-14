@@ -91,6 +91,7 @@ export default makeSource({
         {
           defaultLang: "js",
           theme: "one-dark-pro",
+
           onVisitLine(node) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted

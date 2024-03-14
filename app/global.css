@@ -111,7 +111,7 @@ table {
 }
 [data-rehype-pretty-code-fragment] pre,
 [data-rehype-pretty-code-fragment] span {
-  @apply !bg-secondary-50 dark:!bg-secondary-900 border-0;
+  @apply !bg-secondary-50 dark:!bg-secondary-900 border-0 m-0;
 }
 
 [data-rehype-pretty-code-fragment] code {

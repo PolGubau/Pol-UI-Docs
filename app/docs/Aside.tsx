@@ -2,38 +2,30 @@
 
 import { allDocs } from "contentlayer/generated";
 import { usePathname } from "next/navigation";
-import React, { useMemo } from "react";
+import React from "react";
 import { Sidebar, SidebarCollapse, SidebarItem, useBoolean } from "pol-ui";
 import { TbFishHook, TbHelpSquareRounded, TbLayout } from "react-icons/tb";
+export const allDocsSorted = allDocs?.sort((a, b) =>
+  a.order && b.order ? a.order - b.order : a.title.localeCompare(b.title)
+);
+export const allComponents = allDocsSorted?.filter(
+  (d) => d.doc_type === "component"
+);
+
+export const allHooks = allDocsSorted?.filter((d) => d.doc_type === "hook");
+
+export const allHelpers = allDocsSorted?.filter((d) => d.doc_type === "helper");
+
+export const allBase = allDocsSorted?.filter((d) => d.doc_type === "base");
 
 const Aside = () => {
   // some docs have a order field, so we sort them by that, otherwise alphabetically
-  const allDocsSorted = allDocs?.sort((a, b) =>
-    a.order && b.order ? a.order - b.order : a.title.localeCompare(b.title)
-  );
 
   const pathname = usePathname();
   const isActive = (path: string) => {
     const pathnameSame = pathname === "/docs/" + path;
     return pathnameSame;
   };
-
-  const allBase = allDocsSorted?.filter((d) => d.doc_type === "base");
-
-  const allComponents = useMemo(
-    () => allDocsSorted?.filter((d) => d.doc_type === "component"),
-    []
-  );
-
-  const allHooks = useMemo(
-    () => allDocsSorted?.filter((d) => d.doc_type === "hook"),
-    []
-  );
-
-  const allHelpers = useMemo(
-    () => allDocsSorted?.filter((d) => d.doc_type === "helper"),
-    []
-  );
 
   const { value, toggle } = useBoolean(false);
   return (

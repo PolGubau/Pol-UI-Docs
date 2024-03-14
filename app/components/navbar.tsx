@@ -3,6 +3,8 @@ import { DarkThemeToggle, IconButton, Navbar as UINavbar } from "pol-ui";
 import { TbBrandGithub, TbSearch } from "react-icons/tb";
 import { metadata } from "lib/constants";
 import { usePathname } from "next/navigation";
+import { useRecoilState } from "recoil";
+import { commandAtom } from "./Cmdk/state";
 const navItems = [
   {
     label: "Home",
@@ -15,6 +17,8 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const [open, setOpen] = useRecoilState(commandAtom);
+
   const isActive = (path: string) => {
     // if path is / and current path is /, return true
     if (path === "/" && pathname === "/") {
@@ -41,7 +45,7 @@ export default function Navbar() {
       })}
       rightContent={
         <div className="flex gap-2">
-          <IconButton>
+          <IconButton onClick={() => setOpen(!open)}>
             <TbSearch />
           </IconButton>
           <DarkThemeToggle />
