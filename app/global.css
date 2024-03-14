@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 *::selection {
-  background-color: #b49cff;
+  background-color: #b49cffcc;
   color: rgb(59, 60, 35);
 }
 @layer utilities {
@@ -111,7 +111,7 @@ table {
 }
 [data-rehype-pretty-code-fragment] pre,
 [data-rehype-pretty-code-fragment] span {
-  @apply !bg-[#2f2f2f] dark:!bg-[#1f1f1f] border-0;
+  @apply !bg-secondary-50 dark:!bg-secondary-900 border-0;
 }
 
 [data-rehype-pretty-code-fragment] code {
@@ -120,16 +120,12 @@ table {
   box-decoration-break: clone;
 }
 [data-rehype-pretty-code-fragment] .line {
-  @apply py-1;
+  @apply py-0.5;
 }
 [data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
   counter-increment: line;
   content: counter(line);
-  display: inline-block;
-  width: 1rem;
-  margin-right: 1rem;
-  text-align: right;
-  color: gray;
+  @apply text-secondary-600 text-right inline-block w-4;
 }
 [data-rehype-pretty-code-fragment] .line--highlighted {
   @apply bg-secondary bg-opacity-10;
@@ -141,7 +137,7 @@ table {
   @apply rounded-md bg-secondary bg-opacity-10 p-1;
 }
 [data-rehype-pretty-code-title] {
-  @apply px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-secondary-200 border-secondary-800 bg-[#1c1c1c];
+  @apply px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-secondary-200 border-secondary-800 bg-secondary-900;
 }
 [data-rehype-pretty-code-title] + pre {
   @apply mt-0 rounded-t-none border-t-0;

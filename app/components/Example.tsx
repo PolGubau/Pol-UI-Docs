@@ -51,15 +51,19 @@ const Example = ({
     code ?? children?.toString() ?? "No children to copy";
 
   return (
-    <div className="max-w-screen w-full rounded-xl bg-primary bg-gradient-to-br from-primary-200 to-secondary-300   pb-4 shadow-inner shadow-primary-500/10 dark:border-none dark:bg-gray-700 dark:from-purple-700/10 dark:to-cyan-700/10 dark:shadow  p-2 gap-2">
-      <header className="flex justify-between px-4 pb-2 rounded-t-2xl items-center">
+    <div className="max-w-screen w-full rounded-[25px] bg-primary bg-gradient-to-br from-primary-200 to-blue-200 shadow-inner shadow-primary-500/10 dark:border-none  dark:bg-gray-700 dark:from-purple-700/10 dark:to-cyan-700/10 dark:shadow gap-1 p-[5px]">
+      <header className="flex justify-between px-4 rounded-t-2xl items-center">
         <p className="py-0 fonst-medium text-lg p-0 first-letter:uppercase">
           {name}
         </p>
         {storybookUrl && (
           <IconButton
             outline
-            href={storybookUrl}
+            size="sm"
+            href={
+              "https://pol-ui-storybook.vercel.app/?path=/story/components-" +
+              storybookUrl
+            }
             label="Open in storybook"
             target="_blank"
             rel="noreferrer noopener"
@@ -68,28 +72,34 @@ const Example = ({
           </IconButton>
         )}
       </header>
-      <div className="rounded-md flex justify-center items-center ">
+      <div className="rounded-t-[20px] flex justify-center items-center relative">
         <iframe
           title={embedUrl}
-          className="rounded-md "
-          src={embedUrl}
+          className="rounded-t-[20px]"
+          src={
+            "https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-" +
+            embedUrl
+          }
           width="100%"
           height={height}
         ></iframe>
+        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-transparent to-secondary-50 dark:to-secondary-900 z-20" />
       </div>
 
       <motion.div
         animate={value ? openVariant : closedVariant}
-        transition={{ duration: 0.5 }}
-        className={cn("overflow-hidden relative -mt-4 rounded-b-2xl ", {
-          hidden: !value,
-        })}
+        transition={{ duration: 0.5, type: "spring" }}
+        className={cn(
+          "overflow-hidden relative -mt-4 rounded-b-[20px] bg-secondary-50 dark:bg-secondary-900",
+          {
+            hidden: !value,
+          }
+        )}
       >
         {children}
         <div className="absolute bottom-6 right-6 z-10  flex flex-col gap-4">
           <IconButton
             color={justCopied ? "success" : "primary"}
-            className=""
             onClick={() => {
               copy(parsedChildrenToCopy);
               setJustCopied(true);
@@ -109,7 +119,7 @@ const Example = ({
           </IconButton>
         </div>
         {!value && (
-          <div className="bg-gradient-to-b from-transparent mt-6 pointer-events-none from-50% to-[#121212] absolute top-0 left-0 inset-0"></div>
+          <div className="bg-gradient-to-b from-transparent mt-6 pointer-events-none from-50% to-secondary-50 dark:to-secondary-900 absolute top-0 left-0 inset-0"></div>
         )}
       </motion.div>
     </div>

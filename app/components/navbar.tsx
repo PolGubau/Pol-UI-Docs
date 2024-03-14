@@ -1,6 +1,6 @@
 "use client";
 import { DarkThemeToggle, IconButton, Navbar as UINavbar } from "pol-ui";
-import { TbBrandGithub } from "react-icons/tb";
+import { TbBrandGithub, TbSearch } from "react-icons/tb";
 import { metadata } from "lib/constants";
 import { usePathname } from "next/navigation";
 const navItems = [
@@ -41,6 +41,9 @@ export default function Navbar() {
       })}
       rightContent={
         <div className="flex gap-2">
+          <IconButton>
+            <TbSearch />
+          </IconButton>
           <DarkThemeToggle />
           <IconButton
             label="Github"
