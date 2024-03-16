@@ -151,17 +151,17 @@ export const Code = ({
   language: string;
   filename: string;
 }) => {
-  const [_copiedText, copy] = useCopyToClipboard();
+  const { copiedText, copy } = useCopyToClipboard();
   const [copied, setCopied] = React.useState(false);
 
   React.useEffect(() => {
-    if (_copiedText) {
+    if (copiedText) {
       setCopied(true);
       setTimeout(() => {
         setCopied(false);
       }, 2000);
     }
-  }, [_copiedText]);
+  }, [copiedText]);
 
   return (
     <>
