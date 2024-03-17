@@ -2,7 +2,6 @@ import "./global.css";
 import type { Metadata } from "next";
 import { metadata as constants } from "../lib/constants";
 import { Poppins } from "next/font/google";
-import Navbar from "./components/navbar";
 import { Footer } from "./components/Layout";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import AppProvider from "./providers/AppProvider";

@@ -38,6 +38,7 @@ export const ContainerScrollComp = () => {
   return (
     <>
       <ContainerScroll
+        className="hidden sm:flex"
         titleComponent={
           <h2 className="flex flex-col gap-2">
             <span className="text-2xl font-bold text-black dark:text-white">
@@ -52,10 +53,12 @@ export const ContainerScrollComp = () => {
         <div className=" flex flex-col md:grid md:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] md:gap-8 md:mt-20">
           {cards.map((card, index) => (
             <Card key={index} className="flex flex-col gap-2 py-3">
-              <h3 className="text-2xl font-normal md:font-semibold">
+              <h3 className="text-lg md:text-2xl font-normal md:font-semibold">
                 {card.title}
               </h3>
-              <p className="text-lg hidden md:flex">{card.description}</p>
+              <p className="text-lg hidden md:flex text-center justify-center">
+                {card.description}
+              </p>
             </Card>
           ))}
         </div>
@@ -66,7 +69,7 @@ export const ContainerScrollComp = () => {
           label="Start creatign"
           size="xl"
           rounded="xl"
-          className="w-full max-w-[300px]"
+          className="w-full max-w-[300px] hidden sm:flex"
         >
           Start creating
         </Button>

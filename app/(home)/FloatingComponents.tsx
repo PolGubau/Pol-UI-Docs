@@ -23,7 +23,7 @@ import { TbHandMove, TbHome, TbUser } from "react-icons/tb";
 import Floating from "./Floating";
 
 const FloatingComponents = () => {
-  const [otpValue, setOtpValue] = useState("");
+  const [otpValue, setOtpValue] = useState("12");
   const { value: checked, toggle: setChecked } = useBoolean(false);
 
   return (
