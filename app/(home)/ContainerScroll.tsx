@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { Button, Card, ContainerScroll } from "pol-ui";
-import { metadata } from "lib/constants";
 export const ContainerScrollComp = () => {
   const cards = [
     {

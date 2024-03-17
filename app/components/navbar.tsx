@@ -35,7 +35,7 @@ export default function Navbar() {
   const pathname = usePathname();
   return (
     <UINavbar
-      className="relative bg-secondary-50 dark:bg-secondary-900"
+      className="  bg-secondary-50 dark:bg-secondary-900 sticky top-0"
       links={navItems.map((i) => {
         return {
           label: i.label,
