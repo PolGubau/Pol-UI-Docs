@@ -27,8 +27,8 @@ const FloatingComponents = () => {
   const { value: checked, toggle: setChecked } = useBoolean(false);
 
   return (
-    <section className="w-full flex gap-8 justify-center  py-4 overflow-hidden">
-      <div className="flex gap-4 flex-col">
+    <section className="w-full hidden md:flex gap-8 justify-center  py-4 overflow-hidden px-20">
+      <div className="flex gap-4 flex-col justify-center">
         <div className="flex flex-row gap-10 text-left">
           <div className="hidden md:flex">
             <Input label="Your email" placeholder="Type something..." />
