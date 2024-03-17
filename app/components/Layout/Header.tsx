@@ -5,7 +5,7 @@ import { Button } from "pol-ui";
 
 const Header = () => {
   return (
-    <header className="flex flex-col md:flex-row gap-8 justify-center items-center mt-8 mb-16">
+    <header className="flex flex-col md:flex-row gap-8 justify-center items-center mt-40 mb-40">
       <div className="flex flex-col gap-4 text-center ">
         <h1 className="font-medium md:font-semibold text-4xl md:text-5xl lg:text-6xl tracking-tighter  balance">
           {metadata.longName}
