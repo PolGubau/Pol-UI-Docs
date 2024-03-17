@@ -1,31 +1,43 @@
 "use client";
 import { commandAtom } from "app/components/Cmdk/state";
-import { Button, DarkThemeToggle, FollowerPointer, IconButton } from "pol-ui";
+import {
+  Button,
+  Chip,
+  DarkThemeToggle,
+  FollowerPointer,
+  Hamburguer,
+  IconButton,
+  toast,
+  useBoolean,
+} from "pol-ui";
 import React from "react";
-import { TbSearch } from "react-icons/tb";
+import { TbSearch, TbTrash } from "react-icons/tb";
 import { useSetRecoilState } from "recoil";
 
 const Floating = () => {
   const setOpen = useSetRecoilState(commandAtom);
+  const { value, toggle } = useBoolean(false);
 
   return (
     <div className="flex flex-col gap-4">
-      <FollowerPointer
-        className="bg-orange-300 h-fit w-fit p-4 rounded-lg shadow-lg"
-        content={
-          <div className="rounded-full p-2 bg-primary/80 backdrop-blur-sm">
-            Crazy, right
-          </div>
-        }
+      <Chip
+        actions={[
+          {
+            icon: <TbTrash />,
+            onClick: () => toast({ title: "Chip", description: "Deleted" }),
+          },
+        ]}
       >
-        <p className="text-lg">Hover me :)</p>
-      </FollowerPointer>
+        Custom Icon
+      </Chip>
+
       <div className="flex gap-4 flex-col">
         <div className="flex gap-4">
           <IconButton onClick={() => setOpen((prev) => !prev)} label="Search">
             <TbSearch />
           </IconButton>
           <DarkThemeToggle />
+          <Hamburguer open={value} onClick={toggle} />
         </div>
         <Button>Button</Button>
         <Button loading>Loading</Button>

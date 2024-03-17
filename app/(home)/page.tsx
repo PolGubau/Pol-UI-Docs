@@ -4,7 +4,7 @@ import FloatingComponents from "./FloatingComponents";
 
 export default async function Page() {
   return (
-    <main className="flex flex-col justify-center mx-16 text-center">
+    <main className="flex flex-col justify-center  text-center">
       <Header />
       <FloatingComponents />
       <ContainerScrollComp />

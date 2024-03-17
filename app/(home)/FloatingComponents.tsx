@@ -3,32 +3,36 @@ import React, { useState } from "react";
 import {
   Avatar,
   Banner,
+  Breadcrumb,
+  BreadcrumbItem,
   BubbleHeading,
+  Card,
+  CardStack,
   Checkbox,
   ColorsEnum,
   DirectionHover,
+  Dropdown,
+  DropdownItem,
   Dropzone,
   Input,
   OtpInput,
-  PerspectiveCard,
-  Switch,
   toast,
   useBoolean,
 } from "pol-ui";
-import { TbHandMove } from "react-icons/tb";
+import { TbHandMove, TbHome, TbUser } from "react-icons/tb";
 import Floating from "./Floating";
 
 const FloatingComponents = () => {
   const [otpValue, setOtpValue] = useState("");
-  const { value, toggle } = useBoolean(false);
   const { value: checked, toggle: setChecked } = useBoolean(false);
 
   return (
-    <section className="w-full flex gap-8 ">
-      {" "}
+    <section className="w-full flex gap-8 justify-center  py-4 overflow-hidden">
       <div className="flex gap-4 flex-col">
         <div className="flex flex-row gap-10 text-left">
-          <Input label="Your email" placeholder="Type something..." />
+          <div className="hidden md:flex">
+            <Input label="Your email" placeholder="Type something..." />
+          </div>
           <OtpInput
             value={otpValue}
             onChange={setOtpValue}
@@ -51,23 +55,19 @@ const FloatingComponents = () => {
           </div>
         </Dropzone>
       </div>
-      <div className="flex ">
-        <Floating />
-      </div>
-      <div className="flex gap-2 aspect-square p-8">
-        <PerspectiveCard>
-          <div className="w-[150px] h-[150px] rounded-3xl bg-primary grid place-items-center">
-            Hello there
-            <Switch checked={value} onChange={toggle} />
-          </div>
-        </PerspectiveCard>
-      </div>
-      <div className="">
+      <Floating />
+      <CardStack className="hidden lg:flex">
+        <Card className="bg-red-300 h-[100px] w-[100px]">1</Card>
+        <Card className="bg-green-300 h-[100px] w-[100px]">2</Card>
+        <Card className="bg-blue-300 h-[100px] w-[100px]">3</Card>
+        <Card className="bg-purple-300 h-[100px] w-[100px]">4</Card>
+      </CardStack>
+      <div className="hidden xl:flex">
         <DirectionHover imageUrl="/hollidays.jpg" childrenClassName="h-[50px] ">
           Your last summer in Tenerife🏄
         </DirectionHover>
       </div>
-      <div className="flex flex-col gap-8">
+      <div className="  flex-col gap-8 hidden xl:flex">
         <Banner>
           <span>Welcome back to Pol-ui</span>
         </Banner>
@@ -97,6 +97,21 @@ const FloatingComponents = () => {
           checked={checked}
           onChange={() => setChecked()}
         />
+        <Breadcrumb>
+          <BreadcrumbItem href="https://polgubau.com/" icon={TbHome}>
+            Home
+          </BreadcrumbItem>
+          <BreadcrumbItem href="https://polgubau.com/" icon={TbUser}>
+            Profiles
+          </BreadcrumbItem>
+          <u className="text-secondary-600 ml-2" />
+          <Dropdown className="bg-transparent text-secondary-900" label="...">
+            <DropdownItem href="https://polgubau.com/" label="Authors" />
+            <DropdownItem href="https://polgubau.com/" label="Selected" />
+            <DropdownItem href="https://polgubau.com/" label="Matched" />
+          </Dropdown>
+          <BreadcrumbItem>Pol</BreadcrumbItem>
+        </Breadcrumb>
       </div>
     </section>
   );
