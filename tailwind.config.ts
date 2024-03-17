@@ -9,7 +9,13 @@ export default {
     "./content/**/*.mdx",
     "./node_modules/pol-ui/**/*.js",
   ],
-  darkMode: ["class"],
+  theme: {
+    extend: {
+      screens: {
+        "2xl": "1600px",
+      },
+    },
+  },
 
   plugins: [typography, poluiPlugin({})],
 } satisfies Config;

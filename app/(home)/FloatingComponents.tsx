@@ -46,7 +46,7 @@ const FloatingComponents = () => {
         </div>
         <Dropzone>
           <div className="flex flex-col items-center justify-center h-full gap-2">
-            <span className="text-2xl font-bold text-black dark:text-white gap-2 flex ">
+            <span className="text-2xl font-bold text-secondary-800 gap-2 flex ">
               <TbHandMove /> Drop your files here
             </span>
             <span className="text-lg text-gray-500 dark:text-gray-400">
@@ -56,18 +56,18 @@ const FloatingComponents = () => {
         </Dropzone>
       </div>
       <Floating />
-      <CardStack className="hidden lg:flex">
+      <CardStack className="hidden xl:flex">
         <Card className="bg-red-300 h-[100px] w-[100px]">1</Card>
         <Card className="bg-green-300 h-[100px] w-[100px]">2</Card>
         <Card className="bg-blue-300 h-[100px] w-[100px]">3</Card>
         <Card className="bg-purple-300 h-[100px] w-[100px]">4</Card>
       </CardStack>
-      <div className="hidden xl:flex">
+      <div className="hidden 2xl:flex">
         <DirectionHover imageUrl="/hollidays.jpg" childrenClassName="h-[50px] ">
           Your last summer in Tenerife🏄
         </DirectionHover>
       </div>
-      <div className="  flex-col gap-8 hidden xl:flex">
+      <div className="flex-col gap-8 hidden xl:flex">
         <Banner>
           <span>Welcome back to Pol-ui</span>
         </Banner>
