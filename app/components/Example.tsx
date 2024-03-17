@@ -83,7 +83,7 @@ const Example = ({
           width="100%"
           height={height}
         ></iframe>
-        <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-b from-white/0 to-secondary-50 dark:to-secondary-900 z-20" />
+        <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-b from-white/0 to-secondary-50 dark:to-secondary-900 z-20 pointer-events-none" />
       </div>
 
       <motion.div

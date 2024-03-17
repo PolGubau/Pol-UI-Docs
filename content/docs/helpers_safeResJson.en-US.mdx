@@ -14,7 +14,7 @@ tags:
   - Pol-ui
 ---
 
-The **safeResJson** function is a utility that safely extracts JSON data from a `Response` object. It checks if the response status is okay (2xx) and returns the parsed JSON data. Otherwise, it throws an error with the message 'Internal server error!'.
+The **safeResJson** function is a utility that safely extracts JSON data from a **Response** object. It checks if the response status is okay (2xx) and returns the parsed JSON data. Otherwise, it throws an error with the message 'Internal server error!'.
 
 ## Usage
 
@@ -25,7 +25,7 @@ import { safeResJson } from "pol-ui";
 
 // Your code goes here
 
-fetch('https://example.com/api/data')
+fetch("https://example.com/api/data")
   .then(safeResJson)
   .then((jsonData) => {
     console.log("JSON Data:", jsonData);
@@ -33,33 +33,37 @@ fetch('https://example.com/api/data')
   .catch((error) => {
     console.error("Error:", error.message);
   });
+```
+
 Parameters
-res (Response): The Response object from a fetch request.
-Return Value
-The function returns a Promise that resolves to the parsed JSON data if the response status is okay (2xx). Otherwise, it rejects with an error containing the message 'Internal server error!'.
+
+1. res (Response): The Response object from a fetch request.
+
+2. Return Value: The function returns a Promise that resolves to the parsed JSON data if the response status is okay (2xx). Otherwise, it rejects with an error containing the message 'Internal server error!'.
 
 Example
-tsx
-Copy code
-import { safeResJson } from 'pol-ui';
 
-fetch('https://example.com/api/data')
+```tsx
+import { safeResJson } from "pol-ui";
+
+fetch("https://example.com/api/data")
   .then(safeResJson)
   .then((jsonData) => {
-    console.log('JSON Data:', jsonData);
+    console.log("JSON Data:", jsonData);
   })
   .catch((error) => {
-    console.error('Error:', error.message);
+    console.error("Error:", error.message);
   });
 
 // Output:
-// JSON Data: { /* Parsed JSON Data */ }
+// JSON Data: {/* Parsed JSON Data */}
 // or
 // Error: Internal server error!
+```
+
 In this example, the safeResJson function is used to handle a fetch request's response, ensuring that JSON data is safely extracted or an error is thrown if the response status is not okay.
 
 Use Cases
 Fetch Requests: When working with fetch requests, use safeResJson to handle JSON responses more safely.
 Error Handling: Simplifies error handling for fetch requests, providing a consistent way to deal with non-okay responses.
 Integrate the safeResJson function into your project to enhance the reliability of handling JSON responses from fetch requests.
-```
