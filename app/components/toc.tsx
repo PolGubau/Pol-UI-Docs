@@ -1,5 +1,5 @@
-import { cn } from "lib/utils";
 import Link from "next/link";
+import { cn } from "pol-ui";
 import React from "react";
 
 export const Toc = ({ text }: { text: string }) => {

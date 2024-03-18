@@ -3,7 +3,7 @@
 import { Button } from "pol-ui";
 import { useEffect } from "react";
 
-export default function Error({
+export default function RootError({
   error,
   reset,
 }: {
@@ -16,7 +16,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="text-center flex flex-col justify-center">
+    <div className="text-center flex flex-col justify-center items-center">
       <p>🫥 Oh no, something went wrong... maybe refresh?</p>
       <Button onClick={() => reset()} className="w-fit">
         Refresh

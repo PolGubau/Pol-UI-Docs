@@ -1,8 +1,7 @@
 "use client";
 
 import React, { PropsWithChildren } from "react";
-import { IconButton, toast, useBoolean, useCopyToClipboard } from "pol-ui";
-import { cn } from "lib/utils";
+import { IconButton, cn, toast, useBoolean, useCopyToClipboard } from "pol-ui";
 import { motion } from "framer-motion";
 import {
   TbBrandStorybook,
