@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Pol-ui - A beautiful and functional UI library for React and Next.js",
   description:
-    "Pol-ui is a beautiful and functional UI library for React and Next.js. It is designed to be a flexible and customizable library that can be used to build beautiful and functional user interfaces.",
+    "Pol-ui stands out as a stunning and practical UI library tailored for React and Next.js. Crafted with versatility and customization in mind, it empowers developers to create captivating and efficient user interfaces effortlessly.",
   name: "Pol-ui",
   longName: "Pol-ui, empowering web development.",
   slogan: "A beautiful and functional UI library for React and Next.js",
@@ -17,13 +17,10 @@ export const metadata = {
     "Developer",
     "UX Designer",
     "Barcelona",
-    "Mesalvo",
-    "Best React Developer",
     "React",
     "React Developer",
     "UX Designer",
     "UI Designer",
-    "Next.js developer",
     "TailwindCSS",
   ],
 
