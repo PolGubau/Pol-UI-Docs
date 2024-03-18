@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: `${constants.links.website}/brand/thumbnail.png`,
+        url: `${constants.homeOgImage}`,
         width: 1920,
         height: 1080,
         alt: `${constants.title}' website preview`,
@@ -38,9 +38,7 @@ export const metadata: Metadata = {
   publisher: constants.title,
   creator: constants.title,
   manifest: "/brand/manifest.json",
-  verification: {
-    google: "google3c76d94f17d4b233",
-  },
+
   icons: {
     icon: [
       {

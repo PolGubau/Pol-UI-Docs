@@ -1,3 +1,4 @@
+import { metadata } from "lib/constants";
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
 
@@ -13,10 +14,10 @@ export async function GET(req: NextRequest) {
         <div
           style={{
             background:
-              "url(https://polgubau.com/assets/thumbnail.png) no-repeat center",
+              "url(https://ui.polgubau.com/assets/thumbnail.png) no-repeat center",
           }}
         ></div>
-        <p className="text-center">{postTitle}</p>
+        <p className="text-center text-white shadow-xl">{postTitle ?? metadata.name}</p>
       </div>
     ),
     {
