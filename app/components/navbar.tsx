@@ -14,6 +14,10 @@ const navItems = [
     href: "/docs",
     label: "Docs",
   },
+  {
+    href: "/theme-studio",
+    label: "Studio",
+  },
 ];
 
 export default function Navbar() {
