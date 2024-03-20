@@ -16,16 +16,8 @@ const Header = () => {
         {/* <MainSocials /> */}
 
         <div className="flex gap-2 items-center justify-center">
-          <Button href="/docs" label="Documentation" rounded="xl">
-            Documentation
-          </Button>
-          <Button
-            href={metadata.links.github}
-            label="Github"
-            color="secondary"
-            rounded="xl"
-          >
-            Github
+          <Button href="/docs" label="Documentation" rounded="xl" size="xl">
+            Start creating now
           </Button>
         </div>
       </div>
