@@ -92,7 +92,7 @@ const FloatingComponents = () => {
           <Avatar.Counter total={99} />
         </Avatar.Group>
         <Checkbox
-          label="That UI is amazing!"
+          label="This UI is amazing!"
           color={ColorsEnum.primary}
           checked={checked}
           onChange={() => setChecked()}

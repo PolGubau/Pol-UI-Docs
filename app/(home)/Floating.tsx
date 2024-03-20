@@ -4,7 +4,6 @@ import {
   Button,
   Chip,
   DarkThemeToggle,
-  FollowerPointer,
   Hamburguer,
   IconButton,
   toast,
@@ -42,6 +41,14 @@ const Floating = () => {
         <Button>Button</Button>
         <Button loading>Loading</Button>
         <Button outline>Outlined</Button>
+        <Button
+          color="error"
+          onClick={() => {
+            toast({ title: "I see...", type: "error" });
+          }}
+        >
+          Don't click here
+        </Button>
       </div>
     </div>
   );
