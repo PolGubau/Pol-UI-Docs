@@ -264,7 +264,10 @@ const ColorEditors = ({
               isPresetSelected(preset) ? "ring-4 ring-primary-500" : ""
             }`}
           >
-            <span className="text-secondary-900 text-lg"> {preset.name}</span>
+            <span className="text-secondary-900 text-lg first-letter:uppercase">
+              {" "}
+              {preset.name}
+            </span>
 
             <footer className="flex gap-4">
               <div className="flex flex-col text-sm flex-1">
@@ -298,10 +301,12 @@ const ColorEditors = ({
         {Object.keys(colors).map((key) => {
           return (
             <div key={key} className="flex flex-col gap-1">
-              <h3>{key}</h3>
+              <h3 className="text-lg first-letter:uppercase text-normal text-center">
+                {key}
+              </h3>
               {Object.keys(colors[key]).map((key2) => (
                 <div key={key2} className="grid grid-cols-[auto,1fr] gap-4">
-                  <span className="w-fit min-w-[50px]">{key2}</span>
+                  <span className="w-fit min-w-[30px]">{key2}</span>
                   <input
                     className="w-full rounded-full outline-none border-none overflow-hidden bg-transparent"
                     type="color"
