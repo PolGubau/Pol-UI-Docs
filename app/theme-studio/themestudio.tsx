@@ -4,12 +4,13 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import theme from "./themeColors";
 import { wholeConfig } from "./configString";
 import {
+  ColorsEnum,
   IconButton,
   MainSizesEnum,
   ThemeColors,
   useCopyToClipboard,
 } from "pol-ui";
-import { TbClipboard } from "react-icons/tb";
+import { TbCheck, TbClipboard } from "react-icons/tb";
 import ColorEditors from "./ColorEditors";
 
 const ThemeStudio = () => {
@@ -90,8 +91,18 @@ const ThemeStudio = () => {
   const [colors, setColors] = React.useState<ThemeColors>(colorsBase);
   const { copy } = useCopyToClipboard();
   const handleCopyConfig = () => {
+    setJustCopied(true);
     copy(wholeConfig(colors));
   };
+  const [justCopied, setJustCopied] = React.useState(false);
+  React.useEffect(() => {
+    if (justCopied) {
+      const timer = setTimeout(() => {
+        setJustCopied(false);
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [justCopied]);
   return (
     <main className="justify-center w-full flex ">
       <section className="grid grid-cols-2 px-10 w-full gap-6">
@@ -100,8 +111,12 @@ const ThemeStudio = () => {
         <div className="bg-secondary-800 dark:bg-secondary-800 p-4 rounded-xl relative">
           <div className="absolute  h-full top-0 right-0 m-4">
             <div className="sticky top-20">
-              <IconButton size={MainSizesEnum.lg} onClick={handleCopyConfig}>
-                <TbClipboard />
+              <IconButton
+                size={MainSizesEnum.lg}
+                onClick={handleCopyConfig}
+                color={justCopied ? ColorsEnum.success : ColorsEnum.primary}
+              >
+                {justCopied ? <TbCheck /> : <TbClipboard />}
               </IconButton>
             </div>
           </div>
