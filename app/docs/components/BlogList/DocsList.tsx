@@ -26,12 +26,12 @@ const DocsList = ({ docs }: { docs: Docs[] }) => {
 
   return (
     <div className="flex flex-col gap-20">
-      <header className="flex gap-4">
+      <header className="flex gap-4 flex-wrap">
         {orderedBycategory["base"].map((post: Docs) => (
           <Card
             key={post._id}
             href={"/docs/" + post.path}
-            className="flex flex-1 p-4"
+            className="flex flex-1 p-4 min-w-[200px]"
           >
             <h3 className="text-xl">{post.title}</h3>
             <p>{post.summary}</p>

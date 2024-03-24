@@ -37,6 +37,8 @@ const Example = ({
   const { copiedText, copy } = useCopyToClipboard();
   const [justCopied, setJustCopied] = React.useState(false);
 
+  const storybookDomain = "https://pol-ui-storybook.vercel.app";
+
   React.useEffect(() => {
     if (copiedText) {
       setJustCopied(true);
@@ -59,10 +61,7 @@ const Example = ({
           <IconButton
             outline
             size="sm"
-            href={
-              "https://pol-ui-storybook.vercel.app/?path=/story/components-" +
-              storybookUrl
-            }
+            href={`${storybookDomain}/?path=/story/components-` + storybookUrl}
             label="Open in storybook"
             target="_blank"
             rel="noreferrer noopener"
@@ -71,14 +70,11 @@ const Example = ({
           </IconButton>
         )}
       </header>
-      <div className="rounded-t-[20px] flex justify-center items-center relative">
+      <div className="rounded-t-[20px] flex justify-center items-center relative bg-secondary-50">
         <iframe
           title={embedUrl}
           className="rounded-t-[20px]"
-          src={
-            "https://pol-ui-storybook.vercel.app/iframe.html?args=&id=components-" +
-            embedUrl
-          }
+          src={`${storybookDomain}/iframe.html?args=&id=components-` + embedUrl}
           width="100%"
           height={height}
         ></iframe>
