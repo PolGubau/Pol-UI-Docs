@@ -80,7 +80,6 @@ function formatDate(date: string) {
 
   return `${fullDate}`;
 }
-
 export default function DocPage({ params }) {
   const allDocsSorted = allDocs?.sort((a, b) =>
     a.order && b.order ? a.order - b.order : a.title.localeCompare(b.title)
