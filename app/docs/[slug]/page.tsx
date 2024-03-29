@@ -9,10 +9,9 @@ import { Toc } from "app/components/toc";
 export const dynamic = "force-static";
 type Props = {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const doc = allDocs.find((d) => d.path === params.slug) ?? undefined;
