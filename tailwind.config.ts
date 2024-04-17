@@ -17,5 +17,15 @@ export default {
     },
   },
 
-  plugins: [typography, poluiPlugin({})],
+  plugins: [
+    typography,
+    poluiPlugin({
+      colors: {
+        secondary: {
+          800: "#2c3339",
+          900: "#161a1d",
+        },
+      },
+    }),
+  ],
 } satisfies Config;

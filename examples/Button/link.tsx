@@ -1,13 +1,16 @@
 const code = `
 import { Button } from "pol-ui";
+import { Link } from "react-router-dom / next / gatsby / etc";
 
 import React from "react";
-const ButtonComponent = () => {
-  return
-  <Button href={"https://www.polgubau.com"} target={"_blank"}>
-      Button
-    </Button>;
+
+export const LinkButton = () => {
+  return (
+    <Button asChild>
+      <Link href="https://google.com">Google</Link>
+    </Button>
+  );
 };
-export default ButtonComponent;
+export default LinkButton;
 `;
 export default code;

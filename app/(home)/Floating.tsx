@@ -40,7 +40,7 @@ const Floating = () => {
         </div>
         <Button>Button</Button>
         <Button loading>Loading</Button>
-        <Button outline>Outlined</Button>
+        <Button variant={"outline"}>Outlined</Button>
         <Button
           color="error"
           onClick={() => {

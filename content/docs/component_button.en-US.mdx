@@ -85,25 +85,24 @@ embedUrl="button--default-button&viewMode=story"
 
 ## Props
 
-| Prop name       | Type              | Default       | Description                               |
-| --------------- | ----------------- | ------------- | ----------------------------------------- |
-| children        | React.ReactNode   | -             | The children of the breadcrumb component. |
-| as              | React.ElementType | "button"      | The HTML tag to render the button as.     |
-| href            | string            | -             | The URL to navigate when click.           |
-| color           | Colors            | "primary"     | The color of the button.                  |
-| fullSize        | boolean           | false         | The button will take the full width.      |
-| loading         | boolean           | false         | The button will be in a loading state.    |
-| loadingLabel    | string            | "Loading"     | The label of the loading state.           |
-| hasMotion       | boolean           | false         | The button will have a motion effect.     |
-| hasBackground   | boolean           | true          | The button will have a background color.  |
-| loader          | React.ReactNode   | {"<Loader/>"} | The loader component to use.              |
-| label           | string            | -             | The label of the button.                  |
-| outline         | boolean           | false         | The button will have an outline style.    |
-| rounded         | RoundedSizes      | 'md'          | The button will have a rounded style.     |
-| positionInGroup | PositionInGroup   | none          | The position of the button in a group.    |
-| size            | MainSizes         | "md"          | The size of the button.                   |
-| theme           | ButtonTheme       | buttonTheme   | The theme of the button.                  |
-| innerClassName  | string            | -             | Inner class name of the button children.  |
+| Prop name       | Type                            | Default       | Description                               |
+| --------------- | ------------------------------- | ------------- | ----------------------------------------- |
+| children        | React.ReactNode                 | -             | The children of the breadcrumb component. |
+| as              | React.ElementType               | "button"      | The HTML tag to render the button as.     |
+| href            | string                          | -             | The URL to navigate when click.           |
+| color           | Colors                          | "primary"     | The color of the button.                  |
+| fullSize        | boolean                         | false         | The button will take the full width.      |
+| loading         | boolean                         | false         | The button will be in a loading state.    |
+| loadingLabel    | string                          | "Loading"     | The label of the loading state.           |
+| hasMotion       | boolean                         | false         | The button will have a motion effect.     |
+| loader          | React.ReactNode                 | {"<Loader/>"} | The loader component to use.              |
+| label           | string                          | -             | The label of the button.                  |
+| variant         | ghost - filled - outline - link | false         | The button will have an outline style.    |
+| rounded         | RoundedSizes                    | 'md'          | The button will have a rounded style.     |
+| positionInGroup | PositionInGroup                 | none          | The position of the button in a group.    |
+| size            | MainSizes                       | "md"          | The size of the button.                   |
+| theme           | ButtonTheme                     | buttonTheme   | The theme of the button.                  |
+| innerClassName  | string                          | -             | Inner class name of the button children.  |
 
 Add to the previous table all native props from the HTML button tag.
 
@@ -113,13 +112,13 @@ If you provide a **href** property, the button will render as an anchor tag, so 
 
 ### Outline button
 
-Pol-ui allows you to create an outline button by using the **outline** property.
+Pol-ui allows you to create an variant = outline button by using the **outline** property.
 It's an alternative style for the button component.
 If you rather use direct classes from Tailwind CSS, feel free to use the **className** property but this prop gives this functionality for free.
 
  <Example
  storybookUrl='button--outline-button'
-  height={100}
+  height={160}
 name="Outline button"
 code={outline}
 embedUrl="button--outline-button&viewMode=story"
@@ -135,7 +134,7 @@ The **loading** property allows you to create a button with a loading state. A l
 
  <Example
  storybookUrl='button--loading'
-  height={100}
+  height={160}
 name="Loading button"
 code={loading}
 embedUrl="button--loading&viewMode=story"
@@ -152,7 +151,7 @@ This prop will change the button to a disabled state and the user won't be able 
 
  <Example
  storybookUrl='button--disabled'
-  height={100}
+  height={160}
 name="Disabled button"
 code={disabled}
 embedUrl="button--disabled&viewMode=story"
@@ -169,7 +168,7 @@ Useful for mobile devices or when you want to create a button that takes the ful
 
  <Example
  storybookUrl='button--full-sized'
-  height={100}
+  height={160}
 name="Full sized button"
 code={fullSized}
 embedUrl="button--full-sized&viewMode=story"
@@ -181,15 +180,15 @@ embedUrl="button--full-sized&viewMode=story"
 
 ### Transparent button
 
-The **hasBackground** property allows you to create a button without a background color.
+The **ghost** variant property allows you to create a button without a background color.
 This is useful when you want to create a button that looks like a link or 'just text' but still want to use the button component.
 
  <Example
  storybookUrl='button--transparent'
-  height={100}
-name="Transparent button"
+  height={160}
+name="Ghost button"
 code={noBackground}
-embedUrl="button--transparent&viewMode=story"
+embedUrl="button--ghost&viewMode=story"
 
 >
 
@@ -198,11 +197,11 @@ embedUrl="button--transparent&viewMode=story"
 
 ### Link button
 
-**Pol-ui** doesn't have a specific component for links, but you can use the **{"<Button>"}** component and add the **href** property to create a link button. The HTML tag will be rendered as an anchor tag just with specifying this **href** property.
+**Pol-ui** doesn't have a specific component for links, but you can use the **{"<Button>"}** component and add any children as Link with the _asChild_ property.
 
  <Example
  storybookUrl='button--link'
-  height={100}
+  height={160}
 name="Link button"
 code={link}
 embedUrl="button--link&viewMode=story"
@@ -211,31 +210,14 @@ embedUrl="button--link&viewMode=story"
 
   <LinkCode />
 </Example>
-
-### With Motion
-
-If you want to add a motion effect to the button, you can use the **hasMotion** property. This will add a motion effect to the button when the user hovers over it, when the user clicks on it, or when the user focuses on it.
-This is interesting when you have a fancy design and want to add a little bit of animation to the button.
-
- <Example
- storybookUrl='button--with-motion'
-  height={100}
-name="with-motion button"
-code={motion}
-embedUrl="button--with-motion&viewMode=story"
-
->
-
-  <MotionCode />
-</Example>
-
+ 
 ### All rounded styles
 
 All rounded styles are available for the button component. You can use the **rounded** property to change the style of the button.
 
  <Example
  storybookUrl='button--rounded'
-  height={100}
+  height={160}
 name="Rounded button"
 code={rounded}
 embedUrl="button--rounded&viewMode=story"
@@ -251,7 +233,7 @@ The **size** property is used to change the size of the button. You can use the 
 
  <Example
  storybookUrl='button--sizes'
-  height={100}
+  height={160}
 name="sizes button"
 code={sizes}
 embedUrl="button--sizes&viewMode=story"
@@ -312,21 +294,6 @@ embedUrl="button--with-icon&viewMode=story"
 >
 
   <IconCode />
-</Example>
-
-### Button group
-
-To create a group of buttons, you can use the **{"<ButtonGroup>"}** component and add the **{"<Button>"}** component as a child of the button group.
-
- <Example
- storybookUrl='buttongroup--default-avatar-group'
-  height={100}
-name="Button group"
-code={group}
-embedUrl="buttongroup--default-avatar-group&viewMode=story"
->
-
-  <GroupCode />
 </Example>
 
 ## Theme
