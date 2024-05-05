@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Button, Card, ContainerScroll } from "pol-ui";
+import Link from "next/link";
 export const ContainerScrollComp = () => {
   const cards = [
     {
@@ -64,15 +65,15 @@ export const ContainerScrollComp = () => {
         </div>
       </ContainerScroll>
       <div className="flex justify-center">
-        <Button
-          href={"/docs"}
-          label="Start creatign"
-          size="xl"
-          rounded="xl"
-          className="w-full max-w-[300px] hidden sm:flex"
-        >
-          Start creating
-        </Button>
+        <Link href="/docs">
+          <Button
+            size="xl"
+            rounded="xl"
+            className="w-full max-w-[300px] hidden sm:flex"
+          >
+            Start creating
+          </Button>
+        </Link>
       </div>
     </>
   );
