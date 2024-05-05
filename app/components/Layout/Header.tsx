@@ -2,6 +2,7 @@
 import React from "react";
 import { metadata } from "lib/constants";
 import { Button } from "pol-ui";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -16,9 +17,11 @@ const Header = () => {
         {/* <MainSocials /> */}
 
         <div className="flex gap-2 items-center justify-center">
-          <Button href="/docs" label="Documentation" rounded="xl" size="xl">
-            Start creating now
-          </Button>
+          <Link href="/docs">
+            <Button label="Documentation" rounded="xl" size="xl">
+              Start creating now
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

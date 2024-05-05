@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useEffect } from "react";
-import { Modal, Command } from "pol-ui";
-import { TbBrandGithub, TbBrandNpm, TbLayout, TbUser } from "react-icons/tb";
+import { allBase, allComponents, allHelpers, allHooks } from "app/docs/Aside";
+import { metadata } from "lib/constants";
+import { useRouter } from "next/navigation";
+import { Command, Modal } from "pol-ui";
+import { useEffect } from "react";
+import { TbBrandGithub, TbBrandNpm, TbUser } from "react-icons/tb";
 import { useRecoilState } from "recoil";
 import { commandAtom } from "./state";
-import { allBase, allComponents, allHelpers, allHooks } from "app/docs/Aside";
-import { useRouter } from "next/navigation";
-import { metadata } from "lib/constants";
 export const CommandMenu = () => {
   const [open, setOpen] = useRecoilState(commandAtom);
   const toggle = () => setOpen(!open);

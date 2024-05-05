@@ -9,6 +9,7 @@ import {
   TbChevronDown,
   TbCopy,
 } from "react-icons/tb";
+import Link from "next/link";
 const Example = ({
   name = "Component",
   children,
@@ -58,16 +59,15 @@ const Example = ({
           {name}
         </p>
         {storybookUrl && (
-          <IconButton
-            outline
-            size="sm"
-            href={`${storybookDomain}/?path=/story/components-` + storybookUrl}
-            label="Open in storybook"
+          <Link
             target="_blank"
             rel="noreferrer noopener"
+            href={`${storybookDomain}/?path=/story/components-` + storybookUrl}
           >
-            <TbBrandStorybook size={20} />
-          </IconButton>
+            <IconButton variant={"outline"} size="sm" label="Open in storybook">
+              <TbBrandStorybook size={20} />
+            </IconButton>
+          </Link>
         )}
       </header>
       <div className="rounded-t-[20px] flex justify-center items-center relative bg-secondary-50">

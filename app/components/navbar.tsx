@@ -5,6 +5,7 @@ import { metadata } from "lib/constants";
 import { usePathname } from "next/navigation";
 import { useRecoilState } from "recoil";
 import { commandAtom } from "./Cmdk/state";
+import Link from "next/link";
 const navItems = [
   {
     label: "Home",
@@ -53,14 +54,11 @@ export default function Navbar() {
             <TbSearch />
           </IconButton>
           <DarkThemeToggle />
-          <IconButton
-            label="Github"
-            href={metadata.links.github}
-            target="_blank"
-            rel="noopener"
-          >
-            <TbBrandGithub />
-          </IconButton>
+          <Link href={metadata.links.github} target="_blank" rel="noopener">
+            <IconButton label="Github">
+              <TbBrandGithub />
+            </IconButton>
+          </Link>
         </div>
       }
       leftContent={

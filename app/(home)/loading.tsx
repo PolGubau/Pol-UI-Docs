@@ -5,7 +5,6 @@ export default function Loading() {
   return (
     <section className="overflow-visible">
       <Header />
-
       <HomeSkeleton />
     </section>
   );
