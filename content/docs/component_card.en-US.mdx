@@ -46,45 +46,12 @@ Use this example to show a simple card component with a title and description an
 
 ## Props
 
-| Prop name   | Type                       | Default | Description                                  |
-| ----------- | -------------------------- | ------- | -------------------------------------------- |
-| children    | React.ReactNode            | -       | The children displayed inside the card       |
-| theme       | [CardTheme](/theme)        | {}      | The theme applied to the component           |
-| href        | string                     | -       | The url to go when pressing the card         |
-| horizontal  | boolean                    | false   | Set the card to horizontal layout            |
-| className   | string                     | -       | The class name to apply to the card          |
-| renderImage | (props) => React.ReactNode | -       | A custom image component to render the image |
-| imageClass  | string                     | -       | The class name to apply to the image         |
-
-## Horizontal card
-
-A card can hold the horizontal layout to show a wide variety of content such as previews of blog posts, user profiles, pricing plans, and more.
-
-<Example
-  storybookUrl="card--horizontal"
-  height={400}
-  name="Horizontal card"
-  code={horizontal}
-  embedUrl="card--horizontal&viewMode=story"
->
-  <HorizontalCode />
-</Example>
-
-## Custom Image render
-
-When using **next.js** or **Gatsby** you can use the **Image** component from **next/image** or **gatsby-image** to render the image with the **Card** component.
-
-The **renderImage** prop is used to display a custom image component inside on the card.
-
-<Example
-  storybookUrl="card--with-next-image"
-  height={400}
-  name="Horizontal card"
-  code={customRender}
-  embedUrl="https://pol-ui-storybook.vercel.app/iframe.html?id=components-card--with-next-image&viewMode=story"
->
-  <CustomRenderCode />
-</Example>
+| Prop name | Type                | Default | Description                            |
+| --------- | ------------------- | ------- | -------------------------------------- |
+| children  | React.ReactNode     | -       | The children displayed inside the card |
+| theme     | [CardTheme](/theme) | {}      | The theme applied to the component     |
+| href      | string              | -       | The url to go when pressing the card   |
+| className | string              | -       | The class name to apply to the card    |
 
 ## Theme
 
