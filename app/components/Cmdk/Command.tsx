@@ -91,7 +91,6 @@ export const CommandMenu = () => {
               );
             })}
           </Command.Group>
-          <Command.Separator />
           <Command.Group heading="Interest links">
             <Command.Item
               value="github-link"

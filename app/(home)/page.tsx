@@ -1,8 +1,8 @@
+import { readFileSync } from "fs";
 import Header from "../components/Layout/Header";
 import { ContainerScrollComp } from "./ContainerScroll";
 import FloatingComponents from "./FloatingComponents";
 import { readdir } from "fs/promises";
-import { readFileSync } from "fs";
 export default async function Page() {
   // get directory info about pol-ui
   const path = require("path");
@@ -10,10 +10,12 @@ export default async function Page() {
 
   // get all inner files and dirs inside of /lib
   const files = await readdir(url, { withFileTypes: true });
-
-  const dirs = files.filter((f) => f.isDirectory());
-  const innerFiles = files.filter((f) => f.isFile());
-
+  const getOneComponent = (componentName: string) => {
+    return readFileSync(
+      path.join(url, componentName, `${componentName}.js`),
+      "utf-8"
+    );
+  };
   const allInfo = files.map((f) => {
     const componentUrl = path.join(url, f.name);
 
@@ -22,13 +24,11 @@ export default async function Page() {
 
     const mainFileUrl = path.join(componentUrl, `${f.name}.js`);
 
-    const mainFileCode = readFileSync(mainFileUrl, "utf8");
-
     return {
       name: f.name,
       homePath: componentUrl,
       mainFile: mainFileUrl,
-      code: mainFileCode,
+      code: getOneComponent(f.name),
       componentFiles,
       isDir: f.isDirectory(),
       isFile: f.isFile(),
