@@ -21,6 +21,7 @@ import {
 } from "pol-ui";
 import { TbHandMove, TbHome, TbUser } from "react-icons/tb";
 import Floating from "./Floating";
+import Link from "next/link";
 
 const FloatingComponents = () => {
   const [otpValue, setOtpValue] = useState("12");
@@ -37,8 +38,7 @@ const FloatingComponents = () => {
             value={otpValue}
             onChange={setOtpValue}
             onComplete={(value) => {
-              toast({
-                title: "OTP Completed",
+              toast("OTP Completed", {
                 description: `You've entered the OTP: ${value}`,
               });
             }}
@@ -106,9 +106,12 @@ const FloatingComponents = () => {
           </BreadcrumbItem>
           <u className="text-secondary-600 ml-2" />
           <Dropdown className="bg-transparent text-secondary-900" label="...">
-            <DropdownItem href="https://polgubau.com/" label="Authors" />
-            <DropdownItem href="https://polgubau.com/" label="Selected" />
-            <DropdownItem href="https://polgubau.com/" label="Matched" />
+            <DropdownItem label="Authors">
+              <Link href="https://polgubau.com/"> Authors</Link>
+            </DropdownItem>
+            <DropdownItem>
+              <Link href="https://polgubau.com/"> Pol</Link>
+            </DropdownItem>
           </Dropdown>
           <BreadcrumbItem>Pol</BreadcrumbItem>
         </Breadcrumb>
