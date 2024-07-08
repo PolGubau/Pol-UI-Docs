@@ -1,9 +1,9 @@
-import "./global.css";
-import type { Metadata } from "next";
-import { metadata as constants } from "../lib/constants";
-import { Poppins } from "next/font/google";
-import { Footer } from "./components/Layout";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
+import { metadata as constants } from "../lib/constants";
+import { Footer } from "./components/Layout";
+import "./global.css";
 import AppProvider from "./providers/AppProvider";
 
 export const metadata: Metadata = {

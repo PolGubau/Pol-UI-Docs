@@ -38,7 +38,7 @@ const Example = ({
   const { copiedText, copy } = useCopyToClipboard();
   const [justCopied, setJustCopied] = React.useState(false);
 
-  const storybookDomain = "https://pol-ui-storybook.vercel.app";
+  const storybookDomain = "https://ui-storybook.polgubau.com";
 
   React.useEffect(() => {
     if (copiedText) {
@@ -95,8 +95,7 @@ const Example = ({
             onClick={() => {
               copy(parsedChildrenToCopy);
               setJustCopied(true);
-              toast({
-                title: "Copied!",
+              toast("Copied!", {
                 description: "The code was copied to your clipboard",
               });
             }}
