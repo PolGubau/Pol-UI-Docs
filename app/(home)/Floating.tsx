@@ -23,7 +23,7 @@ const Floating = () => {
         actions={[
           {
             icon: <TbTrash />,
-            onClick: () => toast({ title: "Chip", description: "Deleted" }),
+            onClick: () => toast("Chip", { description: "Deleted" }),
           },
         ]}
       >
@@ -44,7 +44,7 @@ const Floating = () => {
         <Button
           color="error"
           onClick={() => {
-            toast({ title: "I see...", type: "error" });
+            toast.error("I see...");
           }}
         >
           Don't click here
